@@ -49,4 +49,4 @@ function generateValidCNPJ() {
 //const cnpj = generateValidCNPJ();
 //console.log(cnpj);
 
-module.exports = generateValidCNPJ();
+export default generateValidCNPJ();

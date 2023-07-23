@@ -1,7 +1,4 @@
-const cpfGenerator = require('./cpfGenerator')
-const cnpjGenerator = require('./cnpjGenerator')
+import cnpjValidator from './src/cnpjValidator';
+import cpfValidator from './src/cpfValidator';
 
-module.exports = {
-    cpfGerador: cpfGenerator,
-    cnpjGerador: cnpjGenerator
-};
+export {cpfValidator, cnpjValidator};

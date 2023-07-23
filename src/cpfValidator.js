@@ -46,4 +46,4 @@ function geraEValida() { // Função que executa todo código.
 
 //console.log(geraEValida());
 
-module.exports = geraEValida();
+export default geraEValida();

@@ -1,28 +1,29 @@
 {
-  "name": "cpf_and_cnpj-generator",
-  "version": "1.0.2",
-  "description": "This repository contains a JavaScript code that generates a valid Brazilian CPF (Cadastro de Pessoas Físicas). CPF is a unique identification number assigned to individuals in Brazil. The code ensures that the generated CPF numbers follow the required validation rules and algorithms.",
+  "name": "multiform-validator",
+  "version": "1.0.0",
+  "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido.git"
+    "url": "git+https://github.com/gabriel-logan/multiform-validator.git"
   },
+  "type": "module",
   "keywords": [
-    "CPF",
-    "CNPJ",
-    "GENERATOR",
-    "GERADOR",
-    "VALIDADOR",
-    "DOCUMENTO",
-    "JAVASCRIPT"
+    "validator",
+    "multiform",
+    "validação",
+    "email-validator",
+    "multiform-validator",
+    "javascript",
+    "npm"
   ],
   "author": "Gabriel Logan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido/issues"
+    "url": "https://github.com/gabriel-logan/multiform-validator/issues"
   },
-  "homepage": "https://github.com/gabriel-logan/Gerador-CPF-e-CNPJ-valido#readme"
+  "homepage": "https://github.com/gabriel-logan/multiform-validator#readme"
 }
