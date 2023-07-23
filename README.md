@@ -1,6 +1,6 @@
 # Multiform-validator
 
-[![npm version](https://badge.fury.io/js/cpf_and_cnpj-generator.svg)](https://badge.fury.io/js/cpf_and_cnpj-generator)
+[![npm version](https://badge.fury.io/js/multiform-validator.svg)](https://badge.fury.io/js/multiform-validator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## English
@@ -9,6 +9,22 @@ This npm package provides JavaScript functions to validate many forms field
 
 ### Installation
 
-# IMPORTANT
+```bash
+npm install multiform-validator
+```
 
-Code under development, not used yet.
+how to use:
+```javascript
+const {cpfIsValid, cnpjIsValid} = require('multiform-validator');
+console.log(cpfIsValid('CPFNUMBER')); return true or false
+console.log(cnpjIsValid('CNPJNUMBER')); return true or false
+
+or
+
+import {cpfIsValid, cnpjIsValid} from 'multiform-validator';
+console.log(cpfIsValid('CPFNUMBER')); return true or false
+console.log(cnpjIsValid('CNPJNUMBER')); return true or false
+```
+
+# IMPORTANT
+Code under development...

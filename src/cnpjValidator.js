@@ -1,19 +1,3 @@
-// Feito por: Logan
-
-// Função para gerar um dígito aleatório entre 0 e 9
-function randomDigit() {
-    return Math.floor(Math.random() * 10);
-  }
-  
-// Função para gerar os 12 primeiros dígitos do CNPJ
-function generateCNPJBase() {
-  const cnpjBase = [];
-  for (let i = 0; i < 12; i++) {
-    cnpjBase.push(randomDigit());
-  }
-  return cnpjBase;
-}
-
 // Função para calcular o primeiro dígito verificador
 function calculateFirstVerifier(cnpjBase) {
   const weight = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -24,7 +8,6 @@ function calculateFirstVerifier(cnpjBase) {
   const remainder = sum % 11;
   return remainder < 2 ? 0 : 11 - remainder;
 }
-
 // Função para calcular o segundo dígito verificador
 function calculateSecondVerifier(cnpjBase, firstVerifier) {
   const weight = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
@@ -36,17 +19,24 @@ function calculateSecondVerifier(cnpjBase, firstVerifier) {
   const remainder = sum % 11;
   return remainder < 2 ? 0 : 11 - remainder;
 }
-
-// Função para gerar um CNPJ válido
-function generateValidCNPJ() {
-  const cnpjBase = generateCNPJBase();
-  const firstVerifier = calculateFirstVerifier(cnpjBase);
-  const secondVerifier = calculateSecondVerifier(cnpjBase.concat(firstVerifier), firstVerifier);
-  return `${cnpjBase.join('')}${firstVerifier}${secondVerifier}`;
+// Função para validar o CNPJ
+function cnpjIsValid(cnpj) {
+  if(!cnpj) return false
+  // Remove any non-digit characters from the CNPJ string
+  const cnpjClean = cnpj.toString().replace(/\D/g, '');
+  // Check if the CNPJ has 14 digits
+  if (cnpjClean.length !== 14) {
+    return false;
+  }
+  // Convert the CNPJ string to an array of digits
+  const cnpjArray = cnpjClean.split('').map(Number);
+  // Calculate the first and second verifiers
+  const firstVerifier = calculateFirstVerifier(cnpjArray.slice(0, 12));
+  const secondVerifier = calculateSecondVerifier(cnpjArray.slice(0, 12).concat(firstVerifier), firstVerifier);
+  // Check if the calculated verifiers match the ones in the CNPJ
+  if (cnpjArray[12] === firstVerifier && cnpjArray[13] === secondVerifier) {
+    return true;
+  }
+  return false;
 }
-
-// Exemplo de uso
-//const cnpj = generateValidCNPJ();
-//console.log(cnpj);
-
-export default generateValidCNPJ();
+module.exports = cnpjIsValid;

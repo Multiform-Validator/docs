@@ -1,4 +1,3 @@
-import cnpjValidator from './src/cnpjValidator';
-import cpfValidator from './src/cpfValidator';
-
-export {cpfValidator, cnpjValidator};
+const cpfIsValid = require('./src/cpfValidator');
+const cnpjIsValid = require('./src/cnpjValidator');
+module.exports = {cpfIsValid, cnpjIsValid};

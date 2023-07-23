@@ -1,6 +1,6 @@
 {
   "name": "multiform-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/gabriel-logan/multiform-validator.git"
   },
-  "type": "module",
   "keywords": [
     "validator",
     "multiform",
