@@ -1,3 +1,5 @@
 const cpfIsValid = require('./src/cpfValidator');
 const cnpjIsValid = require('./src/cnpjValidator');
-module.exports = {cpfIsValid, cnpjIsValid};
+const isEmail = require('./src/isEmail');
+
+module.exports = { cpfIsValid, cnpjIsValid, isEmail };
