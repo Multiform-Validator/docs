@@ -11,8 +11,8 @@ function cpfIsValid(cpf) {
     let numeroBase2 = 11;
     let somaTotal = 0;
     let somaTotal2 = 0;
-    const cpfLimpo = cpf.toString().replace(/\D+/g, ''); // Transforma o cpf em um valor limpo sem caracter especial
-    if (cpfLimpo.length !== 11) return false;
+    if (cpf.length !== 11 || cpf.length !== 14) return false;
+    const cpfLimpo = cpf.replace(/\D+/g, ''); // Transforma o cpf em um valor limpo sem caracter especial
     // Validação para verificar se todos os dígitos são iguais (condição de CPF inválido).
     if (/^(\d)\1{10}$/.test(cpfLimpo)) return false;
     let primeiroVerificador = 0;

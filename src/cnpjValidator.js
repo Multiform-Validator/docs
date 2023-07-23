@@ -30,12 +30,11 @@ function calculateSecondVerifier(cnpjBase, firstVerifier) {
 function cnpjIsValid(cnpj) {
   try {
     if (!cnpj) return false;
-    // Remove any non-digit characters from the CNPJ string
-    const cnpjClean = cnpj.toString().replace(/\D/g, '');
     // Check if the CNPJ has 14 digits
-    if (cnpjClean.length !== 14) {
-      return false;
-    }
+    if (cnpj.length !== 14 || cnpj.length !== 18) return false;
+    // Remove any non-digit characters from the CNPJ string
+    const cnpjClean = cnpj.replace(/\D/g, '');
+
     // Convert the CNPJ string to an array of digits
     const cnpjArray = cnpjClean.split('').map(Number);
     // Calculate the first and second verifiers
