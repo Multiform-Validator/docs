@@ -1,10 +1,28 @@
+/* eslint-disable no-unused-vars */
 const cpfIsValid = require('./src/cpfValidator');
 const cnpjIsValid = require('./src/cnpjValidator');
+const getOnlyEmail = require('./src/getOnlyEmail');
+const isCEP = require('./src/isCEP');
 const isEmail = require('./src/isEmail');
 const validateEmail = require('./src/validateEmail');
-const isCEP = require('./src/isCEP');
 const validatePassword = require('./src/validatePassword');
 const validateUsername = require('./src/validateUsername');
+
+// Nao feitos ainda
+const isAscii = require('./src/isAscii');
+const isBase64 = require('./src/isBase64');
+const isDate = require('./src/isDate');
+const isDecimal = require('./src/isDecimal');
+const isEmpty = require('./src/isEmpty');
+const isMACAddress = require('./src/isMACAddress');
+const isMD5 = require('./src/isMD5');
+const isPassaportNumber = require('./src/isPassaportNumber');
+const isPort = require('./src/isPort');
+const isPostalCode = require('./src/isPostalCode');
+const isTime = require('./src/isTime');
+const validateCreditCard = require('./src/validateCreditCard');
+const validateName = require('./src/validateName');
+const validateTelNumber = require('./src/validateTelNumber');
 
 module.exports = {
   cpfIsValid,
@@ -14,4 +32,5 @@ module.exports = {
   isCEP,
   validateUsername,
   validatePassword,
+  getOnlyEmail,
 };

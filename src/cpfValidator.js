@@ -1,20 +1,72 @@
+const defaultErrorMsg = [
+  'CPF invalid',
+  'CPF must have 11 numerical digits',
+  'CPF is not valid',
+  'Unknown error',
+];
+
 /**
  * @param {string} cpf
+ * @param {string[]} errorMsg
  * @example cpfIsValid('123.456.789.10');
  * @example cpfIsValid('12345678910');
- * @returns {boolean}
+ * @example cpfIsValid('12345678910', ['CPF ta errado','Tem que ter pelo menos 11']);
+ * @description This function returns four errors in the following order,
+ *
+ * If you want to use a default parameter, use null.
+ *
+ * Default:
+ * ['CPF invalid', 'CPF must have 11 numerical digits', 'CPF is not valid', 'Unknown error']
+ * .
+ *
+ * Create a list of errors separated by commas in strings
+ * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function cpfIsValid(cpf) {
+function cpfIsValid(cpf, errorMsg = []) {
+  // Check para saber se as mensagens que sao passadas sao validas
+  // caso contrario retorna um ERRO
+  if (errorMsg) {
+    if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
+    for (let index = 0; index < errorMsg.length; index += 1) {
+      if (typeof errorMsg[index] !== 'string') {
+        throw new Error('All values within the array must be strings');
+      }
+    }
+  }
+
+  // Função interna para obter a mensagem de erro
+  function getErrorMessage(index) {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      return errorMsg[index];
+    }
+    return defaultErrorMsg[index];
+  }
+
   try {
-    if (!cpf) return false;
+    if (!cpf) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(0),
+      };
+    }
     let numeroBase = 10;
     let numeroBase2 = 11;
     let somaTotal = 0;
     let somaTotal2 = 0;
-    if (cpf.length !== 11 || cpf.length !== 14) return false;
+    if (cpf.length !== 11 && cpf.length !== 14) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(1),
+      };
+    }
     const cpfLimpo = cpf.replace(/\D+/g, ''); // Transforma o cpf em um valor limpo sem caracter especial
     // Validação para verificar se todos os dígitos são iguais (condição de CPF inválido).
-    if (/^(\d)\1{10}$/.test(cpfLimpo)) return false;
+    if (/^(\d)\1{10}$/.test(cpfLimpo)) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(2),
+      };
+    }
     let primeiroVerificador = 0;
     let segundoVerificador = 0;
     for (let repetidor = 0; repetidor < 11; repetidor += 1) { // Executa os códigos 11 vezes em sequência.
@@ -37,11 +89,20 @@ function cpfIsValid(cpf) {
     // Valida o Número gerado, se = true, CPF GERADO.
     if (primeiroVerificador === Number(cpfLimpo[9])
         && segundoVerificador === Number(cpfLimpo[10])) {
-      return true;
+      return {
+        isValid: true,
+        errorMsg: null,
+      };
     }
-    return false;
+    return {
+      isValid: false,
+      errorMsg: getErrorMessage(2),
+    };
   } catch (err) {
-    return false;
+    return {
+      isValid: false,
+      errorMsg: getErrorMessage(3),
+    };
   }
 }
 module.exports = cpfIsValid;
