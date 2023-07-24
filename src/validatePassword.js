@@ -52,6 +52,8 @@ function validatePassword(password, minLength, maxLength, {
   requireNumber = false,
   requireString = false,
 } = {}, errorMsg = []) {
+  if (typeof password !== 'string') throw new TypeError('The input should be a string.');
+
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {

@@ -41,13 +41,15 @@ const defaultErrorMsg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', '
  */
 // Função para validar o CNPJ
 function cnpjIsValid(cnpj, errorMsg = []) {
+  if (typeof cnpj !== 'string') throw new TypeError('The input should be a string.');
+
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
-    if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
+    if (!Array.isArray(errorMsg)) throw new TypeError('Must be an Array');
     for (let index = 0; index < errorMsg.length; index += 1) {
       if (typeof errorMsg[index] !== 'string') {
-        throw new Error('All values within the array must be strings');
+        throw new TypeError('All values within the array must be strings');
       }
     }
   }

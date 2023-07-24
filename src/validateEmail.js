@@ -28,6 +28,8 @@ const defaultErrorMsg = [
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 function validateEmail(email, maxLength, country, errorMsg = []) {
+  if (typeof email !== 'string') throw new TypeError('The input should be a string.');
+
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {

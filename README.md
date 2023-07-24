@@ -7,6 +7,9 @@
 
 This npm package provides JavaScript functions to validate many forms field
 
+An html page will be created on github where they will have more detailed information.
+That's it for now, but you can read the parameter comments when you hover over the functions, in vscode at least
+
 ### Installation
 
 ```bash
@@ -35,8 +38,11 @@ validate,
 isPassaportNumber,
 isPort,
 isTime,
-getOnlyEmail
-validateCreditCard
+getOnlyEmail,
+isCreditCardValid,
+identifyFlagCard
+
+Code under development... be patient
 
 # Already working
 cnpjValidator,
@@ -45,8 +51,11 @@ isEmail,
 validateEmail,
 isCEP,
 validateUsername,
-validatePassword
-getOnlyEmail
+validatePassword,
+getOnlyEmail,
+identifyFlagCard,
+isCreditCardValid,
+isMACAddress
 
 validateEmail example:
 
@@ -68,22 +77,22 @@ console.log(validateEmail('email@email.com', 30).isValid) return true
 
 // If you want to use a default parameter, use null.
 
-const resultadoValidacao = validateEmail('email@email.com', 30);
+const validationResult = validateEmail('email@email.com', 30);
 
-if (resultadoValidacao.isValid) {
+if (validationResult.isValid) {
   console.log('0 errors');
 } else {
-  console.log(resultadoValidacao.errorMsg); // returns the error
+  console.log(validationResult.errorMsg); // returns the error
 }
 
 or
 
-const resultadoValidacao = validateEmail('1email@email.com', 30, null, [null, 'Esse email é inválido']);
+const validationResult = validateEmail('1email@email.com', 30, null, [null, 'This is an invalid email with my own errors']);
 
-if (resultadoValidacao.isValid) {
+if (validationResult.isValid) {
   console.log('0 erros');
 } else {
-  console.log(resultadoValidacao.errorMsg); // Return  'Esse email é inválido'
+  console.log(validationResult.errorMsg); // Return  'This is an invalid email with my own errors'
 }
 
 

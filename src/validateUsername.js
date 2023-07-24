@@ -32,6 +32,8 @@ const defaultErrorMsg = [
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 function validateUsername(username, minLength, maxLength, errorMsg = []) {
+  if (typeof username !== 'string') throw new TypeError('The input should be a string.');
+
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
