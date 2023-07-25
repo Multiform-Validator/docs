@@ -15,7 +15,7 @@ const defaultErrorMsg = [
  * @param {number} minLength optional
  * @param {number} maxLength optional
  * @param {object} options optional
- * @param {string[]} errorMsg optional
+ * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @param {boolean} options.requireUppercase optional
  * @param {boolean} options.requireSpecialChar optional
  * @param {boolean} options.requireNumber optional
@@ -51,7 +51,7 @@ function validatePassword(password, minLength, maxLength, {
   requireSpecialChar = false,
   requireNumber = false,
   requireString = false,
-} = {}, errorMsg = []) {
+} = {}, errorMsg = defaultErrorMsg) {
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
 
   // Check para saber se as mensagens que sao passadas sao validas

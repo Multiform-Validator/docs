@@ -1,6 +1,6 @@
 /**
  * @param {string} text
- * @param {boolean} [multiple]
+ * @param {boolean} [multiple] optional
  * @example getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
  * // Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
  *

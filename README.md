@@ -1,14 +1,13 @@
 # Multiform-validator
 
-[![npm version](https://badge.fury.io/js/multiform-validator.svg)](https://badge.fury.io/js/multiform-validator)
+[![npm version](https://badge.fury.io/js/multiform-validator.svg?refresh=1)](https://badge.fury.io/js/multiform-validator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## English
+This npm package provides JavaScript functions to validate various forms fields.
 
-This npm package provides JavaScript functions to validate many forms field
+An HTML page will be created on GitHub where more detailed information can be found. For now, you can read the parameter comments when you hover over the functions, at least in Visual Studio Code.
 
-An html page will be created on github where they will have more detailed information.
-That's it for now, but you can read the parameter comments when you hover over the functions, in vscode at least
+Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!
 
 ### Installation
 
@@ -16,46 +15,36 @@ That's it for now, but you can read the parameter comments when you hover over t
 npm install multiform-validator
 ```
 
+Only the validateName needs to be done, I still have no ideas
+
 Validation modules available:
-
-cnpjValidator,
-cpfValidator,
-isBase64,
-isAscii,
-isDate,
-isDecimal,
-isEmpty,
-isMD5,
-isMACAddress,
-isCEP,
-isPostalCode,
-isEmail,
-validateEmail,
-validatePassword,
-validateUsername,,
-validateTelNumber,
-validate,
-isPassaportNumber,
-isPort,
-isTime,
-getOnlyEmail,
-isCreditCardValid,
-identifyFlagCard
-
-Code under development... be patient
 
 # Already working
 cnpjValidator,
 cpfValidator,
-isEmail,
-validateEmail,
-isCEP,
-validateUsername,
-validatePassword,
 getOnlyEmail,
 identifyFlagCard,
+isAscii,
+isBase64,
+isCEP,
 isCreditCardValid,
-isMACAddress
+isDate,
+isDecimal,
+isEmail,
+isEmpty,
+isMACAddress,
+isMD5,
+isPassaportNumber,
+isPort,
+isPostalCode,
+isTime,
+validateBRPhoneNumber,
+validateEmail,
+validatePassword,
+validatePhoneNumber,
+validateUsername,
+validateUSPhoneNumber,
+
 
 validateEmail example:
 
@@ -94,8 +83,6 @@ if (validationResult.isValid) {
 } else {
   console.log(validationResult.errorMsg); // Return  'This is an invalid email with my own errors'
 }
-
-
 ```
 
 how to use:
@@ -111,7 +98,75 @@ console.log(cpfIsValid('CPFNUMBER').isValid); return true or false
 console.log(cnpjIsValid('CNPJNUMBER').isValid); return true or false
 ```
 
-# IMPORTANT
-Code under development...
+## Additional Examples:
+Here are some additional examples demonstrating the usage of the validation
+
+functions in the package:
+
+```javascript
+// Example: Validating a Brazilian phone number
+const { validateBRPhoneNumber } = require('multiform-validator');
+
+const phoneNumber = '+55 11 987654321';
+const validationResult = validateBRPhoneNumber(phoneNumber);
+
+if (validationResult.isValid) {
+  console.log('Valid Brazilian phone number.');
+} else {
+  console.log(validationResult.errorMsg);
+}
+
+// Example: Validating a date
+const { isDate } = require('multiform-validator');
+
+const dateStr = '2023-07-24';
+const validationResult = isDate(dateStr);
+
+if (validationResult) {
+  console.log('Valid date.');
+} else {
+  console.log('Invalid date format.');
+}
+
+// Example: Validating a CEP (Brazilian ZIP code)
+const { isCEP } = require('multiform-validator');
+
+const cep = '12345-678';
+const validationResult = isCEP(cep);
+
+if (validationResult) {
+  console.log('Valid CEP.');
+} else {
+  console.log('Invalid CEP format.');
+}
+
+// Example: Validating a credit card number
+const { isCreditCardValid } = require('multiform-validator');
+
+const creditCardNumber = '4111111111111111';
+const validationResult = isCreditCardValid(creditCardNumber);
+
+if (validationResult.isValid) {
+  console.log('Valid credit card number.');
+  console.log('Credit card provider:', validationResult.cardType);
+} else {
+  console.log('Invalid credit card number.');
+}
+
+// Example: Identifying the flag of a credit card
+const { identifyFlagCard } = require('multiform-validator');
+
+const creditCardNumber = '5105105105105100';
+const cardFlag = identifyFlagCard(creditCardNumber);
+
+if (cardFlag) {
+  console.log('Credit card flag:', cardFlag);
+} else {
+  console.log('Unable to identify credit card flag.');
+}
+```
+
+Feel free to explore the various functions and experiment with different inputs to understand their behavior. If you encounter any issues or have suggestions, don't hesitate to reach out to me. Your feedback is valuable and helps improve the package. Happy coding!
+
 
 # By - Gabriel Logan

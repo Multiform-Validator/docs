@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const cpfIsValid = require('./src/cpfValidator');
 const cnpjIsValid = require('./src/cnpjValidator');
 const getOnlyEmail = require('./src/getOnlyEmail');
@@ -10,8 +9,6 @@ const validateUsername = require('./src/validateUsername');
 const validateCreditCard = require('./src/isCreditCardValid');
 const identifyFlagCard = require('./src/identifyFlagCard');
 const isMACAddress = require('./src/isMACAddress');
-
-// Nao feitos ainda
 const isAscii = require('./src/isAscii');
 const isBase64 = require('./src/isBase64');
 const isDate = require('./src/isDate');
@@ -22,8 +19,13 @@ const isPassaportNumber = require('./src/isPassaportNumber');
 const isPort = require('./src/isPort');
 const isPostalCode = require('./src/isPostalCode');
 const isTime = require('./src/isTime');
+const validateBRPhoneNumber = require('./src/validateBRPhoneNumber');
+const validateUSPhoneNumber = require('./src/validateUSPhoneNumber');
+const validatePhoneNumber = require('./src/validatePhoneNumber');
+
+// Nao feitos ainda
+// eslint-disable-next-line no-unused-vars
 const validateName = require('./src/validateName');
-const validateTelNumber = require('./src/validateTelNumber');
 
 module.exports = {
   cpfIsValid,
@@ -37,4 +39,17 @@ module.exports = {
   validateCreditCard,
   identifyFlagCard,
   isMACAddress,
+  isAscii,
+  isBase64,
+  isDate,
+  isDecimal,
+  isEmpty,
+  isMD5,
+  isPassaportNumber,
+  isPort,
+  isPostalCode,
+  isTime,
+  validateBRPhoneNumber,
+  validateUSPhoneNumber,
+  validatePhoneNumber,
 };

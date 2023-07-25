@@ -11,7 +11,7 @@ const defaultErrorMsg = [
  * @param {string} email
  * @param {number} maxLength optional
  * @param {string} country optional
- * @param {string[]} errorMsg
+ * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @default maxLength number: 400
  * @example validateEmail('foor@bar.com', 30, 'us);
  * @example validateEmail('foor@bar.com', 30, 'br);
@@ -27,7 +27,7 @@ const defaultErrorMsg = [
  * Create a list of errors separated by commas in strings
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateEmail(email, maxLength, country, errorMsg = []) {
+function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
   if (typeof email !== 'string') throw new TypeError('The input should be a string.');
 
   // Check para saber se as mensagens que sao passadas sao validas

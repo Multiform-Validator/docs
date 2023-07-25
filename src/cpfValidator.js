@@ -7,7 +7,7 @@ const defaultErrorMsg = [
 
 /**
  * @param {string} cpf
- * @param {string[]} errorMsg
+ * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @example cpfIsValid('123.456.789.10');
  * @example cpfIsValid('12345678910');
  * @example cpfIsValid('12345678910', ['CPF ta errado','Tem que ter pelo menos 11']);
@@ -22,7 +22,7 @@ const defaultErrorMsg = [
  * Create a list of errors separated by commas in strings
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function cpfIsValid(cpf, errorMsg = []) {
+function cpfIsValid(cpf, errorMsg = defaultErrorMsg) {
   if (typeof cpf !== 'string') throw new TypeError('The input should be a string.');
 
   // Check para saber se as mensagens que sao passadas sao validas

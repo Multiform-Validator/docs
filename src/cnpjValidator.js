@@ -24,7 +24,7 @@ const defaultErrorMsg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', '
 
 /**
  * @param {string} cnpj
- * @param {string[]} errorMsg
+ * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @example cpfIsValid('72.501.263/0001-40');
  * @example cpfIsValid('73.506.263/0001-45');
  * @example cpfIsValid('73.506.263/0001-45', ['CNPJ ta errado']);
@@ -40,7 +40,7 @@ const defaultErrorMsg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', '
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 // Função para validar o CNPJ
-function cnpjIsValid(cnpj, errorMsg = []) {
+function cnpjIsValid(cnpj, errorMsg = defaultErrorMsg) {
   if (typeof cnpj !== 'string') throw new TypeError('The input should be a string.');
 
   // Check para saber se as mensagens que sao passadas sao validas
