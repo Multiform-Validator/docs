@@ -1,4 +1,4 @@
-const defaultErrorMsg = ['Invalid value passed','Invalid phone number','Unknown error'];
+const defaultErrorMsg = ['Invalid value passed', 'Invalid phone number', 'Unknown error'];
 /**
  * @param {string} phoneNumber
  * @param {string[]} [errorMsg=defaultErrorMsg] optional

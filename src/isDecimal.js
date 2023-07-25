@@ -12,31 +12,32 @@
  * @returns {boolean} true or false
  */
 function isDecimal(value) {
-  if (typeof value !== 'string') {
-    if (typeof value === 'number') {
-      value = value.toString();
+  let getValued = value;
+  if (typeof getValued !== 'string') {
+    if (typeof getValued === 'number') {
+      getValued = getValued.toString();
     } else {
       throw new TypeError('Input value must be a string or a number.');
     }
   }
-  if (value.trim().length === 0) {
+  if (getValued.trim().length === 0) {
     throw new Error('Input value must not be an empty string.');
   }
   // Regular expression to validate decimal numbers
   const decimalRegex = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
-  if (!decimalRegex.test(value)) {
+  if (!decimalRegex.test(getValued)) {
     return false;
   }
   // Check for multiple decimal separators
-  const decimalSeparator = value.includes('.') ? '.' : ',';
+  const decimalSeparator = getValued.includes('.') ? '.' : ',';
   const otherSeparator = decimalSeparator === '.' ? ',' : '.';
-  if (value.includes(decimalSeparator) && value.includes(otherSeparator)) {
+  if (getValued.includes(decimalSeparator) && getValued.includes(otherSeparator)) {
     return false;
   }
   // Additional checks for negative sign
-  if (value.startsWith('-')) {
+  if (getValued.startsWith('-')) {
     // Ensure the negative sign is only at the beginning and not elsewhere
-    if (value.lastIndexOf('-') > 0) {
+    if (getValued.lastIndexOf('-') > 0) {
       return false;
     }
   }

@@ -9,6 +9,6 @@ function isNumber(value) {
   if (value === null || value === undefined || typeof value === 'boolean') {
     return false;
   }
-	return !isNaN(parseFloat(value)) && isFinite(value);
+  return !Number.isNaN(parseFloat(value)) && Number.isFinite(value);
 }
 module.exports = isNumber;

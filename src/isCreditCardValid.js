@@ -7,7 +7,7 @@
  */
 function isCreditCardValid(cardNumber) {
   if (typeof cardNumber !== 'string') throw new TypeError('The input should be a string.');
-	const digits = cardNumber.replace(/\D+/g, '').split('').map(Number);
+  const digits = cardNumber.replace(/\D+/g, '').split('').map(Number);
   const { length } = digits;
   let sum = 0;
   let isEven = false;

@@ -52,7 +52,7 @@ function validateUsername(username, minLength, maxLength, errorMsg = defaultErro
   }
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
-  if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
+    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
       return errorMsg[index];
     }
     return defaultErrorMsg[index];
@@ -65,31 +65,31 @@ function validateUsername(username, minLength, maxLength, errorMsg = defaultErro
   }
   const minLenthUsername = parseInt(minLength, 10) || 1;
   const maxLenthUsername = parseInt(maxLength, 10) || Infinity;
-	if (minLenthUsername > maxLenthUsername) {
-		throw new Error('Minimum cannot be greater than maximum');
-	} // Verifica se o min é maior que o max
-	if (minLenthUsername < 1 || maxLenthUsername < 1) {
-		throw new Error('Size parameters cannot be less than one');
-	} // Nenhum dos dois pode ser menor que 1
+  if (minLenthUsername > maxLenthUsername) {
+    throw new Error('Minimum cannot be greater than maximum');
+  } // Verifica se o min é maior que o max
+  if (minLenthUsername < 1 || maxLenthUsername < 1) {
+    throw new Error('Size parameters cannot be less than one');
+  } // Nenhum dos dois pode ser menor que 1
   try {
-		if(regexHasSpaces.test(username)){
-			return {
-				isValid: false,
-				errorMsg: getErrorMessage(4),
-			};
-		}
-		if(regexStartsWithNumber.test(username)){
-			return {
-				isValid: false,
-				errorMsg: getErrorMessage(5),
-			};
-		}
-		if(regexOnlyNumbers.test(username)){
-			return {
-				isValid: false,
-				errorMsg: getErrorMessage(6),
-			};
-		}
+    if (regexHasSpaces.test(username)) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(4),
+      };
+    }
+    if (regexStartsWithNumber.test(username)) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(5),
+      };
+    }
+    if (regexOnlyNumbers.test(username)) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(6),
+      };
+    }
     if (username.length < minLenthUsername) {
       return {
         isValid: false,
@@ -114,4 +114,3 @@ function validateUsername(username, minLength, maxLength, errorMsg = defaultErro
   }
 }
 module.exports = validateUsername;
-

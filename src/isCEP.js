@@ -6,7 +6,7 @@
  * @returns {boolean}
  */
 function isCEP(cep) {
-	if (typeof cep !== 'string') {
+  if (typeof cep !== 'string') {
     throw new TypeError('Input value must be a string.');
   }
   try {

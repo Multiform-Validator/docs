@@ -22,12 +22,10 @@ const isTime = require('./src/isTime');
 const validateBRPhoneNumber = require('./src/validateBRPhoneNumber');
 const validateUSPhoneNumber = require('./src/validateUSPhoneNumber');
 const validatePhoneNumber = require('./src/validatePhoneNumber');
-
 const isNumber = require('./src/isNumber');
 const passwordStrengthTester = require('./src/passwordStrengthTester');
 
 // Nao feitos ainda
-// eslint-disable-next-line no-unused-vars
 const comparePass = require('./src/comparePass');
 const validateName = require('./src/validateName');
 
@@ -56,5 +54,6 @@ module.exports = {
   validateBRPhoneNumber,
   validateUSPhoneNumber,
   validatePhoneNumber,
-	isNumber
+  isNumber,
+  passwordStrengthTester,
 };

@@ -36,7 +36,7 @@ isEmail,
 isEmpty,
 isMACAddress,
 isMD5,
-isPassaportNumber,
+validatePassportNumber,
 isPort,
 isPostalCode,
 isTime,
@@ -46,6 +46,8 @@ validatePassword,
 validatePhoneNumber,
 validateUsername,
 validateUSPhoneNumber,
+isNumber,
+passwordStrengthTester
 
 
 validateEmail example:

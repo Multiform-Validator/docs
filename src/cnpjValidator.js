@@ -99,4 +99,3 @@ function cnpjIsValid(cnpj, errorMsg = defaultErrorMsg) {
   }
 }
 module.exports = cnpjIsValid;
-
