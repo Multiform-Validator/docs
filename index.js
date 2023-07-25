@@ -6,7 +6,7 @@ const isEmail = require('./src/isEmail');
 const validateEmail = require('./src/validateEmail');
 const validatePassword = require('./src/validatePassword');
 const validateUsername = require('./src/validateUsername');
-const validateCreditCard = require('./src/isCreditCardValid');
+const isCreditCardValid = require('./src/isCreditCardValid');
 const identifyFlagCard = require('./src/identifyFlagCard');
 const isMACAddress = require('./src/isMACAddress');
 const isAscii = require('./src/isAscii');
@@ -36,7 +36,7 @@ module.exports = {
   validateUsername,
   validatePassword,
   getOnlyEmail,
-  validateCreditCard,
+  isCreditCardValid,
   identifyFlagCard,
   isMACAddress,
   isAscii,

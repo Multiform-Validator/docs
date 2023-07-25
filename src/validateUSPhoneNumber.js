@@ -11,12 +11,25 @@ const defaultErrorMsg = ['Invalid value passed', 'Invalid phone number', 'Unknow
 function validateUSPhoneNumber(phoneNumber, errorMsg = defaultErrorMsg) {
   if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
 
+  // Check to see if the passed error messages are valid; otherwise, return an error
+  if (errorMsg) {
+    if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array');
+    for (let index = 0; index < errorMsg.length; index += 1) {
+      if (index === 0 && errorMsg[index] !== null && errorMsg[index] !== undefined) {
+        throw new Error('The first error message should be null or undefined to use the default value.');
+      }
+      if (errorMsg[index] !== null && typeof errorMsg[index] !== 'string') {
+        throw new Error('All values within the array must be strings or null/undefined.');
+      }
+    }
+  }
+
   // Regular expression to validate USA phone numbers
   const usPhoneNumberRegex = /^(1\s?)?(\(\d{3}\)|\d{3})(\s?|-)\d{3}(\s?|-)\d{4}$/;
 
   // Internal function to get the error message
   function getErrorMessage(index) {
-    if (index >= 0 && index < errorMsg.length) {
+    if (index >= 0 && index < errorMsg.length && errorMsg[index] !== null) {
       return errorMsg[index];
     }
     return 'Unknown error';
