@@ -120,6 +120,15 @@ if (validationResult.isValid) {
 
 // other
 
+const validationResult = validatePassword('asom', 5,15, null, [null, 'my ownMensage']);
+
+if (validationResult.isValid) {
+  console.log('0 errors');
+} else {
+  console.log(validationResult.errorMsg); // returns the error
+}
+// other
+
 const validationResult = validatePassword('minhasenha', 5,15, {
   requireUppercase: true
 });
