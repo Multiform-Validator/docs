@@ -6,7 +6,6 @@ const defaultErrorMsg = [
   'Requires at least one number',
   'Requires at least one letter',
   'Unknown error',
-  'Check the parameters, invalid values, this error does not come out to the end user',
 ];
 
 /**
@@ -14,11 +13,11 @@ const defaultErrorMsg = [
  * @param {number} minLength optional
  * @param {number} maxLength optional
  * @param {object} options optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @param {boolean} options.requireUppercase optional
  * @param {boolean} options.requireSpecialChar optional
  * @param {boolean} options.requireNumber optional
  * @param {boolean} options.requireString optional
+ * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
  * @default options.requireUppercase: false
@@ -41,19 +40,18 @@ const defaultErrorMsg = [
   'Requires at least one number',
   'Requires at least one letter',
   'Unknown error',
-  'Check the parameters, invalid values, this error does not come out to the end user',
 ];
 
  *
  * Create a list of errors separated by commas in strings
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validatePassword(password, minLength, maxLength, {
-  requireUppercase = false,
-  requireSpecialChar = false,
-  requireNumber = false,
-  requireString = false,
-} = {}, errorMsg = defaultErrorMsg) {
+function validatePassword(password, minLength, maxLength, options = {
+  requireUppercase: false,
+  requireSpecialChar: false,
+  requireNumber: false,
+  requireString: false,
+}, errorMsg = defaultErrorMsg) {
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
 
   // Check para saber se as mensagens que sao passadas sao validas
@@ -77,20 +75,16 @@ function validatePassword(password, minLength, maxLength, {
 
   const minLenthPassword = parseInt(minLength, 10) || 1;
   const maxLenthPassword = parseInt(maxLength, 10) || Infinity;
+
+  if (minLenthPassword > maxLenthPassword) {
+    throw new TypeError('the minimum size cannot be larger than the maximum');
+  } // Verifica se o min é maior que o max
+  if (minLenthPassword < 1 || maxLenthPassword < 1) {
+    throw new TypeError('No size can be smaller than 1');
+  } // Nenhum dos dois pode ser menor que 1
+
   try {
     const passwordString = password.toString();
-    if (minLenthPassword > maxLenthPassword) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(7),
-      };
-    } // Verifica se o min é maior que o max
-    if (minLenthPassword < 1 || maxLenthPassword < 1) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(7),
-      };
-    } // Nenhum dos dois pode ser menor que 1
     if (passwordString.length > maxLenthPassword) {
       return {
         isValid: false,
@@ -104,30 +98,32 @@ function validatePassword(password, minLength, maxLength, {
       };
     } // Tamanho n pode ser menor q o min
 
-    // Password validation rules
-    if (requireUppercase && !/[A-Z]/.test(passwordString)) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(2), // Requer pelo menos uma letra maiuscula
-      };
-    }
-    if (requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(passwordString)) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(3), // Requer pelo menos uma especial caracter
-      };
-    }
-    if (requireNumber && !/\d/.test(passwordString)) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(4), // Requer pelo menos um numero
-      };
-    }
-    if (requireString && !/[a-zA-Z]/.test(passwordString)) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(5), // Requer pelo menos uma letra
-      };
+    if (options != null) {
+      // Password validation rules
+      if (options.requireUppercase && !/[A-Z]/.test(passwordString)) {
+        return {
+          isValid: false,
+          errorMsg: getErrorMessage(2), // Requer pelo menos uma letra maiuscula
+        };
+      }
+      if (options.requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(passwordString)) {
+        return {
+          isValid: false,
+          errorMsg: getErrorMessage(3), // Requer pelo menos uma especial caracter
+        };
+      }
+      if (options.requireNumber && !/\d/.test(passwordString)) {
+        return {
+          isValid: false,
+          errorMsg: getErrorMessage(4), // Requer pelo menos um numero
+        };
+      }
+      if (options.requireString && !/[a-zA-Z]/.test(passwordString)) {
+        return {
+          isValid: false,
+          errorMsg: getErrorMessage(5), // Requer pelo menos uma letra
+        };
+      }
     }
     return {
       isValid: true,

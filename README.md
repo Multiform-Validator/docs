@@ -86,6 +86,10 @@ if (validationResult.isValid) {
 ```
 
 how to use:
+
+You can combine all parameters using with or if you want to skip some, use null, then use the next param
+
+
 ```javascript
 const {cpfIsValid, cnpjIsValid} = require('multiform-validator');
 console.log(cpfIsValid('CPFNUMBER').isValid); return true or false
@@ -97,6 +101,46 @@ import {cpfIsValid, cnpjIsValid} from 'multiform-validator';
 console.log(cpfIsValid('CPFNUMBER').isValid); return true or false
 console.log(cnpjIsValid('CNPJNUMBER').isValid); return true or false
 ```
+
+## Password Examples:
+
+```javascript
+
+const {validatePassword} = require("multiform-validator");
+or
+import {validatePassword} from "multiform-validator";
+
+const validationResult = validatePassword('minhasenha', 5,15);
+
+if (validationResult.isValid) {
+  console.log('0 errors');
+} else {
+  console.log(validationResult.errorMsg); // returns the error
+}
+
+// other
+
+const validationResult = validatePassword('minhasenha', 5,15, {
+  requireUppercase: true
+});
+
+if (validationResult.isValid) {
+  console.log('0 errors');
+} else {
+  console.log(validationResult.errorMsg); // returns the error Requires at least one capital letter
+}
+// other
+
+const validationResult = validatePassword('minhasenha', 5,15, null, ['My own errors msgs']);
+
+if (validationResult.isValid) {
+  console.log('0 errors');
+} else {
+  console.log(validationResult.errorMsg); // returns the error
+}
+
+```
+
 
 ## Additional Examples:
 Here are some additional examples demonstrating the usage of the validation
