@@ -15,12 +15,7 @@
 function getOnlyEmail(text, multiple = false) {
   const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
   const matches = text.match(emailPattern);
-
-  if (!matches) {
-    return null;
-  }
-
+  if (!matches) return 'No email found';
   return multiple ? matches : matches[0];
 }
-
 module.exports = getOnlyEmail;

@@ -1,20 +1,18 @@
 /* eslint-disable no-restricted-syntax */
 /**
  * @param {string} passaportNumber
- * @example isPassaportNumber('A1234567');
- * @example isPassaportNumber('123456789');
+ * @example validatePassportNumber('A1234567');
+ * @example validatePassportNumber('123456789');
  * @description Values have to be passed as a string
  * @returns {object} return { isValid: boolean, country: string }
  */
-function isPassaportNumber(passaportNumber) {
+function validatePassportNumber(passaportNumber) {
   // Verificar se o parâmetro é uma string
   if (typeof passaportNumber !== 'string') {
     throw new TypeError('The input should be a string.');
   }
-
   // Remover espaços em branco antes de realizar a validação
   const cleanedPassportNumber = passaportNumber.replace(/\s/g, '');
-
   // Mapear os formatos comuns de passaporte e seus respectivos países
   const passportFormats = [
     { country: 'United States', regex: /^[0-9]{9}$/ },
@@ -28,16 +26,14 @@ function isPassaportNumber(passaportNumber) {
     { country: 'India', regex: /^[A-Z][0-9]{7}$/ },
     { country: 'China', regex: /^[A-Z][0-9]{8}$/ },
   ];
-
   // Verificar o formato do passaporte antes de verificar o país
   for (const format of passportFormats) {
     if (format.regex.test(cleanedPassportNumber)) {
       return { isValid: true, country: format.country };
     }
   }
-
   // Caso o formato não seja válido, retornar { isValid: false, country: null }
   return { isValid: false, country: null };
 }
 
-module.exports = isPassaportNumber;
+module.exports = validatePassportNumber;

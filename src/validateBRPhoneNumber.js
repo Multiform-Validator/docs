@@ -14,7 +14,6 @@ const defaultErrorMsg = ['Invalid value passed', 'Invalid phone number', 'Unknow
  */
 function validateBRPhoneNumber(phoneNumber, errorMsg = defaultErrorMsg) {
   if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
-
   // Check to see if the passed error messages are valid; otherwise, return an error
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array');
@@ -32,26 +31,21 @@ function validateBRPhoneNumber(phoneNumber, errorMsg = defaultErrorMsg) {
     }
     return defaultErrorMsg[index];
   }
-
   if (!phoneNumber) {
     return {
       isValid: false,
       errorMsg: getErrorMessage(0),
     };
   }
-
   // Regular expression to validate Brazilian phone numbers
   const brPhoneNumberRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
-
   try {
-    const phoneNumberString = phoneNumber.toString(); // Just for safety
-    if (!brPhoneNumberRegex.test(phoneNumberString)) {
+    if (!brPhoneNumberRegex.test(phoneNumber)) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(1),
       };
     }
-
     return {
       isValid: true,
       errorMsg: null,
@@ -63,5 +57,4 @@ function validateBRPhoneNumber(phoneNumber, errorMsg = defaultErrorMsg) {
     };
   }
 }
-
 module.exports = validateBRPhoneNumber;

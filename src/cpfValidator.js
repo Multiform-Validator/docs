@@ -4,7 +4,6 @@ const defaultErrorMsg = [
   'CPF is not valid',
   'Unknown error',
 ];
-
 /**
  * @param {string} cpf
  * @param {string[]} [errorMsg=defaultErrorMsg] optional
@@ -24,7 +23,6 @@ const defaultErrorMsg = [
  */
 function cpfIsValid(cpf, errorMsg = defaultErrorMsg) {
   if (typeof cpf !== 'string') throw new TypeError('The input should be a string.');
-
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
@@ -35,7 +33,6 @@ function cpfIsValid(cpf, errorMsg = defaultErrorMsg) {
       }
     }
   }
-
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -43,7 +40,6 @@ function cpfIsValid(cpf, errorMsg = defaultErrorMsg) {
     }
     return defaultErrorMsg[index];
   }
-
   try {
     if (!cpf) {
       return {

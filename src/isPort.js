@@ -10,15 +10,11 @@
  * @returns {boolean} true or false
  */
 function isPort(value) {
-  if (!value) return false;
-
   if (typeof value !== 'string' && typeof value !== 'number') {
     throw new TypeError('Input value must be a string or a number.');
   }
-
   // Converte o valor para um inteiro (se for uma string) e verifica se está dentro do intervalo de porta válido
   const portNumber = parseInt(value, 10);
   return Number.isInteger(portNumber) && portNumber >= 1 && portNumber <= 65535;
 }
-
 module.exports = isPort;

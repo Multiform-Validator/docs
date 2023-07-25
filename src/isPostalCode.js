@@ -17,10 +17,7 @@
  * @returns {boolean} true or false
  */
 function isPostalCode(postalCode) {
-  if (typeof postalCode !== 'string') {
-    throw new TypeError('Input value must be a string.');
-  }
-
+  if (typeof postalCode !== 'string') throw new TypeError('Input value must be a string.');
   // Regular expressions for supported countries' postal code formats
   const usZipCodeRegex = /^\d{5}(-\d{4})?$/;
   const canadaPostalCodeRegex = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
@@ -35,7 +32,6 @@ function isPostalCode(postalCode) {
   const brazilPostalCodeRegex = /^\d{5}-\d{3}$/;
   const italyPostalCodeRegex = /^\d{5}$/;
   const usZipCodeOnlyRegex = /^\d{5}$/;
-
   return (
     usZipCodeRegex.test(postalCode)
     || canadaPostalCodeRegex.test(postalCode)

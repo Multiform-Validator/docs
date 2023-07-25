@@ -18,14 +18,9 @@ function identifyFlagCard(cardNumber) {
     { name: 'UnionPay', interval: /^(62|88)/ },
     { name: 'Elo', interval: /^63[789]/ },
     { name: 'Hipercard', interval: /^(3841|60)/ },
-    // Adicione mais bandeiras conforme necessário
   ];
-
   const bandeiraEncontrada = bandeiras.find((bandeira) => bandeira.interval.test(cardNumber));
-
-  return bandeiraEncontrada ? bandeiraEncontrada.name : 'Desconhecida';
+  return bandeiraEncontrada ? bandeiraEncontrada.name : 'Unknown';
 }
-
 // Função para identificar a bandeira do cartão com base nos primeiros dígitos
-
 module.exports = identifyFlagCard;

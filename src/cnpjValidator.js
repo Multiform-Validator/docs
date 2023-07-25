@@ -42,18 +42,16 @@ const defaultErrorMsg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', '
 // Função para validar o CNPJ
 function cnpjIsValid(cnpj, errorMsg = defaultErrorMsg) {
   if (typeof cnpj !== 'string') throw new TypeError('The input should be a string.');
-
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
-    if (!Array.isArray(errorMsg)) throw new TypeError('Must be an Array');
+    if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
     for (let index = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
-
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -61,7 +59,6 @@ function cnpjIsValid(cnpj, errorMsg = defaultErrorMsg) {
     }
     return defaultErrorMsg[index];
   }
-
   try {
     if (!cnpj) {
       return {
@@ -77,8 +74,7 @@ function cnpjIsValid(cnpj, errorMsg = defaultErrorMsg) {
       };
     }
     // Remove any non-digit characters from the CNPJ string
-    const cnpjClean = cnpj.replace(/\D/g, '');
-
+    const cnpjClean = cnpj.replace(/\D+/g, '');
     // Convert the CNPJ string to an array of digits
     const cnpjArray = cnpjClean.split('').map(Number);
     // Calculate the first and second verifiers
@@ -103,3 +99,4 @@ function cnpjIsValid(cnpj, errorMsg = defaultErrorMsg) {
   }
 }
 module.exports = cnpjIsValid;
+

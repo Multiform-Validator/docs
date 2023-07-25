@@ -16,11 +16,8 @@ function isTime(time) {
   if (typeof time !== 'string') {
     throw new TypeError('Input value must be a string.');
   }
-
   // Regular expression to validate time in the format "hh:mm" or "hh:mm AM/PM" or "hh:mm:ss" or "hh:mm:ss AM/PM"
   const timeRegex = /^(?:2[0-3]|1\d|0?[0-9]):[0-5]\d(?::[0-5]\d)?(?: [APap][Mm])?$/;
-
   return timeRegex.test(time);
 }
-
 module.exports = isTime;

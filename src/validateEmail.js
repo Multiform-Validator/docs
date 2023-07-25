@@ -29,18 +29,16 @@ const defaultErrorMsg = [
  */
 function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
   if (typeof email !== 'string') throw new TypeError('The input should be a string.');
-
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
-    if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array');
+    if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
     for (let index = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
-
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -48,7 +46,6 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
     }
     return defaultErrorMsg[index];
   }
-
   if (!email) {
     return {
       isValid: false,
@@ -57,14 +54,13 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
   }
   const maxEmailLength = maxLength || 400;
   try {
-    const emailString = email.toString(); // apenas por segurança
-    if (!(isEmail(emailString))) {
+    if (!(isEmail(email))) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(1),
       };
     }
-    if (emailString.length > maxEmailLength) {
+    if (email.length > maxEmailLength) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(2),
@@ -72,7 +68,7 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
     }
     // If country is provided, check if the email ends with the country code
     if (country) {
-      if (!emailString.endsWith(`.${country}`)) {
+      if (!email.endsWith(`.${country}`)) {
         return {
           isValid: false,
           errorMsg: getErrorMessage(3),

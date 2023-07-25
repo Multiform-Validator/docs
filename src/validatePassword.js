@@ -53,18 +53,16 @@ function validatePassword(password, minLength, maxLength, options = {
   requireString: false,
 }, errorMsg = defaultErrorMsg) {
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
-
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
-    if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
+    if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
     for (let index = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
-
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -77,48 +75,46 @@ function validatePassword(password, minLength, maxLength, options = {
   const maxLenthPassword = parseInt(maxLength, 10) || Infinity;
 
   if (minLenthPassword > maxLenthPassword) {
-    throw new TypeError('the minimum size cannot be larger than the maximum');
+    throw new Error('the minimum size cannot be larger than the maximum');
   } // Verifica se o min é maior que o max
   if (minLenthPassword < 1 || maxLenthPassword < 1) {
-    throw new TypeError('No size can be smaller than 1');
+    throw new Error('No size can be smaller than 1');
   } // Nenhum dos dois pode ser menor que 1
 
   try {
-    const passwordString = password.toString();
-    if (passwordString.length > maxLenthPassword) {
+    if (password.length > maxLenthPassword) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(0),
       };
     } // Tamanho da palavra não pode ser maior que o tamanho máximo
-    if (passwordString.length < minLenthPassword) {
+    if (password.length < minLenthPassword) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(1),
       };
     } // Tamanho n pode ser menor q o min
-
     if (options != null) {
       // Password validation rules
-      if (options.requireUppercase && !/[A-Z]/.test(passwordString)) {
+      if (options.requireUppercase && !/[A-Z]/.test(password)) {
         return {
           isValid: false,
           errorMsg: getErrorMessage(2), // Requer pelo menos uma letra maiuscula
         };
       }
-      if (options.requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(passwordString)) {
+      if (options.requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
         return {
           isValid: false,
           errorMsg: getErrorMessage(3), // Requer pelo menos uma especial caracter
         };
       }
-      if (options.requireNumber && !/\d/.test(passwordString)) {
+      if (options.requireNumber && !/\d/.test(password)) {
         return {
           isValid: false,
           errorMsg: getErrorMessage(4), // Requer pelo menos um numero
         };
       }
-      if (options.requireString && !/[a-zA-Z]/.test(passwordString)) {
+      if (options.requireString && !/[a-zA-Z]/.test(password)) {
         return {
           isValid: false,
           errorMsg: getErrorMessage(5), // Requer pelo menos uma letra

@@ -15,7 +15,7 @@ const isDate = require('./src/isDate');
 const isDecimal = require('./src/isDecimal');
 const isEmpty = require('./src/isEmpty');
 const isMD5 = require('./src/isMD5');
-const isPassaportNumber = require('./src/isPassaportNumber');
+const validatePassportNumber = require('./src/validatePassportNumber');
 const isPort = require('./src/isPort');
 const isPostalCode = require('./src/isPostalCode');
 const isTime = require('./src/isTime');
@@ -23,8 +23,12 @@ const validateBRPhoneNumber = require('./src/validateBRPhoneNumber');
 const validateUSPhoneNumber = require('./src/validateUSPhoneNumber');
 const validatePhoneNumber = require('./src/validatePhoneNumber');
 
+const isNumber = require('./src/isNumber');
+const passwordStrengthTester = require('./src/passwordStrengthTester');
+
 // Nao feitos ainda
 // eslint-disable-next-line no-unused-vars
+const comparePass = require('./src/comparePass');
 const validateName = require('./src/validateName');
 
 module.exports = {
@@ -45,11 +49,12 @@ module.exports = {
   isDecimal,
   isEmpty,
   isMD5,
-  isPassaportNumber,
   isPort,
   isPostalCode,
   isTime,
+  validatePassportNumber,
   validateBRPhoneNumber,
   validateUSPhoneNumber,
   validatePhoneNumber,
+	isNumber
 };

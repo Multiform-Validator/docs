@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/multiform-validator.svg?refresh=1)](https://badge.fury.io/js/multiform-validator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dm/multiform-validator.svg?style=flat-square)](https://npm-stat.com/charts.html?package=multiform-validator)
+
 
 This npm package provides JavaScript functions to validate various forms fields.
 
