@@ -35,18 +35,15 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array');
     for (let index = 0; index < errorMsg.length; index += 1) {
-      if (index === 0 && errorMsg[index] !== null && errorMsg[index] !== undefined) {
-        throw new Error('The first error message should be null or undefined to use the default value.');
-      }
-      if (errorMsg[index] !== null && typeof errorMsg[index] !== 'string') {
-        throw new Error('All values within the array must be strings or null/undefined.');
+      if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
+        throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
 
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] !== null) {
+    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
       return errorMsg[index];
     }
     return defaultErrorMsg[index];

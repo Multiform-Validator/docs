@@ -7,7 +7,6 @@
  */
 function identifyFlagCard(cardNumber) {
   if (typeof cardNumber !== 'string') throw new TypeError('The input should be a string.');
-  if (!cardNumber) return false;
   const bandeiras = [
     { name: 'Visa', interval: /^4/ },
     { name: 'Mastercard', interval: /^5[1-5]/ },

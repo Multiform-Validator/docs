@@ -1,5 +1,4 @@
 const defaultErrorMsg = [
-  'Invalid value passed',
   'This password is too long',
   'password too short',
   'Requires at least one capital letter',
@@ -29,19 +28,22 @@ const defaultErrorMsg = [
  * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true });
  * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true }, ['My own error msg']);
  * @info minLength cannot be greater than maxLength
- * @description This function returns 8 errors in the following order,
+ * @description This function returns 7 errors in the following order,
  *
  * If you want to use a default parameter, use null.
  *
  * Default:
- *   ['Invalid value passed',
+ *   [
   'This password is too long',
   'password too short',
   'Requires at least one capital letter',
   'Requires at least one special character',
   'Requires at least one number',
   'Requires at least one letter',
-  'Unknown error']
+  'Unknown error',
+  'Check the parameters, invalid values, this error does not come out to the end user',
+];
+
  *
  * Create a list of errors separated by commas in strings
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
@@ -59,29 +61,20 @@ function validatePassword(password, minLength, maxLength, {
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
     for (let index = 0; index < errorMsg.length; index += 1) {
-      if (index === 0 && errorMsg[index] !== null && errorMsg[index] !== undefined) {
-        throw new Error('The first error message should be null or undefined to use the default value.');
-      }
-      if (errorMsg[index] !== null && typeof errorMsg[index] !== 'string') {
-        throw new Error('All values within the array must be strings or null/undefined.');
+      if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
+        throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
 
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] !== null) {
+    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
       return errorMsg[index];
     }
     return defaultErrorMsg[index];
   }
 
-  if (!password) {
-    return {
-      isValid: false,
-      errorMsg: getErrorMessage(0),
-    };
-  }
   const minLenthPassword = parseInt(minLength, 10) || 1;
   const maxLenthPassword = parseInt(maxLength, 10) || Infinity;
   try {
@@ -89,25 +82,25 @@ function validatePassword(password, minLength, maxLength, {
     if (minLenthPassword > maxLenthPassword) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(8),
+        errorMsg: getErrorMessage(7),
       };
     } // Verifica se o min é maior que o max
     if (minLenthPassword < 1 || maxLenthPassword < 1) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(8),
+        errorMsg: getErrorMessage(7),
       };
     } // Nenhum dos dois pode ser menor que 1
     if (passwordString.length > maxLenthPassword) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(1),
+        errorMsg: getErrorMessage(0),
       };
     } // Tamanho da palavra não pode ser maior que o tamanho máximo
     if (passwordString.length < minLenthPassword) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(2),
+        errorMsg: getErrorMessage(1),
       };
     } // Tamanho n pode ser menor q o min
 
@@ -115,25 +108,25 @@ function validatePassword(password, minLength, maxLength, {
     if (requireUppercase && !/[A-Z]/.test(passwordString)) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(3), // Requer pelo menos uma letra maiuscula
+        errorMsg: getErrorMessage(2), // Requer pelo menos uma letra maiuscula
       };
     }
     if (requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(passwordString)) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(4), // Requer pelo menos uma especial caracter
+        errorMsg: getErrorMessage(3), // Requer pelo menos uma especial caracter
       };
     }
     if (requireNumber && !/\d/.test(passwordString)) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(5), // Requer pelo menos um numero
+        errorMsg: getErrorMessage(4), // Requer pelo menos um numero
       };
     }
     if (requireString && !/[a-zA-Z]/.test(passwordString)) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(6), // Requer pelo menos uma letra
+        errorMsg: getErrorMessage(5), // Requer pelo menos uma letra
       };
     }
     return {
@@ -143,7 +136,7 @@ function validatePassword(password, minLength, maxLength, {
   } catch (error) {
     return {
       isValid: false,
-      errorMsg: getErrorMessage(7),
+      errorMsg: getErrorMessage(6),
     };
   }
 }
