@@ -1,6 +1,6 @@
 # Multiform-validator
 
-[![npm version](https://badge.fury.io/js/multiform-validator.svg?refresh=2)](https://badge.fury.io/js/multiform-validator)
+[![npm version](https://badge.fury.io/js/multiform-validator.svg?refresh=1)](https://badge.fury.io/js/multiform-validator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dm/multiform-validator.svg?style=flat-square)](https://npm-stat.com/charts.html?package=multiform-validator)
 
@@ -18,38 +18,63 @@ Feel free to find bugs and report them to me. Your feedback is highly appreciate
 npm install multiform-validator
 ```
 
-Only the validateName needs to be done, I still have no ideas
+Only the validateName and comparePass needs to be done, I still have no ideas
 
-Validation modules available:
+# Data Validator
 
-# Already working
-cnpjValidator,
-cpfValidator,
-getOnlyEmail,
-identifyFlagCard,
-isAscii,
-isBase64,
-isCEP,
-isCreditCardValid,
-isDate,
-isDecimal,
-isEmail,
-isEmpty,
-isMACAddress,
-isMD5,
-validatePassportNumber,
-isPort,
-isPostalCode,
-isTime,
-validateBRPhoneNumber,
-validateEmail,
-validatePassword,
-validatePhoneNumber,
-validateUsername,
-validateUSPhoneNumber,
-isNumber,
-passwordStrengthTester
+This package contains various modules for validating different types of data. Below are the available validation modules:
 
+## Available Validation Modules
+
+- **cnpjValidator**: CNPJ validation.
+- **cpfValidator**: CPF validation.
+- **getOnlyEmail**: Extracts only the email or emails address from a string.
+- **identifyFlagCard**: Identifies the flag of a credit card.
+- **isAscii**: Checks if the string contains only ASCII characters.
+- **isBase64**: Checks if the string is a valid Base64 encoding.
+- **isCEP**: CEP validation (Brazilian postal code).
+- **isCreditCardValid**: Credit card validation.
+- **isDate**: Date format validation.
+- **isDecimal**: Checks if the number is a decimal.
+- **isEmail**: Email address validation.
+- **isEmpty**: Checks if the string is empty.
+- **isMACAddress**: MAC address validation.
+- **isMD5**: Checks if the string is a valid MD5 hash.
+- **validatePassportNumber**: Passport number validation.
+- **isPort**: Port number validation.
+- **isPostalCode**: Postal code validation.
+- **isTime**: Time format validation.
+- **validateBRPhoneNumber**: Brazilian phone number validation.
+- **validateEmail**: Email address validation.
+- **validatePassword**: Password validation.
+- **validatePhoneNumber**: Phone number validation.
+- **validateUsername**: Username validation.
+- **validateUSPhoneNumber**: US phone number validation.
+- **isNumber**: Checks if the value is a number.
+- **passwordStrengthTester**: Password strength test.
+
+if you prefer, you can use importing as:
+```javascript
+	const validator = require('multiform-validator');
+	or
+	import validator from 'multiform-validator';
+	then
+
+	validator.FUNCTION_NAME
+	#OBS: 'if the function is called validate, the return will be an object and not boolean'
+
+	When return object boolean
+	validation.FUNCTION_NAME = true or false
+
+	When return object
+	validation.FUNCTION_NAME = object = {isValid: true or false, errorMsg: 'stringError'}
+	validation.FUNCTION_NAME.isValid = true or false
+	validation.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
+
+	/**
+	 * There are other returns in some functions, with strings etc, stay tuned
+	*/
+```
 
 validateEmail example:
 

@@ -1,0 +1,17 @@
+body{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	pre{
+		padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    color: #1F2328;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+		border: 1px #1F2328;
+		width: 50%;
+	}
+}
