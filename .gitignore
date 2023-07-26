@@ -1,6 +1,0 @@
-node_modules/
-.npmignore
-.eslintrc.js
-.editorconfig
-package-lock.json
-.gitignore
