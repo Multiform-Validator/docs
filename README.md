@@ -1,10 +1,18 @@
 # Multiform-validator
 
-[![npm version](https://badge.fury.io/js/multiform-validator.svg?refresh=4)](https://badge.fury.io/js/multiform-validator)
+[![npm version](https://badge.fury.io/js/multiform-validator.svg?refresh=18)](https://badge.fury.io/js/multiform-validator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dm/multiform-validator.svg?style=flat-square)](https://npm-stat.com/charts.html?package=multiform-validator)
 
 This npm package provides JavaScript functions to validate various forms fields.
+
+If you want to help me, you can buy me a coffee (:
+
+<p align="center">
+	<a href="https://www.buymeacoffee.com/gabriellogan" target="_blank">
+		<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+	</a>
+</p>
 
 An HTML page will be created on GitHub where more detailed information can be found. For now, you can read the parameter comments when you hover over the functions, at least in Visual Studio Code.
 
