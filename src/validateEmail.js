@@ -5,30 +5,55 @@ const defaultErrorMsg = [
   'This e-mail is not valid',
   'Email too big, try again',
   'This email is not valid in the country',
+  'Email domain is not allowed.',
   'Unknown error',
 ];
+const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@icloud.com', '@hotmail.com',
+  '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'];
+
 /**
  * @param {string} email
  * @param {number} maxLength optional
  * @param {string} country optional
  * @param {string[]} [errorMsg=defaultErrorMsg] optional
- * @default maxLength number: 400
+ * @param {boolean|string[]} [validDomains=false] optional
+ * @default maxLength number: 400, validDomains = false
  * @example validateEmail('foor@bar.com', 30, 'us);
  * @example validateEmail('foor@bar.com', 30, 'br);
  * @example validateEmail('foor@bar.com', 30);
  * @example validateEmail('foor@bar.com', 30, null, ['My own error message']); Country is set to null
- * @description This function returns five errors in the following order,
+ * @example validateEmail('joao@myOwnDomain.com', null, null, null, ['@myOwnDomain.com']);
+ * @example validateEmail('joaoaoao@gmail.com.com', null, null, null, true);
+ * @description This function returns six errors in the following order,
  *
  * If you want to use a default parameter, use null.
  *
  * Default:
- * ['Invalid value passed', 'This e-mail is not valid', 'Email too big, try again', 'This email is not valid in the country', 'Unknown error']
+ * ['Invalid value passed', 'This e-mail is not valid', 'Email too big, try again', 'This email is not valid in the country','Email domain is not allowed.', 'Unknown error']
  *
  * Create a list of errors separated by commas in strings
+ *
+ * @description You can also pass a list of domains that will be allowed, if you leave the parameter empty, it will be set to false and no check will be performed, you can also pass only true and the following list will be used by default:
+ *
+ * Default:
+ * ['@gmail.com', '@outlook.com', '@yahoo.com', '@icloud.com', '@hotmail.com',
+  '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'];
+
+ * You can also create a custom list, your list will completely replace the default list.
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
+function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg, validDomains = false) {
   if (typeof email !== 'string') throw new TypeError('The input should be a string.');
+
+  // Expressão regular para verificar se o e-mail termina com um dos domínios válidos
+  let regex;
+  if (validDomains === true) {
+    regex = new RegExp(`${validDomainsDefault.join('|')}$`, 'i');
+  } else if (Array.isArray(validDomains) && validDomains.length > 0) {
+    const validDomainsCustom = validDomains.map((domain) => domain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    regex = new RegExp(`${validDomainsCustom.join('|')}$`, 'i');
+  }
+
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
@@ -39,6 +64,7 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
       }
     }
   }
+
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -54,6 +80,13 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
   }
   const maxEmailLength = maxLength || 400;
   try {
+    // Check domain only if regex is defined (validDomains is true or validDomains is an array)
+    if (regex && !regex.test(email)) {
+      return {
+        isValid: false,
+        errorMsg: getErrorMessage(4),
+      };
+    }
     if (!(isEmail(email))) {
       return {
         isValid: false,
@@ -82,7 +115,7 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg) {
   } catch (error) {
     return {
       isValid: false,
-      errorMsg: getErrorMessage(4),
+      errorMsg: getErrorMessage(5),
     };
   }
 }

@@ -1,8 +1,17 @@
-body{
+section{
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 35px;
+	margin-bottom: 80px;
+	div{
+		display: flex;
+		flex-direction: column;
+		a{
+			margin-block: 5px;
+		}
+	}
 	pre{
 		padding: 16px;
     overflow: auto;
@@ -13,5 +22,6 @@ body{
     border-radius: 6px;
 		border: 1px #1F2328;
 		width: 50%;
+		margin: auto;
 	}
 }

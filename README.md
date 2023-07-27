@@ -8,7 +8,7 @@ This npm package provides JavaScript functions to validate various forms fields.
 
 An HTML page will be created on GitHub where more detailed information can be found. For now, you can read the parameter comments when you hover over the functions, at least in Visual Studio Code.
 
-link: https://gabriel-logan.github.io/multiform-validator
+Website: https://gabriel-logan.github.io/multiform-validator
 
 Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!
 
@@ -17,8 +17,6 @@ Feel free to find bugs and report them to me. Your feedback is highly appreciate
 ```bash
 npm install multiform-validator
 ```
-
-Only the validateName and comparePass needs to be done, I still have no ideas
 
 # Data Validator
 
@@ -52,6 +50,8 @@ This package contains various modules for validating different types of data. Be
 - **validateUSPhoneNumber**: US phone number validation.
 - **isNumber**: Checks if the value is a number.
 - **passwordStrengthTester**: Password strength test.
+- **validateName**: Name validation.
+- **validateSurname**: Surname validation.
 
 if you prefer, you can use importing as:
 ```javascript

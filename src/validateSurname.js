@@ -1,15 +1,15 @@
 const defaultErrorMsg = [
   'Invalid value passed',
-  'Name cannot contain numbers', 'Name cannot contain special characters',
-  'This name is not valid',
-  'Name too big, try again',
+  'Surname cannot contain numbers', 'Surname cannot contain special characters',
+  'This surname is not valid',
+  'Surname too big, try again',
   'Unknown error',
 ];
 /**
- * @param {string} name
+ * @param {string} surname
  * @default minLength number: default: 1
- * @default maxLength number: default: 20
- * @example validateName('John', 2, 20);
+ * @default maxLength number: default: 25
+ * @example validateSurname('Jackson', 3, 25);
  * @info minLength cannot be greater than maxLength
  * @description This function returns 6 errors in the following order,
  *
@@ -17,16 +17,16 @@ const defaultErrorMsg = [
  *
  * [
   'Invalid value passed',
-  'Name cannot contain numbers',
-  'Name cannot contain special characters',
-  'This name is not valid',
-  'Name too big, try again',
+  'Surname cannot contain numbers',
+  'Surname cannot contain special characters',
+  'This surname is not valid',
+  'Surname too big, try again',
   'Unknown error',
 ];
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateName(name, minLength = 1, maxLength = 20, errorMsg = defaultErrorMsg) {
-  if (typeof name !== 'string') throw new TypeError('The input should be a string.');
+function validateSurname(surname, minLength = 1, maxLength = 25, errorMsg = defaultErrorMsg) {
+  if (typeof surname !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
@@ -47,51 +47,51 @@ function validateName(name, minLength = 1, maxLength = 20, errorMsg = defaultErr
   if (minLength > maxLength) {
     throw new Error('minLength cannot be greater than maxLength');
   }
-  if (!name) {
+  if (!surname) {
     return {
       isValid: false,
       errorMsg: getErrorMessage(0),
     };
   }
   try {
-    if (name.length > maxLength) {
+    if (surname.length > maxLength) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(4),
       };
     }
-    if (name.length < minLength) {
+    if (surname.length < minLength) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(3),
       };
     }
 
-    if (name.match(/\d/)) {
+    if (surname.match(/\d/)) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(1),
       };
     }
 
-    if (name.match(/[^\w\s]/)) {
+    if (surname.match(/[^\w\s]/)) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(2),
       };
     }
 
-    // Check if all characters in the name are repeated
-    if (new Set(name).size === 1) {
+    // Check if all characters in the surname are repeated
+    if (new Set(surname).size === 1) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(3), // Assuming 'Name is not allowed.' refers to all characters being repeated.
+        errorMsg: getErrorMessage(3), // Assuming 'Surname is not allowed.' refers to all characters being repeated.
       };
     }
 
-    // Check if the name contains at least 3 consecutive characters that are the same
+    // Check if the surname contains at least 3 consecutive characters that are the same
     const consecutiveCharsRegex = /(\w)\1\1/;
-    if (consecutiveCharsRegex.test(name)) {
+    if (consecutiveCharsRegex.test(surname)) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(3), // You can set the appropriate error message for this case.
@@ -109,4 +109,4 @@ function validateName(name, minLength = 1, maxLength = 20, errorMsg = defaultErr
     };
   }
 }
-module.exports = validateName;
+module.exports = validateSurname;

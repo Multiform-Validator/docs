@@ -24,9 +24,7 @@ const validateUSPhoneNumber = require('./src/validateUSPhoneNumber');
 const validatePhoneNumber = require('./src/validatePhoneNumber');
 const isNumber = require('./src/isNumber');
 const passwordStrengthTester = require('./src/passwordStrengthTester');
-
-// Nao feitos ainda
-const comparePass = require('./src/comparePass');
+const validateSurname = require('./src/validateSurname');
 const validateName = require('./src/validateName');
 
 module.exports = {
@@ -56,4 +54,6 @@ module.exports = {
   validatePhoneNumber,
   isNumber,
   passwordStrengthTester,
+  validateName,
+  validateSurname,
 };
