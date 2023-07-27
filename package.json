@@ -1,6 +1,6 @@
 {
   "name": "multiform-validator",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "index.js",
   "scripts": {
