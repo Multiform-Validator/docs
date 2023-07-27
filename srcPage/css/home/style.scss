@@ -5,6 +5,11 @@ section{
 	align-items: center;
 	margin-top: 35px;
 	margin-bottom: 80px;
+	.bmc-btn-container {
+		display: flex;
+		align-items: center;
+		margin-top: 35px;
+	}
 	div{
 		display: flex;
 		flex-direction: column;

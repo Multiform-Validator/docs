@@ -481,6 +481,10 @@ body.dark h1 {
   color: #fff;
 }
 
+body.dark .myTitle {
+	color: #fff;
+}
+
 body.dark h1 span {
   transition-delay: 0ms !important;
 }
@@ -494,7 +498,7 @@ body.dark .bg-light {
   background-color: #14151a !important;
 }
 
-body.dark .start-header {
+body.dark .navbar-light .navbar-nav .start-header {
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -502,11 +506,11 @@ body.dark .start-header.scroll-on {
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-body.dark .nav-link {
-  color: #fff !important;
+body.dark .navbar-light .navbar-nav .nav-link {
+  color: #cdcdcd !important;
 }
 
-body.dark .nav-item.active .nav-link {
+body.dark .navbar-light .navbar-nav .nav-item.active .nav-link {
   color: #999 !important;
 }
 

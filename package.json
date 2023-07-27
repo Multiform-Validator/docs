@@ -17,7 +17,11 @@
     "email-validator",
     "multiform-validator",
     "javascript",
-    "npm"
+    "npm",
+		"security",
+		"safe",
+		"pentest",
+		"security-tools"
   ],
   "author": "Gabriel Logan",
   "license": "MIT",
