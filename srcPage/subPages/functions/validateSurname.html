@@ -8,6 +8,8 @@
     <title>validateSurname</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+
 </head>
 
 <body>
@@ -118,8 +120,52 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>validateSurname</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">Surname Validation Function Documentation</h1>
+                    <p>
+                        The <code>validateSurname</code> function is used to validate surnames. It returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string). The 'isValid' property will be true if the surname meets the specified
+                        criteria, and 'errorMsg' will contain the error message if the surname is invalid, or it will be null if the surname is valid.
+                    </p>
+
+                    <h2 class="subtitle">Function Signature</h2>
+                    <pre>
+										function validateSurname(
+												surname: string,
+												minLength?: number,
+												maxLength?: number,
+												errorMsg?: string[]
+										): { isValid: boolean, errorMsg: string | null };</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <ul>
+                        <li><code>surname</code> (string) - The surname to be validated.</li>
+                        <li><code>minLength</code> (number) [optional] - The minimum length of the surname. Default is 1.</li>
+                        <li><code>maxLength</code> (number) [optional] - The maximum length of the surname. Default is 25.</li>
+                        <li><code>errorMsg</code> (string[]) [optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Default Error Messages</h2>
+                    <pre>
+										[
+												'Invalid value passed',
+												'Surname cannot contain numbers',
+												'Surname cannot contain special characters',
+												'This surname is not valid',
+												'Surname too big, try again',
+												'Unknown error',
+										]</pre>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+										const result1 = validateSurname('Jackson', 3, 25);
+										console.log(result1);
+										// Output: { isValid: true, errorMsg: null }
+
+										const customErrorMsg = [null, 'Custom error 2'];
+										const result2 = validateSurname('J@ckson', 3, 25, customErrorMsg);
+										console.log(result2);
+										// Output: { isValid: false, errorMsg: 'Surname cannot contain special characters' }
+								</pre>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

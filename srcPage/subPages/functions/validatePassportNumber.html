@@ -8,6 +8,8 @@
     <title>validatePassportNumber</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+
 </head>
 
 <body>
@@ -118,8 +120,47 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>validatePassportNumber</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">Passport Number Validation Function Documentation</h1>
+                    <p>
+                        The <code>validatePassportNumber</code> function is used to validate passport numbers. It returns an object with two properties: 'isValid' (boolean) and 'country' (string). The 'isValid' property will be true if the passport number
+                        matches the supported formats, and 'country' property will indicate the country associated with the passport number. If the passport number does not match any supported format, 'isValid' will be false, and 'country' will be null.
+                    </p>
+
+                    <h2 class="subtitle">Function Signature</h2>
+                    <pre>
+										function validatePassportNumber(
+												passportNumber: string
+										): { isValid: boolean, country: string | null };</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <ul>
+                        <li><code>passportNumber</code> (string) - The passport number to be validated.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+										const result1 = validatePassportNumber('A1234567');
+										console.log(result1);
+										// Output: { isValid: true, country: 'United States' }
+
+										const result2 = validatePassportNumber('123456789');
+										console.log(result2);
+										// Output: { isValid: false, country: null }</pre>
+
+                    <h2 class="subtitle">Supported Passport Formats</h2>
+                    <ul>
+                        <li>United States: 9 digits (e.g., '123456789')</li>
+                        <li>United Kingdom: 2 uppercase letters followed by 6 digits (e.g., 'AB123456')</li>
+                        <li>Germany: 2 uppercase letters followed by 8 digits (e.g., 'AB12345678')</li>
+                        <li>Canada: 1 uppercase letter followed by 7 digits (e.g., 'A1234567')</li>
+                        <li>Australia: 1 uppercase letter followed by 7 digits (e.g., 'A1234567')</li>
+                        <li>Brazil: 9 digits (e.g., '123456789')</li>
+                        <li>France: 2 uppercase letters followed by 7 digits (e.g., 'AB1234567')</li>
+                        <li>Italy: 1 uppercase letter followed by 7 digits (e.g., 'A1234567')</li>
+                        <li>India: 1 uppercase letter followed by 7 digits (e.g., 'A1234567')</li>
+                        <li>China: 1 uppercase letter followed by 8 digits (e.g., 'A12345678')</li>
+                    </ul>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

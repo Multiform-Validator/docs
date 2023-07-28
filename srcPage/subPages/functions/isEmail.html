@@ -8,6 +8,7 @@
     <title>isEmail</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
 </head>
 
 <body>
@@ -118,8 +119,46 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>isEmail</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">isEmail Function Documentation</h1>
+                    <p>
+                        The <code>isEmail</code> function checks if the input string is a valid email address. It returns <code>true</code> if the email address is valid and follows the supported format, and <code>false</code> otherwise.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+						import { isEmail } from 'multiform-validator';</pre>
+
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+						const { isEmail } = require('multiform-validator');</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes one parameter:
+                    </p>
+                    <ul>
+                        <li><code>email</code> (string) - The input string representing the email address to validate.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Example</h2>
+                    <pre>
+						// Example - Valid email address
+						const result1 = isEmail('foor@bar.com');
+						console.log(result1); // true
+						</pre>
+
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        The function expects the input email to be passed as a string. If the input is not a string or an empty string, the function returns <code>false</code>. It uses a regular expression to validate the email address format. The regular
+                        expression checks for the correct structure of the email address, ensuring it contains an "@" symbol and a valid domain with at least two letters (e.g., ".com", ".org", etc.). It also performs additional checks to ensure that the
+                        first character of the email address is not a number and that there are no numbers immediately after the "@" symbol and the last dot in the domain.
+                    </p>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

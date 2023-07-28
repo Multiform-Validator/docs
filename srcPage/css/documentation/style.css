@@ -16,6 +16,7 @@
   overflow-y: auto;
   background: #000;
   transition: all 0.5s ease;
+  overflow-x: hidden;
 }
 #wrapper.toggled #sidebar-wrapper {
   width: 250px;

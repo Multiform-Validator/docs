@@ -8,6 +8,7 @@
     <title>Cnpj validation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
 </head>
 
 <body>
@@ -118,8 +119,45 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>Cnpj validation</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">cnpjIsValid Function Documentation</h1>
+                    <p>
+                        The <code>cnpjIsValid</code> function is used to validate a Brazilian CNPJ (National Registry of Legal Entities) number. It returns an object containing the <code>isValid</code> (boolean) and <code>errorMsg</code> (string) properties,
+                        indicating whether the CNPJ is valid and, in case of an error, the corresponding error message.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+						import { cnpjIsValid } from 'multiform-validator';</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes two parameters:
+                    </p>
+                    <ul>
+                        <li><code>cnpj</code> (string) - The CNPJ number to validate.</li>
+                        <li><code>errorMsg</code> (optional array) - A list of custom error messages. If not provided, it uses a default list of error messages.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+						// Example 1 - Using the CNPJ number '72.501.263/0001-40'
+						const result1 = cnpjIsValid('72.501.263/0001-40');
+						console.log(result1.isValid); // true
+						console.log(result1.errorMsg); // null
+
+						// Example 2 - Using the CNPJ number '73.506.263/0001-45' and custom error messages
+						const result2 = cnpjIsValid('73.506.263/0001-45', ['CNPJ is wrong']);
+						console.log(result2.isValid); // false
+						console.log(result2.errorMsg); // 'CNPJ is wrong'</pre>
+
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        If the function is called with an invalid value for the <code>errorMsg</code> parameter (non-array), or if an error occurs during the validation process, the function will return an object with <code>isValid</code> set to <code>false</code>                        and <code>errorMsg</code> containing the default error message 'Unknown error'.
+                    </p>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

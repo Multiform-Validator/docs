@@ -8,13 +8,12 @@
     <title>getOnlyEmail</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
 </head>
 
 <body>
     <section>
-
         <div id="wrapper" class="toggled">
-
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
@@ -118,8 +117,52 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>getOnlyEmail</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">getOnlyEmail Function Documentation</h1>
+                    <p>
+                        The <code>getOnlyEmail</code> function extracts email addresses from a given text. If the optional <code>multiple</code> parameter is set to <code>true</code>, it returns an array with all the email addresses found. Otherwise,
+                        it returns only the first email address found as a string.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+						import { getOnlyEmail } from 'multiform-validator';</pre>
+
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+						const { getOnlyEmail } = require('multiform-validator');</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes two parameters:
+                    </p>
+                    <ul>
+                        <li><code>text</code> (string) - The input text from which emails will be extracted.</li>
+                        <li><code>multiple</code> (optional boolean) - If set to <code>true</code>, the function will return an array with all the email addresses found. If set to <code>false</code> or not provided, it will return only the first email address
+                            found as a string.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+						// Example 1 - Extracting multiple emails from the text
+						const result1 = getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
+						console.log(result1);
+						// Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
+
+						// Example 2 - Extracting the first email from the text
+						const result2 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.com</br>Sim aqui mesmo");
+						console.log(result2);
+						// Output: "fiawn@rdwah.com"</pre>
+
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        If no email address is found in the input text, the function will return the string "No email found".
+                    </p>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

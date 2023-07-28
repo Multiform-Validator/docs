@@ -8,6 +8,8 @@
     <title>validatePhoneNumber</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+
 </head>
 
 <body>
@@ -118,8 +120,45 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>validatePhoneNumber</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">Phone Number Validation Function Documentation</h1>
+                    <p>
+                        The <code>validatePhoneNumber</code> function is used to validate phone numbers. It returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string). The 'isValid' property will be true if the phone number meets
+                        the specified criteria, and 'errorMsg' will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.
+                    </p>
+
+                    <h2 class="subtitle">Function Signature</h2>
+                    <pre>
+										function validatePhoneNumber(
+												phoneNumber: string,
+												errorMsg?: string[]
+										): { isValid: boolean, errorMsg: string | null };</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <ul>
+                        <li><code>phoneNumber</code> (string) - The phone number to be validated.</li>
+                        <li><code>errorMsg</code> (string[]) [optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Default Error Messages</h2>
+                    <pre>
+										[
+												'Invalid value passed',
+												'Invalid phone number',
+												'Unknown error',
+										]</pre>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+										const result1 = validatePhoneNumber('555-123-4567');
+										console.log(result1);
+										// Output: { isValid: false, errorMsg: 'Invalid phone number' }
+
+										const customErrorMsg = [null, 'Custom error 2'];
+										const result2 = validatePhoneNumber('(555) 123-4567', customErrorMsg);
+										console.log(result2);
+										// Output: { isValid: false, errorMsg: 'Custom error 2' }
+								</pre>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

@@ -8,6 +8,7 @@
     <title>isMACAddress</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
 </head>
 
 <body>
@@ -118,8 +119,56 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>isMACAddress</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">isMACAddress Function Documentation</h1>
+                    <p>
+                        The <code>isMACAddress</code> function checks if the input string is a valid MAC address. It returns <code>true</code> if the MAC address is valid and follows the supported formats, and <code>false</code> otherwise.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+						import { isMACAddress } from 'multiform-validator';</pre>
+
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+						const { isMACAddress } = require('multiform-validator');</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes one parameter:
+                    </p>
+                    <ul>
+                        <li><code>mac</code> (string) - The input string representing the MAC address to validate. The MAC address can be in the following formats: "001A2B3C4D5E", "00:1A:2B:3C:4D:5E", or "00-1A-2B-3C-4D-5E".</li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+						// Example 1 - Valid MAC addresses
+						const result1 = isMACAddress('001A2B3C4D5E'); // true
+						console.log(result1);
+
+						const result2 = isMACAddress('00:1A:2B:3C:4D:5E'); // true
+						console.log(result2);
+
+						const result3 = isMACAddress('00-1A-2B-3C-4D-5E'); // true
+						console.log(result3);
+
+						// Example 2 - Invalid MAC address
+						const result4 = isMACAddress('Hello'); // false
+						console.log(result4);
+						</pre>
+
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        The function expects the input MAC address to be passed as a string. If the input is not a string, the function throws a TypeError. It removes all non-alphanumeric characters from the input string using a regular expression and checks if the resulting
+                        string has a valid length (exactly 12 characters). Then, it uses another regular expression to verify if the cleaned MAC address matches the supported pattern. The supported pattern is a 12-character string consisting of hexadecimal
+                        digits (0-9, A-F, a-f), with optional separators (":", "-") between pairs of hexadecimal digits.
+                    </p>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

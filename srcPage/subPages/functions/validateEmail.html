@@ -8,6 +8,7 @@
     <title>validateEmail</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
 </head>
 
 <body>
@@ -118,8 +119,67 @@
 
             <!-- Page Content -->
             <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>validateEmail</h1>
+                <div class="container container-fluid">
+                    <h1 class="title">Email Validation Function Documentation</h1>
+                    <p>
+                        The <code>validateEmail</code> function is used to validate email addresses. It returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string). The 'errorMsg' property will contain the error message if the email
+                        address is invalid, or it will be null if the email address is valid.
+                    </p>
+
+                    <h2 class="subtitle">Function Signature</h2>
+                    <pre>
+										function validateEmail(
+												email: string,
+												maxLength?: number,
+												country?: string,
+												errorMsg?: string[],
+												validDomains?: boolean | string[]
+										): { isValid: boolean, errorMsg: string | null };</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <ul>
+                        <li><code>email</code> (string) - The email address to be validated.</li>
+                        <li><code>maxLength</code> (number) [optional] - The maximum length allowed for the email address. If not provided, the default value is 400.</li>
+                        <li><code>country</code> (string) [optional] - The country code to check if the email ends with it. If not provided, no country code check will be performed.</li>
+                        <li><code>errorMsg</code> (string[]) [optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.</li>
+                        <li><code>validDomains</code> (boolean | string[]) [optional] - This parameter determines whether to check for specific valid email domains or not. If set to <code>true</code>, the function will use a default list of valid domains.
+                            If set to <code>false</code>, no domain check will be performed. Alternatively, you can pass an array of custom valid domains to perform the check against a specific list.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Default Error Messages</h2>
+                    <pre>
+										[
+												'Invalid value passed',
+												'This e-mail is not valid',
+												'Email too big, try again',
+												'This email is not valid in the country',
+												'Email domain is not allowed.',
+												'Unknown error',
+										]</pre>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+										const result1 = validateEmail('foor@bar.com', 30, 'us');
+										console.log(result1);
+										// Output: { isValid: true, errorMsg: null }
+
+										const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
+										const result2 = validateEmail('foor@bar.com', 30, 'br', customErrorMsg);
+										console.log(result2);
+										// Output: { isValid: true, errorMsg: null }
+
+										const result3 = validateEmail('invalid', 30, null, null, ['My own error message']);
+										console.log(result3);
+										// Output: { isValid: false, errorMsg: 'Invalid value passed' }
+
+										const result4 = validateEmail('joao@myOwnDomain.com', null, null, null, ['@myOwnDomain.com']);
+										console.log(result4);
+										// Output: { isValid: true, errorMsg: null }
+
+										const result5 = validateEmail('joaoaoao@gmail.com.com', null, null, null, true);
+										console.log(result5);
+										// Output: { isValid: true, errorMsg: null }
+								</pre>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->
