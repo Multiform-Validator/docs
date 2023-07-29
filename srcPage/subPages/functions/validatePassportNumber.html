@@ -129,9 +129,10 @@
 
                     <h2 class="subtitle">Function Signature</h2>
                     <pre>
-										function validatePassportNumber(
-												passportNumber: string
-										): { isValid: boolean, country: string | null };</pre>
+																					function validatePassportNumber(
+																							passportNumber: string
+																					): { isValid: boolean, country: string | null };
+									</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <ul>
@@ -140,13 +141,14 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-										const result1 = validatePassportNumber('A1234567');
-										console.log(result1);
-										// Output: { isValid: true, country: 'United States' }
+																								const result1 = validatePassportNumber('A1234567');
+																								console.log(result1);
+																								// Output: { isValid: true, country: 'United States' }
 
-										const result2 = validatePassportNumber('123456789');
-										console.log(result2);
-										// Output: { isValid: false, country: null }</pre>
+																								const result2 = validatePassportNumber('123456789');
+																								console.log(result2);
+																								// Output: { isValid: false, country: null }
+									</pre>
 
                     <h2 class="subtitle">Supported Passport Formats</h2>
                     <ul>

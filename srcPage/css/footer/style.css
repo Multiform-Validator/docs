@@ -1,7 +1,8 @@
 .footer-basic {
   padding: 40px 0;
-  background-color: #ffffff;
-  color: #4b4c4d;
+  background-color: #1f2029;
+  color: #fafafa;
+  border-top: 5px solid #101117;
 }
 .footer-basic ul {
   padding: 0;
@@ -34,7 +35,7 @@
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid #464752;
   margin: 0 8px;
   color: inherit;
   opacity: 0.75;

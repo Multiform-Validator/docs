@@ -130,13 +130,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isMD5 } from 'multiform-validator';</pre>
+																		import { isMD5 } from 'multiform-validator';
+					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isMD5 } = require('multiform-validator');</pre>
+																		const { isMD5 } = require('multiform-validator');
+					</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,22 +150,22 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Valid MD5 hashes
-						const result1 = isMD5('d41d8cd98f00b204e9800998ecf8427e'); // true
-						console.log(result1);
+																					// Example 1 - Valid MD5 hashes
+																					const result1 = isMD5('d41d8cd98f00b204e9800998ecf8427e'); // true
+																					console.log(result1);
 
-						const result2 = isMD5('6df23dc03f9b54cc38a0fc1483df6e21'); // true
-						console.log(result2);
+																					const result2 = isMD5('6df23dc03f9b54cc38a0fc1483df6e21'); // true
+																					console.log(result2);
 
-						// Example 2 - Invalid MD5 hashes
-						const result3 = isMD5('Hello'); // false
-						console.log(result3);
+																					// Example 2 - Invalid MD5 hashes
+																					const result3 = isMD5('Hello'); // false
+																					console.log(result3);
 
-						const result4 = isMD5('123'); // false
-						console.log(result4);
+																					const result4 = isMD5('123'); // false
+																					console.log(result4);
 
-						const result5 = isMD5('d41d8cd98f00b204e9800998ecf8427e123'); // false
-						console.log(result5);
+																					const result5 = isMD5('d41d8cd98f00b204e9800998ecf8427e123'); // false
+																					console.log(result5);
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

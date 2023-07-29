@@ -9,12 +9,13 @@ const defaultErrorMsg = [
   'Unknown error',
 ];
 const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@icloud.com', '@hotmail.com',
-  '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'];
+  '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'
+];
 
 /**
  * @param {string} email
  * @param {number} maxLength optional
- * @param {string} country optional
+ * @param {string|null} country optional
  * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @param {boolean|string[]} [validDomains=false] optional
  * @default maxLength number: 400, validDomains = false

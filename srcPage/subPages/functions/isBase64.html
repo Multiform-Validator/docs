@@ -130,13 +130,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isBase64 } from 'multiform-validator';</pre>
+																	import { isBase64 } from 'multiform-validator';
+					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isBase64 } = require('multiform-validator');</pre>
+																	const { isBase64 } = require('multiform-validator');
+					</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,21 +150,21 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Checking if the string is a valid Base64
-						const result1 = isBase64('SGVsbG8gV29ybGQh');
-						console.log(result1); // true
+																							// Example 1 - Checking if the string is a valid Base64
+																							const result1 = isBase64('SGVsbG8gV29ybGQh');
+																							console.log(result1); // true
 
-						// Example 2 - Checking a non-Base64 string
-						const result2 = isBase64('こんにちは');
-						console.log(result2); // false
+																							// Example 2 - Checking a non-Base64 string
+																							const result2 = isBase64('こんにちは');
+																							console.log(result2); // false
 
-						// Example 3 - Checking a non-Base64 string with digits
-						const result3 = isBase64('12345');
-						console.log(result3); // false
+																							// Example 3 - Checking a non-Base64 string with digits
+																							const result3 = isBase64('12345');
+																							console.log(result3); // false
 
-						// Example 4 - Checking a null value
-						const result4 = isBase64(null);
-						console.log(result4); // false
+																							// Example 4 - Checking a null value
+																							const result4 = isBase64(null);
+																							console.log(result4); // false
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

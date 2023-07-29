@@ -127,14 +127,29 @@
                         criteria, and 'errorMsg' will contain the error message if the username is invalid, or it will be null if the username is valid.
                     </p>
 
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+															import { validateUsername } from 'multiform-validator';
+										</pre>
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+															const { validateUsername } = require('multiform-validator');
+										</pre>
+
                     <h2 class="subtitle">Function Signature</h2>
                     <pre>
-										function validateUsername(
-												username: string,
-												minLength?: number,
-												maxLength?: number,
-												errorMsg?: string[]
-										): { isValid: boolean, errorMsg: string | null };</pre>
+																function validateUsername(
+																		username: string,
+																		minLength?: number,
+																		maxLength?: number,
+																		errorMsg?: string[]
+																): { isValid: boolean, errorMsg: string | null };
+									</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <ul>
@@ -146,26 +161,27 @@
 
                     <h2 class="subtitle">Default Error Messages</h2>
                     <pre>
-										[
-												'Invalid value passed',
-												'Username too short',
-												'This username is too long',
-												'Username cannot contain spaces',
-												'Cannot start with a number',
-												'Cannot contain only numbers',
-												'Unknown error'
-										]</pre>
+																				[
+																						'Invalid value passed',
+																						'Username too short',
+																						'This username is too long',
+																						'Username cannot contain spaces',
+																						'Cannot start with a number',
+																						'Cannot contain only numbers',
+																						'Unknown error'
+																				]
+									</pre>
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-										const result1 = validateUsername('User999', 8, 20);
-										console.log(result1);
-										// Output: { isValid: true, errorMsg: null }
+																					const result1 = validateUsername('User999', 8, 20);
+																					console.log(result1);
+																					// Output: { isValid: true, errorMsg: null }
 
-										const customErrorMsg = ['Custom error 1', 'Custom error 2'];
-										const result2 = validateUsername('User999', 8, 20, customErrorMsg);
-										console.log(result2);
-										// Output: { isValid: false, errorMsg: 'Username too short' }
+																					const customErrorMsg = ['Custom error 1', 'Custom error 2'];
+																					const result2 = validateUsername('User999', 8, 20, customErrorMsg);
+																					console.log(result2);
+																					// Output: { isValid: false, errorMsg: 'Username too short' }
 								</pre>
                 </div>
             </div>

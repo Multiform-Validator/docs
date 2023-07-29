@@ -129,10 +129,11 @@
 
                     <h2 class="subtitle">Function Signature</h2>
                     <pre>
-										function validatePhoneNumber(
-												phoneNumber: string,
-												errorMsg?: string[]
-										): { isValid: boolean, errorMsg: string | null };</pre>
+																					function validatePhoneNumber(
+																							phoneNumber: string,
+																							errorMsg?: string[]
+																					): { isValid: boolean, errorMsg: string | null };
+									</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <ul>
@@ -142,22 +143,23 @@
 
                     <h2 class="subtitle">Default Error Messages</h2>
                     <pre>
-										[
-												'Invalid value passed',
-												'Invalid phone number',
-												'Unknown error',
-										]</pre>
+																						[
+																								'Invalid value passed',
+																								'Invalid phone number',
+																								'Unknown error',
+																						]
+									</pre>
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-										const result1 = validatePhoneNumber('555-123-4567');
-										console.log(result1);
-										// Output: { isValid: false, errorMsg: 'Invalid phone number' }
+																						const result1 = validatePhoneNumber('555-123-4567');
+																						console.log(result1);
+																						// Output: { isValid: false, errorMsg: 'Invalid phone number' }
 
-										const customErrorMsg = [null, 'Custom error 2'];
-										const result2 = validatePhoneNumber('(555) 123-4567', customErrorMsg);
-										console.log(result2);
-										// Output: { isValid: false, errorMsg: 'Custom error 2' }
+																						const customErrorMsg = [null, 'Custom error 2'];
+																						const result2 = validatePhoneNumber('(555) 123-4567', customErrorMsg);
+																						console.log(result2);
+																						// Output: { isValid: false, errorMsg: 'Custom error 2' }
 								</pre>
                 </div>
             </div>

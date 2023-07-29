@@ -132,13 +132,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isTime } from 'multiform-validator';</pre>
+																		import { isTime } from 'multiform-validator';
+					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isTime } = require('multiform-validator');</pre>
+																		const { isTime } = require('multiform-validator');
+					</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -150,34 +152,34 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Valid time formats
-						const result1 = isTime('12:34'); // true
-						console.log(result1);
+																		// Example 1 - Valid time formats
+																		const result1 = isTime('12:34'); // true
+																		console.log(result1);
 
-						const result2 = isTime('12:34 AM'); // true
-						console.log(result2);
+																		const result2 = isTime('12:34 AM'); // true
+																		console.log(result2);
 
-						const result3 = isTime('23:59:59'); // true
-						console.log(result3);
+																		const result3 = isTime('23:59:59'); // true
+																		console.log(result3);
 
-						const result4 = isTime('12:34:56 PM'); // true
-						console.log(result4);
+																		const result4 = isTime('12:34:56 PM'); // true
+																		console.log(result4);
 
-						const result5 = isTime('12:34:56 AM'); // true
-						console.log(result5);
+																		const result5 = isTime('12:34:56 AM'); // true
+																		console.log(result5);
 
-						// Example 2 - Invalid time formats
-						const result6 = isTime('12:34:56XM'); // false (invalid format)
-						console.log(result6);
+																		// Example 2 - Invalid time formats
+																		const result6 = isTime('12:34:56XM'); // false (invalid format)
+																		console.log(result6);
 
-						const result7 = isTime('25:00'); // false (invalid hour)
-						console.log(result7);
+																		const result7 = isTime('25:00'); // false (invalid hour)
+																		console.log(result7);
 
-						const result8 = isTime('23:60'); // false (invalid minute)
-						console.log(result8);
+																		const result8 = isTime('23:60'); // false (invalid minute)
+																		console.log(result8);
 
-						const result9 = isTime('23:59:61'); // false (invalid second)
-						console.log(result9);
+																		const result9 = isTime('23:59:61'); // false (invalid second)
+																		console.log(result9);
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

@@ -130,13 +130,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isDecimal } from 'multiform-validator';</pre>
+																			import { isDecimal } from 'multiform-validator';
+					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isDecimal } = require('multiform-validator');</pre>
+																			const { isDecimal } = require('multiform-validator');
+					</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,31 +150,31 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Valid decimal numbers
-						const result1 = isDecimal('123.45');
-						console.log(result1); // true
+																										// Example 1 - Valid decimal numbers
+																										const result1 = isDecimal('123.45');
+																										console.log(result1); // true
 
-						const result2 = isDecimal('-123.45');
-						console.log(result2); // true
+																										const result2 = isDecimal('-123.45');
+																										console.log(result2); // true
 
-						const result3 = isDecimal('0.123');
-						console.log(result3); // true
+																										const result3 = isDecimal('0.123');
+																										console.log(result3); // true
 
-						const result4 = isDecimal('1,234.56');
-						console.log(result4); // true
+																										const result4 = isDecimal('1,234.56');
+																										console.log(result4); // true
 
-						// Example 2 - Invalid decimal numbers
-						const result5 = isDecimal('1.234,56');
-						console.log(result5); // false (invalid format)
+																										// Example 2 - Invalid decimal numbers
+																										const result5 = isDecimal('1.234,56');
+																										console.log(result5); // false (invalid format)
 
-						const result6 = isDecimal('abc');
-						console.log(result6); // false (not a valid number)
+																										const result6 = isDecimal('abc');
+																										console.log(result6); // false (not a valid number)
 
-						const result7 = isDecimal('12a.34');
-						console.log(result7); // false (not a valid number)
+																										const result7 = isDecimal('12a.34');
+																										console.log(result7); // false (not a valid number)
 
-						const result8 = isDecimal('12.34.56');
-						console.log(result8); // false (not a valid number)
+																										const result8 = isDecimal('12.34.56');
+																										console.log(result8); // false (not a valid number)
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

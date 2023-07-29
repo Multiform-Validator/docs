@@ -131,13 +131,15 @@
                         The function can be imported using ES6 syntax from the "br-phone-number-validator" package:
                     </p>
                     <pre>
-						import { validateBRPhoneNumber } from 'br-phone-number-validator';</pre>
+																					import { validateBRPhoneNumber } from 'br-phone-number-validator';
+					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { validateBRPhoneNumber } = require('br-phone-number-validator');</pre>
+																					const { validateBRPhoneNumber } = require('br-phone-number-validator');
+					</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -153,30 +155,31 @@
                         The default error messages are as follows:
                     </p>
                     <pre>
-						[
-							'Invalid value passed',
-							'Invalid phone number',
-							'Unknown error'
-						]</pre>
+																			[
+																				'Invalid value passed',
+																				'Invalid phone number',
+																				'Unknown error'
+																			]
+										</pre>
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						const result1 = validateBRPhoneNumber('(11) 98765-4321');
-						console.log(result1);
-						// Output: { isValid: true, errorMsg: null }
+																							const result1 = validateBRPhoneNumber('(11) 98765-4321');
+																							console.log(result1);
+																							// Output: { isValid: true, errorMsg: null }
 
-						const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
-						const result2 = validateBRPhoneNumber('(11) 98765-4321', customErrorMsg);
-						console.log(result2);
-						// Output: { isValid: true, errorMsg: null }
+																							const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
+																							const result2 = validateBRPhoneNumber('(11) 98765-4321', customErrorMsg);
+																							console.log(result2);
+																							// Output: { isValid: true, errorMsg: null }
 
-						const result3 = validateBRPhoneNumber('invalid');
-						console.log(result3);
-						// Output: { isValid: false, errorMsg: 'Invalid value passed' }
+																							const result3 = validateBRPhoneNumber('invalid');
+																							console.log(result3);
+																							// Output: { isValid: false, errorMsg: 'Invalid value passed' }
 
-						const result4 = validateBRPhoneNumber('(11) 1234-5678', customErrorMsg);
-						console.log(result4);
-						// Output: { isValid: false, errorMsg: 'Invalid phone number' }
+																							const result4 = validateBRPhoneNumber('(11) 1234-5678', customErrorMsg);
+																							console.log(result4);
+																							// Output: { isValid: false, errorMsg: 'Invalid phone number' }
 						</pre>
                 </div>
             </div>

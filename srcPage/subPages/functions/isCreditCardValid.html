@@ -130,13 +130,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isCreditCardValid } from 'multiform-validator';</pre>
+																						import { isCreditCardValid } from 'multiform-validator';
+																					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isCreditCardValid } = require('multiform-validator');</pre>
+																							const { isCreditCardValid } = require('multiform-validator');
+																						</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,17 +150,17 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Valid credit card number with spaces
-						const result1 = isCreditCardValid('6062 8226 8644 9791');
-						console.log(result1); // true
+																								// Example 1 - Valid credit card number with spaces
+																								const result1 = isCreditCardValid('6062 8226 8644 9791');
+																								console.log(result1); // true
 
-						// Example 2 - Valid credit card number without spaces
-						const result2 = isCreditCardValid('6062822686449791');
-						console.log(result2); // true
+																								// Example 2 - Valid credit card number without spaces
+																								const result2 = isCreditCardValid('6062822686449791');
+																								console.log(result2); // true
 
-						// Example 3 - Invalid credit card number (does not pass the Luhn algorithm)
-						const result3 = isCreditCardValid('1234 5678 9012 3456');
-						console.log(result3); // false
+																								// Example 3 - Invalid credit card number (does not pass the Luhn algorithm)
+																								const result3 = isCreditCardValid('1234 5678 9012 3456');
+																								console.log(result3); // false
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

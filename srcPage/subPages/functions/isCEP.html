@@ -130,13 +130,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isCEP } from 'multiform-validator';</pre>
+																		import { isCEP } from 'multiform-validator';
+										</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isCEP } = require('multiform-validator');</pre>
+																		const { isCEP } = require('multiform-validator');
+										</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,17 +150,17 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Checking if the CEP is valid with dashes
-						const result1 = isCEP('12345-678');
-						console.log(result1); // true
+																	// Example 1 - Checking if the CEP is valid with dashes
+																	const result1 = isCEP('12345-678');
+																	console.log(result1); // true
 
-						// Example 2 - Checking if the CEP is valid without dashes
-						const result2 = isCEP('12345678');
-						console.log(result2); // true
+																	// Example 2 - Checking if the CEP is valid without dashes
+																	const result2 = isCEP('12345678');
+																	console.log(result2); // true
 
-						// Example 3 - Checking an invalid CEP with an incorrect format
-						const result3 = isCEP('12.345-678');
-						console.log(result3); // false
+																	// Example 3 - Checking an invalid CEP with an incorrect format
+																	const result3 = isCEP('12.345-678');
+																	console.log(result3); // false
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

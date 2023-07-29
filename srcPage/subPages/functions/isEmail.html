@@ -124,19 +124,23 @@
                     <p>
                         The <code>isEmail</code> function checks if the input string is a valid email address. It returns <code>true</code> if the email address is valid and follows the supported format, and <code>false</code> otherwise.
                     </p>
-
+                    <p>
+                        This function just checks the syntax of the email to see if it's valid or not, if you need a stronger validation, use <a href="./validateEmail.html"><code>validateEmail</code></a>
+                    </p>
                     <h2 class="subtitle">Import</h2>
                     <p>
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isEmail } from 'multiform-validator';</pre>
+													import { isEmail } from 'multiform-validator';
+										</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isEmail } = require('multiform-validator');</pre>
+													const { isEmail } = require('multiform-validator');
+										</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,10 +152,10 @@
 
                     <h2 class="subtitle">Example</h2>
                     <pre>
-						// Example - Valid email address
-						const result1 = isEmail('foor@bar.com');
-						console.log(result1); // true
-						</pre>
+												// Example - Valid email address
+												const result1 = isEmail('foor@bar.com');
+												console.log(result1); // true
+										</pre>
 
                     <h2 class="subtitle">Notes</h2>
                     <p>

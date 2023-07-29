@@ -131,7 +131,8 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { cnpjIsValid } from 'multiform-validator';</pre>
+												 import { cnpjIsValid } from 'multiform-validator';
+										</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -144,15 +145,16 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Using the CNPJ number '72.501.263/0001-40'
-						const result1 = cnpjIsValid('72.501.263/0001-40');
-						console.log(result1.isValid); // true
-						console.log(result1.errorMsg); // null
+														// Example 1 - Using the CNPJ number '72.501.263/0001-40'
+														const result1 = cnpjIsValid('72.501.263/0001-40');
+														console.log(result1.isValid); // true
+														console.log(result1.errorMsg); // null
 
-						// Example 2 - Using the CNPJ number '73.506.263/0001-45' and custom error messages
-						const result2 = cnpjIsValid('73.506.263/0001-45', ['CNPJ is wrong']);
-						console.log(result2.isValid); // false
-						console.log(result2.errorMsg); // 'CNPJ is wrong'</pre>
+														// Example 2 - Using the CNPJ number '73.506.263/0001-45' and custom error messages
+														const result2 = cnpjIsValid('73.506.263/0001-45', ['CNPJ is wrong']);
+														console.log(result2.isValid); // false
+														console.log(result2.errorMsg); // 'CNPJ is wrong'
+										</pre>
 
                     <h2 class="subtitle">Notes</h2>
                     <p>

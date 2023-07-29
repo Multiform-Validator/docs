@@ -126,15 +126,34 @@
                         address is invalid, or it will be null if the email address is valid.
                     </p>
 
+                    <p>
+                        What is the difference between <code>validateEmail</code> and <code>isEmail</code>? isEmail just does simple validations like checking if the string has the formatting of an email like several validators out there, <code>validateEmail</code>                        does not, it does complex validations and better than that, you can customize the validations passing the information in the parameters
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+															import { validateEmail } from 'multiform-validator';
+										</pre>
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+															const { validateEmail } = require('multiform-validator');
+										</pre>
+
                     <h2 class="subtitle">Function Signature</h2>
                     <pre>
-										function validateEmail(
-												email: string,
-												maxLength?: number,
-												country?: string,
-												errorMsg?: string[],
-												validDomains?: boolean | string[]
-										): { isValid: boolean, errorMsg: string | null };</pre>
+																				function validateEmail(
+																						email: string,
+																						maxLength?: number,
+																						country?: string,
+																						errorMsg?: string[],
+																						validDomains?: boolean | string[]
+																				): { isValid: boolean, errorMsg: string | null };
+										</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <ul>
@@ -148,37 +167,38 @@
 
                     <h2 class="subtitle">Default Error Messages</h2>
                     <pre>
-										[
-												'Invalid value passed',
-												'This e-mail is not valid',
-												'Email too big, try again',
-												'This email is not valid in the country',
-												'Email domain is not allowed.',
-												'Unknown error',
-										]</pre>
+																				[
+																						'Invalid value passed',
+																						'This e-mail is not valid',
+																						'Email too big, try again',
+																						'This email is not valid in the country',
+																						'Email domain is not allowed.',
+																						'Unknown error',
+																				]
+										</pre>
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-										const result1 = validateEmail('foor@bar.com', 30, 'us');
-										console.log(result1);
-										// Output: { isValid: true, errorMsg: null }
+																			const result1 = validateEmail('foor@bar.com', 30, 'us');
+																			console.log(result1);
+																			// Output: { isValid: true, errorMsg: null }
 
-										const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
-										const result2 = validateEmail('foor@bar.com', 30, 'br', customErrorMsg);
-										console.log(result2);
-										// Output: { isValid: true, errorMsg: null }
+																			const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
+																			const result2 = validateEmail('foor@bar.com', 30, 'br', customErrorMsg);
+																			console.log(result2);
+																			// Output: { isValid: true, errorMsg: null }
 
-										const result3 = validateEmail('invalid', 30, null, null, ['My own error message']);
-										console.log(result3);
-										// Output: { isValid: false, errorMsg: 'Invalid value passed' }
+																			const result3 = validateEmail('invalid', 30, null, null, ['My own error message']);
+																			console.log(result3);
+																			// Output: { isValid: false, errorMsg: 'Invalid value passed' }
 
-										const result4 = validateEmail('joao@myOwnDomain.com', null, null, null, ['@myOwnDomain.com']);
-										console.log(result4);
-										// Output: { isValid: true, errorMsg: null }
+																			const result4 = validateEmail('joao@myOwnDomain.com', null, null, null, ['@myOwnDomain.com']);
+																			console.log(result4);
+																			// Output: { isValid: true, errorMsg: null }
 
-										const result5 = validateEmail('joaoaoao@gmail.com.com', null, null, null, true);
-										console.log(result5);
-										// Output: { isValid: true, errorMsg: null }
+																			const result5 = validateEmail('joaoaoao@gmail.com.com', null, null, null, true);
+																			console.log(result5);
+																			// Output: { isValid: true, errorMsg: null }
 								</pre>
                 </div>
             </div>

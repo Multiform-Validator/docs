@@ -129,13 +129,14 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { getOnlyEmail } from 'multiform-validator';</pre>
-
+															import { getOnlyEmail } from 'multiform-validator';
+										</pre>
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { getOnlyEmail } = require('multiform-validator');</pre>
+															const { getOnlyEmail } = require('multiform-validator');
+										</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -149,15 +150,15 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Extracting multiple emails from the text
-						const result1 = getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
-						console.log(result1);
-						// Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
+																			// Example 1 - Extracting multiple emails from the text
+																			const result1 = getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
+																			console.log(result1);
+																			// Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
 
-						// Example 2 - Extracting the first email from the text
-						const result2 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.com</br>Sim aqui mesmo");
-						console.log(result2);
-						// Output: "fiawn@rdwah.com"</pre>
+																			// Example 2 - Extracting the first email from the text
+																			const result2 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.com</br>Sim aqui mesmo");
+																			console.log(result2);
+																			// Output: "fiawn@rdwah.com"</pre>
 
                     <h2 class="subtitle">Notes</h2>
                     <p>

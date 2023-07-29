@@ -130,13 +130,15 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-						import { isAscii } from 'multiform-validator';</pre>
+																			import { isAscii } from 'multiform-validator';
+					</pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-						const { isAscii } = require('multiform-validator');</pre>
+																			const { isAscii } = require('multiform-validator');
+					</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -148,25 +150,25 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-						// Example 1 - Checking if the string contains only ASCII characters
-						const result1 = isAscii('Hello');
-						console.log(result1); // true
+																					// Example 1 - Checking if the string contains only ASCII characters
+																					const result1 = isAscii('Hello');
+																					console.log(result1); // true
 
-						// Example 2 - Checking a non-ASCII string
-						const result2 = isAscii('こんにちは');
-						console.log(result2); // false
+																					// Example 2 - Checking a non-ASCII string
+																					const result2 = isAscii('こんにちは');
+																					console.log(result2); // false
 
-						// Example 3 - Checking a string with only ASCII characters
-						const result3 = isAscii('12345');
-						console.log(result3); // true
+																					// Example 3 - Checking a string with only ASCII characters
+																					const result3 = isAscii('12345');
+																					console.log(result3); // true
 
-						// Example 4 - Checking a null value
-						const result4 = isAscii(null);
-						console.log(result4); // false
+																					// Example 4 - Checking a null value
+																					const result4 = isAscii(null);
+																					console.log(result4); // false
 
-						// Example 5 - Checking an undefined value
-						const result5 = isAscii(undefined);
-						console.log(result5); // false
+																					// Example 5 - Checking an undefined value
+																					const result5 = isAscii(undefined);
+																					console.log(result5); // false
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>

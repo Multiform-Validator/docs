@@ -1,43 +1,40 @@
-(function ($) {
-  $(() => {
-    const header = $('.start-style');
-    $(window).scroll(() => {
-      const scroll = $(window).scrollTop();
+  // Function to set the dark mode preference in local storage
+  function setDarkModePreference(darkMode) {
+    localStorage.setItem('darkModePreference', darkMode);
+  }
 
-      if (scroll >= 10) {
-        header.removeClass('start-style').addClass('scroll-on');
-      } else {
-        header.removeClass('scroll-on').addClass('start-style');
-      }
-    });
-  });
+  // Function to get the dark mode preference from local storage
+  function getDarkModePreference() {
+    return localStorage.getItem('darkModePreference');
+  }
 
-  // Animation
-
-  $(document).ready(() => {
-    $('body.hero-anime').removeClass('hero-anime');
-  });
-
-  // Menu On Hover
-
-  $('body').on('mouseenter mouseleave', '.nav-item', (e) => {
-    if ($(window).width() > 750) {
-      const _d = $(e.target).closest('.nav-item'); _d.addClass('show');
-      setTimeout(() => {
-        _d[_d.is(':hover') ? 'addClass' : 'removeClass']('show');
-      }, 1);
-    }
-  });
-
-  // Switch light/dark
-
-  $('#switch').on('click', () => {
-    if ($('body').hasClass('dark')) {
-      $('body').removeClass('dark');
-      $('#switch').removeClass('switched');
-    } else {
+  // Function to apply the dark mode if it's enabled in local storage
+  function applyDarkModeFromLocalStorage() {
+    const darkModePreference = getDarkModePreference();
+    if (darkModePreference === 'true') {
       $('body').addClass('dark');
       $('#switch').addClass('switched');
     }
+  }
+
+  $(document).ready(() => {
+    // Apply dark mode from local storage when the page loads
+    applyDarkModeFromLocalStorage();
+
+    // Rest of your existing code...
+
+    // Switch light/dark
+    $('#switch').on('click', () => {
+      if ($('body').hasClass('dark')) {
+        $('body').removeClass('dark');
+        $('#switch').removeClass('switched');
+        // Store the dark mode preference as 'false' in local storage
+        setDarkModePreference('false');
+      } else {
+        $('body').addClass('dark');
+        $('#switch').addClass('switched');
+        // Store the dark mode preference as 'true' in local storage
+        setDarkModePreference('true');
+      }
+    });
   });
-}(jQuery));
