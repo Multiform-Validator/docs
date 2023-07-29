@@ -13,6 +13,7 @@
     const darkModePreference = getDarkModePreference();
     if (darkModePreference === 'true') {
       $('body').addClass('dark');
+      $('footer').addClass('dark'); // Add 'dark' class to the footer
       $('#switch').addClass('switched');
     }
   }
@@ -27,11 +28,13 @@
     $('#switch').on('click', () => {
       if ($('body').hasClass('dark')) {
         $('body').removeClass('dark');
+        $('footer').removeClass('dark'); // Remove 'dark' class from the footer
         $('#switch').removeClass('switched');
         // Store the dark mode preference as 'false' in local storage
         setDarkModePreference('false');
       } else {
         $('body').addClass('dark');
+        $('footer').addClass('dark'); // Add 'dark' class to the footer
         $('#switch').addClass('switched');
         // Store the dark mode preference as 'true' in local storage
         setDarkModePreference('true');

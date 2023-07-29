@@ -1,8 +1,8 @@
 .footer-basic {
   padding: 40px 0;
-  background-color: #1f2029;
-  color: #fafafa;
-  border-top: 5px solid #101117;
+  background-color: #ffffff;
+  color: #212529;
+  border-top: 5px solid #fafafa;
 }
 .footer-basic ul {
   padding: 0;
@@ -49,4 +49,10 @@
   font-size: 13px;
   color: #aaa;
   margin-bottom: 0;
+}
+
+.dark {
+  background-color: #1f2029;
+  color: #fafafa;
+  border-top: 5px solid #101117;
 }/*# sourceMappingURL=style.css.map */
