@@ -167,6 +167,23 @@
                             If set to <code>false</code>, no domain check will be performed. Alternatively, you can pass an array of custom valid domains to perform the check against a specific list.</li>
                     </ul>
 
+                    <h2 class="subtitle">Default list of valid domains</h2>
+                    <pre>
+[
+'@gmail.com',
+'@outlook.com',
+'@yahoo.com',
+'@icloud.com',
+'@hotmail.com',
+'@mail.ru',
+'@yandex.ru',
+'@gmx.com',
+'@zoho.com',
+'@protonmail.com',
+'@protonmail.ch'
+];
+</pre>
+
                     <h2 class="subtitle">Default Error Messages</h2>
                     <pre>
 																				[
@@ -200,6 +217,34 @@
 
 																			const result5 = validateEmail('joaoaoao@gmail.com.com', null, null, null, true);
 																			console.log(result5);
+																			// Output: { isValid: true, errorMsg: null }
+
+																			const result6 = validateEmail('foo@bar.com', 25, null, null, true);
+																			console.log(result6);
+																			// Output: { isValid: false, errorMsg: 'Email domain is not allowed.' }
+
+																			const result7 =validateEmail('foo@gmail.com', 25, null, null, ['@myownemail.com']);
+																			console.log(result7);
+																			// Output: { isValid: false, errorMsg: 'Email domain is not allowed.' }
+
+																			const result8 = validateEmail('foo@gmail.com', 25, null, [null, null, null, null, 'This is my own error for domain'], ['@myownemail.com']);
+																			console.log(result8);
+																			// Output: { isValid: false, errorMsg: 'This is my own error for domain' }
+
+																			const result9 = validateEmail('foo@myownemail.com', 25, null, [null, null, null, null, 'This is my own error for domain'], ['@myownemail.com']);
+																			console.log(result9);
+																			// Output: { isValid: true, errorMsg: null }
+
+
+
+
+
+																			const result10 = validateEmail('foo@gmail.com', 25, null, ['OwnError1', 'OwnError2', 'OwnError3', 'OwnError4', 'OwnError5'], ['@myownemail.com']);
+																			console.log(result10);
+																			// Output: { isValid: false, errorMsg: 'OwnError5' }
+
+																			const result11 = validateEmail('foo@myownemail.com', 25, null, ['OwnError1', 'OwnError2', 'OwnError3', 'OwnError4', 'OwnError5'], ['@myownemail.com']);
+																			console.log(result11);
 																			// Output: { isValid: true, errorMsg: null }
 								</pre>
                 </div>
