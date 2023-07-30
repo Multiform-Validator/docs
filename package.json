@@ -1,6 +1,6 @@
 {
   "name": "multiform-validator",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,12 @@
     "multiform-validator",
     "javascript",
     "npm",
-		"security",
-		"safe",
-		"pentest",
-		"security-tools"
+    "security",
+    "safe",
+    "pentest",
+    "security-tools",
+    "Validator",
+    "validate"
   ],
   "author": "Gabriel Logan",
   "license": "MIT",
@@ -29,7 +31,7 @@
     "url": "https://github.com/gabriel-logan/multiform-validator/issues"
   },
   "homepage": "https://github.com/gabriel-logan/multiform-validator#readme",
-	"contributors": ["Gabriel Logan"],
+  "contributors": ["Gabriel Logan"],
   "devDependencies": {
     "eslint": "^8.45.0",
     "eslint-config-airbnb-base": "^15.0.0",

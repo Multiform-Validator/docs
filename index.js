@@ -26,6 +26,7 @@ const isNumber = require('./src/isNumber');
 const passwordStrengthTester = require('./src/passwordStrengthTester');
 const validateSurname = require('./src/validateSurname');
 const validateName = require('./src/validateName');
+const validateTextarea = require('./src/validateTextarea');
 
 module.exports = {
   cpfIsValid,
@@ -56,4 +57,5 @@ module.exports = {
   passwordStrengthTester,
   validateName,
   validateSurname,
+  validateTextarea
 };

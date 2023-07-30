@@ -6,6 +6,44 @@
   padding-left: 250px;
 }
 
+#examples_code h1 {
+  font-size: 24px;
+}
+#examples_code h2 {
+  font-size: 20px;
+}
+#examples_code h3 {
+  font-size: 16px;
+}
+#examples_code code {
+  background-color: #f2f2f2;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+#examples_code pre {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+  display: flex;
+}
+#examples_code #examples_code {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+#examples_code a {
+  color: #007BFF;
+  text-decoration: none;
+}
+#examples_code a:hover {
+  text-decoration: underline;
+}
+#examples_code p {
+  margin-bottom: 10px;
+}
+
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;

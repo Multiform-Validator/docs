@@ -119,8 +119,8 @@
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
-                    <h1>Simple Sidebar</h1>
-                    <h4>I'm still developing and developing on my own is a little too tiring, have mercy on me, thank you</h4>
+                    <a href="https://gabriel-logan.github.io/multiform-validator/" class="btn btn-secondary" id="menu-toggle">Back to home page</a>
+                    <h1>Official documentation</h1>
                     <p>
                         Welcome to the main page of Multiform Validator! Here, you will find detailed documentation for various functions provided by Multiform Validator, a useful JavaScript library for data validation. Each function is designed to assist in validating different
                         types of data, making your code more robust and secure. Multiform Validator consists of a series of specialized functions that allow you to validate various data types, such as emails, passwords, names, surnames, passport numbers,
@@ -131,7 +131,300 @@
                         Validator in your projects. Feel free to explore the various available functions and do not hesitate to reach out to us if you have any questions or suggestions. Thank you for choosing Multiform Validator as your data validation
                         tool, and we wish you success in your projects! Multiform Validator Team
                     </p>
-                    <a href="https://gabriel-logan.github.io/multiform-validator/" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+                    <div id="examples_code">
+                        <h1>Multiform-validator</h1>
+
+                        <p>
+                            <a href="https://badge.fury.io/js/multiform-validator.svg" target="_blank">
+                                <img src="https://badge.fury.io/js/multiform-validator.svg" alt="npm version">
+                            </a>
+                            <a href="https://opensource.org/licenses/MIT" target="_blank">
+                                <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+                            </a>
+                            <a href="https://npm-stat.com/charts.html?package=multiform-validator" target="_blank">
+                                <img src="https://img.shields.io/npm/dm/multiform-validator.svg?style=flat-square" alt="npm downloads">
+                            </a>
+                        </p>
+
+                        <p>This npm package provides JavaScript functions to validate various forms fields.</p>
+
+                        <p>If you want to help me, you can buy me a coffee (:</p>
+
+                        <p align="center">
+                            <a href="https://www.buymeacoffee.com/gabriellogan" target="_blank">
+                                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+                            </a>
+                        </p>
+
+                        <p>
+                            You can combine all parameters using with or <strong>if you want to skip some, use null,</strong> then use the next param
+                        </p>
+
+                        <strong>
+													<p>INFO: </p>
+													<p>All functions that have the name "validate" return an object with two methods isValid: true|false and errorMsg: 'String with errors'</p>
+													<p>The remaining ones can return true|false|string|array, look at the doc for each one</p>
+												</strong>
+
+                        <p>Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!</p>
+
+                        <h2>Installation</h2>
+
+                        <pre style="justify-content: center;">
+													<code>npm install multiform-validator</code>
+												</pre>
+
+                        <h1>Data Validator</h1>
+
+                        <p>This package contains various modules for validating different types of data. Below are the available validation modules:
+                        </p>
+
+                        <h3>Available Validation Modules</h3>
+
+                        <ul>
+                            <li><strong>cnpjValidator:</strong> CNPJ validation.</li>
+                            <li><strong>cpfValidator:</strong> CPF validation.</li>
+                            <li><strong>getOnlyEmail:</strong> Extracts only the email or emails address from a string.</li>
+                            <li><strong>identifyFlagCard:</strong> Identifies the flag of a credit card.</li>
+                            <li><strong>isAscii:</strong> Checks if the string contains only ASCII characters.</li>
+                            <li><strong>isBase64:</strong> Checks if the string is a valid Base64 encoding.</li>
+                            <li><strong>isCEP:</strong> CEP validation (Brazilian postal code).</li>
+                            <li><strong>isCreditCardValid:</strong> Credit card validation.</li>
+                            <li><strong>isDate:</strong> Date format validation.</li>
+                            <li><strong>isDecimal:</strong> Checks if the number is a decimal.</li>
+                            <li><strong>isEmail:</strong> Email address validation format.</li>
+                            <li><strong>isEmpty:</strong> Checks if the string is empty.</li>
+                            <li><strong>isMACAddress:</strong> MAC address validation.</li>
+                            <li><strong>isMD5:</strong> Checks if the string is a valid MD5 hash.</li>
+                            <li><strong>validatePassportNumber:</strong> Passport number validation.</li>
+                            <li><strong>isPort:</strong> Port number validation.</li>
+                            <li><strong>isPostalCode:</strong> Postal code validation.</li>
+                            <li><strong>isTime:</strong> Time format validation.</li>
+                            <li><strong>validateBRPhoneNumber:</strong> Brazilian phone number validation.</li>
+                            <li><strong>validateEmail:</strong> Email address full validation.</li>
+                            <li><strong>validatePassword:</strong> Password validation.</li>
+                            <li><strong>validatePhoneNumber:</strong> Phone number validation.</li>
+                            <li><strong>validateUsername:</strong> Username validation.</li>
+                            <li><strong>validateUSPhoneNumber:</strong> US phone number validation.</li>
+                            <li><strong>isNumber:</strong> Checks if the value is a number.</li>
+                            <li><strong>passwordStrengthTester:</strong> Password strength test.</li>
+                            <li><strong>validateName:</strong> Name validation.</li>
+                            <li><strong>validateSurname:</strong> Surname validation.</li>
+                            <li><strong>validateTextarea:</strong> Textarea validation.</li>
+                        </ul>
+
+                        <p>if you prefer, you can use importing as:</p>
+
+                        <pre>
+												<code>
+const validator = require('multiform-validator');
+// or
+import validator from 'multiform-validator';
+
+// then
+
+validator.FUNCTION_NAME
+// OBS: 'if the function is called validate, the return will be an object and not boolean'
+// When return object boolean
+validator.FUNCTION_NAME = true or false
+// When return object
+validator.FUNCTION_NAME = object = { isValid: true or false, errorMsg: 'stringError' }
+validator.FUNCTION_NAME.isValid = true or false
+validator.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
+/**
+   * There are other returns in some functions, with strings etc, stay tuned
+*/
+												</code>
+											</pre>
+
+                        <h3>validateEmail example:</h3>
+
+                        <pre>
+												<code>
+/**
+* ALWAYS CHECK WHICH FUNCTION RETURNS, functions named validate always return objects with isValid and errorMsg
+*/
+
+const { validateEmail } = require('multiform-validator');
+// or
+import { validateEmail } from 'multiform-validator';
+
+// Two last parameters are optional
+console.log(validateEmail('email@email.com', 30, 'br').isValid); // returns false
+console.log(validateEmail('email@email.com.br', 30, 'br').isValid); // returns true
+console.log(validateEmail('email@email.com', 30).isValid); // returns true
+
+// All examples return default messages, below is an example setting your own messages
+
+// If you want to use a default parameter, use null.
+
+const validationResult = validateEmail('email@email.com', 30);
+
+if (validationResult.isValid) {
+console.log('0 errors');
+} else {
+console.log(validationResult.errorMsg); // returns the error
+}
+
+// or
+
+const validationResult = validateEmail('1email@email.com', 30, null, [null, 'This is an invalid email with my own errors']);
+
+if (validationResult.isValid) {
+console.log('0 errors');
+} else {
+console.log(validationResult.errorMsg); // Return  'This is an invalid email with my own errors'
+}
+												</code>
+											</pre>
+
+                        <h3>how to use:</h3>
+
+                        <p>You can combine all parameters using with or if you want to skip some, use null, then use the next param</p>
+
+                        <pre>
+												<code>
+const { cpfIsValid, cnpjIsValid } = require('multiform-validator');
+console.log(cpfIsValid('CPFNUMBER').isValid); // returns true or false
+console.log(cnpjIsValid('CNPJNUMBER').isValid); // returns true or false
+
+// or
+
+import { cpfIsValid, cnpjIsValid } from 'multiform-validator';
+console.log(cpfIsValid('CPFNUMBER').isValid); // returns true or false
+console.log(cnpjIsValid('CNPJNUMBER').isValid); // returns true or false
+												</code>
+											</pre>
+
+                        <h2>Password Examples:</h2>
+
+                        <pre>
+												<code>
+const { validatePassword } = require("multiform-validator");
+// or
+import { validatePassword } from "multiform-validator";
+
+const validationResult = validatePassword('minhasenha', 5, 15);
+
+if (validationResult.isValid) {
+	console.log('0 errors');
+} else {
+	console.log(validationResult.errorMsg); // returns the error
+}
+
+// other
+
+const validationResult = validatePassword('asom', 5, 15, null, [null, 'my ownMensage']);
+
+if (validationResult.isValid) {
+	console.log('0 errors');
+} else {
+	console.log(validationResult.errorMsg); // returns the error
+}
+// other
+
+const validationResult = validatePassword('minhasenha', 5, 15, {
+	requireUppercase: true
+});
+
+if (validationResult.isValid) {
+	console.log('0 errors');
+} else {
+	console.log(validationResult.errorMsg); // returns the error Requires at least one capital letter
+}
+// other
+
+const validationResult = validatePassword('minhasenha', 5, 15, null, ['My own errors msgs']);
+
+if (validationResult.isValid) {
+	console.log('0 errors');
+} else {
+	console.log(validationResult.errorMsg); // returns the error
+}
+												</code>
+											</pre>
+
+                        <h2>Additional Examples:</h2>
+                        <p>Here are some additional examples demonstrating the usage of the validation functions in the package:</p>
+
+                        <pre>
+												<code>
+// Example: Validating a Brazilian phone number
+const { validateBRPhoneNumber } = require('multiform-validator');
+
+const phoneNumber = '+55 11 987654321';
+const validationResult = validateBRPhoneNumber(phoneNumber);
+
+if (validationResult.isValid) {
+	console.log('Valid Brazilian phone number.');
+} else {
+	console.log(validationResult.errorMsg);
+}
+
+// Example: Validating a date
+const { isDate } = require('multiform-validator');
+
+const dateStr = '2023-07-24';
+const validationResult = isDate(dateStr);
+
+if (validationResult) {
+	console.log('Valid date.');
+} else {
+	console.log('Invalid date format.');
+}
+
+// Example: Validating a CEP (Brazilian ZIP code)
+const { isCEP } = require('multiform-validator');
+
+const cep = '12345-678';
+const validationResult = isCEP(cep);
+
+if (validationResult) {
+	console.log('Valid CEP.');
+} else {
+	console.log('Invalid CEP format.');
+}
+
+// Example: Validating a credit card number
+const { isCreditCardValid } = require('multiform-validator');
+
+const creditCardNumber = '4111111111111111';
+const validationResult = isCreditCardValid(creditCardNumber);
+
+if (validationResult.isValid) {
+	console.log('Valid credit card number.');
+	console.log('Credit card provider:', validationResult.cardType);
+} else {
+	console.log('Invalid credit card number.');
+}
+
+// Example: Identifying the flag of a credit card
+const { identifyFlagCard } = require('multiform-validator');
+
+const creditCardNumber = '5105105105105100';
+const cardFlag = identifyFlagCard(creditCardNumber);
+
+if (cardFlag) {
+	console.log('Credit card flag:', cardFlag);
+} else {
+	console.log('Unable to identify credit card flag.');
+}
+												</code>
+											</pre>
+
+                        <p>If you want to help me, you can buy me a coffee (:</p>
+
+                        <p align="center">
+                            <a href="https://www.buymeacoffee.com/gabriellogan" target="_blank">
+                                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+                            </a>
+                        </p>
+
+                        <p>Feel free to explore the various functions and experiment with different inputs to understand their behavior. If you encounter any issues or have suggestions, don't hesitate to reach out to me. Your feedback is valuable and helps
+                            improve the package. Happy coding!</p>
+
+                        <h2>By - Gabriel Logan</h2>
+                    </div>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

@@ -6,17 +6,58 @@ section {
   margin-top: 35px;
   margin-bottom: 80px;
 }
+section #temporary_span {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(243, 243, 243, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
 section .bmc-btn-container {
   display: flex;
   align-items: center;
   margin-top: 35px;
 }
+section #npm_install {
+  position: relative;
+  justify-content: center;
+}
+section #npm_install button {
+  width: 90px;
+  position: absolute;
+  right: 225px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(84, 105, 212);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+  display: inline-block;
+  min-height: 28px;
+  transition: background-color 0.24s, box-shadow 0.24s;
+}
+section #npm_install button:hover {
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 3px 9px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+section #npm_install button:active {
+  background-color: #1F2328;
+}
 section div {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 section div a {
-  margin-block: 5px;
+  margin-block: 10px;
+  width: 170px;
 }
 section pre {
   padding: 16px;
