@@ -26,6 +26,12 @@ section #npm_install {
   position: relative;
   justify-content: center;
 }
+@media (min-width: 1000px) {
+  section #npm_install {
+    width: 890px;
+    margin: auto;
+  }
+}
 section #npm_install button {
   width: 90px;
   position: absolute;

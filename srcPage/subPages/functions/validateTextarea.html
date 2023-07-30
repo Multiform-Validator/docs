@@ -112,8 +112,6 @@
                     <li>
                         <a href="../functions/validateSurname.html">validateSurname</a>
                     </li>
-
-
                 </ul>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -127,19 +125,19 @@
                     <h2>Function Signature</h2>
                     <pre>
 									<code>
-									/**
-									 * @param {string} textarea - The input textarea string to be validated.
-									 * @param {boolean} [isRequired=false] - A boolean flag to determine if the textarea is required (default: false).
-									 * @param {number} [maxLength=50] - The maximum allowed length for the textarea (default: 50).
-									 * @param {string[]} [errorMsg=defaultErrorMsg] - An array of custom error messages for different validation conditions (default: predefined messages).
-									 * @default isRequired boolean: default: false
-									 * @default maxLength number: default: 50
-									 * @example validateTextarea();
-									 * @example validateTextarea();
-									 * @example validateTextarea();
-									 * @description This function returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string).
-									 * The 'isValid' property indicates if the textarea is valid based on the given criteria, and 'errorMsg' contains the corresponding error message, if any.
-									 */
+/**
+	* @param {string} textarea - The input textarea string to be validated.
+	* @param {boolean} [isRequired=false] - A boolean flag to determine if the textarea is required (default: false).
+	* @param {number} [maxLength=50] - The maximum allowed length for the textarea (default: 50).
+	* @param {string[]} [errorMsg=defaultErrorMsg] - An array of custom error messages for different validation conditions (default: predefined messages).
+	* @default isRequired boolean: default: false
+	* @default maxLength number: default: 50
+	* @example validateTextarea();
+	* @example validateTextarea();
+	* @example validateTextarea();
+	* @description This function returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string).
+	* The 'isValid' property indicates if the textarea is valid based on the given criteria, and 'errorMsg' contains the corresponding error message, if any.
+	*/
 									</code>
 									</pre>
 
@@ -171,14 +169,14 @@
                     <h2>Usage Examples</h2>
                     <pre>
 									<code>
-									validateTextarea('Some text content'); // Example 1
-									// Returns: { isValid: true, errorMsg: null }
+validateTextarea('Some text content'); // Example 1
+// Returns: { isValid: true, errorMsg: null }
 
-									validateTextarea('', true); // Example 2
-									// Returns: { isValid: false, errorMsg: 'Can not be empty' }
+validateTextarea('', true); // Example 2
+// Returns: { isValid: false, errorMsg: 'Can not be empty' }
 
-									validateTextarea('Very long text...', false, 10); // Example 3
-									// Returns: { isValid: false, errorMsg: 'This textarea is too big' }
+validateTextarea('Very long text...', false, 10); // Example 3
+// Returns: { isValid: false, errorMsg: 'This textarea is too big' }
 									</code>
 									</pre>
 
@@ -189,10 +187,10 @@
                     <h2>Function Implementation</h2>
                     <pre>
 									<code>
-									// The actual implementation of the validateTextarea function...
-									function validateTextarea(textarea, isRequired = false, maxLength = 50, errorMsg = defaultErrorMsg) {
-										// ... (The function implementation code) ...
-									}
+// The actual implementation of the validateTextarea function...
+function validateTextarea(textarea, isRequired = false, maxLength = 50, errorMsg = defaultErrorMsg) {
+	// ... (The function implementation code) ...
+}
 									</code>
 									</pre>
                 </div>

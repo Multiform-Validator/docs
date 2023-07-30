@@ -6,7 +6,7 @@
 
 This npm package provides JavaScript functions to validate various forms fields.
 
-Website: https://gabriel-logan.github.io/multiform-validator
+Documentation: https://gabriel-logan.github.io/multiform-validator
 
 Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!
 
@@ -59,6 +59,8 @@ This package contains various modules for validating different types of data. Be
 - **validateName**: Name validation.
 - **validateSurname**: Surname validation.
 - **validateTextarea**: Textarea validation.
+
+### For better information, read the documentation
 
 ```javascript
 
