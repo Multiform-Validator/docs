@@ -148,6 +148,12 @@
                         <li><code>text</code> (string) - The input text from which emails will be extracted.</li>
                         <li><code>multiple</code> (optional boolean) - If set to <code>true</code>, the function will return an array with all the email addresses found. If set to <code>false</code> or not provided, it will return only the first email address
                             found as a string.</li>
+                        <li><code>cleanDomain</code> (optional boolean | string[]) - Either a boolean value indicating whether to clean after default domains or an array of custom domains to clean after. Default is <code>false</code> which means it won't
+                            clean the email addresses after default domains ['.br', '.io', '.pt', '.us', '.org', '.com', ];. If set to <code>true</code>, it will clean after default domains. If set to an array of strings, it will clean after the specified
+                            custom domains.</li>
+                        <li><code>repeatEmail</code> (optional boolean) - If set to <code>false</code>, the function will remove duplicate emails from the output list. If set to <code>true</code> or not provided, it will keep the duplicate emails in the output
+                            list.
+                        </li>
                     </ul>
 
                     <h2 class="subtitle">Examples</h2>
@@ -160,7 +166,16 @@
 																			// Example 2 - Extracting the first email from the text
 																			const result2 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.com</br>Sim aqui mesmo");
 																			console.log(result2);
-																			// Output: "fiawn@rdwah.com"</pre>
+																			// Output: "fiawn@rdwah.com"
+
+																			const result3 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo", true, true);
+																			console.log(result3);
+																			// Output: [ 'fiawn@rdwah.com', 'asdasd@gmail.com' ]
+
+																			const result4 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo asdasd asd as fiawn@rdwah.com", true, true, true);
+																			console.log(result4);
+																			// Output: [ 'fiawn@rdwah.com', 'asdasd@gmail.com', 'fiawn@rdwah.com' ]
+										</pre>
 
                     <h2 class="subtitle">Notes</h2>
                     <p>

@@ -95,6 +95,8 @@ validator.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
 */
 ```
 
+Documentation: https://gabriel-logan.github.io/multiform-validator
+
 ```javascript
 
 const { validateEmail } = require('multiform-validator');
