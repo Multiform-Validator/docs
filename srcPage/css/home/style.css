@@ -56,6 +56,11 @@ section #npm_install button:hover {
 section #npm_install button:active {
   background-color: #1F2328;
 }
+@media (max-width: 880px) {
+  section #npm_install button {
+    display: none;
+  }
+}
 section div {
   display: flex;
   flex-direction: column;
