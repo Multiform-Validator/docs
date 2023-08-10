@@ -8,6 +8,7 @@
     <title>Documentation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
 </head>
 
 <body>
@@ -172,7 +173,7 @@
                         <h2>Installation</h2>
 
                         <pre style="justify-content: center;">
-													<code>npm install multiform-validator</code>
+													<code class="language-javascript">npm install multiform-validator</code>
 												</pre>
 
                         <h1>Data Validator</h1>
@@ -217,7 +218,7 @@
                         <p>if you prefer, you can use importing as:</p>
 
                         <pre>
-												<code>
+												<code class="language-javascript">
 const validator = require('multiform-validator');
 // or
 import validator from 'multiform-validator';
@@ -241,7 +242,7 @@ validator.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
                         <h3>validateEmail example:</h3>
 
                         <pre>
-												<code>
+												<code class="language-javascript">
 /**
 * ALWAYS CHECK WHICH FUNCTION RETURNS, functions named validate always return objects with isValid and errorMsg
 */
@@ -254,6 +255,10 @@ import { validateEmail } from 'multiform-validator';
 console.log(validateEmail('email@email.com', 30, 'br').isValid); // returns false
 console.log(validateEmail('email@email.com.br', 30, 'br').isValid); // returns true
 console.log(validateEmail('email@email.com', 30).isValid); // returns true
+console.log(validateEmail('email@email', 30).isValid); // returns false
+console.log(validateEmail('email.email', 30).isValid); // returns false
+console.log(validateEmail('email@email@email.email', 30).isValid); // returns false
+console.log(validateEmail('email@emailaasdasd.com', 15).isValid); // returns false
 
 // All examples return default messages, below is an example setting your own messages
 
@@ -284,7 +289,7 @@ console.log(validationResult.errorMsg); // Return  'This is an invalid email wit
                         <p>You can combine all parameters using with or if you want to skip some, use null, then use the next param</p>
 
                         <pre>
-												<code>
+												<code class="language-javascript">
 const { cpfIsValid, cnpjIsValid } = require('multiform-validator');
 console.log(cpfIsValid('CPFNUMBER').isValid); // returns true or false
 console.log(cnpjIsValid('CNPJNUMBER').isValid); // returns true or false
@@ -300,7 +305,7 @@ console.log(cnpjIsValid('CNPJNUMBER').isValid); // returns true or false
                         <h2>Password Examples:</h2>
 
                         <pre>
-												<code>
+												<code class="language-javascript">
 const { validatePassword } = require("multiform-validator");
 // or
 import { validatePassword } from "multiform-validator";
@@ -349,7 +354,7 @@ if (validationResult.isValid) {
                         <p>Here are some additional examples demonstrating the usage of the validation functions in the package:</p>
 
                         <pre>
-												<code>
+												<code class="language-javascript">
 // Example: Validating a Brazilian phone number
 const { validateBRPhoneNumber } = require('multiform-validator');
 
@@ -443,6 +448,10 @@ if (cardFlag) {
 
 
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
