@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
     <link rel="stylesheet" href="../../css/functions/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
 </head>
 
 <body>
@@ -134,13 +135,13 @@
                             <strong>Using <code>require</code> (Node.js):</strong>
                         </li>
                         <pre>
-													const {cpfIsValid} = require('multiform-validator');
+													<code class="language-javascript">const {cpfIsValid} = require('multiform-validator');</code>
 												</pre>
                         <li>
                             <strong>Using <code>import</code> (ES6):</strong>
                         </li>
                         <pre>
-													import {cpfIsValid} from 'multiform-validator';
+													<code class="language-javascript">import {cpfIsValid} from 'multiform-validator';</code>
 												</pre>
                     </ul>
 
@@ -155,20 +156,21 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-													// Example 1 - Using the CPF number '123.456.789.10'
-													const result1 = cpfIsValid('123.456.789.10');
-													console.log(result1.isValid); // false
-													console.log(result1.errorMsg); // 'CPF invalid'
+													<code class="language-javascript">
+// Example 1 - Using the CPF number '123.456.789.10'
+const result1 = cpfIsValid('123.456.789.10');
+console.log(result1.isValid); // false
+console.log(result1.errorMsg); // 'CPF invalid'
 
-													// Example 2 - Using the CPF number '12345678910' and custom error messages
-													const result2 = cpfIsValid('12345678910', ['CPF is wrong', 'Must have at least 11 digits']);
-													console.log(result2.isValid); // false
-													console.log(result2.errorMsg); // 'CPF is wrong'
+// Example 2 - Using the CPF number '12345678910' and custom error messages
+const result2 = cpfIsValid('12345678910', ['CPF is wrong', 'Must have at least 11 digits']);
+console.log(result2.isValid); // false
+console.log(result2.errorMsg); // 'CPF is wrong'
 
-													// Example 3 - Using a valid CPF number '52998224725'
-													const result3 = cpfIsValid('52998224725');
-													console.log(result3.isValid); // true
-													console.log(result3.errorMsg); // null
+// Example 3 - Using a valid CPF number '52998224725'
+const result3 = cpfIsValid('52998224725');
+console.log(result3.isValid); // true
+console.log(result3.errorMsg); // null</code>
 										</pre>
                     <h2 class="subtitle">Notes</h2>
                     <p>
@@ -189,6 +191,10 @@
             });
         </script>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
