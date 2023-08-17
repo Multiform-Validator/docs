@@ -1,4 +1,3 @@
-"use strict";
 const CleanAfterDefaultDomain = ['.br', '.io', '.pt', '.us', '.org', '.com'];
 /**
  * @param {string} text
@@ -29,41 +28,47 @@ const CleanAfterDefaultDomain = ['.br', '.io', '.pt', '.us', '.org', '.com'];
  *
  * @returns {string | string[]} An email string if multiple is false, or an array of email strings if multiple is true.
  */
-function getOnlyEmail(text, multiple = false, cleanDomain = false, repeatEmail = false) {
-    const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
-    const matches = text.match(emailPattern);
-    if (!matches)
-        return 'No email found';
-    if (cleanDomain) {
-        let domainsToClean; // Certifica-se de que domainsToClean seja sempre um array de strings
-        if (Array.isArray(cleanDomain)) {
-            domainsToClean = cleanDomain;
+function getOnlyEmail(text: string, multiple = false, cleanDomain = false, repeatEmail = false) {
+  const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
+  const matches = text.match(emailPattern);
+
+  if (!matches) return 'No email found';
+
+  if (cleanDomain) {
+		let domainsToClean: string[]; // Certifica-se de que domainsToClean seja sempre um array de strings
+
+		if (Array.isArray(cleanDomain)) {
+			domainsToClean = cleanDomain;
+		} else if (cleanDomain === true) {
+			domainsToClean = CleanAfterDefaultDomain;
+		} else {
+			domainsToClean = []; // Define como um array vazio se cleanDomain for false ou não for especificado
+		}
+
+    const cleanedEmails = matches.map((email) => {
+      for (const domain of domainsToClean) {
+        const index = email.lastIndexOf(domain);
+        if (index !== -1) {
+          return email.substring(0, index + domain.length);
         }
-        else if (cleanDomain === true) {
-            domainsToClean = CleanAfterDefaultDomain;
-        }
-        else {
-            domainsToClean = []; // Define como um array vazio se cleanDomain for false ou não for especificado
-        }
-        const cleanedEmails = matches.map((email) => {
-            for (const domain of domainsToClean) {
-                const index = email.lastIndexOf(domain);
-                if (index !== -1) {
-                    return email.substring(0, index + domain.length);
-                }
-            }
-            return email;
-        });
-        if (!repeatEmail) {
-            const uniqueEmails = [...new Set(cleanedEmails)];
-            return multiple ? uniqueEmails : uniqueEmails[0];
-        }
-        return multiple ? cleanedEmails : cleanedEmails[0];
-    }
+      }
+      return email;
+    });
+
     if (!repeatEmail) {
-        const uniqueEmails = [...new Set(matches)];
-        return multiple ? uniqueEmails : uniqueEmails[0];
+      const uniqueEmails = [...new Set(cleanedEmails)];
+      return multiple ? uniqueEmails : uniqueEmails[0];
     }
-    return multiple ? matches : matches[0];
+
+    return multiple ? cleanedEmails : cleanedEmails[0];
+  }
+
+  if (!repeatEmail) {
+    const uniqueEmails = [...new Set(matches)];
+    return multiple ? uniqueEmails : uniqueEmails[0];
+  }
+
+  return multiple ? matches : matches[0];
 }
-module.exports = getOnlyEmail;
+
+export = getOnlyEmail;

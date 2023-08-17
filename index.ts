@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 const cpfIsValid = require('./src/cpfValidator');
 const cnpjIsValid = require('./src/cnpjValidator');
 const getOnlyEmail = require('./src/getOnlyEmail');
@@ -27,6 +30,7 @@ const passwordStrengthTester = require('./src/passwordStrengthTester');
 const validateSurname = require('./src/validateSurname');
 const validateName = require('./src/validateName');
 const validateTextarea = require('./src/validateTextarea');
+
 module.exports = {
   cpfIsValid,
   cnpjIsValid,

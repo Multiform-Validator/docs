@@ -1,17 +1,19 @@
-const isEmail = require('./isEmail');
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+const isEmail_1 = __importDefault(require("./isEmail"));
 const defaultErrorMsg = [
-  'Invalid value passed',
-  'This e-mail is not valid',
-  'Email too big, try again',
-  'This email is not valid in the country',
-  'Email domain is not allowed.',
-  'Unknown error',
+    'Invalid value passed',
+    'This e-mail is not valid',
+    'Email too big, try again',
+    'This email is not valid in the country',
+    'Email domain is not allowed.',
+    'Unknown error',
 ];
 const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@icloud.com', '@hotmail.com',
-  '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'
+    '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'
 ];
-
 /**
  * @param {string} email
  * @param {number} maxLength optional
@@ -44,80 +46,81 @@ const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@iclou
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg, validDomains = false) {
-  if (typeof email !== 'string') throw new TypeError('The input should be a string.');
-
-  // Expressão regular para verificar se o e-mail termina com um dos domínios válidos
-  let regex;
-  if (validDomains === true) {
-    regex = new RegExp(`${validDomainsDefault.join('|')}$`, 'i');
-  } else if (Array.isArray(validDomains) && validDomains.length > 0) {
-    const validDomainsCustom = validDomains.map((domain) => domain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-    regex = new RegExp(`${validDomainsCustom.join('|')}$`, 'i');
-  }
-
-  // Check para saber se as mensagens que sao passadas sao validas
-  // caso contrario retorna um ERRO
-  if (errorMsg) {
-    if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
-      if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-        throw new TypeError('All values within the array must be strings or null/undefined.');
-      }
+    if (typeof email !== 'string')
+        throw new TypeError('The input should be a string.');
+    // Expressão regular para verificar se o e-mail termina com um dos domínios válidos
+    let regex;
+    if (validDomains === true) {
+        regex = new RegExp(`${validDomainsDefault.join('|')}$`, 'i');
     }
-  }
-
-  // Função interna para obter a mensagem de erro
-  function getErrorMessage(index) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+    else if (Array.isArray(validDomains) && validDomains.length > 0) {
+        const validDomainsCustom = validDomains.map((domain) => domain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+        regex = new RegExp(`${validDomainsCustom.join('|')}$`, 'i');
     }
-    return defaultErrorMsg[index];
-  }
-  if (!email) {
-    return {
-      isValid: false,
-      errorMsg: getErrorMessage(0),
-    };
-  }
-  const maxEmailLength = maxLength || 400;
-  try {
-    // Check domain only if regex is defined (validDomains is true or validDomains is an array)
-    if (regex && !regex.test(email)) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(4),
-      };
+    // Check para saber se as mensagens que sao passadas sao validas
+    // caso contrario retorna um ERRO
+    if (errorMsg) {
+        if (!Array.isArray(errorMsg))
+            throw new Error('errorMsg must be an Array or null');
+        for (let index = 0; index < errorMsg.length; index += 1) {
+            if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
+                throw new TypeError('All values within the array must be strings or null/undefined.');
+            }
+        }
     }
-    if (!(isEmail(email))) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(1),
-      };
+    // Função interna para obter a mensagem de erro
+    function getErrorMessage(index) {
+        if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
+            return errorMsg[index];
+        }
+        return defaultErrorMsg[index];
     }
-    if (email.length > maxEmailLength) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(2),
-      };
-    }
-    // If country is provided, check if the email ends with the country code
-    if (country) {
-      if (!email.endsWith(`.${country}`)) {
+    if (!email) {
         return {
-          isValid: false,
-          errorMsg: getErrorMessage(3),
+            isValid: false,
+            errorMsg: getErrorMessage(0),
         };
-      }
     }
-    return {
-      isValid: true,
-      errorMsg: null,
-    };
-  } catch (error) {
-    return {
-      isValid: false,
-      errorMsg: getErrorMessage(5),
-    };
-  }
+    const maxEmailLength = maxLength || 400;
+    try {
+        // Check domain only if regex is defined (validDomains is true or validDomains is an array)
+        if (regex && !regex.test(email)) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(4),
+            };
+        }
+        if (!((0, isEmail_1.default)(email))) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(1),
+            };
+        }
+        if (email.length > maxEmailLength) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(2),
+            };
+        }
+        // If country is provided, check if the email ends with the country code
+        if (country) {
+            if (!email.endsWith(`.${country}`)) {
+                return {
+                    isValid: false,
+                    errorMsg: getErrorMessage(3),
+                };
+            }
+        }
+        return {
+            isValid: true,
+            errorMsg: null,
+        };
+    }
+    catch (error) {
+        return {
+            isValid: false,
+            errorMsg: getErrorMessage(5),
+        };
+    }
 }
 module.exports = validateEmail;

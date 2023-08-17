@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @param {string|number} value
  * @example isDecimal('123.45'); // true
@@ -12,35 +13,36 @@
  * @returns {boolean} true or false
  */
 function isDecimal(value) {
-  let getValued = value;
-  if (typeof getValued !== 'string') {
-    if (typeof getValued === 'number') {
-      getValued = getValued.toString();
-    } else {
-      throw new TypeError('Input value must be a string or a number.');
+    let getValued = value;
+    if (typeof getValued !== 'string') {
+        if (typeof getValued === 'number') {
+            getValued = getValued.toString();
+        }
+        else {
+            throw new TypeError('Input value must be a string or a number.');
+        }
     }
-  }
-  if (getValued.trim().length === 0) {
-    throw new Error('Input value must not be an empty string.');
-  }
-  // Regular expression to validate decimal numbers
-  const decimalRegex = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
-  if (!decimalRegex.test(getValued)) {
-    return false;
-  }
-  // Check for multiple decimal separators
-  const decimalSeparator = getValued.includes('.') ? '.' : ',';
-  const otherSeparator = decimalSeparator === '.' ? ',' : '.';
-  if (getValued.includes(decimalSeparator) && getValued.includes(otherSeparator)) {
-    return false;
-  }
-  // Additional checks for negative sign
-  if (getValued.startsWith('-')) {
-    // Ensure the negative sign is only at the beginning and not elsewhere
-    if (getValued.lastIndexOf('-') > 0) {
-      return false;
+    if (getValued.trim().length === 0) {
+        throw new Error('Input value must not be an empty string.');
     }
-  }
-  return true;
+    // Regular expression to validate decimal numbers
+    const decimalRegex = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
+    if (!decimalRegex.test(getValued)) {
+        return false;
+    }
+    // Check for multiple decimal separators
+    const decimalSeparator = getValued.includes('.') ? '.' : ',';
+    const otherSeparator = decimalSeparator === '.' ? ',' : '.';
+    if (getValued.includes(decimalSeparator) && getValued.includes(otherSeparator)) {
+        return false;
+    }
+    // Additional checks for negative sign
+    if (getValued.startsWith('-')) {
+        // Ensure the negative sign is only at the beginning and not elsewhere
+        if (getValued.lastIndexOf('-') > 0) {
+            return false;
+        }
+    }
+    return true;
 }
 module.exports = isDecimal;

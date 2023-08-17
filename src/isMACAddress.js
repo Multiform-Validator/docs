@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @param {string} mac
  * @example isMACAddress('001A2B3C4D5E');
@@ -7,24 +8,19 @@
  * @returns {boolean} return true or false
  */
 function isMACAddress(mac) {
-  // Verificar se o parâmetro é uma string
-  if (typeof mac !== 'string') {
-    throw new TypeError('The input should be a string.');
-  }
-
-  // Remover todos os caracteres não alfanuméricos
-  const cleanedMac = mac.replace(/[^0-9A-Fa-f]/g, '');
-
-  // Verificar se o comprimento é válido (12 caracteres)
-  if (cleanedMac.length !== 12) {
-    return false;
-  }
-
-  // Expressão regular para verificar o padrão de endereço MAC
-  const macPattern = /^([0-9A-Fa-f]{2}){6}$/;
-
-  // Verificar se o endereço MAC corresponde ao padrão
-  return macPattern.test(cleanedMac);
+    // Verificar se o parâmetro é uma string
+    if (typeof mac !== 'string') {
+        throw new TypeError('The input should be a string.');
+    }
+    // Remover todos os caracteres não alfanuméricos
+    const cleanedMac = mac.replace(/[^0-9A-Fa-f]/g, '');
+    // Verificar se o comprimento é válido (12 caracteres)
+    if (cleanedMac.length !== 12) {
+        return false;
+    }
+    // Expressão regular para verificar o padrão de endereço MAC
+    const macPattern = /^([0-9A-Fa-f]{2}){6}$/;
+    // Verificar se o endereço MAC corresponde ao padrão
+    return macPattern.test(cleanedMac);
 }
-
 module.exports = isMACAddress;

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @param {any} value
  * @example isNumber(123)
@@ -6,9 +7,9 @@
  * @returns {boolean} true if the value is a valid number, false otherwise.
  */
 function isNumber(value) {
-  if (value === null || value === undefined || typeof value === 'boolean') {
-    return false;
-  }
-  return !Number.isNaN(parseFloat(value)) && Number.isFinite(value);
+    if (value === null || value === undefined || typeof value === 'boolean') {
+        return false;
+    }
+    return !Number.isNaN(parseFloat(value)) && Number.isFinite(value);
 }
 module.exports = isNumber;

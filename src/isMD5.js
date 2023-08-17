@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @param {string} value
  * @example isMD5('d41d8cd98f00b204e9800998ecf8427e'); // true
@@ -9,34 +10,27 @@
  * @returns {boolean} true or false
  */
 function isMD5(value) {
-  if (typeof value !== 'string') {
-    throw new TypeError('Input value must be a string.');
-  }
-
-  const trimmedValue = value.trim();
-  if (trimmedValue.length !== 32) {
-    return false;
-  }
-
-  const md5Regex = /^[a-fA-F0-9]{32}$/;
-
-  if (!md5Regex.test(trimmedValue)) {
-    return false;
-  }
-
-  const allZeroRegex = /^0{32}$/;
-  if (allZeroRegex.test(trimmedValue)) {
-    return false;
-  }
-
-  const weakHashes = [
-    'd41d8cd98f00b204e9800998ecf8427e',
-  ];
-  if (weakHashes.includes(trimmedValue)) {
-    return false;
-  }
-
-  return true;
+    if (typeof value !== 'string') {
+        throw new TypeError('Input value must be a string.');
+    }
+    const trimmedValue = value.trim();
+    if (trimmedValue.length !== 32) {
+        return false;
+    }
+    const md5Regex = /^[a-fA-F0-9]{32}$/;
+    if (!md5Regex.test(trimmedValue)) {
+        return false;
+    }
+    const allZeroRegex = /^0{32}$/;
+    if (allZeroRegex.test(trimmedValue)) {
+        return false;
+    }
+    const weakHashes = [
+        'd41d8cd98f00b204e9800998ecf8427e',
+    ];
+    if (weakHashes.includes(trimmedValue)) {
+        return false;
+    }
+    return true;
 }
-
 module.exports = isMD5;
