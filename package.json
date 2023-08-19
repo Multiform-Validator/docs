@@ -4,7 +4,8 @@
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tester.js",
+		"build": "npx tsc"
   },
   "repository": {
     "type": "git",
