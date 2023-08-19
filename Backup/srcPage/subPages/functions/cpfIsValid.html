@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page with documentation explaining how to use function methods">
+    <title>cpfIsValid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+</head>
+
+<body>
+    <section>
+        <div id="wrapper" class="toggled">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="../documentation/">
+													Documentation
+											</a>
+                    </li>
+                    <li>
+                        <a href="https://gabriel-logan.github.io/multiform-validator/">Home</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cpfIsValid">cpfIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cnpjIsValid">cnpjIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmail">isEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateEmail">validateEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCEP">isCEP</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUsername">validateUsername</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassword">validatePassword</a>
+                    </li>
+                    <li>
+                        <a href="../functions/getOnlyEmail">getOnlyEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCreditCardValid">isCreditCardValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/identifyFlagCard">identifyFlagCard</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMACAddress">isMACAddress</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isAscii">isAscii</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isBase64">isBase64</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDate">isDate</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDecimal">isDecimal</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmpty">isEmpty</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMD5">isMD5</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPort">isPort</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPostalCode">isPostalCode</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isTime">isTime</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassportNumber">validatePassportNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateBRPhoneNumber">validateBRPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUSPhoneNumber">validateUSPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePhoneNumber">validatePhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isNumber">isNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/passwordStrengthTester">passwordStrengthTester</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateName">validateName</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateSurname">validateSurname</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateTextarea">validateTextarea</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid container">
+                    <h1 class="title">cpfIsValid Function Documentation</h1>
+                    <p>
+                        The <code>cpfIsValid</code> function is used to validate a Brazilian CPF (Individual Taxpayer Identification) number. It returns an object containing the <code>isValid</code> (boolean) and <code>errorMsg</code> (string) properties,
+                        indicating whether the CPF is valid and, in case of an error, the corresponding error message.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        There are two ways to import the function:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Using <code>require</code> (Node.js):</strong>
+                        </li>
+                        <pre>
+													<code class="language-javascript">const {cpfIsValid} = require('multiform-validator');</code>
+												</pre>
+                        <li>
+                            <strong>Using <code>import</code> (ES6):</strong>
+                        </li>
+                        <pre>
+													<code class="language-javascript">import {cpfIsValid} from 'multiform-validator';</code>
+												</pre>
+                    </ul>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes two parameters:
+                    </p>
+                    <ul>
+                        <li><code>cpf</code> (string) - The CPF number to validate.</li>
+                        <li><code>errorMsg</code> (optional array) - A list of custom error messages. If not provided, it uses a default list of error messages.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+													<code class="language-javascript">
+// Example 1 - Using the CPF number '123.456.789.10'
+const result1 = cpfIsValid('123.456.789.10');
+console.log(result1.isValid); // false
+console.log(result1.errorMsg); // 'CPF invalid'
+
+// Example 2 - Using the CPF number '12345678910' and custom error messages
+const result2 = cpfIsValid('12345678910', ['CPF is wrong', 'Must have at least 11 digits']);
+console.log(result2.isValid); // false
+console.log(result2.errorMsg); // 'CPF is wrong'
+
+// Example 3 - Using a valid CPF number '52998224725'
+const result3 = cpfIsValid('52998224725');
+console.log(result3.isValid); // true
+console.log(result3.errorMsg); // null</code>
+										</pre>
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        If the function is called with an invalid value for the <code>errorMsg</code> parameter (non-array), or if an error occurs during the validation process, the function will return an object with <code>isValid</code> set to <code>false</code>                        and <code>errorMsg</code> containing the default error message 'Unknown error'.
+                    </p>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+</body>
+
+</html>

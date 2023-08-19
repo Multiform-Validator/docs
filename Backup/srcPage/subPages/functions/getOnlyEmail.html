@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page with documentation explaining how to use function methods">
+    <title>getOnlyEmail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+</head>
+
+<body>
+    <section>
+        <div id="wrapper" class="toggled">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="../documentation/">
+													Documentation
+											</a>
+                    </li>
+                    <li>
+                        <a href="https://gabriel-logan.github.io/multiform-validator/">Home</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cpfIsValid">cpfIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cnpjIsValid">cnpjIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmail">isEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateEmail">validateEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCEP">isCEP</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUsername">validateUsername</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassword">validatePassword</a>
+                    </li>
+                    <li>
+                        <a href="../functions/getOnlyEmail">getOnlyEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCreditCardValid">isCreditCardValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/identifyFlagCard">identifyFlagCard</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMACAddress">isMACAddress</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isAscii">isAscii</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isBase64">isBase64</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDate">isDate</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDecimal">isDecimal</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmpty">isEmpty</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMD5">isMD5</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPort">isPort</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPostalCode">isPostalCode</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isTime">isTime</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassportNumber">validatePassportNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateBRPhoneNumber">validateBRPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUSPhoneNumber">validateUSPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePhoneNumber">validatePhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isNumber">isNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/passwordStrengthTester">passwordStrengthTester</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateName">validateName</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateSurname">validateSurname</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateTextarea">validateTextarea</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container container-fluid">
+                    <h1 class="title">getOnlyEmail Function Documentation</h1>
+                    <p>
+                        The <code>getOnlyEmail</code> function extracts email addresses from a given text. If the optional <code>multiple</code> parameter is set to <code>true</code>, it returns an array with all the email addresses found. Otherwise,
+                        it returns only the first email address found as a string.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+											<code class="language-javascript">import { getOnlyEmail } from 'multiform-validator';</code>
+										</pre>
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+											<code class="language-javascript">const { getOnlyEmail } = require('multiform-validator');</code>
+										</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes two parameters:
+                    </p>
+                    <ul>
+                        <li><code>text</code> (string) - The input text from which emails will be extracted.</li>
+                        <li><code>multiple</code> (optional boolean) - If set to <code>true</code>, the function will return an array with all the email addresses found. If set to <code>false</code> or not provided, it will return only the first email address
+                            found as a string.</li>
+                        <li><code>cleanDomain</code> (optional boolean | string[]) - Either a boolean value indicating whether to clean after default domains or an array of custom domains to clean after. Default is <code>false</code> which means it won't
+                            clean the email addresses after default domains ['.br', '.io', '.pt', '.us', '.org', '.com', ];. If set to <code>true</code>, it will clean after default domains. If set to an array of strings, it will clean after the specified
+                            custom domains.</li>
+                        <li><code>repeatEmail</code> (optional boolean) - If set to <code>false</code>, the function will remove duplicate emails from the output list. If set to <code>true</code> or not provided, it will keep the duplicate emails in the output
+                            list.
+                        </li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+											<code class="language-javascript">
+// Example 1 - Extracting multiple emails from the text
+const result1 = getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
+console.log(result1);
+// Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
+
+// Example 2 - Extracting the first email from the text
+const result2 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.com</br>Sim aqui mesmo");
+console.log(result2);
+// Output: "fiawn@rdwah.com"
+
+const result3 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo", true, true);
+console.log(result3);
+// Output: [ 'fiawn@rdwah.com', 'asdasd@gmail.com' ]
+
+const result4 = getOnlyEmail("Vaga na asdlaod </br> Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo asdasd asd as fiawn@rdwah.com", true, true, true);
+console.log(result4);
+// Output: [ 'fiawn@rdwah.com', 'asdasd@gmail.com', 'fiawn@rdwah.com' ]
+											</code>
+										</pre>
+
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        If no email address is found in the input text, the function will return the string "No email found".
+                    </p>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+</body>
+
+</html>

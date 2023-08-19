@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page with documentation explaining how to use function methods">
+    <title>validateTextarea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+
+</head>
+
+<body>
+    <section>
+
+        <div id="wrapper" class="toggled">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="../documentation/">
+													Documentation
+											</a>
+                    </li>
+                    <li>
+                        <a href="https://gabriel-logan.github.io/multiform-validator/">Home</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cpfIsValid">cpfIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cnpjIsValid">cnpjIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmail">isEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateEmail">validateEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCEP">isCEP</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUsername">validateUsername</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassword">validatePassword</a>
+                    </li>
+                    <li>
+                        <a href="../functions/getOnlyEmail">getOnlyEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCreditCardValid">isCreditCardValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/identifyFlagCard">identifyFlagCard</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMACAddress">isMACAddress</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isAscii">isAscii</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isBase64">isBase64</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDate">isDate</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDecimal">isDecimal</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmpty">isEmpty</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMD5">isMD5</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPort">isPort</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPostalCode">isPostalCode</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isTime">isTime</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassportNumber">validatePassportNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateBRPhoneNumber">validateBRPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUSPhoneNumber">validateUSPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePhoneNumber">validatePhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isNumber">isNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/passwordStrengthTester">passwordStrengthTester</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateName">validateName</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateSurname">validateSurname</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container container-fluid">
+                    <h1>validateTextarea Function</h1>
+                    <p>This function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.</p>
+
+                    <h2>Function Signature</h2>
+                    <pre>
+									<code>
+/**
+	* @param {string} textarea - The input textarea string to be validated.
+	* @param {boolean} [isRequired=false] - A boolean flag to determine if the textarea is required (default: false).
+	* @param {number} [maxLength=50] - The maximum allowed length for the textarea (default: 50).
+	* @param {string[]} [errorMsg=defaultErrorMsg] - An array of custom error messages for different validation conditions (default: predefined messages).
+	* @default isRequired boolean: default: false
+	* @default maxLength number: default: 50
+	* @example validateTextarea();
+	* @example validateTextarea();
+	* @example validateTextarea();
+	* @description This function returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string).
+	* The 'isValid' property indicates if the textarea is valid based on the given criteria, and 'errorMsg' contains the corresponding error message, if any.
+	*/
+									</code>
+									</pre>
+
+                    <h2>Parameters</h2>
+                    <ul>
+                        <li><strong>textarea</strong> (string): The input textarea string to be validated.</li>
+                        <li><strong>isRequired</strong> (boolean, optional, default: false): A flag to determine if the textarea is required.</li>
+                        <li><strong>maxLength</strong> (number, optional, default: 50): The maximum allowed length for the textarea.</li>
+                        <li>
+                            <strong>errorMsg</strong> (string array, optional, default: predefined messages): An array of custom error messages for different validation conditions. The array should contain three elements corresponding to different error
+                            scenarios. If not provided, default error messages will be used. Default Error Messages:
+                            <ul>
+                                <li>Index 0: 'This textarea is too big'</li>
+                                <li>Index 1: 'Can not be empty'</li>
+                                <li>Index 2: 'Unknown error'</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2>Return Value</h2>
+                    <p>
+                        The function returns an object with two properties:
+                        <ul>
+                            <li><strong>isValid</strong> (boolean): Indicates if the textarea is valid based on the given criteria.</li>
+                            <li><strong>errorMsg</strong> (string): Contains the corresponding error message, if any, based on the validation result.</li>
+                        </ul>
+                    </p>
+
+                    <h2>Usage Examples</h2>
+                    <pre>
+									<code>
+validateTextarea('Some text content'); // Example 1
+// Returns: { isValid: true, errorMsg: null }
+
+validateTextarea('', true); // Example 2
+// Returns: { isValid: false, errorMsg: 'Can not be empty' }
+
+validateTextarea('Very long text...', false, 10); // Example 3
+// Returns: { isValid: false, errorMsg: 'This textarea is too big' }
+									</code>
+									</pre>
+
+                    <p>
+                        <strong>Note:</strong> The examples provided demonstrate how to use the function with different parameters and show the expected return values.
+                    </p>
+
+                    <h2>Function Implementation</h2>
+                    <pre>
+									<code>
+// The actual implementation of the validateTextarea function...
+function validateTextarea(textarea, isRequired = false, maxLength = 50, errorMsg = defaultErrorMsg) {
+	// ... (The function implementation code) ...
+}
+									</code>
+									</pre>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+    </section>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+</body>
+
+</html>

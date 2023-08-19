@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page with documentation explaining how to use function methods">
+    <title>validateUsername</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+
+</head>
+
+<body>
+    <section>
+
+        <div id="wrapper" class="toggled">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="../documentation/">
+													Documentation
+											</a>
+                    </li>
+                    <li>
+                        <a href="https://gabriel-logan.github.io/multiform-validator/">Home</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cpfIsValid">cpfIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cnpjIsValid">cnpjIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmail">isEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateEmail">validateEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCEP">isCEP</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUsername">validateUsername</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassword">validatePassword</a>
+                    </li>
+                    <li>
+                        <a href="../functions/getOnlyEmail">getOnlyEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCreditCardValid">isCreditCardValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/identifyFlagCard">identifyFlagCard</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMACAddress">isMACAddress</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isAscii">isAscii</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isBase64">isBase64</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDate">isDate</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDecimal">isDecimal</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmpty">isEmpty</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMD5">isMD5</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPort">isPort</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPostalCode">isPostalCode</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isTime">isTime</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassportNumber">validatePassportNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateBRPhoneNumber">validateBRPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUSPhoneNumber">validateUSPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePhoneNumber">validatePhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isNumber">isNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/passwordStrengthTester">passwordStrengthTester</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateName">validateName</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateSurname">validateSurname</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateTextarea">validateTextarea</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container container-fluid">
+                    <h1 class="title">Username Validation Function Documentation</h1>
+                    <p>
+                        The <code>validateUsername</code> function is used to validate usernames. It returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string). The 'isValid' property will be true if the username meets the specified
+                        criteria, and 'errorMsg' will contain the error message if the username is invalid, or it will be null if the username is valid.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+															import { validateUsername } from 'multiform-validator';
+										</pre>
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+															const { validateUsername } = require('multiform-validator');
+										</pre>
+
+                    <h2 class="subtitle">Function Signature</h2>
+                    <pre>
+																function validateUsername(
+																		username: string,
+																		minLength?: number,
+																		maxLength?: number,
+																		errorMsg?: string[]
+																): { isValid: boolean, errorMsg: string | null };
+									</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <ul>
+                        <li><code>username</code> (string) - The username to be validated.</li>
+                        <li><code>minLength</code> (number) [optional] - The minimum length of the username. Default is 1.</li>
+                        <li><code>maxLength</code> (number) [optional] - The maximum length of the username. Default is Infinity.</li>
+                        <li><code>errorMsg</code> (string[]) [optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Default Error Messages</h2>
+                    <pre>
+																				[
+																						'Invalid value passed',
+																						'Username too short',
+																						'This username is too long',
+																						'Username cannot contain spaces',
+																						'Cannot start with a number',
+																						'Cannot contain only numbers',
+																						'Unknown error'
+																				]
+									</pre>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+																					const result1 = validateUsername('User999', 8, 20);
+																					console.log(result1);
+																					// Output: { isValid: true, errorMsg: null }
+
+																					const customErrorMsg = ['Custom error 1', 'Custom error 2'];
+																					const result2 = validateUsername('User999', 8, 20, customErrorMsg);
+																					console.log(result2);
+																					// Output: { isValid: false, errorMsg: 'Username too short' }
+								</pre>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+    </section>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+</body>
+
+</html>

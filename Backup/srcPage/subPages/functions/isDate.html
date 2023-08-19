@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page with documentation explaining how to use function methods">
+    <title>isDate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/documentation/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css">
+</head>
+
+<body>
+    <section>
+
+        <div id="wrapper" class="toggled">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="../documentation/">
+													Documentation
+											</a>
+                    </li>
+                    <li>
+                        <a href="https://gabriel-logan.github.io/multiform-validator/">Home</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cpfIsValid">cpfIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/cnpjIsValid">cnpjIsValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmail">isEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateEmail">validateEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCEP">isCEP</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUsername">validateUsername</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassword">validatePassword</a>
+                    </li>
+                    <li>
+                        <a href="../functions/getOnlyEmail">getOnlyEmail</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isCreditCardValid">isCreditCardValid</a>
+                    </li>
+                    <li>
+                        <a href="../functions/identifyFlagCard">identifyFlagCard</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMACAddress">isMACAddress</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isAscii">isAscii</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isBase64">isBase64</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDate">isDate</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isDecimal">isDecimal</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isEmpty">isEmpty</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isMD5">isMD5</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPort">isPort</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isPostalCode">isPostalCode</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isTime">isTime</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePassportNumber">validatePassportNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateBRPhoneNumber">validateBRPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateUSPhoneNumber">validateUSPhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validatePhoneNumber">validatePhoneNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/isNumber">isNumber</a>
+                    </li>
+                    <li>
+                        <a href="../functions/passwordStrengthTester">passwordStrengthTester</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateName">validateName</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateSurname">validateSurname</a>
+                    </li>
+                    <li>
+                        <a href="../functions/validateTextarea">validateTextarea</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container container-fluid">
+                    <h1 class="title">isCreditCardValid Function Documentation</h1>
+                    <p>
+                        The <code>isCreditCardValid</code> function checks if the input string represents a valid credit card number using the Luhn algorithm. It returns <code>true</code> if the credit card number is valid, and <code>false</code> otherwise.
+                    </p>
+
+                    <h2 class="subtitle">Import</h2>
+                    <p>
+                        The function can be imported using ES6 syntax from the "multiform-validator" package:
+                    </p>
+                    <pre>
+																			import { isCreditCardValid } from 'multiform-validator';
+					</pre>
+
+                    <p>
+                        Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
+                    </p>
+                    <pre>
+																			const { isCreditCardValid } = require('multiform-validator');
+					</pre>
+
+                    <h2 class="subtitle">Parameters</h2>
+                    <p>
+                        The function takes one parameter:
+                    </p>
+                    <ul>
+                        <li><code>cardNumber</code> (string) - The input string representing the credit card number to validate.</li>
+                    </ul>
+
+                    <h2 class="subtitle">Examples</h2>
+                    <pre>
+																			// Example 1 - Valid credit card number with spaces
+																			const result1 = isCreditCardValid('6062 8226 8644 9791');
+																			console.log(result1); // true
+
+																			// Example 2 - Valid credit card number without spaces
+																			const result2 = isCreditCardValid('6062822686449791');
+																			console.log(result2); // true
+
+																			// Example 3 - Invalid credit card number (does not pass the Luhn algorithm)
+																			const result3 = isCreditCardValid('1234 5678 9012 3456');
+																			console.log(result3); // false
+						</pre>
+
+                    <h2 class="subtitle">Notes</h2>
+                    <p>
+                        The function expects the input value to be passed as a string representing a credit card number. It removes any non-digit characters and applies the Luhn algorithm to validate the credit card number. If the input is not a string, the function throws an
+                        error.
+                    </p>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+
+    </section>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+</body>
+
+</html>
