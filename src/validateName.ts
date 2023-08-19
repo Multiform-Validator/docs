@@ -7,6 +7,9 @@ const defaultErrorMsg = [
 ];
 /**
  * @param {string} name
+ * @param {number} [minLength=1]
+ * @param {number} [maxLength=20]
+ * @param {string[]} [errorMsg=defaultErrorMsg]
  * @default minLength number: default: 1
  * @default maxLength number: default: 20
  * @example validateName('John', 2, 20);
@@ -25,7 +28,7 @@ const defaultErrorMsg = [
 ];
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateName(name: string, minLength = 1, maxLength = 20, errorMsg = defaultErrorMsg) {
+function validateName(name: string, minLength?: number, maxLength?: number, errorMsg = defaultErrorMsg) {
   if (typeof name !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
@@ -44,7 +47,15 @@ function validateName(name: string, minLength = 1, maxLength = 20, errorMsg = de
     }
     return defaultErrorMsg[index];
   }
-  if (minLength > maxLength) {
+
+	const minNameLength = minLength || 1;
+	const maxNameLength = maxLength || 20;
+
+	if (maxNameLength < 1 || minNameLength < 1 || typeof minNameLength !== 'number' || typeof maxNameLength !== 'number') {
+		throw new Error('maxLength or minLength must be a number and cannot be less than 1');
+	}
+
+  if (minNameLength > maxNameLength) {
     throw new Error('minLength cannot be greater than maxLength');
   }
   if (!name) {
@@ -54,13 +65,13 @@ function validateName(name: string, minLength = 1, maxLength = 20, errorMsg = de
     };
   }
   try {
-    if (name.length > maxLength) {
+    if (name.length > maxNameLength) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(4),
       };
     }
-    if (name.length < minLength) {
+    if (name.length < minNameLength) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(3),

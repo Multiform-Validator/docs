@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 /**
  * @param {string} passaportNumber
  * @example validatePassportNumber('A1234567');

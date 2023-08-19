@@ -10,8 +10,8 @@ const defaultErrorMsg = [
 
 /**
  * @param {string} password
- * @param {number} minLength optional
- * @param {number} maxLength optional
+ * @param {number} [minLength = 1] optional
+ * @param {number} [maxLength = Infinity] optional
  * @param {object} options optional
  * @param {boolean} options.requireUppercase optional
  * @param {boolean} options.requireSpecialChar optional
@@ -46,12 +46,14 @@ const defaultErrorMsg = [
  * Create a list of errors separated by commas in strings
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validatePassword(password: string, minLength = 1, maxLength = Infinity, options = {
+function validatePassword(password: string, minLength?: number, maxLength?: number, options = {
   requireUppercase: false,
   requireSpecialChar: false,
   requireNumber: false,
   requireString: false,
 }, errorMsg = defaultErrorMsg) {
+
+
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
@@ -63,6 +65,8 @@ function validatePassword(password: string, minLength = 1, maxLength = Infinity,
       }
     }
   }
+
+
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -71,8 +75,12 @@ function validatePassword(password: string, minLength = 1, maxLength = Infinity,
     return defaultErrorMsg[index];
   }
 
-  const minLenthPassword = minLength;
-  const maxLenthPassword = maxLength;
+  const minLenthPassword = minLength || 1;
+  const maxLenthPassword = maxLength || Infinity;
+
+	if (typeof minLenthPassword !== 'number' || typeof maxLenthPassword !== 'number') {
+		throw new Error('maxLength and/or minLength must be a number');
+	}
 
   if (minLenthPassword > maxLenthPassword) {
     throw new Error('the minimum size cannot be larger than the maximum');

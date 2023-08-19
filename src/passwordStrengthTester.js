@@ -31,13 +31,13 @@ function passwordStrengthTester(password) {
     const passwordLength = password.length;
     let strengthType;
     // Critérios para classificar a senha
-    if (passwordLength < 6) {
+    if (passwordLength < 6 && /^\d+$/.test(password)) {
         strengthType = 'veryWeak';
     }
-    else if (passwordLength < 8) {
+    else if (passwordLength < 8 && /^\d+$/.test(password)) {
         strengthType = 'weak';
     }
-    else if (passwordLength < 10) {
+    else if (passwordLength < 8 && /\d/.test(password) && /[a-zA-Z]/.test(password)) {
         strengthType = 'regular';
     }
     else if (/[A-Z]/.test(password)

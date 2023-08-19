@@ -24,7 +24,7 @@ const defaultErrorMsg = [
 ];
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateTextarea(textarea: string, isRequired = false, maxLength = 50, errorMsg = defaultErrorMsg) {
+function validateTextarea(textarea: string, isRequired = false, maxLength?: number, errorMsg = defaultErrorMsg) {
   if (typeof textarea !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
@@ -43,6 +43,11 @@ function validateTextarea(textarea: string, isRequired = false, maxLength = 50, 
     }
     return defaultErrorMsg[index];
   }
+	const maxTextAreaLength = maxLength || 50;
+
+	if (maxTextAreaLength < 1 || typeof maxTextAreaLength !== 'number') {
+		throw new Error('maxLength or minLength must be a number and cannot be less than 1');
+	}
   if (isRequired === true) {
     if (textarea === '') {
       return {
@@ -52,7 +57,7 @@ function validateTextarea(textarea: string, isRequired = false, maxLength = 50, 
     }
   }
   try {
-    if (textarea.length > maxLength) {
+    if (textarea.length > maxTextAreaLength) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(0),

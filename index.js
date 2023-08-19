@@ -1,3 +1,5 @@
+"use strict";
+/* eslint-disable @typescript-eslint/no-var-requires */
 const cpfIsValid = require('./src/cpfValidator');
 const cnpjIsValid = require('./src/cnpjValidator');
 const getOnlyEmail = require('./src/getOnlyEmail');
@@ -28,33 +30,33 @@ const validateSurname = require('./src/validateSurname');
 const validateName = require('./src/validateName');
 const validateTextarea = require('./src/validateTextarea');
 module.exports = {
-  cpfIsValid,
-  cnpjIsValid,
-  isEmail,
-  validateEmail,
-  isCEP,
-  validateUsername,
-  validatePassword,
-  getOnlyEmail,
-  isCreditCardValid,
-  identifyFlagCard,
-  isMACAddress,
-  isAscii,
-  isBase64,
-  isDate,
-  isDecimal,
-  isEmpty,
-  isMD5,
-  isPort,
-  isPostalCode,
-  isTime,
-  validatePassportNumber,
-  validateBRPhoneNumber,
-  validateUSPhoneNumber,
-  validatePhoneNumber,
-  isNumber,
-  passwordStrengthTester,
-  validateName,
-  validateSurname,
-  validateTextarea
+    cpfIsValid,
+    cnpjIsValid,
+    isEmail,
+    validateEmail,
+    isCEP,
+    validateUsername,
+    validatePassword,
+    getOnlyEmail,
+    isCreditCardValid,
+    identifyFlagCard,
+    isMACAddress,
+    isAscii,
+    isBase64,
+    isDate,
+    isDecimal,
+    isEmpty,
+    isMD5,
+    isPort,
+    isPostalCode,
+    isTime,
+    validatePassportNumber,
+    validateBRPhoneNumber,
+    validateUSPhoneNumber,
+    validatePhoneNumber,
+    isNumber,
+    passwordStrengthTester,
+    validateName,
+    validateSurname,
+    validateTextarea
 };

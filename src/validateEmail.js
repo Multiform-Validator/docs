@@ -16,7 +16,7 @@ const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@iclou
 ];
 /**
  * @param {string} email
- * @param {number} maxLength optional
+ * @param {number} [maxLength=400] optional
  * @param {string|null} country optional
  * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @param {boolean|string[]} [validDomains=false] optional
@@ -45,7 +45,7 @@ const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@iclou
  * You can also create a custom list, your list will completely replace the default list.
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg, validDomains = false) {
+function validateEmail(email, maxLength, country = '', errorMsg = defaultErrorMsg, validDomains = false) {
     if (typeof email !== 'string')
         throw new TypeError('The input should be a string.');
     // Expressão regular para verificar se o e-mail termina com um dos domínios válidos
@@ -82,6 +82,8 @@ function validateEmail(email, maxLength, country, errorMsg = defaultErrorMsg, va
         };
     }
     const maxEmailLength = maxLength || 400;
+    if (maxEmailLength < 1 || typeof maxEmailLength !== 'number')
+        throw new Error('maxLength must be a number and cannot be less than 1');
     try {
         // Check domain only if regex is defined (validDomains is true or validDomains is an array)
         if (regex && !regex.test(email)) {

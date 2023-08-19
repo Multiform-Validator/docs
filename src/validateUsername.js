@@ -13,8 +13,8 @@ const defaultErrorMsg = [
 ];
 /**
  * @param {string} username
- * @param {number} minLength optional
- * @param {number} maxLength optional
+ * @param {number} [minLength=1] optional
+ * @param {number} [maxLength=Infinity] optional
  * @param {string[]} [errorMsg=defaultErrorMsg] optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
@@ -39,7 +39,7 @@ const defaultErrorMsg = [
  * Create a list of errors separated by commas in strings
  * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateUsername(username, minLength = 1, maxLength = Infinity, errorMsg = defaultErrorMsg) {
+function validateUsername(username, minLength, maxLength, errorMsg = defaultErrorMsg) {
     if (typeof username !== 'string')
         throw new TypeError('The input should be a string.');
     // Check para saber se as mensagens que sao passadas sao validas
@@ -66,8 +66,11 @@ function validateUsername(username, minLength = 1, maxLength = Infinity, errorMs
             errorMsg: getErrorMessage(0),
         };
     }
-    const minLenthUsername = minLength;
-    const maxLenthUsername = maxLength;
+    const minLenthUsername = minLength || 1;
+    const maxLenthUsername = maxLength || Infinity;
+    if (typeof minLenthUsername !== 'number' || typeof maxLenthUsername !== 'number') {
+        throw new Error('maxLength or minLength must be a number');
+    }
     if (minLenthUsername > maxLenthUsername) {
         throw new Error('Minimum cannot be greater than maximum');
     } // Verifica se o min é maior que o max
