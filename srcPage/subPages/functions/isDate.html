@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
     <link rel="stylesheet" href="../../css/functions/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
 </head>
 
 <body>
@@ -132,15 +133,17 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-																			import { isCreditCardValid } from 'multiform-validator';
-					</pre>
+											<code>
+import { isCreditCardValid } from 'multiform-validator';
+											</code></pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-																			const { isCreditCardValid } = require('multiform-validator');
-					</pre>
+											<code>
+const { isCreditCardValid } = require('multiform-validator');
+											</code></pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -152,17 +155,19 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-																			// Example 1 - Valid credit card number with spaces
-																			const result1 = isCreditCardValid('6062 8226 8644 9791');
-																			console.log(result1); // true
+											<code>
+// Example 1 - Valid credit card number with spaces
+const result1 = isCreditCardValid('6062 8226 8644 9791');
+console.log(result1); // true
 
-																			// Example 2 - Valid credit card number without spaces
-																			const result2 = isCreditCardValid('6062822686449791');
-																			console.log(result2); // true
+// Example 2 - Valid credit card number without spaces
+const result2 = isCreditCardValid('6062822686449791');
+console.log(result2); // true
 
-																			// Example 3 - Invalid credit card number (does not pass the Luhn algorithm)
-																			const result3 = isCreditCardValid('1234 5678 9012 3456');
-																			console.log(result3); // false
+// Example 3 - Invalid credit card number (does not pass the Luhn algorithm)
+const result3 = isCreditCardValid('1234 5678 9012 3456');
+console.log(result3); // false
+											</code>
 						</pre>
 
                     <h2 class="subtitle">Notes</h2>
@@ -187,6 +192,11 @@
 
 
     </section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
+    <script src="../../js/functions/index.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
