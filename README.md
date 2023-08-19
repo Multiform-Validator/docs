@@ -24,6 +24,12 @@ If you want to help me, you can buy me a coffee (:
 npm install multiform-validator
 ```
 
+or
+
+```bash
+yarn add install multiform-validator
+```
+
 # Data Validator
 
 This package contains various modules for validating different types of data. Below are the available validation modules:
