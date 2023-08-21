@@ -35,4 +35,4 @@ function validatePassportNumber(passaportNumber: string) {
   return { isValid: false, country: null };
 }
 
-export = validatePassportNumber;
+export default validatePassportNumber;

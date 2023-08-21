@@ -49,4 +49,4 @@ function isPostalCode(postalCode: string) {
   );
 }
 
-export = isPostalCode;
+export default isPostalCode;

@@ -47,7 +47,7 @@ function validateEmail(email: string, maxLength?: number, country = '', errorMsg
   if (typeof email !== 'string') throw new TypeError('The input should be a string.');
 
   // Expressão regular para verificar se o e-mail termina com um dos domínios válidos
-  let regex;
+  let regex: RegExp = /(?:)/; // Inicialização com uma expressão regular vazia
   if (validDomains === true) {
     regex = new RegExp(`${validDomainsDefault.join('|')}$`, 'i');
   } else if (Array.isArray(validDomains) && validDomains.length > 0) {
@@ -123,4 +123,4 @@ function validateEmail(email: string, maxLength?: number, country = '', errorMsg
     };
   }
 }
-export = validateEmail;
+export default validateEmail;

@@ -57,4 +57,4 @@ function validateBRPhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) 
     };
   }
 }
-export = validateBRPhoneNumber;
+export default validateBRPhoneNumber;

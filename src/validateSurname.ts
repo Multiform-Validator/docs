@@ -119,4 +119,4 @@ function validateSurname(surname: string, minLength?: number, maxLength?: number
     };
   }
 }
-export = validateSurname;
+export default validateSurname;

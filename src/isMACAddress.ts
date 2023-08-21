@@ -27,4 +27,4 @@ function isMACAddress(mac: string) {
   return macPattern.test(cleanedMac);
 }
 
-export = isMACAddress;
+export default isMACAddress;

@@ -22,4 +22,4 @@ function isCEP(cep: string) {
     return false;
   }
 }
-export = isCEP;
+export default isCEP;

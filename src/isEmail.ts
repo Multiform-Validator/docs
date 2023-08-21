@@ -19,4 +19,4 @@ function isEmail(email: string) {
     return false;
   }
 }
-export = isEmail;
+export default isEmail;

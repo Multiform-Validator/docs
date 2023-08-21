@@ -1,4 +1,6 @@
+
 const CleanAfterDefaultDomain = ['.br', '.io', '.pt', '.us', '.org', '.com'];
+
 /**
  * @param {string} text
  * @param {boolean} [multiple] optional
@@ -29,8 +31,10 @@ const CleanAfterDefaultDomain = ['.br', '.io', '.pt', '.us', '.org', '.com'];
  * @returns {string | string[]} An email string if multiple is false, or an array of email strings if multiple is true.
  */
 function getOnlyEmail(text: string, multiple = false, cleanDomain = false, repeatEmail = false) {
+
   const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
-  const matches = text.match(emailPattern);
+
+  const matches: RegExpMatchArray|null = text.match(emailPattern);
 
   if (!matches) return 'No email found';
 
@@ -71,4 +75,4 @@ function getOnlyEmail(text: string, multiple = false, cleanDomain = false, repea
   return multiple ? matches : matches[0];
 }
 
-export = getOnlyEmail;
+export default getOnlyEmail;

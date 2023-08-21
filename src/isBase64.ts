@@ -22,4 +22,4 @@ function isBase64(value: string) {
   return base64Regex.test(value);
 }
 
-export = isBase64;
+export default isBase64;

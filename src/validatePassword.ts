@@ -85,6 +85,7 @@ function validatePassword(password: string, minLength?: number, maxLength?: numb
   if (minLenthPassword > maxLenthPassword) {
     throw new Error('the minimum size cannot be larger than the maximum');
   } // Verifica se o min é maior que o max
+
   if (minLenthPassword < 1 || maxLenthPassword < 1) {
     throw new Error('No size can be smaller than 1');
   } // Nenhum dos dois pode ser menor que 1
@@ -141,4 +142,4 @@ function validatePassword(password: string, minLength?: number, maxLength?: numb
   }
 }
 
-export = validatePassword;
+export default validatePassword;

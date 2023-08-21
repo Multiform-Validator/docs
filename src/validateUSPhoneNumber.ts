@@ -54,4 +54,4 @@ function validateUSPhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) 
   }
 }
 
-export = validateUSPhoneNumber;
+export default validateUSPhoneNumber;

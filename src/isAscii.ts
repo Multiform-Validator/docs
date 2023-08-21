@@ -26,4 +26,4 @@ function isAscii(value: string) {
   return true;
 }
 
-export = isAscii;
+export default isAscii;

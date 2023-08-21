@@ -24,6 +24,6 @@ function isCreditCardValid(cardNumber: string) {
   }
   return sum % 10 === 0;
 }
-export = isCreditCardValid;
+export default isCreditCardValid;
 
 // Função para validar o número do cartão usando o algoritmo de Luhn

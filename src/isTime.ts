@@ -20,4 +20,4 @@ function isTime(time: string) {
   const timeRegex = /^(?:2[0-3]|1\d|0?[0-9]):[0-5]\d(?::[0-5]\d)?(?: [APap][Mm])?$/;
   return timeRegex.test(time);
 }
-export = isTime;
+export default isTime;

@@ -23,4 +23,4 @@ function identifyFlagCard(cardNumber: string) {
   return bandeiraEncontrada ? bandeiraEncontrada.name : 'Unknown';
 }
 // Função para identificar a bandeira do cartão com base nos primeiros dígitos
-export = identifyFlagCard;
+export default identifyFlagCard;

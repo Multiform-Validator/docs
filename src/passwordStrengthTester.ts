@@ -49,4 +49,4 @@ function passwordStrengthTester(password: string) {
 
   return strengthType;
 }
-export = passwordStrengthTester;
+export default passwordStrengthTester;

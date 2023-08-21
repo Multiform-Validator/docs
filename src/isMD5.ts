@@ -39,4 +39,4 @@ function isMD5(value: string) {
   return true;
 }
 
-export = isMD5;
+export default isMD5;

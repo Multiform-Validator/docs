@@ -116,4 +116,4 @@ function validateUsername(username: string, minLength?: number, maxLength?: numb
     };
   }
 }
-export = validateUsername;
+export default validateUsername;

@@ -17,4 +17,4 @@ function isPort(value: string|number) {
   const portNumber = parseInt(String(value), 10);
   return Number.isInteger(portNumber) && portNumber >= 1 && portNumber <= 65535;
 }
-export = isPort;
+export default isPort;

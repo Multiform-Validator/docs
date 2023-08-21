@@ -39,4 +39,4 @@ function isDate(value: string) {
   }
   return true;
 }
-export = isDate;
+export default isDate;

@@ -65,8 +65,10 @@ function cpfIsValid(cpf: string, errorMsg = defaultErrorMsg) {
         errorMsg: getErrorMessage(2),
       };
     }
+
     let primeiroVerificador = 0;
     let segundoVerificador = 0;
+
     for (let repetidor = 0; repetidor < 11; repetidor += 1) { // Executa os códigos 11 vezes em sequência.
       // Faz a soma numérica de todos os números gerados por multiplicador.
       const multiplicador = Number(cpfLimpo[repetidor]) * numeroBase;
@@ -104,4 +106,4 @@ function cpfIsValid(cpf: string, errorMsg = defaultErrorMsg) {
   }
 }
 
-export = cpfIsValid;
+export default cpfIsValid;

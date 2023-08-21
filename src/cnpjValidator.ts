@@ -98,4 +98,4 @@ function cnpjIsValid(cnpj: string, errorMsg = defaultErrorMsg) {
     };
   }
 }
-export = cnpjIsValid;
+export default cnpjIsValid;

@@ -1,35 +1,35 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const cpfIsValid = require('./src/cpfValidator');
-const cnpjIsValid = require('./src/cnpjValidator');
-const getOnlyEmail = require('./src/getOnlyEmail');
-const isCEP = require('./src/isCEP');
-const isEmail = require('./src/isEmail');
-const validateEmail = require('./src/validateEmail');
-const validatePassword = require('./src/validatePassword');
-const validateUsername = require('./src/validateUsername');
-const isCreditCardValid = require('./src/isCreditCardValid');
-const identifyFlagCard = require('./src/identifyFlagCard');
-const isMACAddress = require('./src/isMACAddress');
-const isAscii = require('./src/isAscii');
-const isBase64 = require('./src/isBase64');
-const isDate = require('./src/isDate');
-const isDecimal = require('./src/isDecimal');
-const isEmpty = require('./src/isEmpty');
-const isMD5 = require('./src/isMD5');
-const validatePassportNumber = require('./src/validatePassportNumber');
-const isPort = require('./src/isPort');
-const isPostalCode = require('./src/isPostalCode');
-const isTime = require('./src/isTime');
-const validateBRPhoneNumber = require('./src/validateBRPhoneNumber');
-const validateUSPhoneNumber = require('./src/validateUSPhoneNumber');
-const validatePhoneNumber = require('./src/validatePhoneNumber');
-const isNumber = require('./src/isNumber');
-const passwordStrengthTester = require('./src/passwordStrengthTester');
-const validateSurname = require('./src/validateSurname');
-const validateName = require('./src/validateName');
-const validateTextarea = require('./src/validateTextarea');
-module.exports = {
-  cpfIsValid,
+import cpfIsValid from './src/cpfValidator';
+import cnpjIsValid from './src/cnpjValidator';
+import getOnlyEmail from './src/getOnlyEmail';
+import isCEP from './src/isCEP';
+import isEmail from './src/isEmail';
+import validateEmail from './src/validateEmail';
+import validatePassword from './src/validatePassword';
+import validateUsername from './src/validateUsername';
+import isCreditCardValid from './src/isCreditCardValid';
+import identifyFlagCard from './src/identifyFlagCard';
+import isMACAddress from './src/isMACAddress';
+import isAscii from './src/isAscii';
+import isBase64 from './src/isBase64';
+import isDate from './src/isDate';
+import isDecimal from './src/isDecimal';
+import isEmpty from './src/isEmpty';
+import isMD5 from './src/isMD5';
+import validatePassportNumber from './src/validatePassportNumber';
+import isPort from './src/isPort';
+import isPostalCode from './src/isPostalCode';
+import isTime from './src/isTime';
+import validateBRPhoneNumber from './src/validateBRPhoneNumber';
+import validateUSPhoneNumber from './src/validateUSPhoneNumber';
+import validatePhoneNumber from './src/validatePhoneNumber';
+import isNumber from './src/isNumber';
+import passwordStrengthTester from './src/passwordStrengthTester';
+import validateSurname from './src/validateSurname';
+import validateName from './src/validateName';
+import validateTextarea from './src/validateTextarea';
+
+export {
+	cpfIsValid,
   cnpjIsValid,
   isEmail,
   validateEmail,

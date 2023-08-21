@@ -19,6 +19,7 @@ function validatePhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) {
       }
     }
   }
+
   // Internal function to get the error message
   function getErrorMessage(index: number) {
     if (index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -26,15 +27,18 @@ function validatePhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) {
     }
     return defaultErrorMsg[index];
   }
+
   if (!phoneNumber) {
     return {
       isValid: false,
       errorMsg: getErrorMessage(0),
     };
   }
+
   // Add specific phone number validation logic here for different countries/formats
   // For the generic implementation, we'll use a dummy regex that matches any string.
   // Updated regular expression for phone number validation
+
   const phoneNumberRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
   try {
     if (!phoneNumberRegex.test(phoneNumber)) {
@@ -54,4 +58,4 @@ function validatePhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) {
     };
   }
 }
-export = validatePhoneNumber;
+export default validatePhoneNumber;

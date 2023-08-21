@@ -40,6 +40,7 @@ function validateName(name: string, minLength?: number, maxLength?: number, erro
       }
     }
   }
+
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number) {
     if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
@@ -58,6 +59,7 @@ function validateName(name: string, minLength?: number, maxLength?: number, erro
   if (minNameLength > maxNameLength) {
     throw new Error('minLength cannot be greater than maxLength');
   }
+
   if (!name) {
     return {
       isValid: false,
@@ -113,6 +115,7 @@ function validateName(name: string, minLength?: number, maxLength?: number, erro
       isValid: true,
       errorMsg: null,
     };
+
   } catch (error) {
     return {
       isValid: false,
@@ -120,4 +123,5 @@ function validateName(name: string, minLength?: number, maxLength?: number, erro
     };
   }
 }
-export = validateName;
+
+export default validateName;

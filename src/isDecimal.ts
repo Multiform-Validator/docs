@@ -43,4 +43,4 @@ function isDecimal(value: string|number) {
   }
   return true;
 }
-export = isDecimal;
+export default isDecimal;

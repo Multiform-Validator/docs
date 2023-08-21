@@ -74,4 +74,4 @@ function validateTextarea(textarea: string, isRequired = false, maxLength?: numb
     };
   }
 }
-export = validateTextarea;
+export default validateTextarea;

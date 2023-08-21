@@ -19,4 +19,4 @@ function isEmpty(value: string) {
   return value.trim().length === 0;
 }
 
-export = isEmpty;
+export default isEmpty;
