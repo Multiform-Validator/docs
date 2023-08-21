@@ -1,6 +1,6 @@
 import isEmail from './isEmail';
 
-const defaultErrorMsg = [
+const defaultErrorMsg: string[] = [
   'Invalid value passed',
   'This e-mail is not valid',
   'Email too big, try again',
@@ -8,19 +8,18 @@ const defaultErrorMsg = [
   'Email domain is not allowed.',
   'Unknown error',
 ];
-const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@icloud.com', '@hotmail.com',
+const validDomainsDefault: string[] = ['@gmail.com', '@outlook.com', '@yahoo.com', '@icloud.com', '@hotmail.com',
   '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'
 ];
 
 /**
- * @param {string} email
- * @param {number} [maxLength=400] optional
- * @param {string|null} country optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
- * @param {boolean|string[]} [validDomains=false] optional
+ * @param email
+ * @param maxLength optional
+ * @param country optional
+ * @param errorMsg optional
+ * @param validDomains optional
  * @default maxLength number: 400, validDomains = false
  * @example validateEmail('foor@bar.com', 30, 'us);
- * @example validateEmail('foor@bar.com', 30, 'br);
  * @example validateEmail('foor@bar.com', 30);
  * @example validateEmail('foor@bar.com', 30, null, ['My own error message']); Country is set to null
  * @example validateEmail('joao@myOwnDomain.com', null, null, null, ['@myOwnDomain.com']);
@@ -41,9 +40,15 @@ const validDomainsDefault = ['@gmail.com', '@outlook.com', '@yahoo.com', '@iclou
   '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'];
 
  * You can also create a custom list, your list will completely replace the default list.
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+
+	DOCUMENTATION: https://gabriel-logan.github.io/multiform-validator/srcPage/subPages/functions/validateEmail
+
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateEmail(email: string, maxLength?: number, country = '', errorMsg = defaultErrorMsg, validDomains = false) {
+function validateEmail(email: string, maxLength?: number|null, country: string|null = '', errorMsg: (string|null)[] = defaultErrorMsg, validDomains: boolean = false): {
+	isValid: boolean;
+	errorMsg: string | null;
+} {
   if (typeof email !== 'string') throw new TypeError('The input should be a string.');
 
   // Expressão regular para verificar se o e-mail termina com um dos domínios válidos
@@ -59,7 +64,7 @@ function validateEmail(email: string, maxLength?: number, country = '', errorMsg
   // caso contrario retorna um ERRO
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
@@ -67,19 +72,21 @@ function validateEmail(email: string, maxLength?: number, country = '', errorMsg
   }
 
   // Função interna para obter a mensagem de erro
-  function getErrorMessage(index: number) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
+
   if (!email) {
     return {
       isValid: false,
       errorMsg: getErrorMessage(0),
     };
   }
-	const maxEmailLength = maxLength || 400;
+	const maxEmailLength: number = maxLength || 400;
 
 	if (maxEmailLength < 1 || typeof maxEmailLength !== 'number') throw new Error('maxLength must be a number and cannot be less than 1');
 

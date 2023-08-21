@@ -1,5 +1,4 @@
 /**
- * @param {string} postalCode
  * @example isPostalCode('12345'); // true (United States)
  * @example isPostalCode('M4B 1B3'); // true (Canada)
  * @example isPostalCode('SW1A 1AA'); // true (United Kingdom)
@@ -14,24 +13,23 @@
  * @example isPostalCode('00100'); // true (Italy)
  * @example isPostalCode('90210'); // true (United States ZIP Code)
  * @description Values have to be passed as a string. Supported countries: United States, Canada, United Kingdom, France, Netherlands, Japan, Spain, South Africa, Germany, Switzerland, Brazil, Italy.
- * @returns {boolean} true or false
  */
-function isPostalCode(postalCode: string) {
+function isPostalCode(postalCode: string): boolean {
   if (typeof postalCode !== 'string') throw new TypeError('Input value must be a string.');
   // Regular expressions for supported countries' postal code formats
-  const usZipCodeRegex = /^\d{5}(-\d{4})?$/;
-  const canadaPostalCodeRegex = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
-  const ukPostalCodeRegex = /^[A-Za-z]{1,2}\d[A-Za-z\d]?\s\d[A-Za-z]{2}$/;
-  const francePostalCodeRegex = /^\d{5}$/;
-  const netherlandsPostalCodeRegex = /^\d{4}$/;
-  const japanPostalCodeRegex = /^\d{3}-\d{4}$/;
-  const spainPostalCodeRegex = /^\d{5}$/;
-  const southAfricaPostalCodeRegex = /^\d{4}$/;
-  const germanyPostalCodeRegex = /^\d{5}$/;
-  const switzerlandPostalCodeRegex = /^\d{4}$/;
-  const brazilPostalCodeRegex = /^\d{5}-\d{3}$/;
-  const italyPostalCodeRegex = /^\d{5}$/;
-  const usZipCodeOnlyRegex = /^\d{5}$/;
+  const usZipCodeRegex: RegExp = /^\d{5}(-\d{4})?$/;
+  const canadaPostalCodeRegex: RegExp = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
+  const ukPostalCodeRegex: RegExp = /^[A-Za-z]{1,2}\d[A-Za-z\d]?\s\d[A-Za-z]{2}$/;
+  const francePostalCodeRegex: RegExp = /^\d{5}$/;
+  const netherlandsPostalCodeRegex: RegExp = /^\d{4}$/;
+  const japanPostalCodeRegex: RegExp = /^\d{3}-\d{4}$/;
+  const spainPostalCodeRegex: RegExp = /^\d{5}$/;
+  const southAfricaPostalCodeRegex: RegExp = /^\d{4}$/;
+  const germanyPostalCodeRegex: RegExp = /^\d{5}$/;
+  const switzerlandPostalCodeRegex: RegExp = /^\d{4}$/;
+  const brazilPostalCodeRegex: RegExp = /^\d{5}-\d{3}$/;
+  const italyPostalCodeRegex: RegExp = /^\d{5}$/;
+  const usZipCodeOnlyRegex: RegExp = /^\d{5}$/;
   return (
     usZipCodeRegex.test(postalCode)
     || canadaPostalCodeRegex.test(postalCode)

@@ -1,49 +1,47 @@
-const defaultErrorMsg = [
+const defaultErrorMsg: string[] = [
   'This textarea is too big',
   'Can not be empty',
   'Unknown error',
 ];
 /**
- * @param {string} textarea
- * @param {boolean} [isRequired=false]
- * @param {number} [maxLength=50]
- * @param {string[]} [errorMsg=defaultErrorMsg]
  * @default isRequired boolean: default: false
  * @default maxLength number: default: 50
- * @example validateTextarea();
- * @example validateTextarea();
- * @example validateTextarea();
  * @description This function returns 2 errors in the following order,
  *
  * default:
- *
  * [
   'This textarea is too big',
   'Can not be empty',
   'Unknown error',
 ];
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateTextarea(textarea: string, isRequired = false, maxLength?: number, errorMsg = defaultErrorMsg) {
+function validateTextarea(textarea: string, isRequired: boolean = false, maxLength?: number|null,
+	errorMsg: (string|null)[] = defaultErrorMsg): {
+	isValid: boolean, errorMsg: string|null
+} {
   if (typeof textarea !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
+
   // Função interna para obter a mensagem de erro
-  function getErrorMessage(index: number) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
-	const maxTextAreaLength = maxLength || 50;
+
+	const maxTextAreaLength: number = maxLength || 50;
 
 	if (maxTextAreaLength < 1 || typeof maxTextAreaLength !== 'number') {
 		throw new Error('maxLength or minLength must be a number and cannot be less than 1');

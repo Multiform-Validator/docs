@@ -1,6 +1,6 @@
 /**
- * @param {string} phoneNumber
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param phoneNumber
+ * @param errorMsg optional
  * @example validateBRPhoneNumber('(11) 98765-4321');
  * @example validateBRPhoneNumber('(11) 98765-4321', ['Invalid phone number', 'Invalid format', 'Unknown error']);
  * @description This function returns three errors in the following order:
@@ -9,13 +9,10 @@
  * ['Invalid value passed', 'Invalid phone number', 'Unknown error']
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateBRPhoneNumber(phoneNumber: string, errorMsg?: string[]): {
+declare function validateBRPhoneNumber(phoneNumber: string, errorMsg?: (string | null)[]): {
     isValid: boolean;
-    errorMsg: string;
-} | {
-    isValid: boolean;
-    errorMsg: null;
+    errorMsg: string | null;
 };
 export default validateBRPhoneNumber;

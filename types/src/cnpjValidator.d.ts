@@ -1,25 +1,20 @@
 /**
- * @param {string} cnpj
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param cnpj
+ * @param errorMsg optional
  * @example cpfIsValid('72.501.263/0001-40');
- * @example cpfIsValid('73.506.263/0001-45');
- * @example cpfIsValid('73.506.263/0001-45', ['CNPJ ta errado']);
  * @description This function returns four errors in the following order,
  *
- * If you want to use a default parameter, use null.
+ * If you want to use a default parameter, use null or leave Empty.
  *
  * Default:
  * ['CNPJ invalid', 'CNPJ must have 14 numerical digits', 'CNPJ is not valid', 'Unknown error']
  * .
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function cnpjIsValid(cnpj: string, errorMsg?: string[]): {
+declare function cnpjIsValid(cnpj: string, errorMsg?: (string | null)[]): {
     isValid: boolean;
-    errorMsg: string;
-} | {
-    isValid: boolean;
-    errorMsg: null;
+    errorMsg: string | null;
 };
 export default cnpjIsValid;

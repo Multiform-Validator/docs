@@ -1,64 +1,68 @@
 // Função para calcular o primeiro dígito verificador
-function calculateFirstVerifier(cnpjBase: number[]) {
-  const weight = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-  let sum = 0;
-  for (let i = 0; i < 12; i += 1) {
+function calculateFirstVerifier(cnpjBase: number[]): number {
+  const weight: Array<number> = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+  let sum: number = 0;
+  for (let i: number = 0; i < 12; i += 1) {
     sum += cnpjBase[i] * weight[i];
   }
-  const remainder = sum % 11;
+  const remainder: number = sum % 11;
   return remainder < 2 ? 0 : 11 - remainder;
 }
 // Função para calcular o segundo dígito verificador
-function calculateSecondVerifier(cnpjBase: number[], firstVerifier: number) {
-  const weight = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-  let sum = 0;
-  for (let i = 0; i < 12; i += 1) {
+function calculateSecondVerifier(cnpjBase: number[], firstVerifier: number): number {
+  const weight: number[] = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+  let sum: number = 0;
+  for (let i: number = 0; i < 12; i += 1) {
     sum += cnpjBase[i] * weight[i];
   }
   sum += firstVerifier * weight[12];
-  const remainder = sum % 11;
+  const remainder: number = sum % 11;
   return remainder < 2 ? 0 : 11 - remainder;
 }
 
-const defaultErrorMsg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', 'CNPJ is not valid', 'Unknown error'];
+const defaultErrorMsg: string[] = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', 'CNPJ is not valid', 'Unknown error'];
 
 /**
- * @param {string} cnpj
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param cnpj
+ * @param errorMsg optional
  * @example cpfIsValid('72.501.263/0001-40');
- * @example cpfIsValid('73.506.263/0001-45');
- * @example cpfIsValid('73.506.263/0001-45', ['CNPJ ta errado']);
  * @description This function returns four errors in the following order,
  *
- * If you want to use a default parameter, use null.
+ * If you want to use a default parameter, use null or leave Empty.
  *
  * Default:
  * ['CNPJ invalid', 'CNPJ must have 14 numerical digits', 'CNPJ is not valid', 'Unknown error']
  * .
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-// Função para validar o CNPJ
-function cnpjIsValid(cnpj: string, errorMsg = defaultErrorMsg) {
+
+function cnpjIsValid(cnpj: string, errorMsg: (string|null)[] = defaultErrorMsg): {
+	isValid: boolean;
+	errorMsg: string | null;
+} {
+
   if (typeof cnpj !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
   // Função interna para obter a mensagem de erro
-  function getErrorMessage(index: number) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
+
   try {
     if (!cnpj) {
       return {
@@ -74,12 +78,12 @@ function cnpjIsValid(cnpj: string, errorMsg = defaultErrorMsg) {
       };
     }
     // Remove any non-digit characters from the CNPJ string
-    const cnpjClean = cnpj.replace(/\D+/g, '');
+    const cnpjClean: string = cnpj.replace(/\D+/g, '');
     // Convert the CNPJ string to an array of digits
-    const cnpjArray = cnpjClean.split('').map(Number);
+    const cnpjArray: number[] = cnpjClean.split('').map(Number);
     // Calculate the first and second verifiers
-    const firstVerifier = calculateFirstVerifier(cnpjArray.slice(0, 12));
-    const secondVerifier = calculateSecondVerifier(cnpjArray.slice(0, 12).concat(firstVerifier), firstVerifier);
+    const firstVerifier: number = calculateFirstVerifier(cnpjArray.slice(0, 12));
+    const secondVerifier: number = calculateSecondVerifier(cnpjArray.slice(0, 12).concat(firstVerifier), firstVerifier);
     // Check if the calculated verifiers match the ones in the CNPJ
     if (cnpjArray[12] === firstVerifier && cnpjArray[13] === secondVerifier) {
       return {
@@ -99,3 +103,4 @@ function cnpjIsValid(cnpj: string, errorMsg = defaultErrorMsg) {
   }
 }
 export default cnpjIsValid;
+

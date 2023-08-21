@@ -1,12 +1,11 @@
 /**
- * @param {string} email
- * @param {number} [maxLength=400] optional
- * @param {string|null} country optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
- * @param {boolean|string[]} [validDomains=false] optional
+ * @param email
+ * @param maxLength optional
+ * @param country optional
+ * @param errorMsg optional
+ * @param validDomains optional
  * @default maxLength number: 400, validDomains = false
  * @example validateEmail('foor@bar.com', 30, 'us);
- * @example validateEmail('foor@bar.com', 30, 'br);
  * @example validateEmail('foor@bar.com', 30);
  * @example validateEmail('foor@bar.com', 30, null, ['My own error message']); Country is set to null
  * @example validateEmail('joao@myOwnDomain.com', null, null, null, ['@myOwnDomain.com']);
@@ -27,13 +26,13 @@
   '@mail.ru', '@yandex.ru', '@gmx.com', '@zoho.com', '@protonmail.com', '@protonmail.ch'];
 
  * You can also create a custom list, your list will completely replace the default list.
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+
+    DOCUMENTATION: https://gabriel-logan.github.io/multiform-validator/srcPage/subPages/functions/validateEmail
+
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateEmail(email: string, maxLength?: number, country?: string, errorMsg?: string[], validDomains?: boolean): {
+declare function validateEmail(email: string, maxLength?: number | null, country?: string | null, errorMsg?: (string | null)[], validDomains?: boolean): {
     isValid: boolean;
-    errorMsg: string;
-} | {
-    isValid: boolean;
-    errorMsg: null;
+    errorMsg: string | null;
 };
 export default validateEmail;

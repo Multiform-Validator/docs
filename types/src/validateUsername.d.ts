@@ -1,8 +1,8 @@
 /**
- * @param {string} username
- * @param {number} [minLength=1] optional
- * @param {number} [maxLength=Infinity] optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param username
+ * @param minLength optional
+ * @param maxLength optional
+ * @param errorMsg optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
  * @example validateUsername('User999', 8, 20);
@@ -24,13 +24,10 @@
 ];
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateUsername(username: string, minLength?: number, maxLength?: number, errorMsg?: string[]): {
+declare function validateUsername(username: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): {
     isValid: boolean;
-    errorMsg: string;
-} | {
-    isValid: boolean;
-    errorMsg: null;
+    errorMsg: string | null;
 };
 export default validateUsername;

@@ -4,10 +4,10 @@ function isCreditCardValid(cardNumber) {
     if (typeof cardNumber !== 'string')
         throw new TypeError('The input should be a string.');
     var digits = cardNumber.replace(/\D+/g, '').split('').map(Number);
-    var length = digits.length;
+    var tamanhoDoDigito = digits.length;
     var sum = 0;
     var isEven = false;
-    for (var i = length - 1; i >= 0; i -= 1) {
+    for (var i = tamanhoDoDigito - 1; i >= 0; i -= 1) {
         var digit = digits[i];
         if (isEven) {
             digit *= 2;

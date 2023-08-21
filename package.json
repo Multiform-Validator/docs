@@ -1,12 +1,12 @@
 {
   "name": "multiform-validator",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "./dist/index.js",
-	"types": "./types/index.d.ts",
+  "types": "./types/index.d.ts",
   "scripts": {
     "test": "node tester.js",
-		"build": "npx tsc"
+    "build": "npx tsc"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }
 }

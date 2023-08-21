@@ -1,5 +1,4 @@
 /**
- * @param {string|number} value
  * @example isDecimal('123.45'); // true
  * @example isDecimal('-123.45'); // true
  * @example isDecimal('0.123'); // true
@@ -9,10 +8,10 @@
  * @example isDecimal('12a.34'); // false (not a valid number)
  * @example isDecimal('12.34.56'); // false (not a valid number)
  * @description Values have to be passed as a string
- * @returns {boolean} true or false
+ * @returns true or false
  */
-function isDecimal(value: string|number) {
-  let getValued = value;
+function isDecimal(value: string|number): boolean {
+  let getValued: string|number = value;
   if (typeof getValued !== 'string') {
     if (typeof getValued === 'number') {
       getValued = getValued.toString();
@@ -24,7 +23,7 @@ function isDecimal(value: string|number) {
     throw new Error('Input value must not be an empty string.');
   }
   // Regular expression to validate decimal numbers
-  const decimalRegex = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
+  const decimalRegex: RegExp = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
   if (!decimalRegex.test(getValued)) {
     return false;
   }

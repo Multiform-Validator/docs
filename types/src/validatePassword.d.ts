@@ -1,19 +1,19 @@
 /**
- * @param {string} password
- * @param {number} [minLength = 1] optional
- * @param {number} [maxLength = Infinity] optional
- * @param {object} options optional
- * @param {boolean} options.requireUppercase optional
- * @param {boolean} options.requireSpecialChar optional
- * @param {boolean} options.requireNumber optional
- * @param {boolean} options.requireString optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param password
+ * @param minLength optional
+ * @param maxLength optional
+ * @param options optional
+ * @param options.requireUppercase optional
+ * @param options.requireSpecialChar optional
+ * @param options.requireNumber optional
+ * @param options.requireString optional
+ * @param errorMsg optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
- * @default options.requireUppercase: false
- * @default options.requireSpecialChar: false -> Examples !@#$%^&*(),.?":{}|<>
- * @default options.requireNumber: false
- * @default options.requireString: false
+ * @default {requireUppercase}: false
+ * @default {requireSpecialChar}: false -> Examples !@#$%^&*(),.?":{}|<>
+ * @default {requireNumber}: false
+ * @default {requireString}: false
  * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true });
  * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true }, ['My own error msg']);
  * @info minLength cannot be greater than maxLength
@@ -34,18 +34,15 @@
 
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validatePassword(password: string, minLength?: number, maxLength?: number, options?: {
+declare function validatePassword(password: string, minLength?: number | null, maxLength?: number | null, options?: {
     requireUppercase: boolean;
     requireSpecialChar: boolean;
     requireNumber: boolean;
     requireString: boolean;
-}, errorMsg?: string[]): {
+}, errorMsg?: (string | null)[]): {
     isValid: boolean;
-    errorMsg: string;
-} | {
-    isValid: boolean;
-    errorMsg: null;
+    errorMsg: string | null;
 };
 export default validatePassword;

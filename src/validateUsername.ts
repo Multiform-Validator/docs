@@ -1,7 +1,7 @@
-const regexHasSpaces = /\s/;
-const regexOnlyNumbers = /^\d+$/;
-const regexStartsWithNumber = /^\d/;
-const defaultErrorMsg = [
+const regexHasSpaces: RegExp = /\s/;
+const regexOnlyNumbers: RegExp = /^\d+$/;
+const regexStartsWithNumber: RegExp = /^\d/;
+const defaultErrorMsg: string[] = [
   'Invalid value passed',
   'username too short',
   'This username is too long',
@@ -11,10 +11,10 @@ const defaultErrorMsg = [
   'Unknown error',
 ];
 /**
- * @param {string} username
- * @param {number} [minLength=1] optional
- * @param {number} [maxLength=Infinity] optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param username
+ * @param minLength optional
+ * @param maxLength optional
+ * @param errorMsg optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
  * @example validateUsername('User999', 8, 20);
@@ -36,35 +36,42 @@ const defaultErrorMsg = [
 ];
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateUsername(username: string, minLength?: number, maxLength?: number, errorMsg = defaultErrorMsg) {
+function validateUsername(username: string, minLength?: number|null, maxLength?: number|null,
+	errorMsg: (string|null)[] = defaultErrorMsg): {
+	isValid: boolean, errorMsg: string|null
+} {
   if (typeof username !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
   // Função interna para obter a mensagem de erro
-  function getErrorMessage(index: number) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
+
   if (!username) {
     return {
       isValid: false,
       errorMsg: getErrorMessage(0),
     };
   }
-  const minLenthUsername = minLength || 1;
-  const maxLenthUsername = maxLength || Infinity;
+
+  const minLenthUsername: number = minLength || 1;
+  const maxLenthUsername: number = maxLength || Infinity;
+
 	if (typeof minLenthUsername !== 'number' || typeof maxLenthUsername !== 'number') {
 		throw new Error('maxLength or minLength must be a number');
 	}

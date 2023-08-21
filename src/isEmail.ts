@@ -1,9 +1,8 @@
 /**
- * @param {string} email
- * @example isEmail('foor@bar.com');
- * @returns {boolean}
+ * @example isEmail('foor@bar.com') true;
+ * @example isEmail('foor@bar') false;
  */
-function isEmail(email: string) {
+function isEmail(email: string): boolean {
   try {
     if (typeof email !== 'string') throw new TypeError('Invalid input, must be a string');
     if (!email) throw new Error('Value cannot be null or empty');

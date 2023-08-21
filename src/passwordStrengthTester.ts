@@ -1,9 +1,7 @@
 /**
- * @param {string} password
- *
  * @description Avalia a força de uma senha e retorna o tipo de força da senha.
  *
- * @returns {string} O tipo de força da senha ('veryWeak', 'weak', 'regular', 'strong' ou 'veryStrong').
+ * @returns O tipo de força da senha ('veryWeak', 'weak', 'regular', 'strong' ou 'veryStrong').
  *
  * @example
  * passwordStrengthTester('123'); // Output: 'veryWeak'
@@ -19,14 +17,11 @@
  *
  * @example
  * passwordStrengthTester('SuperSecurePassword123!'); // Output: 'veryStrong'
- *
- *
- * @returns {string} O tipo de força da senha ('veryWeak', 'weak', 'regular', 'strong' ou 'veryStrong').
  */
-function passwordStrengthTester(password: string) {
+function passwordStrengthTester(password: string): string {
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
   // Check de comprimento da senha
-  const passwordLength = password.length;
+  const passwordLength: number = password.length;
   let strengthType: string;
 
   // Critérios para classificar a senha

@@ -1,5 +1,4 @@
 /**
- * @param {string} postalCode
  * @example isPostalCode('12345'); // true (United States)
  * @example isPostalCode('M4B 1B3'); // true (Canada)
  * @example isPostalCode('SW1A 1AA'); // true (United Kingdom)
@@ -14,7 +13,6 @@
  * @example isPostalCode('00100'); // true (Italy)
  * @example isPostalCode('90210'); // true (United States ZIP Code)
  * @description Values have to be passed as a string. Supported countries: United States, Canada, United Kingdom, France, Netherlands, Japan, Spain, South Africa, Germany, Switzerland, Brazil, Italy.
- * @returns {boolean} true or false
  */
 declare function isPostalCode(postalCode: string): boolean;
 export default isPostalCode;

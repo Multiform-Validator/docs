@@ -76,11 +76,31 @@ function getOnlyEmail(text, multiple, cleanDomain, repeatEmail) {
             }
             return email;
         });
+        var cleanedEmails2 = cleanedEmails.map(function (email) {
+            var e_2, _a;
+            try {
+                for (var domainsToClean_3 = __values(domainsToClean_1), domainsToClean_3_1 = domainsToClean_3.next(); !domainsToClean_3_1.done; domainsToClean_3_1 = domainsToClean_3.next()) {
+                    var domain = domainsToClean_3_1.value;
+                    var index = email.indexOf(domain);
+                    if (index !== -1) {
+                        return email.substring(0, index + domain.length);
+                    }
+                }
+            }
+            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            finally {
+                try {
+                    if (domainsToClean_3_1 && !domainsToClean_3_1.done && (_a = domainsToClean_3.return)) _a.call(domainsToClean_3);
+                }
+                finally { if (e_2) throw e_2.error; }
+            }
+            return email;
+        });
         if (!repeatEmail) {
-            var uniqueEmails = __spreadArray([], __read(new Set(cleanedEmails)), false);
+            var uniqueEmails = __spreadArray([], __read(new Set(cleanedEmails2)), false);
             return multiple ? uniqueEmails : uniqueEmails[0];
         }
-        return multiple ? cleanedEmails : cleanedEmails[0];
+        return multiple ? cleanedEmails2 : cleanedEmails2[0];
     }
     if (!repeatEmail) {
         var uniqueEmails = __spreadArray([], __read(new Set(matches)), false);

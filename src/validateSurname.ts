@@ -1,4 +1,4 @@
-const defaultErrorMsg = [
+const defaultErrorMsg: string[] = [
   'Invalid value passed',
   'Surname cannot contain numbers', 'Surname cannot contain special characters',
   'This surname is not valid',
@@ -6,10 +6,10 @@ const defaultErrorMsg = [
   'Unknown error',
 ];
 /**
- * @param {string} surname
- * @param {number} [minLength=1]
- * @param {number} [maxLength=25]
- * @param {string[]} [errorMsg=defaultErrorMsg]
+ * @param surname
+ * @param minLength
+ * @param maxLength
+ * @param errorMsg
  * @default minLength number: default: 1
  * @default maxLength number: default: 25
  * @example validateSurname('Jackson', 3, 25);
@@ -26,29 +26,34 @@ const defaultErrorMsg = [
   'Surname too big, try again',
   'Unknown error',
 ];
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateSurname(surname: string, minLength?: number, maxLength?: number, errorMsg = defaultErrorMsg) {
+function validateSurname(surname: string, minLength?: number|null, maxLength?: number|null, errorMsg: (string|null)[] = defaultErrorMsg): {isValid: boolean, errorMsg: string|null} {
   if (typeof surname !== 'string') throw new TypeError('The input should be a string.');
+
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
+
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
     }
   }
+
   // Função interna para obter a mensagem de erro
-  function getErrorMessage(index: number) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
-	const minNameLength = minLength || 1;
-	const maxNameLength = maxLength || 25;
+
+	const minNameLength: number = minLength || 1;
+	const maxNameLength: number = maxLength || 25;
 
 	if (maxNameLength < 1 || minNameLength < 1 || typeof minNameLength !== 'number' || typeof maxNameLength !== 'number') {
 		throw new Error('maxLength or minLength must be a number and cannot be less than 1');
@@ -57,13 +62,15 @@ function validateSurname(surname: string, minLength?: number, maxLength?: number
   if (minNameLength > maxNameLength) {
     throw new Error('minLength cannot be greater than maxLength');
   }
+
   if (!surname) {
     return {
       isValid: false,
       errorMsg: getErrorMessage(0),
     };
   }
-  try {
+
+	try {
     if (surname.length > maxNameLength) {
       return {
         isValid: false,
@@ -100,7 +107,7 @@ function validateSurname(surname: string, minLength?: number, maxLength?: number
     }
 
     // Check if the surname contains at least 3 consecutive characters that are the same
-    const consecutiveCharsRegex = /(\w)\1\1/;
+    const consecutiveCharsRegex: RegExp = /(\w)\1\1/;
     if (consecutiveCharsRegex.test(surname)) {
       return {
         isValid: false,

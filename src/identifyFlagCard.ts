@@ -1,13 +1,15 @@
 /**
- * @param {string} cardNumber
  * @example identifyFlagCard('6062 8226 8644 9791');
  * @example identifyFlagCard('6062822686449791');
  * @description Values have to be passed as a string
- * @returns {string} return flag name ex. Visa
+ * @returns return flag name ex. Visa
  */
-function identifyFlagCard(cardNumber: string) {
+function identifyFlagCard(cardNumber: string): string {
   if (typeof cardNumber !== 'string') throw new TypeError('The input should be a string.');
-  const bandeiras = [
+  const bandeiras: {
+    name: string;
+    interval: RegExp;
+}[] = [
     { name: 'Visa', interval: /^4/ },
     { name: 'Mastercard', interval: /^5[1-5]/ },
     { name: 'American Express', interval: /^3[47]/ },
@@ -19,7 +21,10 @@ function identifyFlagCard(cardNumber: string) {
     { name: 'Elo', interval: /^63[789]/ },
     { name: 'Hipercard', interval: /^(3841|60)/ },
   ];
-  const bandeiraEncontrada = bandeiras.find((bandeira) => bandeira.interval.test(cardNumber));
+  const bandeiraEncontrada: {
+    name: string;
+    interval: RegExp;
+} | undefined = bandeiras.find((bandeira) => bandeira.interval.test(cardNumber));
   return bandeiraEncontrada ? bandeiraEncontrada.name : 'Unknown';
 }
 // Função para identificar a bandeira do cartão com base nos primeiros dígitos

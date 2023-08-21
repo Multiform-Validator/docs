@@ -1,8 +1,8 @@
 /**
- * @param {string} surname
- * @param {number} [minLength=1]
- * @param {number} [maxLength=25]
- * @param {string[]} [errorMsg=defaultErrorMsg]
+ * @param surname
+ * @param minLength
+ * @param maxLength
+ * @param errorMsg
  * @default minLength number: default: 1
  * @default maxLength number: default: 25
  * @example validateSurname('Jackson', 3, 25);
@@ -19,13 +19,10 @@
   'Surname too big, try again',
   'Unknown error',
 ];
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateSurname(surname: string, minLength?: number, maxLength?: number, errorMsg?: string[]): {
+declare function validateSurname(surname: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): {
     isValid: boolean;
-    errorMsg: string;
-} | {
-    isValid: boolean;
-    errorMsg: null;
+    errorMsg: string | null;
 };
 export default validateSurname;

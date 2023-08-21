@@ -1,4 +1,4 @@
-const defaultErrorMsg = [
+const defaultErrorMsg: string[] = [
   'This password is too long',
   'password too short',
   'Requires at least one capital letter',
@@ -9,21 +9,21 @@ const defaultErrorMsg = [
 ];
 
 /**
- * @param {string} password
- * @param {number} [minLength = 1] optional
- * @param {number} [maxLength = Infinity] optional
- * @param {object} options optional
- * @param {boolean} options.requireUppercase optional
- * @param {boolean} options.requireSpecialChar optional
- * @param {boolean} options.requireNumber optional
- * @param {boolean} options.requireString optional
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param password
+ * @param minLength optional
+ * @param maxLength optional
+ * @param options optional
+ * @param options.requireUppercase optional
+ * @param options.requireSpecialChar optional
+ * @param options.requireNumber optional
+ * @param options.requireString optional
+ * @param errorMsg optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
- * @default options.requireUppercase: false
- * @default options.requireSpecialChar: false -> Examples !@#$%^&*(),.?":{}|<>
- * @default options.requireNumber: false
- * @default options.requireString: false
+ * @default {requireUppercase}: false
+ * @default {requireSpecialChar}: false -> Examples !@#$%^&*(),.?":{}|<>
+ * @default {requireNumber}: false
+ * @default {requireString}: false
  * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true });
  * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true }, ['My own error msg']);
  * @info minLength cannot be greater than maxLength
@@ -44,14 +44,19 @@ const defaultErrorMsg = [
 
  *
  * Create a list of errors separated by commas in strings
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validatePassword(password: string, minLength?: number, maxLength?: number, options = {
+function validatePassword(password: string, minLength?: number|null, maxLength?: number|null, options: {
+	requireUppercase: boolean
+	requireSpecialChar: boolean
+	requireNumber: boolean
+	requireString: boolean
+} = {
   requireUppercase: false,
   requireSpecialChar: false,
   requireNumber: false,
   requireString: false,
-}, errorMsg = defaultErrorMsg) {
+}, errorMsg: (string|null)[] = defaultErrorMsg): {isValid: boolean, errorMsg: string|null} {
 
 
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
@@ -59,7 +64,7 @@ function validatePassword(password: string, minLength?: number, maxLength?: numb
   // caso contrario retorna um ERRO
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
@@ -68,15 +73,16 @@ function validatePassword(password: string, minLength?: number, maxLength?: numb
 
 
   // Função interna para obter a mensagem de erro
-  function getErrorMessage(index: number) {
-    if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
 
-  const minLenthPassword = minLength || 1;
-  const maxLenthPassword = maxLength || Infinity;
+  const minLenthPassword: number = minLength || 1;
+  const maxLenthPassword: number = maxLength || Infinity;
 
 	if (typeof minLenthPassword !== 'number' || typeof maxLenthPassword !== 'number') {
 		throw new Error('maxLength and/or minLength must be a number');

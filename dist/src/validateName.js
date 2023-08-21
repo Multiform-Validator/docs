@@ -21,8 +21,9 @@ function validateName(name, minLength, maxLength, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        if (errorMsg && index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-            return errorMsg[index];
+        if (errorMsg && index >= 0 && index < errorMsg.length) {
+            var errorMessage = errorMsg[index];
+            return errorMessage != null ? errorMessage : defaultErrorMsg[index];
         }
         return defaultErrorMsg[index];
     }

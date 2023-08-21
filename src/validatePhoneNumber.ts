@@ -1,19 +1,19 @@
-const defaultErrorMsg = ['Invalid value passed', 'Invalid phone number', 'Unknown error'];
+const defaultErrorMsg: string[] = ['Invalid value passed', 'Invalid phone number', 'Unknown error'];
 /**
- * @param {string} phoneNumber
- * @param {string[]} [errorMsg=defaultErrorMsg] optional
+ * @param phoneNumber
+ * @param errorMsg optional
  * @example validatePhoneNumber('555-123-4567');
  * @example validatePhoneNumber('(555) 123-4567', [null, 'Custom error 2']);
  * @default {errorMsg} ['Invalid value passed', 'Invalid phone number', 'Unknown error']
  * @description This function is a generic phone number validator. It can validate phone numbers in various formats depending on the specific implementation.
- * @returns {object} An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
+ * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validatePhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) {
+function validatePhoneNumber(phoneNumber: string, errorMsg: (string|null)[] = defaultErrorMsg): {isValid: boolean, errorMsg: string|null} {
   if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
   // Check to see if the passed error messages are valid; otherwise, return an error
   if (errorMsg) {
     if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index = 0; index < errorMsg.length; index += 1) {
+    for (let index: number = 0; index < errorMsg.length; index += 1) {
       if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
         throw new TypeError('All values within the array must be strings or null/undefined.');
       }
@@ -21,9 +21,10 @@ function validatePhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) {
   }
 
   // Internal function to get the error message
-  function getErrorMessage(index: number) {
-    if (index >= 0 && index < errorMsg.length && errorMsg[index] != null) {
-      return errorMsg[index];
+  function getErrorMessage(index: number): string {
+    if (errorMsg && index >= 0 && index < errorMsg.length) {
+      const errorMessage: string|null = errorMsg[index];
+      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     return defaultErrorMsg[index];
   }
@@ -39,7 +40,7 @@ function validatePhoneNumber(phoneNumber: string, errorMsg = defaultErrorMsg) {
   // For the generic implementation, we'll use a dummy regex that matches any string.
   // Updated regular expression for phone number validation
 
-  const phoneNumberRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+  const phoneNumberRegex: RegExp = /^\(\d{3}\) \d{3}-\d{4}$/;
   try {
     if (!phoneNumberRegex.test(phoneNumber)) {
       return {
