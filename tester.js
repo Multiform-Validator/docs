@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
+
+// OBS
+
+// getOnlyEmail resolver   'awiudwaidu@awduiawid.comASDASDduiawid.com',
+
 const {
   cpfIsValid,
   cnpjIsValid,

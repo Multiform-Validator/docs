@@ -30,7 +30,7 @@ const CleanAfterDefaultDomain = ['.br', '.io', '.pt', '.us', '.org', '.com'];
  *
  * @returns {string | string[]} An email string if multiple is false, or an array of email strings if multiple is true.
  */
-function getOnlyEmail(text: string, multiple = false, cleanDomain = false, repeatEmail = false) {
+function getOnlyEmail(text: string, multiple = false, cleanDomain: boolean|string[] = false, repeatEmail = false) {
 
   const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 
