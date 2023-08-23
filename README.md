@@ -1,3 +1,6 @@
+# I accept help to make the version of the other programming languages.
+It sucks to do it alone );
+
 # Multiform-validator
 
 [![npm version](https://badge.fury.io/js/multiform-validator.svg)](https://badge.fury.io/js/multiform-validator)
