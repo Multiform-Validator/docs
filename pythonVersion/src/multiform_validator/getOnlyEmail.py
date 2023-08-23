@@ -38,5 +38,3 @@ def getOnlyEmail(text, multiple=False, clean_domain=False, repeat_email=False):
         return unique_emails if multiple else unique_emails[0]
 
     return matches if multiple else matches[0]
-
-

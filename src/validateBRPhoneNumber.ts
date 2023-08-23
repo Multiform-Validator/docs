@@ -26,11 +26,8 @@ function validateBRPhoneNumber(phoneNumber: string, errorMsg: (string|null)[] = 
 
   // Internal function to get the error message
   function getErrorMessage(index: number): string {
-    if (errorMsg && index >= 0 && index < errorMsg.length) {
-      const errorMessage: string|null = errorMsg[index];
-      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-    }
-    return defaultErrorMsg[index];
+		const errorMessage: string|null = errorMsg[index];
+		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
   if (!phoneNumber) {

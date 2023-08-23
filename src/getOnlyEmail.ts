@@ -42,6 +42,42 @@ function getOnlyEmail(text: string, multiple: boolean = false, cleanDomain: bool
 		}
 
 		const cleanedEmails: string[] = matches.map((email) => {
+			for (const domain of domainsToClean) {
+				const index: number = email.lastIndexOf(domain);
+				if (index !== -1) {
+					email = email.substring(0, index + domain.length);
+					break; // Break the loop once a match is found
+				}
+			}
+
+			for (const domain of domainsToClean) {
+				const index: number = email.indexOf(domain);
+				if (index !== -1) {
+					email = email.substring(0, index + domain.length);
+					break; // Break the loop once a match is found
+				}
+			}
+
+			return email;
+		});
+
+
+    if (!repeatEmail) {
+      const uniqueEmails: string[] = [...new Set(cleanedEmails)];
+      return multiple ? uniqueEmails : uniqueEmails[0];
+    }
+
+    return multiple ? cleanedEmails : cleanedEmails[0];
+  }
+
+  if (!repeatEmail) {
+    const uniqueEmails: string[] = [...new Set(matches)];
+    return multiple ? uniqueEmails : uniqueEmails[0];
+  }
+
+  return multiple ? matches : matches[0];
+	/**
+	 * 		const cleanedEmails: string[] = matches.map((email) => {
       for (const domain of domainsToClean) {
         const index: number = email.lastIndexOf(domain);
         if (index !== -1) {
@@ -60,22 +96,7 @@ function getOnlyEmail(text: string, multiple: boolean = false, cleanDomain: bool
       }
       return email;
 		});
-
-    if (!repeatEmail) {
-      const uniqueEmails: string[] = [...new Set(cleanedEmails2)];
-      return multiple ? uniqueEmails : uniqueEmails[0];
-    }
-
-    return multiple ? cleanedEmails2 : cleanedEmails2[0];
-  }
-
-  if (!repeatEmail) {
-    const uniqueEmails: string[] = [...new Set(matches)];
-    return multiple ? uniqueEmails : uniqueEmails[0];
-  }
-
-  return multiple ? matches : matches[0];
+	 */
 }
 
 export default getOnlyEmail;
-

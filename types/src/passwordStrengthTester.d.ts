@@ -4,19 +4,19 @@
  * @returns O tipo de força da senha ('veryWeak', 'weak', 'regular', 'strong' ou 'veryStrong').
  *
  * @example
- * passwordStrengthTester('123'); // Output: 'veryWeak'
+ * passwordStrengthTester('12345'); // Output: 'veryWeak'
  *
  * @example
- * passwordStrengthTester('abc'); // Output: 'weak'
+ * passwordStrengthTester('abcdef'); // Output: 'weak'
  *
  * @example
- * passwordStrengthTester('abc123'); // Output: 'regular'
+ * passwordStrengthTester('abc12345'); // Output: 'regular'
  *
  * @example
- * passwordStrengthTester('Abc123!'); // Output: 'strong'
+ * passwordStrengthTester('Abc123awdasd'); // Output: 'strong'
  *
  * @example
- * passwordStrengthTester('SuperSecurePassword123!'); // Output: 'veryStrong'
+ * passwordStrengthTester('SuperSecurePassword123!@'); // Output: 'veryStrong'
  */
 declare function passwordStrengthTester(password: string): string;
 export default passwordStrengthTester;

@@ -26,11 +26,8 @@ function validateUSPhoneNumber(phoneNumber: string, errorMsg: (string|null)[] = 
   const usPhoneNumberRegex: RegExp = /^(1\s?)?(\(\d{3}\)|\d{3})(\s?|-)\d{3}(\s?|-)\d{4}$/;
   // Internal function to get the error message
   function getErrorMessage(index: number): string {
-    if (errorMsg && index >= 0 && index < errorMsg.length) {
-      const errorMessage: string|null = errorMsg[index];
-      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-    }
-    return defaultErrorMsg[index];
+		const errorMessage: string|null = errorMsg[index];
+		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
   if (!phoneNumber) {

@@ -29,10 +29,8 @@ def cnpjValidator(cnpj: str, errorMsg: dict[str, str or None]=default_error_msg)
                 raise TypeError('All values within the list must be strings or None/NoneType.')
 
     def get_error_message(index):
-        if errorMsg and 0 <= index < len(errorMsg):
             error_message = errorMsg[index]
             return error_message if error_message is not None else default_error_msg[index]
-        return default_error_msg[index]
 
     try:
         if not cnpj:

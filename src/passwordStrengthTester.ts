@@ -4,44 +4,65 @@
  * @returns O tipo de força da senha ('veryWeak', 'weak', 'regular', 'strong' ou 'veryStrong').
  *
  * @example
- * passwordStrengthTester('123'); // Output: 'veryWeak'
+ * passwordStrengthTester('12345'); // Output: 'veryWeak'
  *
  * @example
- * passwordStrengthTester('abc'); // Output: 'weak'
+ * passwordStrengthTester('abcdef'); // Output: 'weak'
  *
  * @example
- * passwordStrengthTester('abc123'); // Output: 'regular'
+ * passwordStrengthTester('abc12345'); // Output: 'regular'
  *
  * @example
- * passwordStrengthTester('Abc123!'); // Output: 'strong'
+ * passwordStrengthTester('Abc123awdasd'); // Output: 'strong'
  *
  * @example
- * passwordStrengthTester('SuperSecurePassword123!'); // Output: 'veryStrong'
+ * passwordStrengthTester('SuperSecurePassword123!@'); // Output: 'veryStrong'
  */
 function passwordStrengthTester(password: string): string {
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');
-  // Check de comprimento da senha
+
   const passwordLength: number = password.length;
-  let strengthType: string;
+  let strengthType: string = 'unknow';
+	switch (true) {
+		case passwordLength <= 5 && /^\d+$/.test(password):
+			strengthType = 'veryWeak';
+			break;
 
-  // Critérios para classificar a senha
-  if (passwordLength < 6 && /^\d+$/.test(password)) {
-    strengthType = 'veryWeak';
-  } else if (passwordLength < 8 && /^\d+$/.test(password)) {
-    strengthType = 'weak';
-  } else if (passwordLength < 8 && /\d/.test(password) && /[a-zA-Z]/.test(password)) {
-    strengthType = 'regular';
-  } else if (
-    /[A-Z]/.test(password)
-    && /[!@#$%^&*(),.?":{}|<>]/.test(password)
-    && /\d/.test(password)
-    && /[a-zA-Z]/.test(password)
-  ) {
-    strengthType = 'veryStrong';
-  } else {
-    strengthType = 'strong';
-  }
+		case (passwordLength <= 5 && /^[a-zA-Z0-9]+$/.test(password)) || (passwordLength >= 6 && /^[a-zA-Z0-9]+$/.test(password) && passwordLength <= 7) || (passwordLength < 10 && /(.)\1{3,}/.test(password)) || (passwordLength >= 5 && passwordLength <= 8 && /^\d+$/.test(password)):
+			strengthType = 'weak';
+			break;
 
-  return strengthType;
+		case /(.)\1{5,}/.test(password) && passwordLength > 10:
+			strengthType = 'regular';
+			break;
+
+		case (passwordLength > 16) || (
+			password.length >= 8 &&
+			/[A-Z]/.test(password) &&
+			/[a-z]/.test(password) &&
+			/[0-9]/.test(password) &&
+			/[\W_]/.test(password)
+		):
+			strengthType = 'veryStrong';
+			break;
+
+		case (passwordLength >= 13 && passwordLength <= 16) || (
+			password.length >= 8 &&
+			/[A-Z]/.test(password) &&
+			/[a-z]/.test(password) &&
+			/[0-9]/.test(password)
+		):
+			strengthType = 'strong';
+			break;
+
+		case (passwordLength >= 9 && passwordLength <= 12) || (password.length >= 6 && password.length <= 8 && /[0-9]/.test(password) && /[a-zA-Z]/.test(password)):
+			strengthType = 'regular';
+			break;
+
+		default:
+			break;
+	}
+	return strengthType;
 }
+
 export default passwordStrengthTester;

@@ -7,6 +7,12 @@ const defaultErrorMsg: string[] = [
   'Requires at least one letter',
   'Unknown error',
 ];
+interface Options {
+	requireUppercase: boolean
+	requireSpecialChar: boolean
+	requireNumber: boolean
+	requireString: boolean
+}
 
 /**
  * @param password
@@ -46,12 +52,7 @@ const defaultErrorMsg: string[] = [
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validatePassword(password: string, minLength?: number|null, maxLength?: number|null, options: {
-	requireUppercase: boolean
-	requireSpecialChar: boolean
-	requireNumber: boolean
-	requireString: boolean
-} = {
+function validatePassword(password: string, minLength?: number|null, maxLength?: number|null, options: Options = {
   requireUppercase: false,
   requireSpecialChar: false,
   requireNumber: false,
@@ -74,11 +75,8 @@ function validatePassword(password: string, minLength?: number|null, maxLength?:
 
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
-    if (errorMsg && index >= 0 && index < errorMsg.length) {
-      const errorMessage: string|null = errorMsg[index];
-      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-    }
-    return defaultErrorMsg[index];
+		const errorMessage: string|null = errorMsg[index];
+		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
   const minLenthPassword: number = minLength || 1;

@@ -40,11 +40,8 @@ function cpfIsValid(cpf: string, errorMsg: (string|null)[] = defaultErrorMsg): {
   }
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
-    if (errorMsg && index >= 0 && index < errorMsg.length) {
-      const errorMessage: string|null = errorMsg[index];
-      return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-    }
-    return defaultErrorMsg[index];
+		const errorMessage: string|null = errorMsg[index];
+		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
   try {
