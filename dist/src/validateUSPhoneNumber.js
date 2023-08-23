@@ -16,11 +16,8 @@ function validateUSPhoneNumber(phoneNumber, errorMsg) {
     }
     var usPhoneNumberRegex = /^(1\s?)?(\(\d{3}\)|\d{3})(\s?|-)\d{3}(\s?|-)\d{4}$/;
     function getErrorMessage(index) {
-        if (errorMsg && index >= 0 && index < errorMsg.length) {
-            var errorMessage = errorMsg[index];
-            return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-        }
-        return defaultErrorMsg[index];
+        var errorMessage = errorMsg[index];
+        return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     if (!phoneNumber) {
         return {

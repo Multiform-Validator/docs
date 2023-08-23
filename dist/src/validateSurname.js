@@ -21,11 +21,8 @@ function validateSurname(surname, minLength, maxLength, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        if (errorMsg && index >= 0 && index < errorMsg.length) {
-            var errorMessage = errorMsg[index];
-            return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-        }
-        return defaultErrorMsg[index];
+        var errorMessage = errorMsg[index];
+        return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     var minNameLength = minLength || 1;
     var maxNameLength = maxLength || 25;
