@@ -17,7 +17,7 @@ def calculate_second_verifier(cnpj_base, first_verifier):
 
 default_error_msg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', 'CNPJ is not valid', 'Unknown error']
 
-def cnpjValidator(cnpj: str, errorMsg: list[str, str or None]=default_error_msg) -> object[bool, str or None]:
+def cnpjValidator(cnpj: str, errorMsg: list[str, str or None]=default_error_msg) -> dict[bool, str or None]:
     if not isinstance(cnpj, str):
         raise TypeError('The input should be a string.')
 
@@ -59,4 +59,3 @@ def cnpjValidator(cnpj: str, errorMsg: list[str, str or None]=default_error_msg)
             'isValid': False,
             'errorMsg': get_error_message(3),  # 'Unknown error'
         }
-

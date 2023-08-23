@@ -26,6 +26,28 @@ If you want to help me, you can buy me a coffee (:
 pip install multiform-validator
 ```
 
+# Avaliable for while
+
+- **cnpjValidator**: CNPJ validation.
+- **cpfValidator**: CPF validation.
+- **getOnlyEmail**: Extracts only the email or emails address from a string.
+- **identifyFlagCard**: Identifies the flag of a credit card.
+- **isCreditCardValid**: Credit card validation.
+- **isEmail**: Email address validation format.
+- **passwordStrengthTester**: Password strength test.
+- **validateBRPhoneNumber**: Brazilian phone number validation.
+
+from multiform_validator import (
+    cnpjIsValid,
+    cpfIsValid,
+    getOnlyEmail,
+    identifyFlagCard,
+    isCreditCardValid,
+    isEmail,
+    passwordStrengthTester,
+    validateBRPhoneNumber
+)
+
 # Data Validator
 
 This package contains various modules for validating different types of data. Below are the available validation modules:

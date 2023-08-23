@@ -1,19 +1,24 @@
-def isCreditCardValid(cardNumber: str):
+def isCreditCardValid(cardNumber: str) -> bool:
     if not isinstance(cardNumber, str):
         raise TypeError('The input should be a string.')
 
-    digits = list(map(int, filter(str.isdigit, cardNumber)))
-    tamanho_do_digito = len(digits)
-    sum_value = 0
-    is_even = False
+    # Remove espaços em branco e verifica se todos os caracteres são dígitos
+    cardNumber = cardNumber.replace(" ", "")
+    if not cardNumber.isdigit():
+        return False
 
-    for i in range(tamanho_do_digito - 1, -1, -1):
+    digits = list(map(int, cardNumber))
+    tamanhoDoDigito = len(digits)
+    totalSum = 0
+    isEven = False
+
+    for i in range(tamanhoDoDigito - 1, -1, -1):
         digit = digits[i]
-        if is_even:
+        if isEven:
             digit *= 2
             if digit > 9:
                 digit -= 9
-        sum_value += digit
-        is_even = not is_even
+        totalSum += digit
+        isEven = not isEven
 
-    return sum_value % 10 == 0
+    return totalSum % 10 == 0

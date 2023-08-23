@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: multiform-validator
-Version: 0.0.3
+Version: 0.0.5
 Summary: A small example package
 Author: Gabriel Logan
 Project-URL: Homepage, https://github.com/gabriel-logan/multiform-validator/tree/main/pythonVersion
@@ -39,6 +39,26 @@ If you want to help me, you can buy me a coffee (:
 ```bash
 pip install multiform-validator
 ```
+
+# Avaliable for while
+
+- **cnpjValidator**: CNPJ validation.
+- **cpfValidator**: CPF validation.
+- **getOnlyEmail**: Extracts only the email or emails address from a string.
+- **identifyFlagCard**: Identifies the flag of a credit card.
+- **isCreditCardValid**: Credit card validation.
+- **isEmail**: Email address validation format.
+- **passwordStrengthTester**: Password strength test.
+- **validateBRPhoneNumber**: Brazilian phone number validation.
+
+from .cpfValidator import cpfValidator as
+from .cnpjValidator import cnpjValidator as cnpjIsValid
+from .getOnlyEmail import getOnlyEmail
+from .isEmail import isEmail
+from .identifyFlagCard import identifyFlagCard
+from .isCreditCardValid import isCreditCardValid
+from .passwordStrengthTester import passwordStrengthTester
+from .validateBRPhoneNumber import validateBRPhoneNumber
 
 # Data Validator
 

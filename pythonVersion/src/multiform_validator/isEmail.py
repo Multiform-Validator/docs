@@ -21,4 +21,3 @@ def isEmail(email: str) -> bool:
         return True
     except Exception:
         return False
-

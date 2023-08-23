@@ -90,5 +90,3 @@ def cpfValidator(cpf: str, errorMsg: dict[str, str or None] = defaultErrorMsg) -
       "isValid": False,
       "errorMsg": getErrorMessage(3),
     }
-
-
