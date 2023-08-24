@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
     <link rel="stylesheet" href="../../css/functions/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
 </head>
 
 <body>
@@ -159,25 +160,24 @@
 										</pre>
 
                     <h2 class="subtitle">Examples</h2>
-                    <pre>
-																						const result1 = validateName('John', 2, 20);
-																						console.log(result1);
-																						// Output: { isValid: true, errorMsg: null }
+                    <pre><code>
+const result1 = validateName('John', 2, 20);
+console.log(result1);
+// Output: { isValid: true, errorMsg: null }
 
-																						const result2 = validateName('J0hn');
-																						console.log(result2);
-																						// Output: { isValid: false, errorMsg: 'Name cannot contain numbers' }
+const result2 = validateName('J0hn');
+console.log(result2);
+// Output: { isValid: false, errorMsg: 'Name cannot contain numbers' }
 
-																						const customErrorMsg = ['Invalid format', 'Invalid name', 'Unknown error'];
-																						const result3 = validateName('John$');
-																						console.log(result3);
-																						// Output: { isValid: false, errorMsg: 'Name cannot contain special characters' }
+const customErrorMsg = ['Invalid format', 'Invalid name', 'Unknown error'];
+const result3 = validateName('John$');
+console.log(result3);
+// Output: { isValid: false, errorMsg: 'Name cannot contain special characters' }
 
-																						const result4 = validateName('NameWithTwentyOneCharacters');
-																						console.log(result4);
-																						// Output: { isValid: false, errorMsg: 'Name too big, try again' }
-
-										</pre>
+const result4 = validateName('NameWithTwentyOneCharacters');
+console.log(result4);
+// Output: { isValid: false, errorMsg: 'Name too big, try again' }
+										</code></pre>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->
@@ -195,6 +195,11 @@
 
 
     </section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
+    <script src="../../js/functions/index.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>

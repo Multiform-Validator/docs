@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
     <link rel="stylesheet" href="../../css/functions/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
 </head>
 
 <body>
@@ -133,15 +134,17 @@
                         The function can be imported using ES6 syntax from the "br-phone-number-validator" package:
                     </p>
                     <pre>
-																					import { validateBRPhoneNumber } from 'br-phone-number-validator';
-					</pre>
+											<code>
+import { validateBRPhoneNumber } from 'br-phone-number-validator';
+											</code></pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-																					const { validateBRPhoneNumber } = require('br-phone-number-validator');
-					</pre>
+											<code>
+const { validateBRPhoneNumber } = require('br-phone-number-validator');
+											</code></pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -156,33 +159,34 @@
                     <p>
                         The default error messages are as follows:
                     </p>
-                    <pre>
-																			[
-																				'Invalid value passed',
-																				'Invalid phone number',
-																				'Unknown error'
-																			]
-										</pre>
+                    <pre><code>
+[
+	'Invalid value passed',
+	'Invalid phone number',
+	'Unknown error'
+]
+										</code></pre>
 
                     <h2 class="subtitle">Examples</h2>
                     <pre>
-																							const result1 = validateBRPhoneNumber('(11) 98765-4321');
-																							console.log(result1);
-																							// Output: { isValid: true, errorMsg: null }
+<code>
+const result1 = validateBRPhoneNumber('(11) 98765-4321');
+console.log(result1);
+// Output: { isValid: true, errorMsg: null }
 
-																							const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
-																							const result2 = validateBRPhoneNumber('(11) 98765-4321', customErrorMsg);
-																							console.log(result2);
-																							// Output: { isValid: true, errorMsg: null }
+const customErrorMsg = ['Invalid format', 'Invalid phone number', 'Unknown error'];
+const result2 = validateBRPhoneNumber('(11) 98765-4321', customErrorMsg);
+console.log(result2);
+// Output: { isValid: true, errorMsg: null }
 
-																							const result3 = validateBRPhoneNumber('invalid');
-																							console.log(result3);
-																							// Output: { isValid: false, errorMsg: 'Invalid value passed' }
+const result3 = validateBRPhoneNumber('invalid');
+console.log(result3);
+// Output: { isValid: false, errorMsg: 'Invalid value passed' }
 
-																							const result4 = validateBRPhoneNumber('(11) 1234-5678', customErrorMsg);
-																							console.log(result4);
-																							// Output: { isValid: false, errorMsg: 'Invalid phone number' }
-						</pre>
+const result4 = validateBRPhoneNumber('(11) 1234-5678', customErrorMsg);
+console.log(result4);
+// Output: { isValid: false, errorMsg: 'Invalid phone number' }
+</code> </pre>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->
@@ -200,6 +204,11 @@
 
 
     </section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
+    <script src="../../js/functions/index.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>

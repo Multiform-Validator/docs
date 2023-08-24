@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
     <link rel="stylesheet" href="../../css/functions/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+
 </head>
 
 <body>
@@ -132,15 +134,17 @@
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
                     <pre>
-																			import { isNumber } from 'multiform-validator';
-										</pre>
+											<code>
+import { isNumber } from 'multiform-validator';
+											</code></pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
                     <pre>
-																			const { isNumber } = require('multiform-validator');
-										</pre>
+											<code>
+const { isNumber } = require('multiform-validator');
+											</code></pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -151,15 +155,15 @@
                     </ul>
 
                     <h2 class="subtitle">Examples</h2>
-                    <pre>
-																			// Example 1 - Valid numbers
-																			const result1 = isNumber(123); // true
-																			console.log(result1);
+                    <pre><code>
+// Example 1 - Valid numbers
+const result1 = isNumber(123); // true
+console.log(result1);
 
-																			// Example 2 - Not a valid number
-																			const result2 = isNumber('abc'); // false
-																			console.log(result2);
-						</pre>
+// Example 2 - Not a valid number
+const result2 = isNumber('abc'); // false
+console.log(result2);
+										</code></pre>
 
                     <h2 class="subtitle">Notes</h2>
                     <p>
@@ -183,6 +187,11 @@
 
 
     </section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
+    <script src="../../js/functions/index.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>

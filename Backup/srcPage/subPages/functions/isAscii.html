@@ -8,7 +8,8 @@
     <title>isAscii</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/documentation/style.css">
-    <link rel="stylesheet" href="../../css/functions/style.css">
+    <link rel="stylesheet" href="../../css/functions/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" />
+
 </head>
 
 <body>
@@ -131,16 +132,16 @@
                     <p>
                         The function can be imported using ES6 syntax from the "multiform-validator" package:
                     </p>
-                    <pre>
-																			import { isAscii } from 'multiform-validator';
-					</pre>
+                    <pre><code class="language-javascript">
+import { isAscii } from 'multiform-validator';
+										</code></pre>
 
                     <p>
                         Alternatively, you can import the function using CommonJS syntax with <code>require</code> (Node.js):
                     </p>
-                    <pre>
-																			const { isAscii } = require('multiform-validator');
-					</pre>
+                    <pre><code class="language-javascript">
+const { isAscii } = require('multiform-validator');
+										</code></pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <p>
@@ -151,27 +152,27 @@
                     </ul>
 
                     <h2 class="subtitle">Examples</h2>
-                    <pre>
-																					// Example 1 - Checking if the string contains only ASCII characters
-																					const result1 = isAscii('Hello');
-																					console.log(result1); // true
+                    <pre><code class="language-javascript">
+// Example 1 - Checking if the string contains only ASCII characters
+const result1 = isAscii('Hello');
+console.log(result1); // true
 
-																					// Example 2 - Checking a non-ASCII string
-																					const result2 = isAscii('こんにちは');
-																					console.log(result2); // false
+// Example 2 - Checking a non-ASCII string
+const result2 = isAscii('こんにちは');
+console.log(result2); // false
 
-																					// Example 3 - Checking a string with only ASCII characters
-																					const result3 = isAscii('12345');
-																					console.log(result3); // true
+// Example 3 - Checking a string with only ASCII characters
+const result3 = isAscii('12345');
+console.log(result3); // true
 
-																					// Example 4 - Checking a null value
-																					const result4 = isAscii(null);
-																					console.log(result4); // false
+// Example 4 - Checking a null value
+const result4 = isAscii(null);
+console.log(result4); // false
 
-																					// Example 5 - Checking an undefined value
-																					const result5 = isAscii(undefined);
-																					console.log(result5); // false
-						</pre>
+// Example 5 - Checking an undefined value
+const result5 = isAscii(undefined);
+console.log(result5); // false
+										</code></pre>
 
                     <h2 class="subtitle">Notes</h2>
                     <p>
@@ -195,6 +196,10 @@
 
 
     </section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scss.min.js"></script>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>

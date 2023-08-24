@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/multiform_validator/__init__.py
+src/multiform_validator/cnpjValidator.py
+src/multiform_validator/cpfValidator.py
+src/multiform_validator/getOnlyEmail.py
+src/multiform_validator/identifyFlagCard.py
+src/multiform_validator/isCreditCardValid.py
+src/multiform_validator/isEmail.py
+src/multiform_validator/passwordStrengthTester.py
+src/multiform_validator/validateBRPhoneNumber.py
+src/multiform_validator.egg-info/PKG-INFO
+src/multiform_validator.egg-info/SOURCES.txt
+src/multiform_validator.egg-info/dependency_links.txt
+src/multiform_validator.egg-info/top_level.txt
