@@ -36,7 +36,7 @@ const {
   validateName,
   validateSurname,
   validateTextarea
-} = require('./dist/index.js');
+} = require('../dist/index.js');
 
 console.log('Testing importations:');
 
