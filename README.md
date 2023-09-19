@@ -69,6 +69,9 @@ This package contains various modules for validating different types of data. Be
 - **validateSurname**: Surname validation.
 - **validateTextarea**: Textarea validation.
 
+![Example using Reactjs](https://github.com/gabriel-logan/multiform-validator/blob/main/images/exampleWithReactjs.png)
+![Showing error in browser](https://github.com/gabriel-logan/multiform-validator/blob/main/images/showErro.png)
+
 ### For better information, read the documentation
 
 ```javascript
