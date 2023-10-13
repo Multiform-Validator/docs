@@ -1,3 +1,6 @@
+import isEmpty from './isEmpty';
+import isNumber from './isNumber';
+
 /**
  * @example isCreditCardValid('6062 8226 8644 9791');
  * @example isCreditCardValid('6062822686449791');
@@ -6,6 +9,13 @@
  */
 function isCreditCardValid(cardNumber: string): boolean {
   if (typeof cardNumber !== 'string') throw new TypeError('The input should be a string.');
+
+	const cleanedCreditCardInput = cardNumber.replace(/\D/g, '');
+
+	if (isEmpty(cleanedCreditCardInput) || !isNumber(cleanedCreditCardInput)){
+		return false;
+	}
+
   const digits: number[] = cardNumber.replace(/\D+/g, '').split('').map(Number);
   const tamanhoDoDigito: number = digits.length;
   let sum: number = 0;
