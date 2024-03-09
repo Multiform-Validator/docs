@@ -2,7 +2,7 @@ const regexHasSpaces: RegExp = /\s/;
 const regexOnlyNumbers: RegExp = /^\d+$/;
 const regexStartsWithNumber: RegExp = /^\d/;
 const defaultErrorMsg: string[] = [
-  'Invalid value passed',
+  'Username cannot be empty',
   'username too short',
   'This username is too long',
   'Username cannot contain spaces',
@@ -26,9 +26,9 @@ const defaultErrorMsg: string[] = [
  *
  * Default:
  *   [
-  'Invalid value passed',
-  'username too short',
-  'This username is too long',
+  'Username cannot be empty',
+  'Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters',
+  'Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters',
   'Username cannot contain spaces',
   'Cannot start with number',
   'Cannot contain only numbers',
@@ -53,9 +53,19 @@ function validateUsername(username: string, minLength?: number|null, maxLength?:
       }
     }
   }
+  const minLenthUsername: number = minLength || 1;
+  const maxLenthUsername: number = maxLength || Infinity;
+
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
 		const errorMessage: string|null = errorMsg[index];
+		if(errorMessage === 'username too short' || errorMessage === 'This username is too long'){
+			if(maxLenthUsername === Infinity){
+				return `Username must be greater than ${maxLenthUsername} characters`;
+			}else{
+				return `Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters`;
+			}
+		}
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
@@ -66,8 +76,7 @@ function validateUsername(username: string, minLength?: number|null, maxLength?:
     };
   }
 
-  const minLenthUsername: number = minLength || 1;
-  const maxLenthUsername: number = maxLength || Infinity;
+
 
 	if (typeof minLenthUsername !== 'number' || typeof maxLenthUsername !== 'number') {
 		throw new Error('maxLength or minLength must be a number');

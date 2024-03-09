@@ -6,7 +6,7 @@
  * @description This function returns three errors in the following order:
  *
  * Default:
- * ['Invalid value passed', 'Invalid phone number', 'Unknown error']
+ * ['Field phone number cannot be empty', 'Invalid phone number', 'Unknown error']
  *
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.

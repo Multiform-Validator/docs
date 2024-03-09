@@ -1,3 +1,9 @@
+interface Options {
+    requireUppercase: boolean;
+    requireSpecialChar: boolean;
+    requireNumber: boolean;
+    requireString: boolean;
+}
 /**
  * @param password
  * @param minLength optional
@@ -23,8 +29,8 @@
  *
  * Default:
  *   [
-  'This password is too long',
-  'password too short',
+  'This password is too long',// Password must be between ${minLenthPassword} and ${maxLenthPassword} characters
+  'password too short',// Password must be between ${minLenthPassword} and ${maxLenthPassword} characters
   'Requires at least one capital letter',
   'Requires at least one special character',
   'Requires at least one number',
@@ -36,12 +42,7 @@
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validatePassword(password: string, minLength?: number | null, maxLength?: number | null, options?: {
-    requireUppercase: boolean;
-    requireSpecialChar: boolean;
-    requireNumber: boolean;
-    requireString: boolean;
-}, errorMsg?: (string | null)[]): {
+declare function validatePassword(password: string, minLength?: number | null, maxLength?: number | null, options?: Options, errorMsg?: (string | null)[]): {
     isValid: boolean;
     errorMsg: string | null;
 };

@@ -5,7 +5,7 @@
  *
  * default:
  * [
-  'This textarea is too big',
+  'Textarea cannot exceed ${maxTextAreaLength} characters',
   'Can not be empty',
   'Unknown error',
 ];

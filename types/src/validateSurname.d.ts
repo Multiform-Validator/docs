@@ -12,7 +12,7 @@
  * default:
  *
  * [
-  'Invalid value passed',
+  'Surname cannot be empty',
   'Surname cannot contain numbers',
   'Surname cannot contain special characters',
   'This surname is not valid',

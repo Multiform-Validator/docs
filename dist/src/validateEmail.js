@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var isEmail_1 = __importDefault(require("./isEmail"));
 var defaultErrorMsg = [
-    'Invalid value passed',
+    'Email cannot be empty',
     'This e-mail is not valid',
     'Email too big, try again',
     'This email is not valid in the country',
@@ -38,8 +38,12 @@ function validateEmail(email, maxLength, country, errorMsg, validDomains) {
             }
         }
     }
+    var maxEmailLength = maxLength || 400;
     function getErrorMessage(index) {
         var errorMessage = errorMsg[index];
+        if (errorMessage === 'Email too big, try again') {
+            return "Email cannot be greater than ".concat(maxEmailLength, " characters");
+        }
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     if (!email) {
@@ -48,7 +52,6 @@ function validateEmail(email, maxLength, country, errorMsg, validDomains) {
             errorMsg: getErrorMessage(0),
         };
     }
-    var maxEmailLength = maxLength || 400;
     if (maxEmailLength < 1 || typeof maxEmailLength !== 'number')
         throw new Error('maxLength must be a number and cannot be less than 1');
     try {

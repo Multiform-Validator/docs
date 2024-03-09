@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var defaultErrorMsg = ['Invalid value passed', 'Invalid phone number', 'Unknown error'];
+var defaultErrorMsg = ['Field phone number cannot be empty', 'Invalid phone number', 'Unknown error'];
 function validateBRPhoneNumber(phoneNumber, errorMsg) {
     if (errorMsg === void 0) { errorMsg = defaultErrorMsg; }
     if (typeof phoneNumber !== 'string')

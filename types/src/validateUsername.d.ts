@@ -14,9 +14,9 @@
  *
  * Default:
  *   [
-  'Invalid value passed',
-  'username too short',
-  'This username is too long',
+  'Username cannot be empty',
+  'Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters',
+  'Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters',
   'Username cannot contain spaces',
   'Cannot start with number',
   'Cannot contain only numbers',

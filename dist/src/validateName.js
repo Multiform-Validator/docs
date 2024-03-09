@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var defaultErrorMsg = [
-    'Invalid value passed',
+    'Name cannot be empty',
     'Name cannot contain numbers', 'Name cannot contain special characters',
     'This name is not valid',
     'Name too big, try again',

@@ -10,7 +10,7 @@ const defaultErrorMsg: string[] = [
  *
  * default:
  * [
-  'This textarea is too big',
+  'Textarea cannot exceed ${maxTextAreaLength} characters',
   'Can not be empty',
   'Unknown error',
 ];
@@ -32,13 +32,18 @@ function validateTextarea(textarea: string, isRequired: boolean = false, maxLeng
     }
   }
 
+	const maxTextAreaLength: number = maxLength || 50;
+
+
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
 		const errorMessage: string|null = errorMsg[index];
+		if(errorMessage === 'This textarea is too big'){
+			return `Textarea cannot exceed ${maxTextAreaLength} characters`;
+		}
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
-	const maxTextAreaLength: number = maxLength || 50;
 
 	if (maxTextAreaLength < 1 || typeof maxTextAreaLength !== 'number') {
 		throw new Error('maxLength or minLength must be a number and cannot be less than 1');

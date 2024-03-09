@@ -1,7 +1,7 @@
 import isEmail from './isEmail';
 
 const defaultErrorMsg: string[] = [
-  'Invalid value passed',
+  'Email cannot be empty',
   'This e-mail is not valid',
   'Email too big, try again',
   'This email is not valid in the country',
@@ -29,7 +29,7 @@ const validDomainsDefault: string[] = ['@gmail.com', '@outlook.com', '@yahoo.com
  * If you want to use a default parameter, use null.
  *
  * Default:
- * ['Invalid value passed', 'This e-mail is not valid', 'Email too big, try again', 'This email is not valid in the country','Email domain is not allowed.', 'Unknown error']
+ * ['Email cannot be empty', 'This e-mail is not valid', 'Email cannot be greater than ${maxEmailLength} characters', 'This email is not valid in the country','Email domain is not allowed.', 'Unknown error']
  *
  * Create a list of errors separated by commas in strings
  *
@@ -71,9 +71,15 @@ function validateEmail(email: string, maxLength?: number|null, country: string|n
     }
   }
 
+	const maxEmailLength: number = maxLength || 400;
+
+
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
 		const errorMessage: string|null = errorMsg[index];
+		if(errorMessage === 'Email too big, try again'){
+			return `Email cannot be greater than ${maxEmailLength} characters`;
+		}
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
@@ -83,7 +89,6 @@ function validateEmail(email: string, maxLength?: number|null, country: string|n
       errorMsg: getErrorMessage(0),
     };
   }
-	const maxEmailLength: number = maxLength || 400;
 
 	if (maxEmailLength < 1 || typeof maxEmailLength !== 'number') throw new Error('maxLength must be a number and cannot be less than 1');
 

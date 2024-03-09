@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var defaultErrorMsg = [
     'This password is too long',
     'password too short',
-    'Requires at least one capital letter',
-    'Requires at least one special character',
-    'Requires at least one number',
-    'Requires at least one letter',
+    'Password requires at least one capital letter',
+    'Password requires at least one special character',
+    'Password requires at least one number',
+    'Password requires at least one letter',
     'Unknown error',
 ];
 function validatePassword(password, minLength, maxLength, options, errorMsg) {
@@ -28,12 +28,20 @@ function validatePassword(password, minLength, maxLength, options, errorMsg) {
             }
         }
     }
-    function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
-        return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-    }
     var minLenthPassword = minLength || 1;
     var maxLenthPassword = maxLength || Infinity;
+    function getErrorMessage(index) {
+        var errorMessage = errorMsg[index];
+        if (errorMessage === 'This password is too long' || errorMessage === 'password too short') {
+            if (maxLenthPassword === Infinity) {
+                return "Password must be greater than ".concat(minLenthPassword, " characters");
+            }
+            else {
+                return "Password must be between ".concat(minLenthPassword, " and ").concat(maxLenthPassword, " characters");
+            }
+        }
+        return errorMessage != null ? errorMessage : defaultErrorMsg[index];
+    }
     if (typeof minLenthPassword !== 'number' || typeof maxLenthPassword !== 'number') {
         throw new Error('maxLength and/or minLength must be a number');
     }

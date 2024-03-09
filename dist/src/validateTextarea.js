@@ -19,11 +19,14 @@ function validateTextarea(textarea, isRequired, maxLength, errorMsg) {
             }
         }
     }
+    var maxTextAreaLength = maxLength || 50;
     function getErrorMessage(index) {
         var errorMessage = errorMsg[index];
+        if (errorMessage === 'This textarea is too big') {
+            return "Textarea cannot exceed ".concat(maxTextAreaLength, " characters");
+        }
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
-    var maxTextAreaLength = maxLength || 50;
     if (maxTextAreaLength < 1 || typeof maxTextAreaLength !== 'number') {
         throw new Error('maxLength or minLength must be a number and cannot be less than 1');
     }

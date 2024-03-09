@@ -15,7 +15,7 @@
  * If you want to use a default parameter, use null.
  *
  * Default:
- * ['Invalid value passed', 'This e-mail is not valid', 'Email too big, try again', 'This email is not valid in the country','Email domain is not allowed.', 'Unknown error']
+ * ['Email cannot be empty', 'This e-mail is not valid', 'Email cannot be greater than ${maxEmailLength} characters', 'This email is not valid in the country','Email domain is not allowed.', 'Unknown error']
  *
  * Create a list of errors separated by commas in strings
  *

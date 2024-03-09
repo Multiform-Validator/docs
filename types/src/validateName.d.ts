@@ -12,7 +12,7 @@
  * default:
  *
  * [
-  'Invalid value passed',
+  'Name cannot be empty',
   'Name cannot contain numbers',
   'Name cannot contain special characters',
   'This name is not valid',

@@ -4,7 +4,7 @@ var regexHasSpaces = /\s/;
 var regexOnlyNumbers = /^\d+$/;
 var regexStartsWithNumber = /^\d/;
 var defaultErrorMsg = [
-    'Invalid value passed',
+    'Username cannot be empty',
     'username too short',
     'This username is too long',
     'Username cannot contain spaces',
@@ -25,8 +25,18 @@ function validateUsername(username, minLength, maxLength, errorMsg) {
             }
         }
     }
+    var minLenthUsername = minLength || 1;
+    var maxLenthUsername = maxLength || Infinity;
     function getErrorMessage(index) {
         var errorMessage = errorMsg[index];
+        if (errorMessage === 'username too short' || errorMessage === 'This username is too long') {
+            if (maxLenthUsername === Infinity) {
+                return "Username must be greater than ".concat(maxLenthUsername, " characters");
+            }
+            else {
+                return "Username must be between ".concat(maxLenthUsername, " and ").concat(maxLenthUsername, " characters");
+            }
+        }
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     if (!username) {
@@ -35,8 +45,6 @@ function validateUsername(username, minLength, maxLength, errorMsg) {
             errorMsg: getErrorMessage(0),
         };
     }
-    var minLenthUsername = minLength || 1;
-    var maxLenthUsername = maxLength || Infinity;
     if (typeof minLenthUsername !== 'number' || typeof maxLenthUsername !== 'number') {
         throw new Error('maxLength or minLength must be a number');
     }

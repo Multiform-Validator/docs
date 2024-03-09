@@ -1,5 +1,5 @@
 const defaultErrorMsg: string[] = [
-  'Invalid value passed',
+  'Name cannot be empty',
   'Name cannot contain numbers', 'Name cannot contain special characters',
   'This name is not valid',
   'Name too big, try again',
@@ -19,7 +19,7 @@ const defaultErrorMsg: string[] = [
  * default:
  *
  * [
-  'Invalid value passed',
+  'Name cannot be empty',
   'Name cannot contain numbers',
   'Name cannot contain special characters',
   'This name is not valid',

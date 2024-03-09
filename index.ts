@@ -27,6 +27,7 @@ import passwordStrengthTester from './src/passwordStrengthTester';
 import validateSurname from './src/validateSurname';
 import validateName from './src/validateName';
 import validateTextarea from './src/validateTextarea';
+import { ValidateFunctions, IsValidFunctions } from './src/types';
 
 export {
 	cpfIsValid,
@@ -57,5 +58,7 @@ export {
   passwordStrengthTester,
   validateName,
   validateSurname,
-  validateTextarea
+  validateTextarea,
+	ValidateFunctions,
+	IsValidFunctions
 };

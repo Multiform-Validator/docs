@@ -1,10 +1,10 @@
 const defaultErrorMsg: string[] = [
   'This password is too long',
   'password too short',
-  'Requires at least one capital letter',
-  'Requires at least one special character',
-  'Requires at least one number',
-  'Requires at least one letter',
+  'Password requires at least one capital letter',
+  'Password requires at least one special character',
+  'Password requires at least one number',
+  'Password requires at least one letter',
   'Unknown error',
 ];
 interface Options {
@@ -39,8 +39,8 @@ interface Options {
  *
  * Default:
  *   [
-  'This password is too long',
-  'password too short',
+  'This password is too long',// Password must be between ${minLenthPassword} and ${maxLenthPassword} characters
+  'password too short',// Password must be between ${minLenthPassword} and ${maxLenthPassword} characters
   'Requires at least one capital letter',
   'Requires at least one special character',
   'Requires at least one number',
@@ -72,15 +72,24 @@ function validatePassword(password: string, minLength?: number|null, maxLength?:
     }
   }
 
+	const minLenthPassword: number = minLength || 1;
+  const maxLenthPassword: number = maxLength || Infinity;
+
 
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
 		const errorMessage: string|null = errorMsg[index];
+		if(errorMessage === 'This password is too long' || errorMessage === 'password too short'){
+			if(maxLenthPassword === Infinity){
+				return `Password must be greater than ${minLenthPassword} characters`;
+			}else{
+				return `Password must be between ${minLenthPassword} and ${maxLenthPassword} characters`;
+			}
+		}
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
   }
 
-  const minLenthPassword: number = minLength || 1;
-  const maxLenthPassword: number = maxLength || Infinity;
+
 
 	if (typeof minLenthPassword !== 'number' || typeof maxLenthPassword !== 'number') {
 		throw new Error('maxLength and/or minLength must be a number');

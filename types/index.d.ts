@@ -27,4 +27,5 @@ import passwordStrengthTester from './src/passwordStrengthTester';
 import validateSurname from './src/validateSurname';
 import validateName from './src/validateName';
 import validateTextarea from './src/validateTextarea';
-export { cpfIsValid, cnpjIsValid, isEmail, validateEmail, isCEP, validateUsername, validatePassword, getOnlyEmail, isCreditCardValid, identifyFlagCard, isMACAddress, isAscii, isBase64, isDate, isDecimal, isEmpty, isMD5, isPort, isPostalCode, isTime, validatePassportNumber, validateBRPhoneNumber, validateUSPhoneNumber, validatePhoneNumber, isNumber, passwordStrengthTester, validateName, validateSurname, validateTextarea };
+import { ValidateFunctions, IsValidFunctions } from './src/types';
+export { cpfIsValid, cnpjIsValid, isEmail, validateEmail, isCEP, validateUsername, validatePassword, getOnlyEmail, isCreditCardValid, identifyFlagCard, isMACAddress, isAscii, isBase64, isDate, isDecimal, isEmpty, isMD5, isPort, isPostalCode, isTime, validatePassportNumber, validateBRPhoneNumber, validateUSPhoneNumber, validatePhoneNumber, isNumber, passwordStrengthTester, validateName, validateSurname, validateTextarea, ValidateFunctions, IsValidFunctions };
