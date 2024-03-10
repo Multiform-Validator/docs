@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 /**
  * @param phoneNumber
  * @param errorMsg optional
@@ -11,8 +12,5 @@
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateBRPhoneNumber(phoneNumber: string, errorMsg?: (string | null)[]): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validateBRPhoneNumber(phoneNumber: string, errorMsg?: (string | null)[]): ValidateFunctions;
 export default validateBRPhoneNumber;

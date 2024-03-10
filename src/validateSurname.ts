@@ -1,3 +1,5 @@
+import { ValidateFunctions } from './types';
+
 const defaultErrorMsg: string[] = [
   'Surname cannot be empty',
   'Surname cannot contain numbers', 'Surname cannot contain special characters',
@@ -28,7 +30,7 @@ const defaultErrorMsg: string[] = [
 ];
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateSurname(surname: string, minLength?: number|null, maxLength?: number|null, errorMsg: (string|null)[] = defaultErrorMsg): {isValid: boolean, errorMsg: string|null} {
+function validateSurname(surname: string, minLength?: number|null, maxLength?: number|null, errorMsg: (string|null)[] = defaultErrorMsg): ValidateFunctions {
   if (typeof surname !== 'string') throw new TypeError('The input should be a string.');
 
   // Check para saber se as mensagens que sao passadas sao validas

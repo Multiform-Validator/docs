@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 /**
  * @param surname
  * @param minLength
@@ -21,8 +22,5 @@
 ];
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateSurname(surname: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validateSurname(surname: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): ValidateFunctions;
 export default validateSurname;

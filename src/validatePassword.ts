@@ -1,3 +1,5 @@
+import { ValidateFunctions } from './types';
+
 const defaultErrorMsg: string[] = [
   'This password is too long',
   'password too short',
@@ -57,7 +59,7 @@ function validatePassword(password: string, minLength?: number|null, maxLength?:
   requireSpecialChar: false,
   requireNumber: false,
   requireString: false,
-}, errorMsg: (string|null)[] = defaultErrorMsg): {isValid: boolean, errorMsg: string|null} {
+}, errorMsg: (string|null)[] = defaultErrorMsg): ValidateFunctions {
 
 
   if (typeof password !== 'string') throw new TypeError('The input should be a string.');

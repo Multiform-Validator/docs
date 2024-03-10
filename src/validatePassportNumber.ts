@@ -1,10 +1,12 @@
+import { ValidatePassportNumber } from './types';
+
 /**
  * @example validatePassportNumber('A1234567');
  * @example validatePassportNumber('123456789');
  * @description Values have to be passed as a string
  * @returns return { isValid: boolean, country: string }
  */
-function validatePassportNumber(passaportNumber: string): { isValid: boolean, country: string|null } {
+function validatePassportNumber(passaportNumber: string): ValidatePassportNumber {
   // Verificar se o parâmetro é uma string
   if (typeof passaportNumber !== 'string') {
     throw new TypeError('The input should be a string.');

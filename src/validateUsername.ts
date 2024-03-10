@@ -1,3 +1,5 @@
+import { ValidateFunctions } from './types';
+
 const regexHasSpaces: RegExp = /\s/;
 const regexOnlyNumbers: RegExp = /^\d+$/;
 const regexStartsWithNumber: RegExp = /^\d/;
@@ -39,9 +41,7 @@ const defaultErrorMsg: string[] = [
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 function validateUsername(username: string, minLength?: number|null, maxLength?: number|null,
-	errorMsg: (string|null)[] = defaultErrorMsg): {
-	isValid: boolean, errorMsg: string|null
-} {
+	errorMsg: (string|null)[] = defaultErrorMsg): ValidateFunctions {
   if (typeof username !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO
@@ -63,7 +63,7 @@ function validateUsername(username: string, minLength?: number|null, maxLength?:
 			if(maxLenthUsername === Infinity){
 				return `Username must be greater than ${maxLenthUsername} characters`;
 			}else{
-				return `Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters`;
+				return `Username must be between ${minLenthUsername} and ${maxLenthUsername} characters`;
 			}
 		}
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];

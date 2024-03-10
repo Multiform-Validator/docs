@@ -1,3 +1,5 @@
+import { ValidateFunctions } from './types';
+
 const defaultErrorMsg: string[] = [
   'This textarea is too big',
   'Can not be empty',
@@ -17,9 +19,7 @@ const defaultErrorMsg: string[] = [
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 function validateTextarea(textarea: string, isRequired: boolean = false, maxLength?: number|null,
-	errorMsg: (string|null)[] = defaultErrorMsg): {
-	isValid: boolean, errorMsg: string|null
-} {
+	errorMsg: (string|null)[] = defaultErrorMsg): ValidateFunctions {
   if (typeof textarea !== 'string') throw new TypeError('The input should be a string.');
   // Check para saber se as mensagens que sao passadas sao validas
   // caso contrario retorna um ERRO

@@ -1,3 +1,5 @@
+import { ValidateFunctions } from './types';
+
 const defaultErrorMsg: string[] = ['Field phone number cannot be empty', 'Invalid phone number', 'Unknown error'];
 /**
  * @param phoneNumber
@@ -12,7 +14,7 @@ const defaultErrorMsg: string[] = ['Field phone number cannot be empty', 'Invali
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateBRPhoneNumber(phoneNumber: string, errorMsg: (string|null)[] = defaultErrorMsg): {isValid: boolean, errorMsg: string|null} {
+function validateBRPhoneNumber(phoneNumber: string, errorMsg: (string|null)[] = defaultErrorMsg): ValidateFunctions {
   if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
   // Check to see if the passed error messages are valid; otherwise, return an error
   if (errorMsg) {

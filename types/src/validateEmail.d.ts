@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 /**
  * @param email
  * @param maxLength optional
@@ -31,8 +32,5 @@
 
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateEmail(email: string, maxLength?: number | null, country?: string | null, errorMsg?: (string | null)[], validDomains?: boolean): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validateEmail(email: string, maxLength?: number | null, country?: string | null, errorMsg?: (string | null)[], validDomains?: boolean): ValidateFunctions;
 export default validateEmail;

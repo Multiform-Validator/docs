@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 import isEmail from './isEmail';
 
 const defaultErrorMsg: string[] = [
@@ -45,10 +46,7 @@ const validDomainsDefault: string[] = ['@gmail.com', '@outlook.com', '@yahoo.com
 
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateEmail(email: string, maxLength?: number|null, country: string|null = '', errorMsg: (string|null)[] = defaultErrorMsg, validDomains: boolean = false): {
-	isValid: boolean;
-	errorMsg: string | null;
-} {
+function validateEmail(email: string, maxLength?: number|null, country: string|null = '', errorMsg: (string|null)[] = defaultErrorMsg, validDomains: boolean = false): ValidateFunctions {
   if (typeof email !== 'string') throw new TypeError('The input should be a string.');
 
   // Expressão regular para verificar se o e-mail termina com um dos domínios válidos

@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 /**
  * @default isRequired boolean: default: false
  * @default maxLength number: default: 50
@@ -11,8 +12,5 @@
 ];
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateTextarea(textarea: string, isRequired?: boolean, maxLength?: number | null, errorMsg?: (string | null)[]): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validateTextarea(textarea: string, isRequired?: boolean, maxLength?: number | null, errorMsg?: (string | null)[]): ValidateFunctions;
 export default validateTextarea;

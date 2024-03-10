@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 interface Options {
     requireUppercase: boolean;
     requireSpecialChar: boolean;
@@ -42,8 +43,5 @@ interface Options {
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validatePassword(password: string, minLength?: number | null, maxLength?: number | null, options?: Options, errorMsg?: (string | null)[]): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validatePassword(password: string, minLength?: number | null, maxLength?: number | null, options?: Options, errorMsg?: (string | null)[]): ValidateFunctions;
 export default validatePassword;

@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 /**
  * @param phoneNumber
  * @param errorMsg optional
@@ -7,8 +8,5 @@
  * @default {errorMsg} "['US phone number cannot be empty', 'Invalid phone number', 'Unknown error']"
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateUSPhoneNumber(phoneNumber: string, errorMsg?: (string | null)[]): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validateUSPhoneNumber(phoneNumber: string, errorMsg?: (string | null)[]): ValidateFunctions;
 export default validateUSPhoneNumber;

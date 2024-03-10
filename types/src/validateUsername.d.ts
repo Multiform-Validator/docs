@@ -1,3 +1,4 @@
+import { ValidateFunctions } from './types';
 /**
  * @param username
  * @param minLength optional
@@ -26,8 +27,5 @@
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateUsername(username: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): {
-    isValid: boolean;
-    errorMsg: string | null;
-};
+declare function validateUsername(username: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): ValidateFunctions;
 export default validateUsername;
