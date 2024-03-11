@@ -1,6 +1,9 @@
-export interface ValidateFunctions {
-	isValid: boolean;
-	errorMsg: string | null;
+export type ValidateFunctions = {
+	isValid: true;
+	errorMsg: null;
+} | {
+	isValid: false;
+	errorMsg: string;
 }
 
 export interface ValidatePassportNumber { isValid: boolean, country: string|null }

@@ -30,7 +30,7 @@ npm install multiform-validator
 or
 
 ```bash
-yarn add install multiform-validator
+yarn add multiform-validator
 ```
 
 # Data Validator
