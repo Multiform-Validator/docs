@@ -1,5 +1,5 @@
 {
-	"name": "@multiform-validator/typescript",
+  "name": "@multiform-validator/typescript",
   "version": "1.0.31",
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "./dist/index.js",
@@ -37,7 +37,8 @@
     "Gabriel Logan"
   ],
   "devDependencies": {
-    "@types/jest": "^29.5.4",
+    "@types/jest": "^29.5.12",
+    "@types/mocha": "^10.0.6",
     "@types/node": "^20.5.1",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
