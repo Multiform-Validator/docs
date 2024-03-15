@@ -1,3 +1,5 @@
+# LIB UNDER MODIFICATION, CONTINUES WORKING VIA NPM BUT THE DOCUMENTATION MAY NOT BE ACCESSIBLE AT THE MOMENT
+
 # I accept help to make the version of the other programming languages.
 It sucks to do it alone );
 
