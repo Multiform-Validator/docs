@@ -72,8 +72,8 @@ This package contains various modules for validating different types of data. Be
 ### You can use it in React Native, Angular, any javascript framework or any javascript or typescript code.
 #### Example using Reactjs:
 
-![Example using Reactjs](https://github.com/gabriel-logan/multiform-validator/tree/main/docs/images/exampleWithReactjs.png)
-![Showing error in browser](https://github.com/gabriel-logan/multiform-validator/tree/main/docs/images/showErro.png)
+![Example using Reactjs](https://raw.githubusercontent.com/gabriel-logan/multiform-validator/main/docs/images/exampleWithReactjs.png)
+![Showing error in browser](https://raw.githubusercontent.com/gabriel-logan/multiform-validator/main/docs/images/showErro.png)
 
 ### For better information, read the documentation
 
