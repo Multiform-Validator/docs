@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 function isAscii(value) {
     if (typeof value !== 'string') {
-        throw new TypeError('Input value must be a string.');
+        throw new TypeError('The input should be a string.');
     }
     if (value.trim().length === 0) {
         throw new Error('Input value must not be an empty string.');

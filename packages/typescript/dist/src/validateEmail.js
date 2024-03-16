@@ -40,7 +40,7 @@ function validateEmail(email, maxLength, country, errorMsg, validDomains) {
     }
     var maxEmailLength = maxLength || 400;
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : defaultErrorMsg[index];
         if (errorMessage === 'Email too big, try again') {
             return "Email cannot be greater than ".concat(maxEmailLength, " characters");
         }
