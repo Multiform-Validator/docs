@@ -11,4 +11,9 @@ describe('isPort', () => {
     const result = isPort('65536');
     expect(result).toBe(false);
   });
+
+	it('should return false when the input is not a string or number', () => {
+		// @ts-ignore
+		expect(() => isPort(null)).toThrow('Input value must be a string or a number.');
+	});
 });

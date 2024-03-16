@@ -7,18 +7,8 @@ describe('isPostalCode', () => {
     expect(result).toBe(true);
   });
 
-/**
- *   it('should return false when the input is not a valid postal code', () => {
-    const result = isPostalCode('9021');
-    expect(result).toBe(false);
-  });
- *
- */
-
-/**
- *
- *   it('should throw an error when the input is not a string', () => {
-    expect(() => isPostalCode((12345678 as any))).toThrow('Input value must be a string.');
-  });
- */
+	it('should throw an error when the input is not a string', () => {
+		// @ts-ignore
+		expect(() => isPostalCode(12345678)).toThrow('Input value must be a string.');
+	});
 });

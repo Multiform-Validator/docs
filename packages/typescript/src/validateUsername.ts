@@ -91,19 +91,19 @@ function validateUsername(username: string, minLength?: number|null, maxLength?:
     if (regexHasSpaces.test(username)) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(4),
+        errorMsg: getErrorMessage(3),
       };
     }
-    if (regexStartsWithNumber.test(username)) {
+		if (regexOnlyNumbers.test(username)) {
       return {
         isValid: false,
         errorMsg: getErrorMessage(5),
       };
     }
-    if (regexOnlyNumbers.test(username)) {
+    if (regexStartsWithNumber.test(username)) {
       return {
         isValid: false,
-        errorMsg: getErrorMessage(6),
+        errorMsg: getErrorMessage(4),
       };
     }
     if (username.length < minLenthUsername) {
@@ -125,7 +125,7 @@ function validateUsername(username: string, minLength?: number|null, maxLength?:
   } catch (error) {
     return {
       isValid: false,
-      errorMsg: getErrorMessage(3),
+      errorMsg: getErrorMessage(6),
     };
   }
 }

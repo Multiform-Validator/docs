@@ -16,4 +16,16 @@ describe('validateEmail', () => {
     expect(result.isValid).toBe(false);
     expect(result.errorMsg).toBe('This e-mail is not valid');
   });
+
+  it('should validate an corret email length', () => {
+    const result = validateEmail('test@teste.com', 25);
+    expect(result.isValid).toBe(true);
+    expect(result.errorMsg).toBe(null);
+  });
+
+  it('should validate an corret email length', () => {
+    const result = validateEmail('test@testaaaaaaaaaaaaae.com', 15);
+    expect(result.isValid).toBe(false);
+    expect(result.errorMsg).toBe("Email cannot be greater than 15 characters");
+  });
 });

@@ -2,8 +2,13 @@
 import isNumber from '../../src/isNumber';
 
 describe('isNumber', () => {
-  it('should return true when the input is a valid number', () => {
+  it('should return true when the input is a valid string of number', () => {
     const result = isNumber('123');
+    expect(result).toBe(true);
+  });
+
+  it('should return true when the input is a valid number', () => {
+    const result = isNumber(123);
     expect(result).toBe(true);
   });
 

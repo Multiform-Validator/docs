@@ -1,14 +1,26 @@
-// Testes para isDecimal
-import isDecimal from '../../src/isDecimal';
+import isEmpty from '../../src/isEmpty';
 
-describe('isDecimal', () => {
-  it('should return true when the input is a valid decimal number', () => {
-    const result = isDecimal('123.45');
-    expect(result).toBe(true);
+describe('isEmpty', () => {
+  it('returns true for empty string', () => {
+    expect(isEmpty('')).toBe(true);
   });
 
-  it('should return false when the input is not a valid decimal number', () => {
-    const result = isDecimal('123.456.789');
-    expect(result).toBe(false);
+  it('returns true for string with only spaces', () => {
+    expect(isEmpty('   ')).toBe(true);
+  });
+
+  it('returns false for string with characters', () => {
+    expect(isEmpty('Hello')).toBe(false);
+  });
+
+  it('returns false for string with characters and spaces', () => {
+    expect(isEmpty('   Hello   ')).toBe(false);
+  });
+
+  it('throws TypeError for non-string input', () => {
+    // @ts-ignore
+    expect(() => isEmpty(null)).toThrow(TypeError);
+    // @ts-ignore
+    expect(() => isEmpty(undefined)).toThrow(TypeError);
   });
 });

@@ -35,4 +35,14 @@ describe('validatePassword', () => {
     const result = validatePassword('password', 8);
     expect(result).toEqual({ isValid: true, errorMsg: null });
   });
+
+	it('validates password with all required check modules', () => {
+    const result = validatePassword('Passw0rd2!', null, null, { requireString: true, requireNumber: true, requireSpecialChar: true, requireUppercase: true } as any);
+    expect(result).toEqual({ isValid: true, errorMsg: null });
+  });
+
+	it('validates password with all required check modules', () => {
+    const result = validatePassword('Passw0rd!', null, null, { requireString: true, requireNumber: true, requireSpecialChar: true, requireUppercase: true } as any);
+    expect(result).toEqual({ isValid: true, errorMsg: null });
+  });
 });

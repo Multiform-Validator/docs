@@ -11,4 +11,14 @@ describe('isTime function', () => {
     expect(isTime('12:60')).toBe(false);
     expect(isTime('abc')).toBe(false);
   });
+
+  it('should return false for invalid time', () => {
+    // @ts-ignore
+    expect(() => isTime(1)).toThrow('Input value must be a string.');
+  });
+
+  it('should return false for invalid time', () => {
+    // @ts-ignore
+    expect(() => isTime(null)).toThrow('Input value must be a string.');
+  });
 });

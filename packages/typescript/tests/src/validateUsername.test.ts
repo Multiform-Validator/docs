@@ -6,9 +6,7 @@ describe('validateUsername', () => {
     expect(result).toEqual({ isValid: true, errorMsg: null });
   });
 
-/**
- *
- *   it('returns error for empty username', () => {
+  it('returns error for empty username', () => {
     const result = validateUsername('');
     expect(result).toEqual({ isValid: false, errorMsg: 'Username cannot be empty' });
   });
@@ -27,9 +25,6 @@ describe('validateUsername', () => {
     const result = validateUsername('123456');
     expect(result).toEqual({ isValid: false, errorMsg: 'Cannot contain only numbers' });
   });
-
-	NEED TO VALIDATE IN THE FUNCTION
- */
 
   it('returns error for invalid username', () => {
     const result = validateUsername('Us', 3, 25);

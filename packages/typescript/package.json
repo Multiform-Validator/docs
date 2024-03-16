@@ -6,7 +6,7 @@
   "types": "./types/index.d.ts",
   "scripts": {
     "test": "jest --coverage",
-		"test:file": "jest tests/src/validatePassword.test --watch",
+		"test:file": "jest tests/src/validateUsername.test --watch",
 		"test:watch": "jest --watch",
     "build": "npx tsc"
   },
