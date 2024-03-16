@@ -28,4 +28,24 @@ describe('validateEmail', () => {
     expect(result.isValid).toBe(false);
     expect(result.errorMsg).toBe("Email cannot be greater than 15 characters");
   });
+
+  it('should invalidate an email with a non-allowed domain', () => {
+		// @ts-ignore
+    const result = validateEmail('test@notallowed.com', null, null, null, ['@gmail.com']);
+    expect(result.isValid).toBe(false);
+    expect(result.errorMsg).toBe('Email domain is not allowed.');
+  });
+
+  it('should validate an email with a custom allowed domain', () => {
+		// @ts-ignore
+    const result = validateEmail('test@mydomain.com', null, null, null, ['@mydomain.com']);
+    expect(result.isValid).toBe(true);
+    expect(result.errorMsg).toBe(null);
+  });
+
+  it('should invalidate an email that is too long', () => {
+    const result = validateEmail('a'.repeat(401) + '@gmail.com', 400);
+    expect(result.isValid).toBe(false);
+    expect(result.errorMsg).toBe('Email cannot be greater than 400 characters');
+  });
 });

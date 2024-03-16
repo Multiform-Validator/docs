@@ -74,7 +74,7 @@ function validateEmail(email: string, maxLength?: number|null, country: string|n
 
   // Função interna para obter a mensagem de erro
   function getErrorMessage(index: number): string {
-		const errorMessage: string|null = errorMsg[index];
+		const errorMessage: string|null = errorMsg ? errorMsg[index] : defaultErrorMsg[index];
 		if(errorMessage === 'Email too big, try again'){
 			return `Email cannot be greater than ${maxEmailLength} characters`;
 		}
