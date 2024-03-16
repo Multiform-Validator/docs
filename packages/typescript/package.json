@@ -5,7 +5,9 @@
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
+		"test:file": "jest tests/src/validatePassword.test --watch",
+		"test:watch": "jest --watch",
     "build": "npx tsc"
   },
   "repository": {

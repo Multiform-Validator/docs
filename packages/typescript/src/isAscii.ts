@@ -8,7 +8,7 @@
  */
 function isAscii(value: string): boolean {
   if (typeof value !== 'string') {
-    throw new TypeError('Input value must be a string.');
+    throw new TypeError('The input should be a string.');
   }
 
   if (value.trim().length === 0) {
