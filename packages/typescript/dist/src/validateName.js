@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var defaultErrorMsg = [
     'Name cannot be empty',
-    'Name cannot contain numbers', 'Name cannot contain special characters',
+    'Name cannot contain numbers',
+    'Name cannot contain special characters',
     'This name is not valid',
     'Name too big, try again',
     'Unknown error',
@@ -21,12 +22,15 @@ function validateName(name, minLength, maxLength, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     var minNameLength = minLength || 1;
     var maxNameLength = maxLength || 20;
-    if (maxNameLength < 1 || minNameLength < 1 || typeof minNameLength !== 'number' || typeof maxNameLength !== 'number') {
+    if (maxNameLength < 1 ||
+        minNameLength < 1 ||
+        typeof minNameLength !== 'number' ||
+        typeof maxNameLength !== 'number') {
         throw new Error('maxLength or minLength must be a number and cannot be less than 1');
     }
     if (minNameLength > maxNameLength) {

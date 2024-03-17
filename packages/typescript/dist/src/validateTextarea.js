@@ -1,10 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var defaultErrorMsg = [
-    'This textarea is too big',
-    'Can not be empty',
-    'Unknown error',
-];
+var defaultErrorMsg = ['This textarea is too big', 'Can not be empty', 'Unknown error'];
 function validateTextarea(textarea, isRequired, maxLength, errorMsg) {
     if (isRequired === void 0) { isRequired = false; }
     if (errorMsg === void 0) { errorMsg = defaultErrorMsg; }
@@ -21,7 +17,7 @@ function validateTextarea(textarea, isRequired, maxLength, errorMsg) {
     }
     var maxTextAreaLength = maxLength || 50;
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         if (errorMessage === 'This textarea is too big') {
             return "Textarea cannot exceed ".concat(maxTextAreaLength, " characters");
         }
@@ -30,7 +26,7 @@ function validateTextarea(textarea, isRequired, maxLength, errorMsg) {
     if (maxTextAreaLength < 1 || typeof maxTextAreaLength !== 'number') {
         throw new Error('maxLength or minLength must be a number and cannot be less than 1');
     }
-    if (isRequired === true) {
+    if (isRequired) {
         if (textarea === '') {
             return {
                 isValid: false,

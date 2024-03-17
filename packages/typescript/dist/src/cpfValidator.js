@@ -20,7 +20,7 @@ function cpfIsValid(cpf, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     try {
@@ -58,15 +58,15 @@ function cpfIsValid(cpf, errorMsg) {
             somaTotal2 += multiplicador2;
             var valorDeVerificacao = somaTotal - Number(cpfLimpo[9]);
             var valorDeVerificacao2 = somaTotal2 - Number(cpfLimpo[10]);
-            primeiroVerificador = (11 - (valorDeVerificacao % 11));
-            segundoVerificador = (11 - (valorDeVerificacao2 % 11));
+            primeiroVerificador = 11 - (valorDeVerificacao % 11);
+            segundoVerificador = 11 - (valorDeVerificacao2 % 11);
         }
         if (primeiroVerificador > 9)
             primeiroVerificador = 0;
         if (segundoVerificador > 9)
             segundoVerificador = 0;
-        if (primeiroVerificador === Number(cpfLimpo[9])
-            && segundoVerificador === Number(cpfLimpo[10])) {
+        if (primeiroVerificador === Number(cpfLimpo[9]) &&
+            segundoVerificador === Number(cpfLimpo[10])) {
             return {
                 isValid: true,
                 errorMsg: null,

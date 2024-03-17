@@ -28,14 +28,12 @@ function validateUsername(username, minLength, maxLength, errorMsg) {
     var minLenthUsername = minLength || 1;
     var maxLenthUsername = maxLength || Infinity;
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         if (errorMessage === 'username too short' || errorMessage === 'This username is too long') {
             if (maxLenthUsername === Infinity) {
                 return "Username must be greater than ".concat(maxLenthUsername, " characters");
             }
-            else {
-                return "Username must be between ".concat(minLenthUsername, " and ").concat(maxLenthUsername, " characters");
-            }
+            return "Username must be between ".concat(minLenthUsername, " and ").concat(maxLenthUsername, " characters");
         }
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }

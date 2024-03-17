@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var defaultErrorMsg = ['US phone number cannot be empty', 'Invalid phone number', 'Unknown error'];
+var defaultErrorMsg = [
+    'US phone number cannot be empty',
+    'Invalid phone number',
+    'Unknown error',
+];
 function validateUSPhoneNumber(phoneNumber, errorMsg) {
     if (errorMsg === void 0) { errorMsg = defaultErrorMsg; }
     if (typeof phoneNumber !== 'string')
@@ -16,7 +20,7 @@ function validateUSPhoneNumber(phoneNumber, errorMsg) {
     }
     var usPhoneNumberRegex = /^(1\s?)?(\(\d{3}\)|\d{3})(\s?|-)\d{3}(\s?|-)\d{4}$/;
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     if (!phoneNumber) {

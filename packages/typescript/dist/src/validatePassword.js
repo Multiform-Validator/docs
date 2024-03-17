@@ -31,14 +31,12 @@ function validatePassword(password, minLength, maxLength, options, errorMsg) {
     var minLenthPassword = minLength || 1;
     var maxLenthPassword = maxLength || Infinity;
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         if (errorMessage === 'This password is too long' || errorMessage === 'password too short') {
             if (maxLenthPassword === Infinity) {
                 return "Password must be greater than ".concat(minLenthPassword, " characters");
             }
-            else {
-                return "Password must be between ".concat(minLenthPassword, " and ").concat(maxLenthPassword, " characters");
-            }
+            return "Password must be between ".concat(minLenthPassword, " and ").concat(maxLenthPassword, " characters");
         }
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
@@ -64,31 +62,29 @@ function validatePassword(password, minLength, maxLength, options, errorMsg) {
                 errorMsg: getErrorMessage(1),
             };
         }
-        if (options != null) {
-            if (options.requireUppercase && !/[A-Z]/.test(password)) {
-                return {
-                    isValid: false,
-                    errorMsg: getErrorMessage(2),
-                };
-            }
-            if (options.requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-                return {
-                    isValid: false,
-                    errorMsg: getErrorMessage(3),
-                };
-            }
-            if (options.requireNumber && !/\d/.test(password)) {
-                return {
-                    isValid: false,
-                    errorMsg: getErrorMessage(4),
-                };
-            }
-            if (options.requireString && !/[a-zA-Z]/.test(password)) {
-                return {
-                    isValid: false,
-                    errorMsg: getErrorMessage(5),
-                };
-            }
+        if (options.requireUppercase && !/[A-Z]/.test(password)) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(2),
+            };
+        }
+        if (options.requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(3),
+            };
+        }
+        if (options.requireNumber && !/\d/.test(password)) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(4),
+            };
+        }
+        if (options.requireString && !/[a-zA-Z]/.test(password)) {
+            return {
+                isValid: false,
+                errorMsg: getErrorMessage(5),
+            };
         }
         return {
             isValid: true,

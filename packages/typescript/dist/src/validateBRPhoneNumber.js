@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var defaultErrorMsg = ['Field phone number cannot be empty', 'Invalid phone number', 'Unknown error'];
+var defaultErrorMsg = [
+    'Field phone number cannot be empty',
+    'Invalid phone number',
+    'Unknown error',
+];
 function validateBRPhoneNumber(phoneNumber, errorMsg) {
     if (errorMsg === void 0) { errorMsg = defaultErrorMsg; }
     if (typeof phoneNumber !== 'string')
@@ -15,7 +19,7 @@ function validateBRPhoneNumber(phoneNumber, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     if (!phoneNumber) {

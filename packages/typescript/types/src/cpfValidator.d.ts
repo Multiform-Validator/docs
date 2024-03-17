@@ -15,7 +15,7 @@
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function cpfIsValid(cpf: string, errorMsg?: (string | null)[]): {
+declare function cpfIsValid(cpf: string, errorMsg?: (string | null)[] | null): {
     isValid: boolean;
     errorMsg: string | null;
 };

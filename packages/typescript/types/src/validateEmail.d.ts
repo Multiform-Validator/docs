@@ -32,5 +32,5 @@ import { ValidateFunctions } from './types';
 
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateEmail(email: string, maxLength?: number | null, country?: string | null, errorMsg?: (string | null)[], validDomains?: boolean): ValidateFunctions;
+declare function validateEmail(email: string, maxLength?: number | null, country?: string | null, errorMsg?: (string | null)[] | null, validDomains?: boolean | string[]): ValidateFunctions;
 export default validateEmail;

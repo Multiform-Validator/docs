@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var defaultErrorMsg = [
     'Surname cannot be empty',
-    'Surname cannot contain numbers', 'Surname cannot contain special characters',
+    'Surname cannot contain numbers',
+    'Surname cannot contain special characters',
     'This surname is not valid',
     'Surname too big, try again',
     'Unknown error',
@@ -21,12 +22,15 @@ function validateSurname(surname, minLength, maxLength, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     var minNameLength = minLength || 1;
     var maxNameLength = maxLength || 25;
-    if (maxNameLength < 1 || minNameLength < 1 || typeof minNameLength !== 'number' || typeof maxNameLength !== 'number') {
+    if (maxNameLength < 1 ||
+        minNameLength < 1 ||
+        typeof minNameLength !== 'number' ||
+        typeof maxNameLength !== 'number') {
         throw new Error('maxLength or minLength must be a number and cannot be less than 1');
     }
     if (minNameLength > maxNameLength) {

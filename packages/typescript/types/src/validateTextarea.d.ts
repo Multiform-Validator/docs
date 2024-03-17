@@ -12,5 +12,5 @@ import { ValidateFunctions } from './types';
 ];
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateTextarea(textarea: string, isRequired?: boolean, maxLength?: number | null, errorMsg?: (string | null)[]): ValidateFunctions;
+declare function validateTextarea(textarea: string, isRequired?: boolean, maxLength?: number | null, errorMsg?: (string | null)[] | null): ValidateFunctions;
 export default validateTextarea;

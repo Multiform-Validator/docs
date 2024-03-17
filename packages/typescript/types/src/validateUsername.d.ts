@@ -27,5 +27,5 @@ import { ValidateFunctions } from './types';
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateUsername(username: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): ValidateFunctions;
+declare function validateUsername(username: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[] | null): ValidateFunctions;
 export default validateUsername;

@@ -16,18 +16,18 @@ function isPostalCode(postalCode) {
     var brazilPostalCodeRegex = /^\d{5}-\d{3}$/;
     var italyPostalCodeRegex = /^\d{5}$/;
     var usZipCodeOnlyRegex = /^\d{5}$/;
-    return (usZipCodeRegex.test(postalCode)
-        || canadaPostalCodeRegex.test(postalCode)
-        || ukPostalCodeRegex.test(postalCode)
-        || francePostalCodeRegex.test(postalCode)
-        || netherlandsPostalCodeRegex.test(postalCode)
-        || japanPostalCodeRegex.test(postalCode)
-        || spainPostalCodeRegex.test(postalCode)
-        || southAfricaPostalCodeRegex.test(postalCode)
-        || germanyPostalCodeRegex.test(postalCode)
-        || switzerlandPostalCodeRegex.test(postalCode)
-        || brazilPostalCodeRegex.test(postalCode)
-        || italyPostalCodeRegex.test(postalCode)
-        || usZipCodeOnlyRegex.test(postalCode));
+    return (usZipCodeRegex.test(postalCode) ||
+        canadaPostalCodeRegex.test(postalCode) ||
+        ukPostalCodeRegex.test(postalCode) ||
+        francePostalCodeRegex.test(postalCode) ||
+        netherlandsPostalCodeRegex.test(postalCode) ||
+        japanPostalCodeRegex.test(postalCode) ||
+        spainPostalCodeRegex.test(postalCode) ||
+        southAfricaPostalCodeRegex.test(postalCode) ||
+        germanyPostalCodeRegex.test(postalCode) ||
+        switzerlandPostalCodeRegex.test(postalCode) ||
+        brazilPostalCodeRegex.test(postalCode) ||
+        italyPostalCodeRegex.test(postalCode) ||
+        usZipCodeOnlyRegex.test(postalCode));
 }
 exports.default = isPostalCode;

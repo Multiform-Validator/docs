@@ -9,7 +9,7 @@ function isEmail(email) {
         var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (Number(email[0]))
             return false;
-        if (!(regex.test(email)))
+        if (!regex.test(email))
             return false;
         var depoisDoArroba = email.indexOf('@') + 1;
         var depoisDoUltimoPonto = email.lastIndexOf('.');

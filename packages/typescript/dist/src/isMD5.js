@@ -16,9 +16,7 @@ function isMD5(value) {
     if (allZeroRegex.test(trimmedValue)) {
         return false;
     }
-    var weakHashes = [
-        'd41d8cd98f00b204e9800998ecf8427e',
-    ];
+    var weakHashes = ['d41d8cd98f00b204e9800998ecf8427e'];
     if (weakHashes.includes(trimmedValue)) {
         return false;
     }

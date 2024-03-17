@@ -22,5 +22,5 @@ import { ValidateFunctions } from './types';
 ];
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function validateName(name: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[]): ValidateFunctions;
+declare function validateName(name: string, minLength?: number | null, maxLength?: number | null, errorMsg?: (string | null)[] | null): ValidateFunctions;
 export default validateName;

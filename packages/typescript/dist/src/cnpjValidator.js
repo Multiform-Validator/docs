@@ -19,7 +19,12 @@ function calculateSecondVerifier(cnpjBase, firstVerifier) {
     var remainder = sum % 11;
     return remainder < 2 ? 0 : 11 - remainder;
 }
-var defaultErrorMsg = ['CNPJ invalid', 'CNPJ must have 14 numerical digits', 'CNPJ is not valid', 'Unknown error'];
+var defaultErrorMsg = [
+    'CNPJ invalid',
+    'CNPJ must have 14 numerical digits',
+    'CNPJ is not valid',
+    'Unknown error',
+];
 function cnpjIsValid(cnpj, errorMsg) {
     if (errorMsg === void 0) { errorMsg = defaultErrorMsg; }
     if (typeof cnpj !== 'string')
@@ -34,7 +39,7 @@ function cnpjIsValid(cnpj, errorMsg) {
         }
     }
     function getErrorMessage(index) {
-        var errorMessage = errorMsg[index];
+        var errorMessage = errorMsg ? errorMsg[index] : null;
         return errorMessage != null ? errorMessage : defaultErrorMsg[index];
     }
     try {

@@ -13,7 +13,7 @@
  * Create a list of errors separated by commas in strings
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-declare function cnpjIsValid(cnpj: string, errorMsg?: (string | null)[]): {
+declare function cnpjIsValid(cnpj: string, errorMsg?: (string | null)[] | null): {
     isValid: boolean;
     errorMsg: string | null;
 };

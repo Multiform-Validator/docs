@@ -46,16 +46,9 @@ function getOnlyEmail(text, multiple, cleanDomain, repeatEmail) {
     if (!matches)
         return 'No email found';
     if (cleanDomain) {
-        var domainsToClean_1;
-        if (Array.isArray(cleanDomain)) {
-            domainsToClean_1 = cleanDomain;
-        }
-        else if (cleanDomain === true) {
-            domainsToClean_1 = CleanAfterDefaultDomain;
-        }
-        else {
-            domainsToClean_1 = [];
-        }
+        var domainsToClean_1 = Array.isArray(cleanDomain)
+            ? cleanDomain
+            : CleanAfterDefaultDomain;
         var cleanedEmails = matches.map(function (email) {
             var e_1, _a, e_2, _b;
             try {
