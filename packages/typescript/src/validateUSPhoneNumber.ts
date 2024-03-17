@@ -1,6 +1,10 @@
 import { ValidateFunctions } from './types';
 
-const defaultErrorMsg: string[] = ['US phone number cannot be empty', 'Invalid phone number', 'Unknown error'];
+const defaultErrorMsg: string[] = [
+	'US phone number cannot be empty',
+	'Invalid phone number',
+	'Unknown error',
+];
 
 /**
  * @param phoneNumber
@@ -11,48 +15,51 @@ const defaultErrorMsg: string[] = ['US phone number cannot be empty', 'Invalid p
  * @default {errorMsg} "['US phone number cannot be empty', 'Invalid phone number', 'Unknown error']"
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
-function validateUSPhoneNumber(phoneNumber: string, errorMsg: (string|null)[] = defaultErrorMsg): ValidateFunctions {
-  if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
-  // Check to see if the passed error messages are valid; otherwise, return an error
-  if (errorMsg) {
-    if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
-    for (let index: number = 0; index < errorMsg.length; index += 1) {
-      if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-        throw new TypeError('All values within the array must be strings or null/undefined.');
-      }
-    }
-  }
-  // Regular expression to validate USA phone numbers
-  const usPhoneNumberRegex: RegExp = /^(1\s?)?(\(\d{3}\)|\d{3})(\s?|-)\d{3}(\s?|-)\d{4}$/;
-  // Internal function to get the error message
-  function getErrorMessage(index: number): string {
-		const errorMessage: string|null = errorMsg[index];
+function validateUSPhoneNumber(
+	phoneNumber: string,
+	errorMsg: (string | null)[] | null = defaultErrorMsg,
+): ValidateFunctions {
+	if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
+	// Check to see if the passed error messages are valid; otherwise, return an error
+	if (errorMsg) {
+		if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
+		for (let index: number = 0; index < errorMsg.length; index += 1) {
+			if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
+				throw new TypeError('All values within the array must be strings or null/undefined.');
+			}
+		}
+	}
+	// Regular expression to validate USA phone numbers
+	const usPhoneNumberRegex: RegExp = /^(1\s?)?(\(\d{3}\)|\d{3})(\s?|-)\d{3}(\s?|-)\d{4}$/;
+	// Internal function to get the error message
+	function getErrorMessage(index: number): string {
+		const errorMessage: string | null = errorMsg ? errorMsg[index] : null;
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
-  }
+	}
 
-  if (!phoneNumber) {
-    return {
-      isValid: false,
-      errorMsg: getErrorMessage(0),
-    };
-  }
-  try {
-    if (!usPhoneNumberRegex.test(phoneNumber)) {
-      return {
-        isValid: false,
-        errorMsg: getErrorMessage(1),
-      };
-    }
-    return {
-      isValid: true,
-      errorMsg: null,
-    };
-  } catch (error) {
-    return {
-      isValid: false,
-      errorMsg: getErrorMessage(2),
-    };
-  }
+	if (!phoneNumber) {
+		return {
+			isValid: false,
+			errorMsg: getErrorMessage(0),
+		};
+	}
+	try {
+		if (!usPhoneNumberRegex.test(phoneNumber)) {
+			return {
+				isValid: false,
+				errorMsg: getErrorMessage(1),
+			};
+		}
+		return {
+			isValid: true,
+			errorMsg: null,
+		};
+	} catch (error) {
+		return {
+			isValid: false,
+			errorMsg: getErrorMessage(2),
+		};
+	}
 }
 
 export default validateUSPhoneNumber;

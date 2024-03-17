@@ -12,8 +12,8 @@ describe('getOnlyEmail', () => {
   });
 
   it('should return cleaned emails when cleanDomain is true', () => {
-    const result = getOnlyEmail("Entre em contato com a equipe: joao@empresa.com.br, maria@empresa.com.io, contato@empresa.com.pt", true, true);
-    expect(result).toEqual(['joao@empresa.com.br', 'maria@empresa.com.io', 'contato@empresa.com.pt']);
+    const result = getOnlyEmail("Entre em contato com a equipe: joao@empresa.com.br, maria@empresa.com.io, contato@empresa.com.pt jonyjony@gmail.comAwaodiawdoi", true, true);
+    expect(result).toEqual(['joao@empresa.com.br', 'maria@empresa.com.io', 'contato@empresa.com.pt', 'jonyjony@gmail.com']);
   });
 
   it('should return unique emails when repeatEmail is false', () => {

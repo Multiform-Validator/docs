@@ -15,36 +15,36 @@
  * @description Values have to be passed as a string. Supported countries: United States, Canada, United Kingdom, France, Netherlands, Japan, Spain, South Africa, Germany, Switzerland, Brazil, Italy.
  */
 function isPostalCode(postalCode: string): boolean {
-  if (typeof postalCode !== 'string') throw new TypeError('Input value must be a string.');
-  // Regular expressions for supported countries' postal code formats
-  const usZipCodeRegex: RegExp = /^\d{5}(-\d{4})?$/;
-  const canadaPostalCodeRegex: RegExp = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
-  const ukPostalCodeRegex: RegExp = /^[A-Za-z]{1,2}\d[A-Za-z\d]?\s\d[A-Za-z]{2}$/;
-  const francePostalCodeRegex: RegExp = /^\d{5}$/;
-  const netherlandsPostalCodeRegex: RegExp = /^\d{4}$/;
-  const japanPostalCodeRegex: RegExp = /^\d{3}-\d{4}$/;
-  const spainPostalCodeRegex: RegExp = /^\d{5}$/;
-  const southAfricaPostalCodeRegex: RegExp = /^\d{4}$/;
-  const germanyPostalCodeRegex: RegExp = /^\d{5}$/;
-  const switzerlandPostalCodeRegex: RegExp = /^\d{4}$/;
-  const brazilPostalCodeRegex: RegExp = /^\d{5}-\d{3}$/;
-  const italyPostalCodeRegex: RegExp = /^\d{5}$/;
-  const usZipCodeOnlyRegex: RegExp = /^\d{5}$/;
-  return (
-    usZipCodeRegex.test(postalCode)
-    || canadaPostalCodeRegex.test(postalCode)
-    || ukPostalCodeRegex.test(postalCode)
-    || francePostalCodeRegex.test(postalCode)
-    || netherlandsPostalCodeRegex.test(postalCode)
-    || japanPostalCodeRegex.test(postalCode)
-    || spainPostalCodeRegex.test(postalCode)
-    || southAfricaPostalCodeRegex.test(postalCode)
-    || germanyPostalCodeRegex.test(postalCode)
-    || switzerlandPostalCodeRegex.test(postalCode)
-    || brazilPostalCodeRegex.test(postalCode)
-    || italyPostalCodeRegex.test(postalCode)
-    || usZipCodeOnlyRegex.test(postalCode) // Handle United States ZIP code only (without the optional 4-digit extension)
-  );
+	if (typeof postalCode !== 'string') throw new TypeError('Input value must be a string.');
+	// Regular expressions for supported countries' postal code formats
+	const usZipCodeRegex: RegExp = /^\d{5}(-\d{4})?$/;
+	const canadaPostalCodeRegex: RegExp = /^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$/;
+	const ukPostalCodeRegex: RegExp = /^[A-Za-z]{1,2}\d[A-Za-z\d]?\s\d[A-Za-z]{2}$/;
+	const francePostalCodeRegex: RegExp = /^\d{5}$/;
+	const netherlandsPostalCodeRegex: RegExp = /^\d{4}$/;
+	const japanPostalCodeRegex: RegExp = /^\d{3}-\d{4}$/;
+	const spainPostalCodeRegex: RegExp = /^\d{5}$/;
+	const southAfricaPostalCodeRegex: RegExp = /^\d{4}$/;
+	const germanyPostalCodeRegex: RegExp = /^\d{5}$/;
+	const switzerlandPostalCodeRegex: RegExp = /^\d{4}$/;
+	const brazilPostalCodeRegex: RegExp = /^\d{5}-\d{3}$/;
+	const italyPostalCodeRegex: RegExp = /^\d{5}$/;
+	const usZipCodeOnlyRegex: RegExp = /^\d{5}$/;
+	return (
+		usZipCodeRegex.test(postalCode) ||
+		canadaPostalCodeRegex.test(postalCode) ||
+		ukPostalCodeRegex.test(postalCode) ||
+		francePostalCodeRegex.test(postalCode) ||
+		netherlandsPostalCodeRegex.test(postalCode) ||
+		japanPostalCodeRegex.test(postalCode) ||
+		spainPostalCodeRegex.test(postalCode) ||
+		southAfricaPostalCodeRegex.test(postalCode) ||
+		germanyPostalCodeRegex.test(postalCode) ||
+		switzerlandPostalCodeRegex.test(postalCode) ||
+		brazilPostalCodeRegex.test(postalCode) ||
+		italyPostalCodeRegex.test(postalCode) ||
+		usZipCodeOnlyRegex.test(postalCode) // Handle United States ZIP code only (without the optional 4-digit extension)
+	);
 }
 
 export default isPostalCode;

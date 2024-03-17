@@ -43,6 +43,20 @@ describe('validateEmail', () => {
     expect(result.errorMsg).toBe(null);
   });
 
+	it('should validate an email with the defaults allowed domain', () => {
+		// @ts-ignore
+    const result = validateEmail('test@gmail.com', null, null, null, true);
+    expect(result.isValid).toBe(true);
+    expect(result.errorMsg).toBe(null);
+  });
+
+	it('should invalidate an email with the defaults allowed domain', () => {
+		// @ts-ignore
+    const result = validateEmail('test@mydomain.com', null, null, null, true);
+    expect(result.isValid).toBe(false);
+    expect(result.errorMsg).toBe("Email domain is not allowed.");
+  });
+
   it('should invalidate an email that is too long', () => {
     const result = validateEmail('a'.repeat(401) + '@gmail.com', 400);
     expect(result.isValid).toBe(false);

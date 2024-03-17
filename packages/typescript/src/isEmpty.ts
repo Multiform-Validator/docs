@@ -9,13 +9,13 @@
  * @returns true or false
  */
 function isEmpty(value: string): boolean {
-  // Check if the input value is of type string
-  if (typeof value !== 'string') {
-    throw new TypeError('Input value must be a string.');
-  }
+	// Check if the input value is of type string
+	if (typeof value !== 'string') {
+		throw new TypeError('Input value must be a string.');
+	}
 
-  // Remove leading and trailing whitespace and check if the resulting string is empty
-  return value.trim().length === 0;
+	// Remove leading and trailing whitespace and check if the resulting string is empty
+	return value.trim().length === 0;
 }
 
 export default isEmpty;
