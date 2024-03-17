@@ -68,6 +68,7 @@ This package contains various modules for validating different types of data. Be
 - **validateName**: Name validation.
 - **validateSurname**: Surname validation.
 - **validateTextarea**: Textarea validation.
+- **isValidImage**: Checks whether the image is valid by analyzing the bytes of the file.
 
 ### You can use it in React Native, Angular, any javascript framework or any javascript or typescript code.
 #### Example using Reactjs:
