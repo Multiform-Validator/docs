@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isValidImage = exports.validateTextarea = exports.validateSurname = exports.validateName = exports.passwordStrengthTester = exports.isNumber = exports.validatePhoneNumber = exports.validateUSPhoneNumber = exports.validateBRPhoneNumber = exports.validatePassportNumber = exports.isTime = exports.isPostalCode = exports.isPort = exports.isMD5 = exports.isEmpty = exports.isDecimal = exports.isDate = exports.isBase64 = exports.isAscii = exports.isMACAddress = exports.identifyFlagCard = exports.isCreditCardValid = exports.getOnlyEmail = exports.validatePassword = exports.validateUsername = exports.isCEP = exports.validateEmail = exports.isEmail = exports.cnpjIsValid = exports.cpfIsValid = void 0;
+exports.validateTextarea = exports.validateSurname = exports.validateName = exports.passwordStrengthTester = exports.isNumber = exports.validatePhoneNumber = exports.validateUSPhoneNumber = exports.validateBRPhoneNumber = exports.validatePassportNumber = exports.isTime = exports.isPostalCode = exports.isPort = exports.isMD5 = exports.isEmpty = exports.isDecimal = exports.isDate = exports.isBase64 = exports.isAscii = exports.isMACAddress = exports.identifyFlagCard = exports.isCreditCardValid = exports.getOnlyEmail = exports.validatePassword = exports.validateUsername = exports.isCEP = exports.validateEmail = exports.isEmail = exports.cnpjIsValid = exports.cpfIsValid = void 0;
 var cpfValidator_1 = __importDefault(require("./src/cpfValidator"));
 exports.cpfIsValid = cpfValidator_1.default;
 var cnpjValidator_1 = __importDefault(require("./src/cnpjValidator"));
@@ -62,5 +62,3 @@ var validateName_1 = __importDefault(require("./src/validateName"));
 exports.validateName = validateName_1.default;
 var validateTextarea_1 = __importDefault(require("./src/validateTextarea"));
 exports.validateTextarea = validateTextarea_1.default;
-var isValidImage_1 = __importDefault(require("./src/isValidImage"));
-exports.isValidImage = isValidImage_1.default;

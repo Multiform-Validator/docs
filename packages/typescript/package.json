@@ -1,12 +1,12 @@
 {
   "name": "multiform-validator",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
     "test": "jest --coverage",
-    "test:file": "jest tests/src/validateEmail.test --watch",
+    "test:file": "jest tests/src/isValidImage.test --watch",
     "test:watch": "jest --watch",
     "build": "npx tsc",
     "build:types": "tsc -p tsconfig.types.json"
@@ -37,7 +37,8 @@
   },
   "homepage": "https://github.com/gabriel-logan/multiform-validator#readme",
   "contributors": [
-    "Gabriel Logan"
+    "Gabriel Logan",
+		"Breno A"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -53,5 +54,6 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
-  }
+  },
+  "dependencies": {}
 }

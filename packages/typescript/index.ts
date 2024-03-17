@@ -28,7 +28,6 @@ import validateSurname from './src/validateSurname';
 import validateName from './src/validateName';
 import validateTextarea from './src/validateTextarea';
 import { ValidateFunctions, IsValidFunctions } from './src/types';
-import isValidImage from './src/isValidImage';
 
 export {
 	cpfIsValid,
@@ -62,5 +61,4 @@ export {
 	validateTextarea,
 	ValidateFunctions,
 	IsValidFunctions,
-	isValidImage,
 };
