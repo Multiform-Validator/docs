@@ -2,3 +2,4 @@ dist/
 node_modules/
 tests/**/*
 types/
+webpack.config.js

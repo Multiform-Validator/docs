@@ -21,6 +21,28 @@ If you want to help me, you can buy me a coffee (:
 	</a>
 </p>
 
+
+## CDNs
+
+jsDelivr:
+```bash
+https://cdn.jsdelivr.net/npm/multiform-validator@1.0.39/dist/bundle.min.js
+```
+```html
+<scritp src="https://cdn.jsdelivr.net/npm/multiform-validator@1.0.39/dist/bundle.min.js"></script>
+```
+
+unpkg:
+```bash
+https://unpkg.com/multiform-validator@1.0.39/dist/bundle.js
+```
+```html
+<scritp src="https://unpkg.com/multiform-validator@1.0.39/dist/bundle.js"></script>
+```
+
+
+
+
 ## Installation
 
 ```bash
