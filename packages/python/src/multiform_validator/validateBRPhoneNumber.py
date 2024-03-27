@@ -2,7 +2,7 @@ import re
 
 default_error_msg = ['Invalid value passed', 'Invalid phone number', 'Unknown error']
 
-def validateBRPhoneNumber(phone_number: str, errorMsg: list[str or None]=default_error_msg):
+def validateBRPhoneNumber(phone_number, errorMsg=default_error_msg):
     if not isinstance(phone_number, str):
         raise TypeError('The input should be a string.')
 

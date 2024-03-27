@@ -5,7 +5,7 @@ defaultErrorMsg = [
   'Unknown error',
 ]
 
-def cpfValidator(cpf: str, errorMsg: dict[str, str or None] = defaultErrorMsg) -> dict[bool, str or None]:
+def cpfValidator(cpf, errorMsg = defaultErrorMsg):
 	"""
 	Validates a CPF (Brazilian individual taxpayer registry identification) number.
 

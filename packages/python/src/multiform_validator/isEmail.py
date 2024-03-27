@@ -1,6 +1,6 @@
 import re
 
-def isEmail(email: str) -> bool:
+def isEmail(email):
     try:
         if type(email) != str:
             raise TypeError('Invalid input, must be a string')

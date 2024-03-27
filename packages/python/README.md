@@ -37,6 +37,7 @@ pip install multiform-validator
 - **passwordStrengthTester**: Password strength test.
 - **validateBRPhoneNumber**: Brazilian phone number validation.
 
+```python
 from multiform_validator import (
     cnpjIsValid,
     cpfIsValid,
@@ -47,6 +48,7 @@ from multiform_validator import (
     passwordStrengthTester,
     validateBRPhoneNumber
 )
+```
 
 # Data Validator
 

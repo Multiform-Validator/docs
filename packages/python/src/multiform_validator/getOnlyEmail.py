@@ -2,7 +2,7 @@ import re
 
 CleanAfterDefaultDomain = ['.br', '.io', '.pt', '.us', '.org', '.com']
 
-def getOnlyEmail(text: str, multiple=False, clean_domain=False, repeat_email=False) -> (list[str] | str):
+def getOnlyEmail(text, multiple=False, clean_domain=False, repeat_email=False):
     """
 		Example:
 		getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", True)

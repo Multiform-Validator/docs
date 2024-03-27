@@ -1,4 +1,4 @@
-def passwordStrengthTester(password: str):
+def passwordStrengthTester(password):
     if not isinstance(password, str):
         raise TypeError('The input should be a string.')
 

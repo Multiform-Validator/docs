@@ -1,4 +1,4 @@
-def isCreditCardValid(cardNumber: str) -> bool:
+def isCreditCardValid(cardNumber):
     if not isinstance(cardNumber, str):
         raise TypeError('The input should be a string.')
 

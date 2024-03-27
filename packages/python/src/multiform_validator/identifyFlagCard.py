@@ -1,6 +1,6 @@
 import re
 
-def identifyFlagCard(cardNumber: str):
+def identifyFlagCard(cardNumber):
     if not isinstance(cardNumber, str):
         raise TypeError('The input should be a string.')
 
