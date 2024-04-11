@@ -1,11 +1,17 @@
 package io.multiform_validator;
 
+/**
+ * Abstract class for validation functions.
+ */
 public abstract class ValidateFunctions {
     protected boolean isValid;
 
     public abstract String getErrorMsg();
 }
 
+/**
+ * Class for valid functions.
+ */
 class ValidFunction extends ValidateFunctions {
     public ValidFunction() {
         this.isValid = true;
@@ -17,6 +23,9 @@ class ValidFunction extends ValidateFunctions {
     }
 }
 
+/**
+ * Class for invalid functions.
+ */
 class InvalidFunction extends ValidateFunctions {
     public final String errorMsg;
 
