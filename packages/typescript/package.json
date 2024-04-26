@@ -1,6 +1,6 @@
 {
 	"name": "multiform-validator",
-	"version": "1.0.40",
+	"version": "1.1.1",
 	"description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
 	"main": "./dist/index.js",
 	"types": "./types/index.d.ts",
@@ -9,9 +9,10 @@
 		"test": "jest --coverage",
 		"test:file": "jest tests/src/isValidImage.test --watch",
 		"test:watch": "jest --watch",
-		"build": "npx tsc",
 		"build:types": "tsc -p tsconfig.types.json",
-		"build:browser": "webpack"
+		"build:src": "tsc",
+		"build:browser": "webpack",
+		"build": "yarn build:types && yarn build:src && yarn build:browser"
 	},
 	"repository": {
 		"type": "git",

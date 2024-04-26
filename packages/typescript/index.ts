@@ -28,6 +28,11 @@ import validateSurname from './src/validateSurname';
 import validateName from './src/validateName';
 import validateTextarea from './src/validateTextarea';
 import { ValidateFunctions, IsValidFunctions } from './src/types';
+import isValidImage from './src/isValidImage';
+import isValidAudio from './src/isValidAudio';
+import isValidPdf from './src/isValidPdf';
+import isValidVideo from './src/isValidVideo';
+import isValidTxt from './src/isValidTxt';
 
 export {
 	cpfIsValid,
@@ -61,4 +66,9 @@ export {
 	validateTextarea,
 	ValidateFunctions,
 	IsValidFunctions,
+	isValidImage,
+	isValidAudio,
+	isValidPdf,
+	isValidVideo,
+	isValidTxt,
 };
