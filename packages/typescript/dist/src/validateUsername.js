@@ -8,7 +8,7 @@ var defaultErrorMsg = [
     'username too short',
     'This username is too long',
     'Username cannot contain spaces',
-    'Cannot start with number',
+    'Cannot start with a number',
     'Cannot contain only numbers',
     'Unknown error',
 ];

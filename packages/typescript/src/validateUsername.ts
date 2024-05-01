@@ -8,7 +8,7 @@ const defaultErrorMsg: string[] = [
 	'username too short',
 	'This username is too long',
 	'Username cannot contain spaces',
-	'Cannot start with number',
+	'Cannot start with a number',
 	'Cannot contain only numbers',
 	'Unknown error',
 ];
@@ -32,7 +32,7 @@ const defaultErrorMsg: string[] = [
   'Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters',
   'Username must be between ${maxLenthUsername} and ${maxLenthUsername} characters',
   'Username cannot contain spaces',
-  'Cannot start with number',
+  'Cannot start with a number',
   'Cannot contain only numbers',
   'Unknown error'
 ];
