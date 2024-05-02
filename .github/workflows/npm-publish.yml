@@ -15,21 +15,7 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Cd to directory to build
-        working-directory: ./packages/typescript
-        run: |
-          npm install
-          npm test
-
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,6 +25,10 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Cd to directory to publish npm
         working-directory: ./packages/typescript
-        run: npm publish
+        run: |
+          npm install
+          npm test
+          npm build
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
