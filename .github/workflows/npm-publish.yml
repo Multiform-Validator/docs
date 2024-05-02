@@ -24,8 +24,9 @@ jobs:
           node-version: 16
       - name: Cd to directory
         working-directory: ./packages/typescript
-      - run: yarn ci
-      - run: yarn test
+        run: |
+          yarn ci
+          yarn test
 
   publish-npm:
     needs: build
