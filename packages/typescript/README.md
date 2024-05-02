@@ -107,6 +107,8 @@ import validator from 'multiform-validator';
 
 or
 
+// Attention, FUNCTION_NAME is not a valid function name! It is just an example of how to import the functions.
+
 const {FUNCTION_NAME} = require('multiform-validator');
 // or
 import {FUNCTION_NAME} from 'multiform-validator';
@@ -132,7 +134,8 @@ validator.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
 */
 ```
 
-Documentation: https://gabriel-logan.github.io/multiform-validator
+## Documentation
+### https://gabriel-logan.github.io/multiform-validator
 
 ```javascript
 
@@ -144,15 +147,15 @@ import { validateEmail } from 'multiform-validator';
 // do several tests to learn how to use the library in the best possible way.
 
 // Two last parameters are optional
-console.log(validateEmail('email@email.com', 30, 'br').isValid); // returns false
-console.log(validateEmail('email@email.com.br', 30, 'br').isValid); // returns true
-console.log(validateEmail('email@email.com', 30).isValid); // returns true
+console.log(validateEmail('email@email.com', { maxLength: 30, country: 'br' }).isValid); // returns false
+console.log(validateEmail('email@email.com.br', { maxLength: 30, country: 'br' }).isValid); // returns true
+console.log(validateEmail('email@email.com', { maxLength: 30 }).isValid); // returns true
 
 // All examples return default messages, below is an example setting your own messages
 
 // If you want to use a default parameter, use null.
 
-const validationResult = validateEmail('email@email.com', 30);
+const validationResult = validateEmail('email@email.com', { maxLength: 30 });
 
 if (validationResult.isValid) {
 console.log('0 errors');
@@ -162,7 +165,10 @@ console.log(validationResult.errorMsg); // returns the error
 
 // or
 
-const validationResult = validateEmail('1email@email.com', 30, null, [null, 'This is an invalid email with my own errors']);
+const validationResult = validateEmail("1email@email.com", {
+	maxLength: 30,
+	errorMsg: [null, "This is an invalid email with my own errors"],
+});
 
 if (validationResult.isValid) {
 console.log('0 errors');
