@@ -18,7 +18,7 @@ describe('validateUsername', () => {
 
   it('returns error for username starting with number', () => {
     const result = validateUsername('123User');
-    expect(result).toEqual({ isValid: false, errorMsg: 'Cannot start with number' });
+    expect(result).toEqual({ isValid: false, errorMsg: 'Cannot start with a number' });
   });
 
   it('returns error for username containing only numbers', () => {
