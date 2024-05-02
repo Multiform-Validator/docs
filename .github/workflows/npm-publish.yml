@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          working-directory: /packages/typescript
+          working-directory: ./packages/typescript
       - run: yarn ci
       - run: yarn test
 
