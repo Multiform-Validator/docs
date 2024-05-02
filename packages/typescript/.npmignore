@@ -1,0 +1,51 @@
+# Ignora o .gitignore
+.gitignore
+
+# Ignora o .eslintrc.js
+.eslintrc.js
+
+# Ignora o .editorconfig
+.editorconfig
+
+# Ignora todos os arquivos de código-fonte, exceto .js e ts
+*.java
+*.py
+*.cpp
+*.c
+*.h
+*.php
+*.html
+*.htm
+*.xml
+*.css
+*.scss
+*.sass
+# Adicione aqui outros tipos de arquivos de código-fonte que você queira ignorar
+.htaccess
+srcPage/
+Backup/
+BackupCopia/
+tsconfig.json
+pythonVersion/
+javaVersion/
+phpVersion/
+cSharpVersion/
+tester.js
+/src
+index.ts
+.vscode/
+composer.json
+tests/
+jest.config.js
+images/
+.npmignore
+package-lock.json
+coverage/
+tsconfig.types.json
+.eslintignore
+.prettierrc.js
+.prettierignore
+todo.txt
+webpack.config.js
+gitpush
+gitpush.exe
