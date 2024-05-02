@@ -9,12 +9,32 @@ const defaultErrorMsg: string[] = [
 	"Password requires at least one letter",
 	"Unknown error",
 ];
+
 interface Options {
-	requireUppercase: boolean;
-	requireSpecialChar: boolean;
-	requireNumber: boolean;
-	requireString: boolean;
+	requireUppercase?: boolean;
+	requireSpecialChar?: boolean;
+	requireNumber?: boolean;
+	requireString?: boolean;
 }
+
+interface OptionsParams {
+	minLength?: number;
+	maxLength?: number;
+	options?: Options;
+	errorMsg?: (string | null)[];
+}
+
+const defaultOptionsParams: OptionsParams = {
+	minLength: undefined,
+	maxLength: undefined,
+	options: {
+		requireUppercase: false,
+		requireSpecialChar: false,
+		requireNumber: false,
+		requireString: false,
+	},
+	errorMsg: defaultErrorMsg,
+};
 
 /**
  * @param password
@@ -32,8 +52,7 @@ interface Options {
  * @default {requireSpecialChar}: false -> Examples !@#$%^&*(),.?":{}|<>
  * @default {requireNumber}: false
  * @default {requireString}: false
- * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true });
- * @example validatePassword('MyP@ssw0rd', 8, 20, { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true }, ['My own error msg']);
+ * @example validatePassword('MyP@ssw0rd', { minLength: 8, maxLength: 20, options: { requireUppercase: true, requireSpecialChar: true, requireNumber: true, requireString: true } });
  * @info minLength cannot be greater than maxLength
  * @description This function returns 7 errors in the following order,
  *
@@ -56,15 +75,12 @@ interface Options {
  */
 function validatePassword(
 	password: string,
-	minLength?: number | null,
-	maxLength?: number | null,
-	options: Options = {
-		requireUppercase: false,
-		requireSpecialChar: false,
-		requireNumber: false,
-		requireString: false,
-	},
-	errorMsg: (string | null)[] | null = defaultErrorMsg,
+	{
+		minLength,
+		maxLength,
+		options,
+		errorMsg,
+	}: OptionsParams = defaultOptionsParams,
 ): ValidateFunctions {
 	if (typeof password !== "string") {
 		throw new TypeError("The input should be a string.");
@@ -88,7 +104,9 @@ function validatePassword(
 
 	// Função interna para obter a mensagem de erro
 	function getErrorMessage(index: number): string {
-		const errorMessage: string | null = errorMsg ? errorMsg[index] : null;
+		const errorMessage: string | null = errorMsg
+			? errorMsg[index]
+			: defaultErrorMsg[index];
 		if (
 			errorMessage === "This password is too long" ||
 			errorMessage === "password too short"
@@ -129,14 +147,14 @@ function validatePassword(
 				errorMsg: getErrorMessage(1),
 			};
 		} // Tamanho n pode ser menor q o min
-		if (options.requireUppercase && !/[A-Z]/.test(password)) {
+		if (options?.requireUppercase && !/[A-Z]/.test(password)) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(2), // Requer pelo menos uma letra maiuscula
 			};
 		}
 		if (
-			options.requireSpecialChar &&
+			options?.requireSpecialChar &&
 			!/[!@#$%^&*(),.?":{}|<>]/.test(password)
 		) {
 			return {
@@ -144,13 +162,13 @@ function validatePassword(
 				errorMsg: getErrorMessage(3), // Requer pelo menos uma especial caracter
 			};
 		}
-		if (options.requireNumber && !/\d/.test(password)) {
+		if (options?.requireNumber && !/\d/.test(password)) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(4), // Requer pelo menos um numero
 			};
 		}
-		if (options.requireString && !/[a-zA-Z]/.test(password)) {
+		if (options?.requireString && !/[a-zA-Z]/.test(password)) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(5), // Requer pelo menos uma letra

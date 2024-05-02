@@ -1,48 +1,78 @@
 import validatePassword from '../../src/validatePassword';
 
 describe('validatePassword', () => {
-  it('validates password with minimum length', () => {
-    const result = validatePassword('Passw0rd!', 8);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('validates password with minimum length', () => {
+		const result = validatePassword('Passw0rd!', {
+			minLength: 8
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
-  it('validates password with maximum length', () => {
-    const result = validatePassword('Passw0rd!', null, 10);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('validates password with maximum length', () => {
+		const result = validatePassword('Passw0rd!', {
+			maxLength: 10
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
-  it('validates password with required uppercase', () => {
-    const result = validatePassword('Passw0rd!', null, null, { requireUppercase: true } as any);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('validates password with required uppercase', () => {
+		const result = validatePassword('Passw0rd!', {
+			options: { requireUppercase: true }
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
-  it('validates password with required special character', () => {
-    const result = validatePassword('Passw0rd!', null, null, { requireSpecialChar: true }as any);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('validates password with required special character', () => {
+		const result = validatePassword('Passw0rd!', {
+			options: { requireSpecialChar: true }
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
-  it('validates password with required number', () => {
-    const result = validatePassword('Passw0rd!', null, null, { requireNumber: true }as any);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('validates password with required number', () => {
+		const result = validatePassword('Passw0rd!', {
+			options: { requireNumber: true }
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
-  it('validates password with required string', () => {
-    const result = validatePassword('Passw0rd!', null, null, { requireString: true }as any);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('validates password with required string', () => {
+		const result = validatePassword('Passw0rd!', {
+			options: { requireString: true }
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
-  it('returns invalid for incorrect password', () => {
-    const result = validatePassword('password', 8);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+	it('returns invalid for incorrect password', () => {
+		const result = validatePassword('password', {
+			minLength: 8,
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
 	it('validates password with all required check modules', () => {
-    const result = validatePassword('Passw0rd2!', null, null, { requireString: true, requireNumber: true, requireSpecialChar: true, requireUppercase: true } as any);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+		const result = validatePassword('Passw0rd2!', {
+			options: { requireString: true, requireNumber: true, requireSpecialChar: true, requireUppercase: true }
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
 
 	it('validates password with all required check modules', () => {
-    const result = validatePassword('Passw0rd!', null, null, { requireString: true, requireNumber: true, requireSpecialChar: true, requireUppercase: true } as any);
-    expect(result).toEqual({ isValid: true, errorMsg: null });
-  });
+		const result = validatePassword('Passw0rd!', {
+			options: { requireString: true, requireNumber: true, requireSpecialChar: true, requireUppercase: true }
+		});
+		expect(result).toEqual({ isValid: true, errorMsg: null });
+	});
+
+	it('Returns correct error message for password too long or too short', () => {
+		const result1 = validatePassword('Passw0rd!', {
+			maxLength: 6
+		});
+		expect(result1.errorMsg).toBe("Password must be between 1 and 6 characters");
+
+		const result2 = validatePassword('Passw0rd!', {
+			minLength: 20
+		});
+		expect(result2.errorMsg).toBe("Password must be greater than 20 characters");
+	});
 });

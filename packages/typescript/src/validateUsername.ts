@@ -12,6 +12,19 @@ const defaultErrorMsg: string[] = [
 	"Cannot contain only numbers",
 	"Unknown error",
 ];
+
+interface OptionsParams {
+	minLength?: number;
+	maxLength?: number;
+	errorMsg?: (string | null)[];
+}
+
+const defaultOptionsParams: OptionsParams = {
+	minLength: undefined,
+	maxLength: undefined,
+	errorMsg: defaultErrorMsg,
+};
+
 /**
  * @param username
  * @param minLength optional
@@ -19,8 +32,8 @@ const defaultErrorMsg: string[] = [
  * @param errorMsg optional
  * @default minLength number: 1
  * @default maxLength number: Infinity
- * @example validateUsername('User999', 8, 20);
- * @example validateUsername('User999', 8, 20, ['My own errorsMsg']);
+ * @example validateUsername('User999', { minLength: 8, maxLength: 20 });
+ * @example validateUsername('User999', { minLength: 8, maxLength: 20, errorMsg: ['My own errorsMsg'] });
  * @info minLength cannot be greater than maxLength
  * @description This function returns 7 errors in the following order,
  *
@@ -42,9 +55,7 @@ const defaultErrorMsg: string[] = [
  */
 function validateUsername(
 	username: string,
-	minLength?: number | null,
-	maxLength?: number | null,
-	errorMsg: (string | null)[] | null = defaultErrorMsg,
+	{ minLength, maxLength, errorMsg }: OptionsParams = defaultOptionsParams,
 ): ValidateFunctions {
 	if (typeof username !== "string") {
 		throw new TypeError("The input should be a string.");
@@ -67,7 +78,9 @@ function validateUsername(
 
 	// Função interna para obter a mensagem de erro
 	function getErrorMessage(index: number): string {
-		const errorMessage: string | null = errorMsg ? errorMsg[index] : null;
+		const errorMessage: string | null = errorMsg
+			? errorMsg[index]
+			: defaultErrorMsg[index];
 		if (
 			errorMessage === "username too short" ||
 			errorMessage === "This username is too long"

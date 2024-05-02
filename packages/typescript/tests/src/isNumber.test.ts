@@ -16,4 +16,24 @@ describe('isNumber', () => {
     const result = isNumber('abc');
     expect(result).toBe(false);
   });
+
+	it('should return false when the input is an array', () => {
+		const result = isNumber([]);
+		expect(result).toBe(false);
+	});
+
+	it('should return false when the input is an object', () => {
+		const result = isNumber({});
+		expect(result).toBe(false);
+	});
+
+	it('should return false when the input is a boolean', () => {
+		const result = isNumber(true);
+		expect(result).toBe(false);
+	});
+
+	it('should return false when the input is empty', () => {
+		const result = isNumber('');
+		expect(result).toBe(false);
+	});
 });

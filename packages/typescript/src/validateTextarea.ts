@@ -5,6 +5,19 @@ const defaultErrorMsg: string[] = [
 	"Can not be empty",
 	"Unknown error",
 ];
+
+interface OptionsParams {
+	isRequired: boolean;
+	maxLength?: number;
+	errorMsg?: (string | null)[];
+}
+
+const defaultOptionsParams: OptionsParams = {
+	isRequired: false,
+	maxLength: undefined,
+	errorMsg: defaultErrorMsg,
+};
+
 /**
  * @default isRequired boolean: default: false
  * @default maxLength number: default: 50
@@ -20,9 +33,7 @@ const defaultErrorMsg: string[] = [
  */
 function validateTextarea(
 	textarea: string,
-	isRequired: boolean = false,
-	maxLength?: number | null,
-	errorMsg: (string | null)[] | null = defaultErrorMsg,
+	{ isRequired, maxLength, errorMsg }: OptionsParams = defaultOptionsParams,
 ): ValidateFunctions {
 	if (typeof textarea !== "string") {
 		throw new TypeError("The input should be a string.");
@@ -45,7 +56,10 @@ function validateTextarea(
 
 	// Função interna para obter a mensagem de erro
 	function getErrorMessage(index: number): string {
-		const errorMessage: string | null = errorMsg ? errorMsg[index] : null;
+		const errorMessage: string | null = errorMsg
+			? errorMsg[index]
+			: defaultErrorMsg[index];
+
 		if (errorMessage === "This textarea is too big") {
 			return `Textarea cannot exceed ${maxTextAreaLength} characters`;
 		}
@@ -57,14 +71,13 @@ function validateTextarea(
 			"maxLength or minLength must be a number and cannot be less than 1",
 		);
 	}
-	if (isRequired) {
-		if (textarea === "") {
-			return {
-				isValid: false,
-				errorMsg: getErrorMessage(1),
-			};
-		}
+	if (textarea === "" && isRequired) {
+		return {
+			isValid: false,
+			errorMsg: getErrorMessage(1),
+		};
 	}
+
 	try {
 		if (textarea.length > maxTextAreaLength) {
 			return {

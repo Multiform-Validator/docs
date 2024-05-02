@@ -14,6 +14,9 @@ function isDecimal(value: string | number): boolean {
 	let getValued: string | number = value;
 	if (typeof getValued !== "string") {
 		if (typeof getValued === "number") {
+			if (Number.isInteger(getValued)) {
+				return false;
+			}
 			getValued = getValued.toString();
 		} else {
 			throw new TypeError("Input value must be a string or a number.");
@@ -22,6 +25,12 @@ function isDecimal(value: string | number): boolean {
 	if (getValued.trim().length === 0) {
 		throw new Error("Input value must not be an empty string.");
 	}
+
+	const integerRegex: RegExp = /^\d+$/;
+	if (integerRegex.test(getValued)) {
+		return false;
+	}
+
 	// Regular expression to validate decimal numbers
 	const decimalRegex: RegExp = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
 	if (!decimalRegex.test(getValued)) {

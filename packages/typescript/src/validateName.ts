@@ -8,6 +8,19 @@ const defaultErrorMsg: string[] = [
 	"Name too big, try again",
 	"Unknown error",
 ];
+
+interface OptionsParams {
+	minLength?: number;
+	maxLength?: number;
+	errorMsg?: (string | null)[];
+}
+
+const defaultOptionsParams: OptionsParams = {
+	minLength: undefined,
+	maxLength: undefined,
+	errorMsg: defaultErrorMsg,
+};
+
 /**
  * @param name
  * @param minLength
@@ -15,7 +28,7 @@ const defaultErrorMsg: string[] = [
  * @param errorMsg
  * @default minLength number: default: 1
  * @default maxLength number: default: 20
- * @example validateName('John', 2, 20);
+ * @example validateName('John', { minLength: 2, maxLength: 20 }); // Returns { isValid: true, errorMsg: null }
  * @info minLength cannot be greater than maxLength
  * @description This function returns 6 errors in the following order,
  *
@@ -33,9 +46,7 @@ const defaultErrorMsg: string[] = [
  */
 function validateName(
 	name: string,
-	minLength?: number | null,
-	maxLength?: number | null,
-	errorMsg: (string | null)[] | null = defaultErrorMsg,
+	{ minLength, maxLength, errorMsg }: OptionsParams = defaultOptionsParams,
 ): ValidateFunctions {
 	if (typeof name !== "string") {
 		throw new TypeError("The input should be a string.");
