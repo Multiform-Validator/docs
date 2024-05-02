@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Cd to directory
+      - name: Cd to directory to build
         working-directory: ./packages/typescript
         run: |
           npm install
@@ -32,7 +32,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Cd to directory
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - name: Cd to directory to publish npm
         working-directory: ./packages/typescript
         run: npm publish
         env:
