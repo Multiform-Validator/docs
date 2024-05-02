@@ -22,8 +22,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: cd /packages/typescript/ && yarn ci
-      - run: cd /packages/typescript/ && yarn test
+          working-directory: /packages/typescript
+      - run: yarn ci
+      - run: yarn test
 
   publish-npm:
     needs: build
@@ -34,7 +35,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: cd /packages/typescript/ && yarn ci
-      - run: cd /packages/typescript/ && npm publish
+      - run: yarn ci
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
