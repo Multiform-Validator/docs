@@ -6,7 +6,9 @@
  */
 function isValidAudio(fileBuffer: Buffer): boolean {
 	// Check magic numbers to determine the mimetype
-	const isMp3: boolean = fileBuffer[0] === 0x49 && fileBuffer[1] === 0x44 && fileBuffer[2] === 0x33;
+	const isMp3: boolean =
+		fileBuffer[0] === 0x49 && fileBuffer[1] === 0x44 && fileBuffer[2] === 0x33;
+
 	const isWav: boolean =
 		fileBuffer[0] === 0x52 &&
 		fileBuffer[1] === 0x49 &&

@@ -44,6 +44,7 @@ coverage/
 tsconfig.types.json
 .eslintignore
 .prettierrc.js
+.prettierrc
 .prettierignore
 todo.txt
 webpack.config.js

@@ -1,13 +1,13 @@
-import { ValidateFunctions } from './types';
+import { ValidateFunctions } from "./types";
 
 const defaultErrorMsg: string[] = [
-	'This password is too long',
-	'password too short',
-	'Password requires at least one capital letter',
-	'Password requires at least one special character',
-	'Password requires at least one number',
-	'Password requires at least one letter',
-	'Unknown error',
+	"This password is too long",
+	"password too short",
+	"Password requires at least one capital letter",
+	"Password requires at least one special character",
+	"Password requires at least one number",
+	"Password requires at least one letter",
+	"Unknown error",
 ];
 interface Options {
 	requireUppercase: boolean;
@@ -66,14 +66,19 @@ function validatePassword(
 	},
 	errorMsg: (string | null)[] | null = defaultErrorMsg,
 ): ValidateFunctions {
-	if (typeof password !== 'string') throw new TypeError('The input should be a string.');
+	if (typeof password !== "string") {
+		throw new TypeError("The input should be a string.");
+	}
 	// Check para saber se as mensagens que sao passadas sao validas
 	// caso contrario retorna um ERRO
 	if (errorMsg) {
-		if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
+		if (!Array.isArray(errorMsg))
+			throw new Error("errorMsg must be an Array or null");
 		for (let index: number = 0; index < errorMsg.length; index += 1) {
-			if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-				throw new TypeError('All values within the array must be strings or null/undefined.');
+			if (errorMsg[index] != null && typeof errorMsg[index] !== "string") {
+				throw new TypeError(
+					"All values within the array must be strings or null/undefined.",
+				);
 			}
 		}
 	}
@@ -84,7 +89,10 @@ function validatePassword(
 	// Função interna para obter a mensagem de erro
 	function getErrorMessage(index: number): string {
 		const errorMessage: string | null = errorMsg ? errorMsg[index] : null;
-		if (errorMessage === 'This password is too long' || errorMessage === 'password too short') {
+		if (
+			errorMessage === "This password is too long" ||
+			errorMessage === "password too short"
+		) {
 			if (maxLenthPassword === Infinity) {
 				return `Password must be greater than ${minLenthPassword} characters`;
 			}
@@ -93,16 +101,19 @@ function validatePassword(
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
 	}
 
-	if (typeof minLenthPassword !== 'number' || typeof maxLenthPassword !== 'number') {
-		throw new Error('maxLength and/or minLength must be a number');
+	if (
+		typeof minLenthPassword !== "number" ||
+		typeof maxLenthPassword !== "number"
+	) {
+		throw new Error("maxLength and/or minLength must be a number");
 	}
 
 	if (minLenthPassword > maxLenthPassword) {
-		throw new Error('the minimum size cannot be larger than the maximum');
+		throw new Error("the minimum size cannot be larger than the maximum");
 	} // Verifica se o min é maior que o max
 
 	if (minLenthPassword < 1 || maxLenthPassword < 1) {
-		throw new Error('No size can be smaller than 1');
+		throw new Error("No size can be smaller than 1");
 	} // Nenhum dos dois pode ser menor que 1
 
 	try {
@@ -124,7 +135,10 @@ function validatePassword(
 				errorMsg: getErrorMessage(2), // Requer pelo menos uma letra maiuscula
 			};
 		}
-		if (options.requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+		if (
+			options.requireSpecialChar &&
+			!/[!@#$%^&*(),.?":{}|<>]/.test(password)
+		) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(3), // Requer pelo menos uma especial caracter

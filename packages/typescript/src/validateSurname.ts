@@ -1,12 +1,12 @@
-import { ValidateFunctions } from './types';
+import { ValidateFunctions } from "./types";
 
 const defaultErrorMsg: string[] = [
-	'Surname cannot be empty',
-	'Surname cannot contain numbers',
-	'Surname cannot contain special characters',
-	'This surname is not valid',
-	'Surname too big, try again',
-	'Unknown error',
+	"Surname cannot be empty",
+	"Surname cannot contain numbers",
+	"Surname cannot contain special characters",
+	"This surname is not valid",
+	"Surname too big, try again",
+	"Unknown error",
 ];
 /**
  * @param surname
@@ -37,16 +37,21 @@ function validateSurname(
 	maxLength?: number | null,
 	errorMsg: (string | null)[] | null = defaultErrorMsg,
 ): ValidateFunctions {
-	if (typeof surname !== 'string') throw new TypeError('The input should be a string.');
+	if (typeof surname !== "string") {
+		throw new TypeError("The input should be a string.");
+	}
 
 	// Check para saber se as mensagens que sao passadas sao validas
 	// caso contrario retorna um ERRO
 
 	if (errorMsg) {
-		if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
+		if (!Array.isArray(errorMsg))
+			throw new Error("errorMsg must be an Array or null");
 		for (let index: number = 0; index < errorMsg.length; index += 1) {
-			if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-				throw new TypeError('All values within the array must be strings or null/undefined.');
+			if (errorMsg[index] != null && typeof errorMsg[index] !== "string") {
+				throw new TypeError(
+					"All values within the array must be strings or null/undefined.",
+				);
 			}
 		}
 	}
@@ -63,14 +68,16 @@ function validateSurname(
 	if (
 		maxNameLength < 1 ||
 		minNameLength < 1 ||
-		typeof minNameLength !== 'number' ||
-		typeof maxNameLength !== 'number'
+		typeof minNameLength !== "number" ||
+		typeof maxNameLength !== "number"
 	) {
-		throw new Error('maxLength or minLength must be a number and cannot be less than 1');
+		throw new Error(
+			"maxLength or minLength must be a number and cannot be less than 1",
+		);
 	}
 
 	if (minNameLength > maxNameLength) {
-		throw new Error('minLength cannot be greater than maxLength');
+		throw new Error("minLength cannot be greater than maxLength");
 	}
 
 	if (!surname) {

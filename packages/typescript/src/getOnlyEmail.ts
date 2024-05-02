@@ -1,4 +1,11 @@
-const CleanAfterDefaultDomain: string[] = ['.br', '.io', '.pt', '.us', '.org', '.com'];
+const CleanAfterDefaultDomain: string[] = [
+	".br",
+	".io",
+	".pt",
+	".us",
+	".org",
+	".com",
+];
 
 /**
  * @example getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
@@ -27,11 +34,14 @@ function getOnlyEmail(
 	cleanDomain: boolean | string[] = false,
 	repeatEmail: boolean = false,
 ): string | string[] {
-	const emailPattern: RegExp = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
+	const emailPattern: RegExp =
+		/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 
 	const matches: string | string[] | null = text.match(emailPattern);
 
-	if (!matches) return 'No email found';
+	if (!matches) {
+		return "No email found";
+	}
 
 	if (cleanDomain) {
 		const domainsToClean: string[] = Array.isArray(cleanDomain)

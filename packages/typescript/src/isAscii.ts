@@ -7,12 +7,12 @@
  * @description Values have to be passed as a string
  */
 function isAscii(value: string): boolean {
-	if (typeof value !== 'string') {
-		throw new TypeError('The input should be a string.');
+	if (typeof value !== "string") {
+		throw new TypeError("The input should be a string.");
 	}
 
 	if (value.trim().length === 0) {
-		throw new Error('Input value must not be an empty string.');
+		throw new Error("Input value must not be an empty string.");
 	}
 
 	for (let i: number = 0; i < value.length; i += 1) {

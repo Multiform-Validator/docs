@@ -1,9 +1,9 @@
-import { ValidateFunctions } from './types';
+import { ValidateFunctions } from "./types";
 
 const defaultErrorMsg: string[] = [
-	'Phone number cannot be empty',
-	'Invalid phone number',
-	'Unknown error',
+	"Phone number cannot be empty",
+	"Invalid phone number",
+	"Unknown error",
 ];
 /**
  * @param phoneNumber
@@ -18,13 +18,18 @@ function validatePhoneNumber(
 	phoneNumber: string,
 	errorMsg: (string | null)[] | null = defaultErrorMsg,
 ): ValidateFunctions {
-	if (typeof phoneNumber !== 'string') throw new TypeError('The input should be a string.');
+	if (typeof phoneNumber !== "string") {
+		throw new TypeError("The input should be a string.");
+	}
 	// Check to see if the passed error messages are valid; otherwise, return an error
 	if (errorMsg) {
-		if (!Array.isArray(errorMsg)) throw new Error('errorMsg must be an Array or null');
+		if (!Array.isArray(errorMsg))
+			throw new Error("errorMsg must be an Array or null");
 		for (let index: number = 0; index < errorMsg.length; index += 1) {
-			if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-				throw new TypeError('All values within the array must be strings or null/undefined.');
+			if (errorMsg[index] != null && typeof errorMsg[index] !== "string") {
+				throw new TypeError(
+					"All values within the array must be strings or null/undefined.",
+				);
 			}
 		}
 	}

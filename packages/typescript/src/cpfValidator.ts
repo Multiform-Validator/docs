@@ -1,8 +1,8 @@
 const defaultErrorMsg: string[] = [
-	'CPF invalid',
-	'CPF must have 11 numerical digits',
-	'CPF is not valid',
-	'Unknown error',
+	"CPF invalid",
+	"CPF must have 11 numerical digits",
+	"CPF is not valid",
+	"Unknown error",
 ];
 
 /**
@@ -29,14 +29,18 @@ function cpfIsValid(
 	isValid: boolean;
 	errorMsg: string | null;
 } {
-	if (typeof cpf !== 'string') throw new TypeError('The input should be a string.');
+	if (typeof cpf !== "string") {
+		throw new TypeError("The input should be a string.");
+	}
 	// Check para saber se as mensagens que sao passadas sao validas
 	// caso contrario retorna um ERRO
 	if (errorMsg) {
-		if (!Array.isArray(errorMsg)) throw new TypeError('Must be an Array');
+		if (!Array.isArray(errorMsg)) throw new TypeError("Must be an Array");
 		for (let index: number = 0; index < errorMsg.length; index += 1) {
-			if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-				throw new TypeError('All values within the array must be strings or null/undefined.');
+			if (errorMsg[index] != null && typeof errorMsg[index] !== "string") {
+				throw new TypeError(
+					"All values within the array must be strings or null/undefined.",
+				);
 			}
 		}
 	}
@@ -64,7 +68,7 @@ function cpfIsValid(
 				errorMsg: getErrorMessage(1),
 			};
 		}
-		const cpfLimpo: string = cpf.replace(/\D+/g, ''); // Transforma o cpf em um valor limpo sem caracter especial
+		const cpfLimpo: string = cpf.replace(/\D+/g, ""); // Transforma o cpf em um valor limpo sem caracter especial
 		// Validação para verificar se todos os dígitos são iguais (condição de CPF inválido).
 		if (/^(\d)\1{10}$/.test(cpfLimpo)) {
 			return {

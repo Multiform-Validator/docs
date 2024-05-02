@@ -10,8 +10,8 @@
  */
 function isEmpty(value: string): boolean {
 	// Check if the input value is of type string
-	if (typeof value !== 'string') {
-		throw new TypeError('Input value must be a string.');
+	if (typeof value !== "string") {
+		throw new TypeError("Input value must be a string.");
 	}
 
 	// Remove leading and trailing whitespace and check if the resulting string is empty

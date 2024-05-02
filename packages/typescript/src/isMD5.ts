@@ -8,8 +8,8 @@
  * @returns true or false
  */
 function isMD5(value: string): boolean {
-	if (typeof value !== 'string') {
-		throw new TypeError('Input value must be a string.');
+	if (typeof value !== "string") {
+		throw new TypeError("Input value must be a string.");
 	}
 
 	const trimmedValue: string = value.trim();
@@ -28,7 +28,7 @@ function isMD5(value: string): boolean {
 		return false;
 	}
 
-	const weakHashes: string[] = ['d41d8cd98f00b204e9800998ecf8427e'];
+	const weakHashes: string[] = ["d41d8cd98f00b204e9800998ecf8427e"];
 	if (weakHashes.includes(trimmedValue)) {
 		return false;
 	}

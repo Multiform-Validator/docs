@@ -12,15 +12,15 @@
  */
 function isDecimal(value: string | number): boolean {
 	let getValued: string | number = value;
-	if (typeof getValued !== 'string') {
-		if (typeof getValued === 'number') {
+	if (typeof getValued !== "string") {
+		if (typeof getValued === "number") {
 			getValued = getValued.toString();
 		} else {
-			throw new TypeError('Input value must be a string or a number.');
+			throw new TypeError("Input value must be a string or a number.");
 		}
 	}
 	if (getValued.trim().length === 0) {
-		throw new Error('Input value must not be an empty string.');
+		throw new Error("Input value must not be an empty string.");
 	}
 	// Regular expression to validate decimal numbers
 	const decimalRegex: RegExp = /^[-+]?(?:\d+(?:[,.]\d*)?|\d*[,.]\d+)$/;
@@ -28,15 +28,18 @@ function isDecimal(value: string | number): boolean {
 		return false;
 	}
 	// Check for multiple decimal separators
-	const decimalSeparator: Separators = getValued.includes('.') ? '.' : ',';
-	const otherSeparator: Separators = decimalSeparator === '.' ? ',' : '.';
-	if (getValued.includes(decimalSeparator) && getValued.includes(otherSeparator)) {
+	const decimalSeparator: Separators = getValued.includes(".") ? "." : ",";
+	const otherSeparator: Separators = decimalSeparator === "." ? "," : ".";
+	if (
+		getValued.includes(decimalSeparator) &&
+		getValued.includes(otherSeparator)
+	) {
 		return false;
 	}
 	// Additional checks for negative sign
-	if (getValued.startsWith('-')) {
+	if (getValued.startsWith("-")) {
 		// Ensure the negative sign is only at the beginning and not elsewhere
-		if (getValued.lastIndexOf('-') > 0) {
+		if (getValued.lastIndexOf("-") > 0) {
 			return false;
 		}
 	}
@@ -44,4 +47,4 @@ function isDecimal(value: string | number): boolean {
 }
 export default isDecimal;
 
-type Separators = '.' | ',';
+type Separators = "." | ",";

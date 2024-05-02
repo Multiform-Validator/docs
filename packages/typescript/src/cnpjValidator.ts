@@ -9,7 +9,10 @@ function calculateFirstVerifier(cnpjBase: number[]): number {
 	return remainder < 2 ? 0 : 11 - remainder;
 }
 // Função para calcular o segundo dígito verificador
-function calculateSecondVerifier(cnpjBase: number[], firstVerifier: number): number {
+function calculateSecondVerifier(
+	cnpjBase: number[],
+	firstVerifier: number,
+): number {
 	const weight: number[] = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 	let sum: number = 0;
 	for (let i: number = 0; i < 12; i += 1) {
@@ -21,10 +24,10 @@ function calculateSecondVerifier(cnpjBase: number[], firstVerifier: number): num
 }
 
 const defaultErrorMsg: string[] = [
-	'CNPJ invalid',
-	'CNPJ must have 14 numerical digits',
-	'CNPJ is not valid',
-	'Unknown error',
+	"CNPJ invalid",
+	"CNPJ must have 14 numerical digits",
+	"CNPJ is not valid",
+	"Unknown error",
 ];
 
 /**
@@ -50,14 +53,18 @@ function cnpjIsValid(
 	isValid: boolean;
 	errorMsg: string | null;
 } {
-	if (typeof cnpj !== 'string') throw new TypeError('The input should be a string.');
+	if (typeof cnpj !== "string") {
+		throw new TypeError("The input should be a string.");
+	}
 	// Check para saber se as mensagens que sao passadas sao validas
 	// caso contrario retorna um ERRO
 	if (errorMsg) {
-		if (!Array.isArray(errorMsg)) throw new Error('Must be an Array');
+		if (!Array.isArray(errorMsg)) throw new Error("Must be an Array");
 		for (let index: number = 0; index < errorMsg.length; index += 1) {
-			if (errorMsg[index] != null && typeof errorMsg[index] !== 'string') {
-				throw new TypeError('All values within the array must be strings or null/undefined.');
+			if (errorMsg[index] != null && typeof errorMsg[index] !== "string") {
+				throw new TypeError(
+					"All values within the array must be strings or null/undefined.",
+				);
 			}
 		}
 	}
@@ -83,11 +90,13 @@ function cnpjIsValid(
 			};
 		}
 		// Remove any non-digit characters from the CNPJ string
-		const cnpjClean: string = cnpj.replace(/\D+/g, '');
+		const cnpjClean: string = cnpj.replace(/\D+/g, "");
 		// Convert the CNPJ string to an array of digits
-		const cnpjArray: number[] = cnpjClean.split('').map(Number);
+		const cnpjArray: number[] = cnpjClean.split("").map(Number);
 		// Calculate the first and second verifiers
-		const firstVerifier: number = calculateFirstVerifier(cnpjArray.slice(0, 12));
+		const firstVerifier: number = calculateFirstVerifier(
+			cnpjArray.slice(0, 12),
+		);
 		const secondVerifier: number = calculateSecondVerifier(
 			cnpjArray.slice(0, 12).concat(firstVerifier),
 			firstVerifier,

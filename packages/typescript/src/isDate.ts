@@ -11,11 +11,11 @@
  * @description Values have to be passed as a string
  */
 function isDate(value: string): boolean {
-	if (typeof value !== 'string') {
-		throw new TypeError('Input value must be a string.');
+	if (typeof value !== "string") {
+		throw new TypeError("Input value must be a string.");
 	}
 	if (value.trim().length === 0) {
-		throw new Error('Input value must not be an empty string.');
+		throw new Error("Input value must not be an empty string.");
 	}
 	// Parse the value using the Date constructor
 	const dateObject: Date = new Date(value);
@@ -33,7 +33,14 @@ function isDate(value: string): boolean {
 	const year: number = dateObject.getFullYear();
 	const month: number = dateObject.getMonth() + 1; // Month is zero-based, so we add 1
 	const day: number = dateObject.getDate();
-	if (year < 1000 || year > 9999 || month < 1 || month > 12 || day < 1 || day > 31) {
+	if (
+		year < 1000 ||
+		year > 9999 ||
+		month < 1 ||
+		month > 12 ||
+		day < 1 ||
+		day > 31
+	) {
 		return false;
 	}
 	return true;
