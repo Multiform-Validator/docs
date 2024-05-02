@@ -25,8 +25,8 @@ jobs:
       - name: Cd to directory
         working-directory: ./packages/typescript
         run: |
-          yarn ci
-          yarn test
+          npm ci
+          npm test
 
   publish-npm:
     needs: build
@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: yarn ci
+      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
