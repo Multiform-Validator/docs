@@ -173,10 +173,6 @@
                             </a>
                         </p>
 
-                        <p>
-                            You can combine all parameters using with or <strong>if you want to skip some, use null,</strong> then use the next param
-                        </p>
-
                         <strong>
 													<p>INFO: </p>
 													<p>All functions that have the name "validate" return an object with two methods isValid: true|false and errorMsg: 'String with errors'</p>
@@ -242,198 +238,15 @@ const validator = require('multiform-validator');
 // or
 import validator from 'multiform-validator';
 
-// then
+Attention, FUNCTION_NAME is not a valid function name! It is just an example of how to import the functions.
 
-validator.FUNCTION_NAME
-// OBS: 'if the function is called validate, the return will be an object and not boolean'
-// When return object boolean
-validator.FUNCTION_NAME = true or false
-// When return object
-validator.FUNCTION_NAME = object = { isValid: true or false, errorMsg: 'stringError' }
-validator.FUNCTION_NAME.isValid = true or false
-validator.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
+const { FUNCTION_NAME } = require('multiform-validator');
+// or
+import { FUNCTION_NAME } from 'multiform-validator';
+
 /**
    * There are other returns in some functions, with strings etc, stay tuned
 */
-												</code>
-											</pre>
-
-                        <h3>validateEmail example:</h3>
-
-                        <pre>
-												<code class="language-javascript">
-/**
-* ALWAYS CHECK WHICH FUNCTION RETURNS, functions named validate always return objects with isValid and errorMsg
-*/
-
-const { validateEmail } = require('multiform-validator');
-// or
-import { validateEmail } from 'multiform-validator';
-
-// Two last parameters are optional
-console.log(validateEmail('email@email.com', 30, 'br').isValid); // returns false
-console.log(validateEmail('email@email.com.br', 30, 'br').isValid); // returns true
-console.log(validateEmail('email@email.com', 30).isValid); // returns true
-console.log(validateEmail('email@email', 30).isValid); // returns false
-console.log(validateEmail('email.email', 30).isValid); // returns false
-console.log(validateEmail('email@email@email.email', 30).isValid); // returns false
-console.log(validateEmail('email@emailaasdasd.com', 15).isValid); // returns false
-
-// All examples return default messages, below is an example setting your own messages
-
-// If you want to use a default parameter, use null.
-
-const validationResult = validateEmail('email@email.com', 30);
-
-if (validationResult.isValid) {
-console.log('0 errors');
-} else {
-console.log(validationResult.errorMsg); // returns the error
-}
-
-// or
-
-const validationResult = validateEmail('1email@email.com', 30, null, [null, 'This is an invalid email with my own errors']);
-
-if (validationResult.isValid) {
-console.log('0 errors');
-} else {
-console.log(validationResult.errorMsg); // Return  'This is an invalid email with my own errors'
-}
-												</code>
-											</pre>
-
-                        <h3>how to use:</h3>
-
-                        <p>You can combine all parameters using with or if you want to skip some, use null, then use the next param</p>
-
-                        <pre>
-												<code class="language-javascript">
-const { cpfIsValid, cnpjIsValid } = require('multiform-validator');
-console.log(cpfIsValid('CPFNUMBER').isValid); // returns true or false
-console.log(cnpjIsValid('CNPJNUMBER').isValid); // returns true or false
-
-// or
-
-import { cpfIsValid, cnpjIsValid } from 'multiform-validator';
-console.log(cpfIsValid('CPFNUMBER').isValid); // returns true or false
-console.log(cnpjIsValid('CNPJNUMBER').isValid); // returns true or false
-												</code>
-											</pre>
-
-                        <h2>Password Examples:</h2>
-
-                        <pre>
-												<code class="language-javascript">
-const { validatePassword } = require("multiform-validator");
-// or
-import { validatePassword } from "multiform-validator";
-
-const validationResult = validatePassword('minhasenha', 5, 15);
-
-if (validationResult.isValid) {
-	console.log('0 errors');
-} else {
-	console.log(validationResult.errorMsg); // returns the error
-}
-
-// other
-
-const validationResult = validatePassword('asom', 5, 15, null, [null, 'my ownMensage']);
-
-if (validationResult.isValid) {
-	console.log('0 errors');
-} else {
-	console.log(validationResult.errorMsg); // returns the error
-}
-// other
-
-const validationResult = validatePassword('minhasenha', 5, 15, {
-	requireUppercase: true
-});
-
-if (validationResult.isValid) {
-	console.log('0 errors');
-} else {
-	console.log(validationResult.errorMsg); // returns the error Requires at least one capital letter
-}
-// other
-
-const validationResult = validatePassword('minhasenha', 5, 15, null, ['My own errors msgs']);
-
-if (validationResult.isValid) {
-	console.log('0 errors');
-} else {
-	console.log(validationResult.errorMsg); // returns the error
-}
-												</code>
-											</pre>
-
-                        <h2>Additional Examples:</h2>
-                        <p>Here are some additional examples demonstrating the usage of the validation functions in the package:</p>
-
-                        <pre>
-												<code class="language-javascript">
-// Example: Validating a Brazilian phone number
-const { validateBRPhoneNumber } = require('multiform-validator');
-
-const phoneNumber = '+55 11 987654321';
-const validationResult = validateBRPhoneNumber(phoneNumber);
-
-if (validationResult.isValid) {
-	console.log('Valid Brazilian phone number.');
-} else {
-	console.log(validationResult.errorMsg);
-}
-
-// Example: Validating a date
-const { isDate } = require('multiform-validator');
-
-const dateStr = '2023-07-24';
-const validationResult = isDate(dateStr);
-
-if (validationResult) {
-	console.log('Valid date.');
-} else {
-	console.log('Invalid date format.');
-}
-
-// Example: Validating a CEP (Brazilian ZIP code)
-const { isCEP } = require('multiform-validator');
-
-const cep = '12345-678';
-const validationResult = isCEP(cep);
-
-if (validationResult) {
-	console.log('Valid CEP.');
-} else {
-	console.log('Invalid CEP format.');
-}
-
-// Example: Validating a credit card number
-const { isCreditCardValid } = require('multiform-validator');
-
-const creditCardNumber = '4111111111111111';
-const validationResult = isCreditCardValid(creditCardNumber);
-
-if (validationResult.isValid) {
-	console.log('Valid credit card number.');
-	console.log('Credit card provider:', validationResult.cardType);
-} else {
-	console.log('Invalid credit card number.');
-}
-
-// Example: Identifying the flag of a credit card
-const { identifyFlagCard } = require('multiform-validator');
-
-const creditCardNumber = '5105105105105100';
-const cardFlag = identifyFlagCard(creditCardNumber);
-
-if (cardFlag) {
-	console.log('Credit card flag:', cardFlag);
-} else {
-	console.log('Unable to identify credit card flag.');
-}
 												</code>
 											</pre>
 

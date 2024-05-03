@@ -184,13 +184,13 @@
                     <h2>Usage Examples</h2>
                     <pre>
 									<code>
-validateTextarea('Some text content'); // Example 1
+validateTextarea("Some text content"); // Example 1
 // Returns: { isValid: true, errorMsg: null }
 
-validateTextarea('', true); // Example 2
+validateTextarea("", { isRequired: true }); // Example 2
 // Returns: { isValid: false, errorMsg: 'Can not be empty' }
 
-validateTextarea('Very long text...', false, 10); // Example 3
+validateTextarea("Very long text...", { isRequired: false, maxLength: 10 }); // Example 3
 // Returns: { isValid: false, errorMsg: 'This textarea is too big' }
 									</code>
 									</pre>
@@ -198,16 +198,6 @@ validateTextarea('Very long text...', false, 10); // Example 3
                     <p>
                         <strong>Note:</strong> The examples provided demonstrate how to use the function with different parameters and show the expected return values.
                     </p>
-
-                    <h2>Function Implementation</h2>
-                    <pre>
-									<code>
-// The actual implementation of the validateTextarea function...
-function validateTextarea(textarea, isRequired = false, maxLength = 50, errorMsg = defaultErrorMsg) {
-	// ... (The function implementation code) ...
-}
-									</code>
-									</pre>
                 </div>
             </div>
             <!-- /#page-content-wrapper -->

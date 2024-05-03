@@ -144,14 +144,15 @@
                     </p>
 
                     <h2 class="subtitle">Function Signature</h2>
-                    <pre>
-																							function validateName(
-																									name: string,
-																									minLength?: number,
-																									maxLength?: number,
-																									errorMsg?: string[]
-																							): { isValid: boolean, errorMsg: string | null };
-										</pre>
+                    <pre>            
+function validateName(
+        name: string,
+        {
+            minLength?: number,
+            maxLength?: number,
+            errorMsg?: string[]
+        }
+): { isValid: boolean, errorMsg: string | null };</pre>
 
                     <h2 class="subtitle">Parameters</h2>
                     <ul>
@@ -175,20 +176,22 @@
 
                     <h2 class="subtitle">Examples</h2>
                     <pre><code>
-const result1 = validateName('John', 2, 20);
+const result1 = validateName("John", {
+    minLength: 2,
+    maxLength: 20,
+});
 console.log(result1);
 // Output: { isValid: true, errorMsg: null }
 
-const result2 = validateName('J0hn');
+const result2 = validateName("J0hn");
 console.log(result2);
 // Output: { isValid: false, errorMsg: 'Name cannot contain numbers' }
 
-const customErrorMsg = ['Invalid format', 'Invalid name', 'Unknown error'];
-const result3 = validateName('John$');
+const result3 = validateName("John$");
 console.log(result3);
 // Output: { isValid: false, errorMsg: 'Name cannot contain special characters' }
 
-const result4 = validateName('NameWithTwentyOneCharacters');
+const result4 = validateName("NameWithTwentyOneCharacters");
 console.log(result4);
 // Output: { isValid: false, errorMsg: 'Name too big, try again' }
 										</code></pre>

@@ -161,12 +161,22 @@ const { validateUsername } = require('multiform-validator');
 
                     <h2 class="subtitle">Function Signature</h2>
                     <pre>
-																function validateUsername(
-																		username: string,
-																		minLength?: number,
-																		maxLength?: number,
-																		errorMsg?: string[]
-																): { isValid: boolean, errorMsg: string | null };
+interface OptionsParams {
+    minLength?: number;
+    maxLength?: number;
+    errorMsg?: (string | null)[];
+}
+
+const defaultOptionsParams: OptionsParams = {
+    minLength: undefined,
+    maxLength: undefined,
+    errorMsg: defaultErrorMsg,
+};
+
+function validateUsername(
+    username: string,
+    { minLength, maxLength, errorMsg }: OptionsParams = defaultOptionsParams,
+): { isValid: boolean, errorMsg: string | null };
 									</pre>
 
                     <h2 class="subtitle">Parameters</h2>
@@ -192,12 +202,19 @@ const { validateUsername } = require('multiform-validator');
 
                     <h2 class="subtitle">Examples</h2>
                     <pre><code>
-const result1 = validateUsername('User999', 8, 20);
+const result1 = validateUsername("User999", {
+    minLength: 8,
+    maxLength: 20,
+});
 console.log(result1);
 // Output: { isValid: true, errorMsg: null }
 
-const customErrorMsg = ['Custom error 1', 'Custom error 2'];
-const result2 = validateUsername('User999', 8, 20, customErrorMsg);
+const customErrorMsg = ["Custom error 1", "Custom error 2"];
+const result2 = validateUsername("User999", {
+    minLength: 8,
+    maxLength: 20,
+    errorMsg: customErrorMsg,
+});
 console.log(result2);
 // Output: { isValid: false, errorMsg: 'Username too short' }
 										</code></pre>
