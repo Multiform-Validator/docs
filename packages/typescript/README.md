@@ -96,6 +96,7 @@ This package contains various modules for validating different types of data. Be
 
 ![Example using Reactjs](https://raw.githubusercontent.com/gabriel-logan/multiform-validator/main/docs/images/exampleWithReactjs.png)
 ![Showing error in browser](https://raw.githubusercontent.com/gabriel-logan/multiform-validator/main/docs/images/showErro.png)
+![Showing error options](https://raw.githubusercontent.com/gabriel-logan/multiform-validator/main/docs/images/options.png)
 
 ### For better information, read the documentation
 
