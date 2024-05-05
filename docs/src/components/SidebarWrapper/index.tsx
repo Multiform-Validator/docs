@@ -1,19 +1,28 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function SidebarWrapper() {
+	const path = usePathname();
+	const basePath = "/functions";
 	return (
 		<ul className="p-2">
-			<li className="mb-8 mt-4 text-center text-white">
+			<li
+				className={`mb-6 mt-2 rounded p-2 text-center text-white ${path === "/documentation" && "bg-hoverLi"}`}
+			>
 				<Link className="font-light hover:font-medium" href="/documentation">
 					Documentation
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/home` && "bg-hoverLi"}`}
+			>
 				<Link className="font-extralight hover:font-normal" href="/">
 					Home
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/cnpjIsValid` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/cnpjIsValid"
@@ -21,7 +30,9 @@ export default function SidebarWrapper() {
 					cnpjIsValid
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/cpfIsValid` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/cpfIsValid"
@@ -29,47 +40,9 @@ export default function SidebarWrapper() {
 					cpfIsValid
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isEmail"
-				>
-					isEmail
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validateEmail"
-				>
-					validateEmail
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isCEP"
-				>
-					isCEP
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validateUsername"
-				>
-					validateUsername
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validatePassword"
-				>
-					validatePassword
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/getOnlyEmail` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/getOnlyEmail"
@@ -77,15 +50,9 @@ export default function SidebarWrapper() {
 					getOnlyEmail
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isCreditCardValid"
-				>
-					isCreditCardValid
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/identifyFlagCard` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/identifyFlagCard"
@@ -93,15 +60,9 @@ export default function SidebarWrapper() {
 					identifyFlagCard
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isMACAddress"
-				>
-					isMACAddress
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isAscii` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isAscii"
@@ -109,7 +70,9 @@ export default function SidebarWrapper() {
 					isAscii
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isBase64` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isBase64"
@@ -117,7 +80,29 @@ export default function SidebarWrapper() {
 					isBase64
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isCEP` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/isCEP"
+				>
+					isCEP
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isCreditCardValid` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/isCreditCardValid"
+				>
+					isCreditCardValid
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isDate` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isDate"
@@ -125,7 +110,9 @@ export default function SidebarWrapper() {
 					isDate
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isDecimal` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isDecimal"
@@ -133,7 +120,19 @@ export default function SidebarWrapper() {
 					isDecimal
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isEmail` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/isEmail"
+				>
+					isEmail
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isEmpty` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isEmpty"
@@ -141,7 +140,19 @@ export default function SidebarWrapper() {
 					isEmpty
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isMACAddress` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/isMACAddress"
+				>
+					isMACAddress
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isMD5` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isMD5"
@@ -149,63 +160,9 @@ export default function SidebarWrapper() {
 					isMD5
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isPort"
-				>
-					isPort
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isPostalCode"
-				>
-					isPostalCode
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isTime"
-				>
-					isTime
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validatePassportNumber"
-				>
-					validatePassportNumber
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validateBRPhoneNumber"
-				>
-					validateBRPhoneNumber
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validateUSPhoneNumber"
-				>
-					validateUSPhoneNumber
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validatePhoneNumber"
-				>
-					validatePhoneNumber
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isNumber` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isNumber"
@@ -213,47 +170,39 @@ export default function SidebarWrapper() {
 					isNumber
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isPort` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
-					href="/functions/passwordStrengthTester"
+					href="/functions/isPort"
 				>
-					passwordStrengthTester
+					isPort
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isPostalCode` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
-					href="/functions/validateName"
+					href="/functions/isPostalCode"
 				>
-					validateName
+					isPostalCode
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isTime` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
-					href="/functions/validateSurname"
+					href="/functions/isTime"
 				>
-					validateSurname
+					isTime
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/validateTextarea"
-				>
-					validateTextarea
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isValidImage"
-				>
-					isValidImage
-				</Link>
-			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isValidAudio` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isValidAudio"
@@ -261,23 +210,19 @@ export default function SidebarWrapper() {
 					isValidAudio
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isValidImage` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
-					href="/functions/isValidVideo"
+					href="/functions/isValidImage"
 				>
-					isValidVideo
+					isValidImage
 				</Link>
 			</li>
-			<li className="rounded px-4 py-2 text-white hover:bg-hoverLi">
-				<Link
-					className="font-extralight hover:font-normal"
-					href="/functions/isValidTxt"
-				>
-					isValidTxt
-				</Link>
-			</li>
-			<li className="mb-4 rounded px-4 py-2 text-white hover:bg-hoverLi">
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isValidPdf` && "bg-hoverLi"}`}
+			>
 				<Link
 					className="font-extralight hover:font-normal"
 					href="/functions/isValidPdf"
@@ -285,6 +230,138 @@ export default function SidebarWrapper() {
 					isValidPdf
 				</Link>
 			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isValidTxt` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/isValidTxt"
+				>
+					isValidTxt
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/isValidVideo` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/isValidVideo"
+				>
+					isValidVideo
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/passwordStrengthTester` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/passwordStrengthTester"
+				>
+					passwordStrengthTester
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateBRPhoneNumber` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateBRPhoneNumber"
+				>
+					validateBRPhoneNumber
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateEmail` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateEmail"
+				>
+					validateEmail
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateName` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateName"
+				>
+					validateName
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validatePassportNumber` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validatePassportNumber"
+				>
+					validatePassportNumber
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validatePassword` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validatePassword"
+				>
+					validatePassword
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validatePhoneNumber` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validatePhoneNumber"
+				>
+					validatePhoneNumber
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateSurname` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateSurname"
+				>
+					validateSurname
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateTextarea` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateTextarea"
+				>
+					validateTextarea
+				</Link>
+			</li>
+			<li
+				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateUsername` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateUsername"
+				>
+					validateUsername
+				</Link>
+			</li>
+			<li
+				className={`mb-4 rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/validateUSPhoneNumber` && "bg-hoverLi"}`}
+			>
+				<Link
+					className="font-extralight hover:font-normal"
+					href="/functions/validateUSPhoneNumber"
+				>
+					validateUSPhoneNumber
+				</Link>
+			</li>
 		</ul>
 	);
 }
+
+// isValidPDF ATENCAO

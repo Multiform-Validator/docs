@@ -15,18 +15,10 @@ export default function Footer() {
 			{!show && (
 				<footer className="flex h-56 flex-col items-center justify-center border-t-4 border-black bg-bg1-dark px-0 py-10">
 					<div className="flex items-center justify-center gap-3 pb-6 text-center">
-						<Link
-							href="https://www.instagram.com/magazine_logan17/"
-							target="_blank"
-							className="mx-2 text-white"
-						>
+						<Link href="#" target="_blank" className="mx-2 text-white">
 							<FaInstagram size={32} />
 						</Link>
-						<Link
-							href="https://www.youtube.com/@ComunidadeConecta"
-							target="_blank"
-							className="mx-2 text-white"
-						>
+						<Link href="#" target="_blank" className="mx-2 text-white">
 							<FaYoutube size={32} />
 						</Link>
 						<Link
@@ -36,11 +28,7 @@ export default function Footer() {
 						>
 							<FaGithub size={32} />
 						</Link>
-						<Link
-							href="https://encurtador.com.br/cjyOV"
-							target="_blank"
-							className="mx-2 text-white"
-						>
+						<Link href="#" target="_blank" className="mx-2 text-white">
 							<FaLinkedin size={32} />
 						</Link>
 					</div>

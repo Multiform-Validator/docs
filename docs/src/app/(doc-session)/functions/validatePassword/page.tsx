@@ -58,8 +58,8 @@ interface OptionsParams {
 }
 
 const defaultOptionsParams: OptionsParams = {
-    minLength: undefined,
-    maxLength: undefined,
+    minLength: 1,
+    maxLength: infinity,
     options: {
         requireUppercase: false,
         requireSpecialChar: false,

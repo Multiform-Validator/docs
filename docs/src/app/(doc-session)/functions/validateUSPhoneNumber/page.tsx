@@ -34,7 +34,7 @@ export default function validateUSPhoneNumber() {
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`import {validateUSPhoneNumber} from 'multiform-validator';`}
+					{`import { validateUSPhoneNumber } from 'multiform-validator';`}
 				</SyntaxHighlighter>
 
 				<p>
@@ -43,7 +43,7 @@ export default function validateUSPhoneNumber() {
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`const {validateUSPhoneNumber} = require('multiform-validator');`}
+					{`const { validateUSPhoneNumber } = require('multiform-validator');`}
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">Function Signature</h2>

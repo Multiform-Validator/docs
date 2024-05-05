@@ -4,8 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "Documentation",
-	description: "DOC DOC DOC",
-	authors: { name: "Logan", url: "goole.com" },
+	description: "Documentation for the Multiform Validator library.",
 };
 
 export default function RootLayout({

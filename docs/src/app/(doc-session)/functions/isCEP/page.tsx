@@ -64,13 +64,7 @@ console.log(result3); // false`}
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">Notes</h2>
-				<p>
-					The function expects the input value to be passed as a string
-					representing a Brazilian ZIP Code (CEP). It removes any non-digit
-					characters (e.g., dashes) and checks if the resulting string contains
-					exactly eight digits. If the input is not a string or does not have
-					exactly eight digits, the function returns <code>false</code>.
-				</p>
+				<p>The function expects the input to be passed as a string.</p>
 			</div>
 		</div>
 	);

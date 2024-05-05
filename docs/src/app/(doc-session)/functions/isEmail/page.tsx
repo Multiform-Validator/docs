@@ -23,7 +23,7 @@ export default function IsEmail() {
 				<p>
 					This function just checks the syntax of the email to see if it&apos;s
 					valid or not, if you need a stronger validation, use{" "}
-					<Link href="./vLinklidateEmail">
+					<Link href="./validateEmail" className="nav-link">
 						<code>validateEmail</code>
 					</Link>
 				</p>
@@ -66,15 +66,8 @@ console.log(result1); // true`}
 				<h2 className="subtitle">Notes</h2>
 				<p>
 					The function expects the input email to be passed as a string. If the
-					input is not a string or an empty string, the function returns{" "}
-					<code>false</code>. It uses a regular expression to validate the email
-					address format. The regular expression checks for the correct
-					structure of the email address, ensuring it contains an &quot;@&quot;
-					symbol and a valid domain with at least two letters (e.g.,
-					&quot;.com&quot;, &quot;.org&quot;, etc.). It also performs additional
-					checks to ensure that the first character of the email address is not
-					a number and that there are no numbers immediately after the
-					&quot;@&quot; symbol and the last dot in the domain.
+					input is not a string, it will throw an error. If the email passed is
+					an invalid email, it will return <code>false</code>.
 				</p>
 			</div>
 		</div>

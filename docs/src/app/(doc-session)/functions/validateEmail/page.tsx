@@ -59,7 +59,7 @@ export default function ValidateEmail() {
 }
 
 const defaultOptionsParams: OptionsParams = {
-    maxLength: undefined,
+    maxLength: 400,
     country: "",
     errorMsg: defaultErrorMsg,
     validDomains: false,

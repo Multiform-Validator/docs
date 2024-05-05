@@ -57,7 +57,7 @@ export default function Documentation() {
 								Multiform-validator
 							</h1>
 
-							<p className="mb-4 flex gap-2">
+							<p className="mb-6 flex justify-center gap-2">
 								<a
 									href="https://badge.fury.io/js/multiform-validator.svg"
 									target="_blank"
@@ -120,8 +120,8 @@ export default function Documentation() {
 								<p className="mb-3">INFO: </p>
 								<p className="mb-3">
 									All functions that have the name &quot;validate&quot; return
-									an object with two methods isValid: true|false and errorMsg:
-									&apos;String with errors&apos;
+									an object with two properties, isValid: true|false and
+									errorMsg: &apos;String with errors&apos;
 								</p>
 								<p className="mb-3">
 									The remaining ones can return true|false|string|array, look at
@@ -167,111 +167,128 @@ export default function Documentation() {
 								types of data. Below are the available validation modules:
 							</p>
 
-							<h3 className="mb-1 font-medium">Available Validation Modules</h3>
+							<h3 className="mb-1 text-start font-medium">
+								Available Validation Modules
+							</h3>
 
-							<ul className="mb-5">
-								<li className="ml-10 list-disc">
+							<ul className="mb-5 text-start">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>cnpjValidator:</strong> CNPJ validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>cpfValidator:</strong> CPF validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>getOnlyEmail:</strong> Extracts only the email or
 									emails address from a string.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>identifyFlagCard:</strong> Identifies the flag of a
 									credit card.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isAscii:</strong> Checks if the string contains only
 									ASCII characters.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isBase64:</strong> Checks if the string is a valid
 									Base64 encoding.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isCEP:</strong> CEP validation (Brazilian postal
 									code).
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isCreditCardValid:</strong> Credit card validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isDate:</strong> Date format validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isDecimal:</strong> Checks if the number is a decimal.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isEmail:</strong> Email address validation format.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isEmpty:</strong> Checks if the string is empty.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isMACAddress:</strong> MAC address validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isMD5:</strong> Checks if the string is a valid MD5
 									hash.
 								</li>
-								<li className="ml-10 list-disc">
-									<strong>validatePassportNumber:</strong> Passport number
-									validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>isPort:</strong> Port number validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>isPostalCode:</strong> Postal code validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>isTime:</strong> Time format validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>validateBRPhoneNumber:</strong> Brazilian phone number
-									validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>validateEmail:</strong> Email address full validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>validatePassword:</strong> Password validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>validatePhoneNumber:</strong> Phone number validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>validateUsername:</strong> Username validation.
-								</li>
-								<li className="ml-10 list-disc">
-									<strong>validateUSPhoneNumber:</strong> US phone number
-									validation.
-								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>isNumber:</strong> Checks if the value is a number.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isPort:</strong> Port number validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isPostalCode:</strong> Postal code validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isTime:</strong> Time format validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isValidAudio</strong> Audio file validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isValidImage</strong> Image file validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isValidPdf</strong> Pdf file validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isValidTxt</strong> Txt file validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>isValidVideo</strong> Video file validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
 									<strong>passwordStrengthTester:</strong> Password strength
 									test.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validateBRPhoneNumber:</strong> Brazilian phone number
+									validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validateEmail:</strong> Email address full validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
 									<strong>validateName:</strong> Name validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validatePassportNumber:</strong> Passport number
+									validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validatePassword:</strong> Password validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validatePhoneNumber:</strong> Phone number validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
 									<strong>validateSurname:</strong> Surname validation.
 								</li>
-								<li className="ml-10 list-disc">
+								<li className="mb-1 ml-10 list-disc">
 									<strong>validateTextarea:</strong> Textarea validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validateUsername:</strong> Username validation.
+								</li>
+								<li className="mb-1 ml-10 list-disc">
+									<strong>validateUSPhoneNumber:</strong> US phone number
+									validation.
 								</li>
 							</ul>
 
 							<p className="mb-3">if you prefer, you can use importing as:</p>
 
-							<div>
+							<div className="p-2">
 								<SyntaxHighlighter language="javascript" style={a11yDark}>
 									{`const validator = require('multiform-validator');
 // or

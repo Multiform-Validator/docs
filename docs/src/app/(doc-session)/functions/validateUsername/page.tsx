@@ -52,8 +52,8 @@ export default function ValidateUsername() {
 }
 
 const defaultOptionsParams: OptionsParams = {
-    minLength: undefined,
-    maxLength: undefined,
+    minLength: 1,
+    maxLength: infinity,
     errorMsg: defaultErrorMsg,
 };
 

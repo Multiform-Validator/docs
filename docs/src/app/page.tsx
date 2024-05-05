@@ -13,15 +13,12 @@ export default function Home() {
 			</h1>
 			<p className="text-center text-white">
 				Using my library, you can convert many lines of code into very few lines
-				and as a result you have a cleaner, stronger and safer code
+				and as a result you have a cleaner, stronger and safer code, you will
+				have several tools and functions that will do several form validations
 			</p>
 			<h2 className="my-6 text-center text-4xl font-semibold text-white">
 				Hello (:
 			</h2>
-			<p className="mb-4 text-center text-white">
-				by downloading my library, you will have several tools and functions
-				that will do several form validations
-			</p>
 			<div className="mb-6 mt-3 flex justify-center gap-2">
 				<Link
 					href="https://badge.fury.io/js/multiform-validator.svg"
