@@ -7,6 +7,18 @@ const CleanAfterDefaultDomain: string[] = [
 	".com",
 ];
 
+interface OptionsParams {
+	multiple?: boolean;
+	cleanDomain?: boolean | string[];
+	repeatEmail?: boolean;
+}
+
+const defaultOptionsParams: OptionsParams = {
+	multiple: false,
+	cleanDomain: false,
+	repeatEmail: false,
+};
+
 /**
  * @example getOnlyEmail("Entre em contato com a equipe:</br> joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
  * // Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
@@ -30,9 +42,11 @@ const CleanAfterDefaultDomain: string[] = [
  */
 function getOnlyEmail(
 	text: string,
-	multiple: boolean = false,
-	cleanDomain: boolean | string[] = false,
-	repeatEmail: boolean = false,
+	{
+		multiple = defaultOptionsParams.multiple,
+		cleanDomain = defaultOptionsParams.cleanDomain,
+		repeatEmail = defaultOptionsParams.repeatEmail,
+	}: OptionsParams = defaultOptionsParams,
 ): string | string[] {
 	const emailPattern: RegExp =
 		/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;

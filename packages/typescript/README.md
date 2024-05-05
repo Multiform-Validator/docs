@@ -75,21 +75,26 @@ This package contains various modules for validating different types of data. Be
 - **isEmpty**: Checks if the string is empty.
 - **isMACAddress**: MAC address validation.
 - **isMD5**: Checks if the string is a valid MD5 hash.
-- **validatePassportNumber**: Passport number validation.
+- **isNumber**: Checks if the value is a number.
 - **isPort**: Port number validation.
 - **isPostalCode**: Postal code validation.
 - **isTime**: Time format validation.
+- **isValidAudio**: Audio file validation.
+- **isValidImage**: Image file validation.
+- **isValidPdf**: Pdf file validation.
+- **isValidTxt**: Txt file validation.
+- **isValidVideo**: Video file validation.
+- **passwordStrengthTester**: Password strength test.
 - **validateBRPhoneNumber**: Brazilian phone number validation.
 - **validateEmail**: Email address full validation.
-- **validatePassword**: Password validation.
-- **validatePhoneNumber**: Phone number validation.
-- **validateUsername**: Username validation.
-- **validateUSPhoneNumber**: US phone number validation.
-- **isNumber**: Checks if the value is a number.
-- **passwordStrengthTester**: Password strength test.
 - **validateName**: Name validation.
+- **validatePassword**: Password validation.
+- **validatePassportNumber**: Passport number validation.
+- **validatePhoneNumber**: Phone number validation.
 - **validateSurname**: Surname validation.
 - **validateTextarea**: Textarea validation.
+- **validateUsername**: Username validation.
+- **validateUSPhoneNumber**: US phone number validation.
 
 ### You can use it in React Native, Angular, any javascript framework or any javascript or typescript code.
 #### Example using Reactjs:
@@ -110,9 +115,9 @@ or
 
 // Attention, FUNCTION_NAME is not a valid function name! It is just an example of how to import the functions.
 
-const {FUNCTION_NAME} = require('multiform-validator');
+const { FUNCTION_NAME } = require('multiform-validator');
 // or
-import {FUNCTION_NAME} from 'multiform-validator';
+import { FUNCTION_NAME } from 'multiform-validator';
 
 ```
 
