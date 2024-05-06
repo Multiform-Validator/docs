@@ -13,31 +13,22 @@ Documentation: https://gabriel-logan.github.io/multiform-validator
 
 Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!
 
-If you want to help me, you can buy me a coffee (:
-
-<p align="center">
-	<a href="https://www.buymeacoffee.com/gabriellogan" target="_blank">
-		<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
-	</a>
-</p>
-
-
 ## CDNs
 
 jsDelivr:
 ```bash
-https://cdn.jsdelivr.net/npm/multiform-validator@2.0.0/dist/bundle.min.js
+https://cdn.jsdelivr.net/npm/multiform-validator@2.0.3/dist/bundle.min.js
 ```
 ```html
-<scritp src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.0/dist/bundle.min.js"></script>
+<scritp src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.3/dist/bundle.min.js"></script>
 ```
 
 unpkg:
 ```bash
-https://unpkg.com/multiform-validator@2.0.0/dist/bundle.js
+https://unpkg.com/multiform-validator@2.0.3/dist/bundle.js
 ```
 ```html
-<scritp src="https://unpkg.com/multiform-validator@2.0.0/dist/bundle.js"></script>
+<scritp src="https://unpkg.com/multiform-validator@2.0.3/dist/bundle.js"></script>
 ```
 
 
@@ -185,5 +176,13 @@ console.log(validationResult.errorMsg); // Return  'This is an invalid email wit
 ```
 
 Feel free to explore the various functions and experiment with different inputs to understand their behavior. If you encounter any issues or have suggestions, don't hesitate to reach out to me. Your feedback is valuable and helps improve the package. Happy coding!
+
+If you want to help me, you can buy me a coffee (:
+
+<p align="center">
+	<a href="https://www.buymeacoffee.com/gabriellogan" target="_blank">
+		<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+	</a>
+</p>
 
 # By - Gabriel Logan

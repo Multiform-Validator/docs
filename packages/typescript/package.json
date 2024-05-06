@@ -1,6 +1,6 @@
 {
 	"name": "multiform-validator",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
 	"main": "./dist/index.js",
 	"types": "./types/index.d.ts",
@@ -31,7 +31,17 @@
 		"pentest",
 		"security-tools",
 		"Validator",
-		"validate"
+		"validate",
+		"magic number",
+		"magic number validator",
+		"magic numbers",
+		"cpf",
+		"cnpj",
+		"email validator",
+		"password",
+		"email",
+		"isEmail",
+		"image"
 	],
 	"author": "Gabriel Logan",
 	"license": "MIT",
