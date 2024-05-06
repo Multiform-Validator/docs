@@ -9,11 +9,11 @@ MyLibrary is a multilanguage library designed to validate various form fields. I
 
 This library can validate data in the following programming languages:
 
-- [TypeScript (TS/JS/NPM)](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md)
-- [Java](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java/README.md)
-- [C#](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/csharp/README.md)
-- [Python](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python/README.md)
-- [PHP](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/php/README.md)
+- [TypeScript (TS/JS/NPM)](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md) (stable)
+- [Java](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java/README.md) (coming soon)
+- [C#](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/csharp/README.md) (coming soon)
+- [Python](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python/README.md) (stable)
+- [PHP](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/php/README.md) (coming soon)
 
 ## Usage
 
