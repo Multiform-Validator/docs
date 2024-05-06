@@ -38,8 +38,4 @@ jobs:
           pip install build
           pip install twine
           python -m build
-          twine upload dist/*
-
-      env:
-        user: ${{ secrets.PYPI_USER }}
-        password: ${{ secrets.PYPI_API_TOKEN }}
+          twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_API_TOKEN }} dist/*
