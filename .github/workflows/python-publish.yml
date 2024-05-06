@@ -37,7 +37,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install build
           python -m build
-          uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
-          with:
-            user: ${{ secrets.PYPI_USER }}
-            password: ${{ secrets.PYPI_API_TOKEN }}
+          twine upload dist/*
+
+      env:
+        user: ${{ secrets.PYPI_USER }}
+        password: ${{ secrets.PYPI_API_TOKEN }}
