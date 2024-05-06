@@ -76,20 +76,31 @@ export default function GetOnlyEmail() {
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`// Example 1 - Extracting multiple emails from the text
-const result1 = getOnlyEmail("Entre em contato com a equipe: joao@empresa.com, maria@empresa.com, contato@empresa.com", true);
+const result1 = getOnlyEmail(
+	"Entre em contato com a equipe: joao@empresa.com, maria@empresa.com, contato@empresa.com",
+	{ multiple: true },
+);
 console.log(result1);
 // Output: ["joao@empresa.com", "maria@empresa.com", "contato@empresa.com"]
 
 // Example 2 - Extracting the first email from the text
-const result2 = getOnlyEmail("Vaga na asdlaod  Mande seu email para fiawn@rdwah.comSim aqui mesmo");
+const result2 = getOnlyEmail(
+	"Vaga na asdlaod  Mande seu email para fiawn@rdwah.com Sim aqui mesmo",
+);
 console.log(result2);
 // Output: "fiawn@rdwah.com"
 
-const result3 = getOnlyEmail("Vaga na asdlaod  Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo", true, true);
+const result3 = getOnlyEmail(
+	"Vaga na asdlaod  Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo",
+	{ multiple: true, cleanDomain: true },
+);
 console.log(result3);
 // Output: [ 'fiawn@rdwah.com', 'asdasd@gmail.com' ]
 
-const result4 = getOnlyEmail("Vaga na asdlaod  Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo asdasd asd as fiawn@rdwah.com", true, true, true);
+const result4 = getOnlyEmail(
+	"Vaga na asdlaod  Mande seu email para fiawn@rdwah.comSim aqui  asdasd@gmail.commesmo asdasd asd as fiawn@rdwah.com",
+	{ multiple: true, cleanDomain: true, repeatEmail: true },
+);
 console.log(result4);
 // Output: [ 'fiawn@rdwah.com', 'asdasd@gmail.com', 'fiawn@rdwah.com' ]`}
 				</SyntaxHighlighter>
