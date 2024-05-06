@@ -39,6 +39,10 @@ This package contains various modules for validating different types of data. Be
 - **passwordStrengthTester**: Password strength test.
 - **validateBRPhoneNumber**: Brazilian phone number validation.
 
+## Usage
+
+Here is an example of how to use the functions in this package:
+
 ```python
 from multiform_validator import (
     cnpjIsValid,
@@ -50,6 +54,64 @@ from multiform_validator import (
     passwordStrengthTester,
     validateBRPhoneNumber
 )
+```
+
+```python
+
+print("Is email", isEmail("foo@bar.com")) # True
+print("Get only email", getOnlyEmail("awdawd wadawd wda awd jhony@gmail.com awdawdawd")) # jhony@gmail.com
+print("Password strength", passwordStrengthTester("aA1!asd@qd2asd")) # Strong
+print("Is CPF valid", cpfIsValid("123.456.789-02")['isValid']) # False
+print("Is CNPJ valid", cnpjIsValid("12.345.678/0001-09")) # { 'isValid': False, 'errorMsg': 'CNPJ is not valid' }
+print("Is credit card valid", isCreditCardValid("5117 2161 1334 8362")) # True
+print("Identify flag card", identifyFlagCard("5117 2161 1334 8362")) # Mastercard
+print("Validate BR phone number", validateBRPhoneNumber("(11) 91234-5678")) # { 'isValid': True, 'errorMsg': None }
+
+```
+
+## Functions signature
+
+All params with default values are optional.
+
+```python
+
+def isEmail(email: str) -> bool:
+    pass
+
+def getOnlyEmail(text: str, multiple=False, clean_domain=False, repeat_email=False) -> str:
+    pass
+
+def passwordStrengthTester(password: str) -> str:
+    pass
+
+defaultErrorMsgCPF = [
+  'CPF invalid',
+  'CPF must have 11 numerical digits',
+  'CPF is not valid',
+  'Unknown error',
+]
+def cpfIsValid(cpf: str, errorMsg=defaultErrorMsgCPF) -> Dict[str, Union[bool, str, None]]:
+    pass
+
+default_error_msgCNPJ = [
+   'CNPJ invalid', 
+   'CNPJ must have 14 numerical digits', 
+   'CNPJ is not valid', 
+   'Unknown error'
+]
+def cnpjIsValid(cnpj: str, errorMsg=default_error_msgCNPJ) -> Dict[str, Union[bool, str, None]]:
+    pass
+
+def isCreditCardValid(cardNumber: str) -> bool:
+    pass
+
+def identifyFlagCard(cardNumber: str) -> str:
+    pass
+
+default_error_msg = ['Invalid value passed', 'Invalid phone number', 'Unknown error']
+def validateBRPhoneNumber(phoneNumber: str, errorMsg=default_error_msg) -> Dict[str, Union[bool, str, None]]:
+    pass
+
 ```
 
 ## Looking for contributions. 
