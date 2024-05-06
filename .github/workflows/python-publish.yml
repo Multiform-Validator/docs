@@ -11,8 +11,6 @@ name: Upload Python Package
 on:
   push:
     branches: ["main"]
-    paths:
-      - "packages/python/pyproject.toml"
       
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -43,6 +41,9 @@ jobs:
       working-directory: ./packages/python
     - name: Build package
       run: python -m build
+      working-directory: ./packages/python
+    - name: List files in 'dist/'
+      run: ls -l dist/
       working-directory: ./packages/python
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
