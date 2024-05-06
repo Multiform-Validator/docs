@@ -4,8 +4,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI downloads](https://img.shields.io/pypi/dm/multiform-validator.svg?style=flat-square)](https://pypistats.org/packages/multiform-validator)
 
-# Library is in testing period
-
 This package provides Python functions to validate various forms fields.
 
 Documentation: https://github.com/gabriel-logan/multiform-validator
@@ -25,6 +23,10 @@ If you want to help me, you can buy me a coffee (:
 ```bash
 pip install multiform-validator
 ```
+
+# Data Validator
+
+This package contains various modules for validating different types of data. Below are the available validation modules:
 
 # Avaliable for while
 
@@ -50,23 +52,15 @@ from multiform_validator import (
 )
 ```
 
-# Data Validator
-
-This package contains various modules for validating different types of data. Below are the available validation modules:
+## Looking for contributions. 
 
 ## Available Validation Modules !!! STILL NOT AVALIABLE !!!
 
-- **cnpjValidator**: CNPJ validation.
-- **cpfValidator**: CPF validation.
-- **getOnlyEmail**: Extracts only the email or emails address from a string.
-- **identifyFlagCard**: Identifies the flag of a credit card.
 - **isAscii**: Checks if the string contains only ASCII characters.
 - **isBase64**: Checks if the string is a valid Base64 encoding.
 - **isCEP**: CEP validation (Brazilian postal code).
-- **isCreditCardValid**: Credit card validation.
 - **isDate**: Date format validation.
 - **isDecimal**: Checks if the number is a decimal.
-- **isEmail**: Email address validation format.
 - **isEmpty**: Checks if the string is empty.
 - **isMACAddress**: MAC address validation.
 - **isMD5**: Checks if the string is a valid MD5 hash.
@@ -74,14 +68,12 @@ This package contains various modules for validating different types of data. Be
 - **isPort**: Port number validation.
 - **isPostalCode**: Postal code validation.
 - **isTime**: Time format validation.
-- **validateBRPhoneNumber**: Brazilian phone number validation.
 - **validateEmail**: Email address full validation.
 - **validatePassword**: Password validation.
 - **validatePhoneNumber**: Phone number validation.
 - **validateUsername**: Username validation.
 - **validateUSPhoneNumber**: US phone number validation.
 - **isNumber**: Checks if the value is a number.
-- **passwordStrengthTester**: Password strength test.
 - **validateName**: Name validation.
 - **validateSurname**: Surname validation.
 - **validateTextarea**: Textarea validation.

@@ -1,0 +1,24 @@
+[build-system]
+requires = [
+    "setuptools>=61"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multiform-validator"
+version = "0.0.7"
+authors = [
+  { name="Gabriel Logan" },
+]
+description = "Multilingual library made for validation, various form fields, such as: email, cpf, cnpj, credit card, and much more."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python"
+"Bug Tracker" = "https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python"

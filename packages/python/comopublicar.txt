@@ -1,0 +1,7 @@
+py -m build  
+
+generate build
+
+then 
+
+twine upload dist/*
