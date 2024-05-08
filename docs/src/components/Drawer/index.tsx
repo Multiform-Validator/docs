@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Drawer from "react-modern-drawer";
 
-import SidebarWrapper from "@/components/SidebarWrapper";
+import SidebarWrapper from "@/components/SidebarWrapper/js";
 
 export default function DrawerComponent() {
 	const [isOpen, setIsOpen] = useState(false);

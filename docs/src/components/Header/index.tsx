@@ -12,7 +12,8 @@ export default function Header() {
 	const path = usePathname();
 
 	const show =
-		path.startsWith("/documentation") || path.startsWith("/functions");
+		path.startsWith("/documentation/js") ||
+		path.startsWith("/documentation/py");
 
 	return (
 		<>
