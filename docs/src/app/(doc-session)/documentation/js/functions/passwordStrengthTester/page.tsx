@@ -55,20 +55,23 @@ export default function PasswordStrengthTester() {
 				</ul>
 
 				<h2 className="subtitle">Examples</h2>
-				<pre>
-					<code className="language-javascript">
-						const result1 = passwordStrengthTester(&apos;12345&apos;); //
-						Output: &apos;veryWeak&apos; console.log(result1); const result2 =
-						passwordStrengthTester(&apos;abcdef&apos;); // Output:
-						&apos;weak&apos; console.log(result2); const result3 =
-						passwordStrengthTester(&apos;abc12345&apos;); // Output:
-						&apos;regular&apos; console.log(result3); const result4 =
-						passwordStrengthTester(&apos;Abc123awdasd&apos;); // Output:
-						&apos;strong&apos; console.log(result4); const result5 =
-						passwordStrengthTester(&apos;SuperSecurePassword123!@&apos;); //
-						Output: &apos;veryStrong&apos; console.log(result5);
-					</code>
-				</pre>
+
+				<SyntaxHighlighter language="javascript" style={a11yDark}>
+					{`const result1 = passwordStrengthTester("12345");
+console.log(result1);  // Output: veryWeak
+
+const result2 = passwordStrengthTester("abcdef");
+console.log(result2); // Output: weak
+
+const result3 = passwordStrengthTester("abc12345");
+console.log(result3); // Output: regular
+
+const result4 = passwordStrengthTester("Abc123awdasd");
+console.log(result4); // Output: strong
+
+const result5 = passwordStrengthTester("SuperSecurePassword123!@");
+console.log(result5); // Output: veryStrong`}
+				</SyntaxHighlighter>
 
 				<h2 className="subtitle">Notes</h2>
 				<p>

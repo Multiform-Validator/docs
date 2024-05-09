@@ -128,14 +128,14 @@ function validatePassword(
 				<h2 className="subtitle">Default Error Messages</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
-																						'This password is too long',
-																						'Password too short',
-																						'Requires at least one capital letter',
-																						'Requires at least one special character',
-																						'Requires at least one number',
-																						'Requires at least one letter',
-																						'Unknown error',
-																				]`}
+	'This password is too long',
+	'Password too short',
+	'Requires at least one capital letter',
+	'Requires at least one special character',
+	'Requires at least one number',
+	'Requires at least one letter',
+	'Unknown error',
+]`}
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">Examples</h2>
@@ -205,7 +205,10 @@ const result5 = validatePassword("WeakPassword1", {
 console.log(result5);
 // Output: { isValid: false, errorMsg: 'Requires at least one special character' }
 
-// Example 6: Valid password with custom error message for special character requirement
+/*
+Example 6: Valid password with custom error message
+for special character requirement
+*/
 const myCustomErrorMsg2 = [...defaultErrorMsg];
 myCustomErrorMsg2[3] = "Custom error: Requires at least one special character";
 const result6 = validatePassword("MyP@ssw0rd", {
