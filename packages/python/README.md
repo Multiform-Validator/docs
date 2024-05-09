@@ -6,7 +6,7 @@
 
 This package provides Python functions to validate various forms fields.
 
-Documentation: https://github.com/gabriel-logan/multiform-validator
+Documentation: https://gabriel-logan.github.io/multiform-validator/documentation/py
 
 Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!
 

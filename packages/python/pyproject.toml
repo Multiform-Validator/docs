@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "multiform-validator"
-version = "0.0.8"
+version = "0.0.9"
 authors = [
   { name="Gabriel Logan" },
 ]
@@ -20,5 +20,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python"
+"Homepage" = "https://gabriel-logan.github.io/multiform-validator/documentation"
 "Bug Tracker" = "https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python"
