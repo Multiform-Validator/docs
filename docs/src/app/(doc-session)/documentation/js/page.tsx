@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+
+import {
+	Cdns,
+	Installation,
+	UsageExample,
+} from "./subComponents/MainPageSyntexHightlighter";
 
 export default function DocumentationPageJs() {
 	return (
@@ -102,7 +106,7 @@ export default function DocumentationPageJs() {
 								If you want to help me, you can buy me a coffee (:
 							</p>
 
-							<p className="mb-4 flex justify-center">
+							<p className="mx-auto mb-4 mt-2 flex h-16 w-56 justify-center">
 								<Link
 									href="https://www.buymeacoffee.com/gabriellogan"
 									target="_blank"
@@ -110,6 +114,7 @@ export default function DocumentationPageJs() {
 									<Image
 										width={217}
 										height={60}
+										className="h-auto w-auto"
 										src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 										alt="Buy Me A Coffee"
 									/>{" "}
@@ -134,31 +139,15 @@ export default function DocumentationPageJs() {
 								highly appreciated. Hugs from Gabriel Logan!
 							</p>
 
+							<h2 className="mb-2 mt-4 text-lg font-medium">CDN&apos;s</h2>
+
+							<div className="mb-8">
+								<Cdns />
+							</div>
+
 							<h2 className="text-lg font-medium">Installation</h2>
 
-							<div className="">
-								<SyntaxHighlighter
-									customStyle={{
-										textAlign: "center",
-									}}
-									language="bash"
-									style={a11yDark}
-								>
-									npm install multiform-validator
-								</SyntaxHighlighter>
-							</div>
-
-							<div className="">
-								<SyntaxHighlighter
-									customStyle={{
-										textAlign: "center",
-									}}
-									language="bash"
-									style={a11yDark}
-								>
-									yarn add multiform-validator
-								</SyntaxHighlighter>
-							</div>
+							<Installation />
 
 							<h1 className="mb-3 text-2xl">Data Validator</h1>
 
@@ -289,29 +278,14 @@ export default function DocumentationPageJs() {
 							<p className="mb-3">if you prefer, you can use importing as:</p>
 
 							<div className="p-2">
-								<SyntaxHighlighter language="javascript" style={a11yDark}>
-									{`const validator = require('multiform-validator');
-// or
-import validator from 'multiform-validator';
-
-Attention, FUNCTION_NAME is not a valid function name!
-It is just an example of how to import the functions.
-
-const { FUNCTION_NAME } = require('multiform-validator');
-// or
-import { FUNCTION_NAME } from 'multiform-validator';
-
-/**
-* There are other returns in some functions, with strings etc, stay tuned
-*/`}
-								</SyntaxHighlighter>
+								<UsageExample />
 							</div>
 
 							<p className="mb-4 mt-3">
 								If you want to help me, you can buy me a coffee (:
 							</p>
 
-							<p className="mb-4 flex justify-center">
+							<p className="mx-auto mb-4 flex h-16 w-56 justify-center">
 								<Link
 									href="https://www.buymeacoffee.com/gabriellogan"
 									target="_blank"
@@ -319,6 +293,7 @@ import { FUNCTION_NAME } from 'multiform-validator';
 									<Image
 										width={217}
 										height={60}
+										className="h-auto w-auto"
 										src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 										alt="Buy Me A Coffee"
 									/>{" "}

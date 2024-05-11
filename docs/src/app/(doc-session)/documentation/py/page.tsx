@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -9,6 +10,38 @@ export default function DocumentationPagePy() {
 			<Link href="/" className="text-blue-500 hover:underline">
 				Back to home
 			</Link>
+			<p className="mb-6 mt-6 flex gap-2">
+				<a href="https://badge.fury.io/py/multiform-validator" target="_blank">
+					<Image
+						width={0}
+						height={0}
+						className="h-auto w-auto"
+						src="https://badge.fury.io/py/multiform-validator.svg"
+						alt="pypi version"
+					/>
+				</a>
+				<a href="https://opensource.org/licenses/MIT" target="_blank">
+					<Image
+						width={0}
+						height={0}
+						className="h-auto w-auto"
+						src="https://img.shields.io/badge/License-MIT-yellow.svg"
+						alt="License: MIT"
+					/>
+				</a>
+				<a
+					href="https://pypistats.org/packages/multiform-validator"
+					target="_blank"
+				>
+					<Image
+						width={0}
+						height={0}
+						className="h-auto w-auto"
+						src="https://img.shields.io/pypi/dm/multiform-validator.svg?style=flat-square"
+						alt="pypi downloads"
+					/>
+				</a>
+			</p>
 			<div className="mt-8">
 				<h2 className="mb-2 text-3xl font-semibold">Installation</h2>
 				<p className="mb-2 text-lg">Install the package using pip:</p>
