@@ -5,7 +5,7 @@ import "@/css/infos.css";
 export default function AboutPage() {
 	return (
 		<MainBg>
-			<section>
+			<section id="info-section">
 				<h1>Privacy Policies - Your Data is Safe with Us</h1>
 				<p>
 					At Gabriel Logan Web Services, we take your privacy seriously. We want

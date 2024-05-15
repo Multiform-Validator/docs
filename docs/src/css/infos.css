@@ -1,22 +1,22 @@
 /* styles.scss */
-section {
+#info-section {
   padding: 20px;
   text-align: center;
 }
-section h1 {
+#info-section h1 {
   font-size: 36px;
   margin-bottom: 20px;
 }
-section p {
+#info-section p {
   font-size: 18px;
   line-height: 1.6;
   margin-block: 25px;
 }
-section a {
+#info-section a {
   color: #007bff;
   text-decoration: none;
 }
-section a:hover {
+#info-section a:hover {
   text-decoration: underline;
 }
 

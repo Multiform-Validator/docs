@@ -58,7 +58,8 @@ export default function DocumentationPagePy() {
 	isCreditCardValid,
 	isEmail,
 	passwordStrengthTester,
-	validateBRPhoneNumber
+	validateBRPhoneNumber,
+	isValidImage
 )`}
 				</SyntaxHighlighter>
 			</div>
@@ -97,6 +98,12 @@ print("Multiple, clean and repeat emails", getOnlyEmail(
 )) # ['foor@bar.com', 'jhon@bar.com.br', 'foor@bar.com']
 
 # Each parameter can be passed as false individually, the default for all is false`}
+					</SyntaxHighlighter>
+				</div>
+				<div className="mb-8">
+					<h2 className="text-lg">identifyFlagCard: </h2>
+					<SyntaxHighlighter language="python" style={a11yDark}>
+						{`print("Identify flag card", identifyFlagCard("5117 2161 1334 8362")) # Mastercard`}
 					</SyntaxHighlighter>
 				</div>
 				<div className="mb-8">
@@ -140,6 +147,25 @@ print("Is CPF valid", cpfIsValid("123.456.789-09"))
 # { 'isValid': True, 'errorMsg': None }`}
 					</SyntaxHighlighter>
 				</div>
+				<div className="mb-8">
+					<h2 className="text-lg">isValidImage: </h2>
+					<SyntaxHighlighter language="python" style={a11yDark}>
+						{`import os
+from pathlib import Path
+
+from multiform_validator import isValidImage
+
+# Resolve the file path
+file_path = Path.cwd() / 'static' / 'uploads'
+retrieved_file = file_path / filename
+
+# Read the first 4 bytes of the file
+with open(retrieved_file, 'rb') as f:
+    file_buffer = f.read(4)
+
+print(isValidImage(file_buffer)) # True or False`}
+					</SyntaxHighlighter>
+				</div>
 			</div>
 			<div>
 				<h1 className="text-3xl font-semibold">Functions signature</h1>
@@ -180,7 +206,10 @@ def identifyFlagCard(cardNumber: str) -> str:
 
 default_error_msg = ['Invalid value passed', 'Invalid phone number', 'Unknown error']
 def validateBRPhoneNumber(phoneNumber: str, errorMsg=default_error_msg) -> Dict[str, Union[bool, str, None]]:
-    pass`}
+    pass
+
+def isValidImage(file_buffer: bytes) -> bool:
+	pass`}
 				</SyntaxHighlighter>
 			</div>
 		</div>

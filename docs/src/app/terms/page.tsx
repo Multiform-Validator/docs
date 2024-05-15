@@ -5,7 +5,7 @@ import "@/css/infos.css";
 export default function AboutPage() {
 	return (
 		<MainBg>
-			<section>
+			<section id="info-section">
 				<h1>Terms and Conditions</h1>
 				<p>
 					Welcome to Gabriel Logan Web Services. By using this website, you

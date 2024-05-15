@@ -5,7 +5,7 @@ import "@/css/infos.css";
 export default function AboutPage() {
 	return (
 		<MainBg>
-			<section>
+			<section id="info-section">
 				<h1>Hello, I&apos;m Gabriel Logan</h1>
 				<p>
 					I consider myself a versatile programmer with a passion for both

@@ -5,7 +5,7 @@ import "@/css/infos.css";
 export default function InfoPage() {
 	return (
 		<MainBg>
-			<section>
+			<section id="info-section">
 				<h1>
 					multiform-validator - JavaScript Library for Form Field Validation
 				</h1>
