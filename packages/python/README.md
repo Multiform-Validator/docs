@@ -38,6 +38,7 @@ This package contains various modules for validating different types of data. Be
 - **isEmail**: Email address validation format.
 - **passwordStrengthTester**: Password strength test.
 - **validateBRPhoneNumber**: Brazilian phone number validation.
+- **isValidImage**: Image validation.
 
 ## Usage
 
@@ -52,9 +53,12 @@ from multiform_validator import (
     isCreditCardValid,
     isEmail,
     passwordStrengthTester,
-    validateBRPhoneNumber
+    validateBRPhoneNumber,
+    isValidImage
 )
 ```
+
+### Usage Example
 
 ```python
 
@@ -67,6 +71,25 @@ print("Is credit card valid", isCreditCardValid("5117 2161 1334 8362")) # True
 print("Identify flag card", identifyFlagCard("5117 2161 1334 8362")) # Mastercard
 print("Validate BR phone number", validateBRPhoneNumber("(11) 91234-5678")) # { 'isValid': True, 'errorMsg': None }
 
+```
+
+### isValidImage Usage Example
+
+```python
+import os
+from pathlib import Path
+
+from multiform_validator import isValidImage
+
+# Resolve the file path
+file_path = Path.cwd() / 'static' / 'uploads'
+retrieved_file = file_path / filename
+
+# Read the first 4 bytes of the file
+with open(retrieved_file, 'rb') as f:
+    file_buffer = f.read(4)
+
+print(isValidImage(file_buffer)) # True or False
 ```
 
 ## Functions signature
@@ -110,6 +133,9 @@ def identifyFlagCard(cardNumber: str) -> str:
 
 default_error_msg = ['Invalid value passed', 'Invalid phone number', 'Unknown error']
 def validateBRPhoneNumber(phoneNumber: str, errorMsg=default_error_msg) -> Dict[str, Union[bool, str, None]]:
+    pass
+
+def isValidImage(file_buffer: bytes) -> bool:
     pass
 
 ```

@@ -6,13 +6,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "multiform-validator"
-version = "0.0.10"
+version = "0.1.0"
 authors = [
   { name="Gabriel Logan" },
 ]
 description = "Multilingual library made for validation, various form fields, such as: email, cpf, cnpj, credit card, and much more."
 readme = "README.md"
-keywords = ["validator", "multiform", "validação", "email-validator", "multiform-validator", "python", "security", "safe", "pentest", "security-tools", "Validator", "validate", "cpf", "cnpj", "email validator", "password", "email", "isEmail"]
+keywords = ["validator", "multiform", "validação", "email-validator", "image", "multiform-validator", "python", "security", "safe", "pentest", "security-tools", "Validator", "validate", "cpf", "cnpj", "email validator", "password", "email", "isEmail"]
 requires-python = ">=3.1"
 classifiers = [
     "Programming Language :: Python :: 3",

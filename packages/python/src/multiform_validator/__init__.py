@@ -6,3 +6,4 @@ from .identifyFlagCard import identifyFlagCard
 from .isCreditCardValid import isCreditCardValid
 from .passwordStrengthTester import passwordStrengthTester
 from .validateBRPhoneNumber import validateBRPhoneNumber
+from .isValidImage import isValidImage
