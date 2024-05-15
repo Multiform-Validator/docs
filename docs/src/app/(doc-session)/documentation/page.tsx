@@ -12,14 +12,14 @@ export default function DocumentationPage() {
 	return (
 		<MainBg>
 			<section className="p-2">
-				<h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
+				<h1 className="mb-4 mt-8 text-center text-2xl font-bold text-white sm:text-3xl md:text-start md:text-4xl lg:text-center">
 					Documentations Page
 				</h1>
-				<p className="mb-8 text-lg text-white">
+				<p className="mb-8 text-center text-base text-white sm:text-lg md:text-start lg:text-center">
 					Welcome to the documentation page. Here you can find all the languages
 					that we support and the documentation for each one of them.
 				</p>
-				<h2 className="mb-8 text-2xl font-semibold text-white">
+				<h2 className="mb-12 text-center text-xl font-semibold text-white sm:text-2xl md:text-start lg:text-center">
 					Here&apos;s all the languages that we support
 				</h2>
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-3">

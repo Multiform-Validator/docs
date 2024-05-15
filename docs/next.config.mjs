@@ -23,8 +23,8 @@ const nextConfig = {
 			},
 		],
 	},
-	output: "export",
-	distDir: "page",
+	output: process.env.NODE_ENV === "production" ? "export" : undefined,
+	distDir: process.env.NODE_ENV === "production" ? "page" : undefined,
 	basePath:
 		process.env.NODE_ENV === "production" ? "/multiform-validator" : undefined,
 };

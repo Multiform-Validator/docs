@@ -57,11 +57,11 @@ export default function DocumentationPageJs() {
 							and we wish you success in your projects! Multiform Validator Team
 						</p>
 						<div id="examples_code" className="mt-8">
-							<h1 className="mb-4 text-xl font-semibold">
+							<h1 className="mb-4 text-2xl font-semibold">
 								Multiform-validator
 							</h1>
 
-							<p className="mb-6 flex justify-center gap-2">
+							<p className="mb-6 flex gap-2">
 								<a
 									href="https://badge.fury.io/js/multiform-validator.svg"
 									target="_blank"
@@ -106,7 +106,7 @@ export default function DocumentationPageJs() {
 								If you want to help me, you can buy me a coffee (:
 							</p>
 
-							<p className="mx-auto mb-4 mt-2 flex h-16 w-56 justify-center">
+							<p className="mb-6 mt-4 flex h-12 w-52">
 								<Link
 									href="https://www.buymeacoffee.com/gabriellogan"
 									target="_blank"
@@ -285,7 +285,7 @@ export default function DocumentationPageJs() {
 								If you want to help me, you can buy me a coffee (:
 							</p>
 
-							<p className="mx-auto mb-4 flex h-16 w-56 justify-center">
+							<p className="mb-6 mt-2 flex h-12 w-52">
 								<Link
 									href="https://www.buymeacoffee.com/gabriellogan"
 									target="_blank"
