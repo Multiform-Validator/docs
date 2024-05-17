@@ -28,6 +28,12 @@ Please refer to the specific installation instructions in the README file of the
 
 Contributions are welcome! Please read the contributing guidelines before getting started.
 
+## Contributors
+
+<a style="display: flex; justify-content: center;" href="https://github.com/gabriel-logan/multiform-validator/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=gabriel-logan/multiform-validator" />
+</a>
+
 ## License
 
 This project is licensed under the MIT License.
