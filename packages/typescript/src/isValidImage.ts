@@ -8,13 +8,20 @@ function isValidImage(fileBuffer: Buffer): boolean {
 	// Check magic numbers to determine the mimetype
 	const isJpeg: boolean =
 		fileBuffer[0] === 0xff && fileBuffer[1] === 0xd8 && fileBuffer[2] === 0xff;
+
 	const isPng: boolean =
 		fileBuffer[0] === 0x89 &&
 		fileBuffer[1] === 0x50 &&
 		fileBuffer[2] === 0x4e &&
 		fileBuffer[3] === 0x47;
 
-	return isJpeg || isPng;
+	const isGif: boolean =
+		fileBuffer[0] == 0x47 &&
+		fileBuffer[1] == 0x49 &&
+		fileBuffer[2] == 0x46 &&
+		fileBuffer[3] == 0x38;
+
+	return isJpeg || isPng || isGif;
 }
 
 export default isValidImage;
