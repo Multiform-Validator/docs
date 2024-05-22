@@ -19,6 +19,7 @@ const config: Config = {
 				dropdownMenu: "#1f2029",
 				"bg1-dark": "#1f2029",
 				hoverLi: "#ffffff33",
+				"drawer-bg": "#121212",
 			},
 		},
 	},

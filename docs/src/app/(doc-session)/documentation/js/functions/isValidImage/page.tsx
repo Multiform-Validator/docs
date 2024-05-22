@@ -18,6 +18,20 @@ export default function IsValidImage() {
 					image file is valid or not. It accepts a Buffer as an argument.
 				</p>
 
+				<h2 className="mt-6">Types that are validated</h2>
+
+				<ul>
+					<li>jpeg</li>
+					<li>png</li>
+					<li>gif</li>
+					<li>ico</li>
+				</ul>
+
+				<p>
+					You can also pass an options object as a second argument to exclude a
+					specific type.
+				</p>
+
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`import { isValidImage } from 'multiform-validator';
 import ImageBuffer from 'image-buffer';
@@ -28,7 +42,25 @@ const isValid = isValidImage(buffer);
 console.log(isValid);  // true if the image is valid, false otherwise`}
 				</SyntaxHighlighter>
 
+				<p className="mt-4">
+					Passing options to the <code>isValidImage</code>
+				</p>
+
+				<SyntaxHighlighter language="javascript" style={a11yDark}>
+					{`import { isValidImage } from 'multiform-validator';
+import ImageBuffer from 'image-buffer';
+
+const buffer: Buffer = ImageBuffer;
+const isValid = isValidImage(buffer, { exclude: ['gif'] });
+
+console.log(isValid);  // true if the image is valid, false otherwise`}
+				</SyntaxHighlighter>
+
 				<h2 className="mt-6">Example Usage with Nestjs and Multer</h2>
+				<p>
+					In this example it only allocates 4 bytes for performance reasons, but
+					you can pass the entire file.
+				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const filePath = resolve(process.cwd(), 'public', 'assets', 'images');

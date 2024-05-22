@@ -1,8 +1,19 @@
 $primary-color: #124881;
 $secondary-color: #6c757d;
 
+@media(prefers-color-scheme: dark) {
+	#page-content-wrapper {
+		background-color: #121212;
+	}
+}
+
+@media(prefers-color-scheme: light) {
+	#page-content-wrapper {
+		background-color: #efefef;
+	}
+}
+
 #page-content-wrapper {
-	margin-top: 15px;
 	margin-bottom: 10px;
 	padding: 10px;
 

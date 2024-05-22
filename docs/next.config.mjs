@@ -23,10 +23,10 @@ const nextConfig = {
 			},
 		],
 	},
-	output: process.env.NODE_ENV === "production" ? "export" : undefined,
-	distDir: process.env.NODE_ENV === "production" ? "page" : undefined,
+	output: process.env.NODE_ENV === "development" ? undefined : "export",
+	distDir: process.env.NODE_ENV === "development" ? undefined : "page",
 	basePath:
-		process.env.NODE_ENV === "production" ? "/multiform-validator" : undefined,
+		process.env.NODE_ENV === "development" ? undefined : "/multiform-validator",
 };
 
 export default nextConfig;
