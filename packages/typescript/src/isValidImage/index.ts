@@ -61,3 +61,15 @@ export default function isValidImage(
 
 	return isGif || isIco || isJpeg || isPng;
 }
+
+/**
+ * Validate
+ * Bmp
+ * Gif
+ * Ico
+ * Jpeg
+ * Png
+ * Svg
+ * Tiff
+ * Webp
+ */

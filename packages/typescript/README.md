@@ -17,21 +17,19 @@ Feel free to find bugs and report them to me. Your feedback is highly appreciate
 
 jsDelivr:
 ```bash
-https://cdn.jsdelivr.net/npm/multiform-validator@2.0.3/dist/bundle.min.js
+https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js
 ```
 ```html
-<scritp src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.3/dist/bundle.min.js"></script>
+<scritp src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js"></script>
 ```
 
 unpkg:
 ```bash
-https://unpkg.com/multiform-validator@2.0.3/dist/bundle.js
+https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js
 ```
 ```html
-<scritp src="https://unpkg.com/multiform-validator@2.0.3/dist/bundle.js"></script>
+<scritp src="https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js"></script>
 ```
-
-
 
 
 ## Installation
