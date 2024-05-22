@@ -48,12 +48,15 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-        working-directory: ./docs
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Setup Node
+        run: |
+          cd ./docs
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+        shell: bash
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
