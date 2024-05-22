@@ -22,7 +22,7 @@ export default function DrawerComponent() {
 				className="my-drawer"
 				customIdSuffix="my-drawer"
 			>
-				<section className="hide-scrollbar h-screen overflow-y-auto border-r-2 border-gray-800 bg-drawer-bg">
+				<section className="hide-scrollbar h-screen overflow-y-auto border-r-2 border-gray-800 bg-drawer-bg-dark">
 					<SidebarWrapper />
 				</section>
 			</Drawer>

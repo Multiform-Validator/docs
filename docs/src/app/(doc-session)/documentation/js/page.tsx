@@ -11,7 +11,7 @@ import {
 
 export default function DocumentationPageJs() {
 	return (
-		<section className="min-h-screen p-8">
+		<section className="min-h-screen bg-drawer-bg p-8 dark:bg-drawer-bg-dark">
 			<div>
 				{/**<!-- Page Content --> */}
 				<div id="page-content-wrapper">
