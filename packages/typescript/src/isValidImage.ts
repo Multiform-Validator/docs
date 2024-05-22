@@ -1,3 +1,28 @@
+interface OptionsParams {
+	validateGif?: boolean;
+	validateWebp?: boolean;
+	validateBmp?: boolean;
+	validateTiff?: boolean;
+	validateSvg?: boolean;
+	validateIco?: boolean;
+	validatePng?: boolean;
+	validateJpeg?: boolean;
+	validateJpg?: boolean;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const defaultOptionsParams: OptionsParams = {
+	validateGif: true,
+	validateWebp: true,
+	validateBmp: true,
+	validateTiff: true,
+	validateSvg: true,
+	validateIco: true,
+	validatePng: true,
+	validateJpeg: true,
+	validateJpg: true,
+};
+
 /**
  * Checks if the given file buffer represents a valid image.
  * @param fileBuffer - The buffer containing the file data.
@@ -21,7 +46,26 @@ function isValidImage(fileBuffer: Buffer): boolean {
 		fileBuffer[2] == 0x46 &&
 		fileBuffer[3] == 0x38;
 
-	return isJpeg || isPng || isGif;
+	const isWebp: boolean =
+		fileBuffer[8] === 0x57 &&
+		fileBuffer[9] === 0x45 &&
+		fileBuffer[10] === 0x42 &&
+		fileBuffer[11] === 0x50;
+
+	const isBmp: boolean = fileBuffer[0] === 0x42 && fileBuffer[1] === 0x4d;
+
+	const isTiff: boolean =
+		(fileBuffer[0] === 0x49 && fileBuffer[1] === 0x49) ||
+		(fileBuffer[0] === 0x4d && fileBuffer[1] === 0x4d);
+
+	const isSvg: boolean = fileBuffer[0] === 0x3c && fileBuffer[1] === 0x3f;
+
+	const isIco: boolean =
+		fileBuffer[0] === 0x00 && fileBuffer[1] === 0x00 && fileBuffer[2] === 0x01;
+
+	return (
+		isJpeg || isPng || isGif || isWebp || isBmp || isTiff || isSvg || isIco
+	);
 }
 
 export default isValidImage;

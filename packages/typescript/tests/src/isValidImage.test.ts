@@ -1,21 +1,28 @@
+import path from 'path';
 import isValidImage from '../../src/isValidImage';
+import * as fs from 'fs';
 
 describe('isValidImage', () => {
+	let fileBuffer1: Buffer, fileBuffer2: Buffer, fileBuffer3: Buffer, fileBuffer4: Buffer, fileBuffer5: Buffer;
+
+	beforeAll(() => {
+		fileBuffer1 = fs.readFileSync(path.join(__dirname, '..', 'assets', 'isValidImage', 'valid.jpeg')); // Valid JPEG image
+		fileBuffer2 = fs.readFileSync(path.join(__dirname, '..', 'assets', 'isValidImage', 'valid.png')); // Valid PNG image
+		fileBuffer3 = fs.readFileSync(path.join(__dirname, '..', 'assets', 'isValidImage', 'invalid.jpeg')); // Invalid JPEG image
+	});
+
 	it('should return true for a valid JPEG image', () => {
-		const fileBuffer = Buffer.from([0xff, 0xd8, 0xff, /* ... */]);
-		const result = isValidImage(fileBuffer);
+		const result = isValidImage(fileBuffer1);
 		expect(result).toBe(true);
 	});
 
 	it('should return true for a valid PNG image', () => {
-		const fileBuffer = Buffer.from([0x89, 0x50, 0x4e, 0x47, /* ... */]);
-		const result = isValidImage(fileBuffer);
+		const result = isValidImage(fileBuffer2);
 		expect(result).toBe(true);
 	});
 
 	it('should return false for an invalid image', () => {
-		const fileBuffer = Buffer.from([/* ... */]);
-		const result = isValidImage(fileBuffer);
+		const result = isValidImage(fileBuffer3);
 		expect(result).toBe(false);
 	});
 
