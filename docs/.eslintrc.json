@@ -1,7 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "universe/web"],
-  "rules": {
-    "no-console": "warn",
-    "react-hooks/exhaustive-deps": "warn"
-  }
+	"extends": [
+		"next/core-web-vitals",
+		"universe/web"
+	],
+	"rules": {
+		"no-console": "warn"
+	}
 }
