@@ -5,3 +5,4 @@ types/
 webpack.config.js
 jestTestFile.js
 BackupCopia
+.eslintrc.js

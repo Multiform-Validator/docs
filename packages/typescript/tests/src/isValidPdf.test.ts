@@ -1,26 +1,29 @@
 import isValidPdf from '../../src/isValidPdf';
+import path from 'path';
+import * as fs from 'fs';
 
 describe('isValidPdf', () => {
-	it('should return true for a valid PDF file', () => {
-		// Create a buffer with the magic numbers of a PDF file
-		const fileBuffer = Buffer.from([0x25, 0x50, 0x44, 0x46]);
+	let fileBuffer1: Buffer, fileBuffer2: Buffer;
 
-		// Call the isValidPdf function
-		const result = isValidPdf(fileBuffer);
-
-		// Assert that the result is true
-		expect(result).toBe(true);
+	beforeAll(() => {
+		fileBuffer1 = fs.readFileSync(path.join(__dirname, '..', 'assets', 'isValidPdf', 'invalid.pdf')); // Invalid PDF
+		fileBuffer2 = fs.readFileSync(path.join(__dirname, '..', 'assets', 'isValidPdf', 'valid.pdf')); // Valid PDF
 	});
 
-	it('should return false for an invalid file', () => {
-		// Create a buffer with random data
-		const fileBuffer = Buffer.from([0x12, 0x34, 0x56, 0x78]);
-
-		// Call the isValidPdf function
+	it('should return false for an empty buffer', () => {
+		const fileBuffer = Buffer.from([]);
 		const result = isValidPdf(fileBuffer);
-
-		// Assert that the result is false
 		expect(result).toBe(false);
+	});
+
+	it('should return false for an invalid PDF', () => {
+		const result = isValidPdf(fileBuffer1);
+		expect(result).toBe(false);
+	});
+
+	it('should return true for a valid PDF', () => {
+		const result = isValidPdf(fileBuffer2);
+		expect(result).toBe(true);
 	});
 });
 export default isValidPdf;

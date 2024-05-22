@@ -1,14 +1,10 @@
 import validateAllImages from "./validateAllImages";
+import validateGif from "./validateGif";
+import validateIco from "./validateIco";
+import validateJpeg from "./validateJpeg";
+import validatePng from "./validatePng";
 
-type ImageMimeType =
-	| "bmp"
-	| "gif"
-	| "ico"
-	| "jpeg"
-	| "png"
-	| "svg"
-	| "tiff"
-	| "webp";
+type ImageMimeType = "gif" | "ico" | "jpeg" | "png";
 
 interface OptionsParams {
 	exclude: ImageMimeType[];
@@ -25,15 +21,10 @@ const defaultOptionsParams: OptionsParams = {
  * @param options - An object containing the options for the function.
  * @param options.exclude - An array of image types to exclude from the validation.
  *
- * type ImageMimeType =
-	| "bmp"
-	| "gif"
-	| "ico"
-	| "jpeg"
-	| "png"
-	| "svg"
-	| "tiff"
-	| "webp";
+ * type ImageMimeType = "gif" | "ico" | "jpeg" | "png";
+ *
+ * If you want to exclude some image types from the validation, you can pass the options
+ * @example - isValidImage(fileBuffer, { exclude: ["gif", "ico"] });
  * @returns A boolean indicating whether the file is a valid image or not.
  */
 export default function isValidImage(
@@ -42,25 +33,31 @@ export default function isValidImage(
 ): boolean {
 	const excludedMimeTypes: ImageMimeType[] = options.exclude;
 
-	const listToValidate: ImageMimeType[] = [
-		"bmp",
-		"gif",
-		"ico",
-		"jpeg",
-		"png",
-		"svg",
-		"tiff",
-		"webp",
-	];
-
 	if (excludedMimeTypes.length === 0) {
 		return validateAllImages(fileBuffer);
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const listToValidate: ImageMimeType[] = ["gif", "ico", "jpeg", "png"];
+
 	const filteredList: ImageMimeType[] = listToValidate.filter(
 		(mimeType: ImageMimeType) => !excludedMimeTypes.includes(mimeType),
 	);
 
-	return false;
+	if (filteredList.length === 0) {
+		return false;
+	}
+
+	const isGif: boolean =
+		filteredList.includes("gif") && validateGif(fileBuffer);
+
+	const isIco: boolean =
+		filteredList.includes("ico") && validateIco(fileBuffer);
+
+	const isJpeg: boolean =
+		filteredList.includes("jpeg") && validateJpeg(fileBuffer);
+
+	const isPng: boolean =
+		filteredList.includes("png") && validatePng(fileBuffer);
+
+	return isGif || isIco || isJpeg || isPng;
 }
