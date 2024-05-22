@@ -31,16 +31,18 @@ https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js
 <script src="https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js"></script>
 ```
 
-## Example of use with CDN
+### Example of use with CDN
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js"></script>
 <script>
+
 	const emailResult = isEmail('123456');
 	const cpfResult = cpfIsValid('123456');
 
 	console.log(emailResult); // returns false
 	console.log(cpfResult.isValid); // returns false
+
 </script>
 ```
 

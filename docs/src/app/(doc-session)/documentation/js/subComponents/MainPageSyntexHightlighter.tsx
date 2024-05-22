@@ -52,6 +52,22 @@ import { FUNCTION_NAME } from 'multiform-validator';
 	);
 }
 
+export function UsageCDNExample() {
+	return (
+		<SyntaxHighlighter language="html" style={a11yDark}>
+			{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js"></script>
+
+<script>
+	const emailResult = isEmail('123456');
+	const cpfResult = cpfIsValid('123456');
+
+	console.log(emailResult); // returns false
+	console.log(cpfResult.isValid); // returns false
+</script>`}
+		</SyntaxHighlighter>
+	);
+}
+
 export function Cdns() {
 	return (
 		<>
@@ -61,7 +77,7 @@ export function Cdns() {
 					https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<scritp src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js"></script>`}
+					{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.0.6/dist/bundle.min.js"></script>`}
 				</SyntaxHighlighter>
 			</div>
 			<div className="mb-4">
@@ -70,7 +86,7 @@ export function Cdns() {
 					https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<scritp src="https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js"></script>`}
+					{`<script src="https://unpkg.com/multiform-validator@2.0.6/dist/bundle.js"></script>`}
 				</SyntaxHighlighter>
 			</div>
 		</>

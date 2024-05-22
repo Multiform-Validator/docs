@@ -6,6 +6,7 @@ import DrawerComponent from "@/components/Drawer";
 import {
 	Cdns,
 	Installation,
+	UsageCDNExample,
 	UsageExample,
 } from "./subComponents/MainPageSyntexHightlighter";
 
@@ -143,6 +144,14 @@ export default function DocumentationPageJs() {
 
 							<div className="mb-8">
 								<Cdns />
+							</div>
+
+							<h2 className="mb-2 mt-4 text-lg font-medium">
+								Example of use with CDN
+							</h2>
+
+							<div className="mb-8">
+								<UsageCDNExample />
 							</div>
 
 							<h2 className="text-lg font-medium">Installation</h2>
