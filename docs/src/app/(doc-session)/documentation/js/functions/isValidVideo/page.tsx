@@ -18,14 +18,33 @@ export default function IsValidVideo() {
 					video file is valid or not. It accepts a Buffer as an argument.
 				</p>
 
+				<h2 className="mt-6">Types that are validated</h2>
+
+				<ul>
+					<li>mkv</li>
+					<li>mov</li>
+					<li>mp4</li>
+				</ul>
+
+				<p>
+					You can also pass an options object as a second argument to exclude a
+					specific type.
+				</p>
+
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`import { isValidVideo } from 'multiform-validator';
 import VideoBuffer from 'video-buffer';
+import VideoBuffer2 from 'video-buffer2';
 
 const buffer: Buffer = VideoBuffer;
 const isValid = isValidVideo(buffer);
 
-console.log(isValid);  // true if the video is valid, false otherwise`}
+console.log(isValid);  // true if the video is valid, false otherwise
+
+const buffer2: Buffer = VideoBuffer2;
+const isValid2 = isValidVideo(buffer2, { exclude: ['mov'] });
+
+console.log(isValid2);  // true if the video is valid, false otherwise`}
 				</SyntaxHighlighter>
 			</div>
 		</div>
