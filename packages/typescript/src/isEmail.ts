@@ -11,6 +11,10 @@ function isEmail(email: string): boolean {
 		throw new Error("Value cannot be null or empty");
 	}
 
+	// Check if email starts with a special character
+	const startsWithSpecialChar: RegExp = /^[^a-zA-Z0-9]/;
+	if (startsWithSpecialChar.test(email)) return false;
+
 	const regex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 	if (Number(email[0])) return false;
