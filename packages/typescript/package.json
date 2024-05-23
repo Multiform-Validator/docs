@@ -1,13 +1,13 @@
 {
 	"name": "multiform-validator",
-	"version": "2.0.6",
+	"version": "2.1.0",
 	"description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
 	"main": "./dist/index.js",
 	"types": "./types/index.d.ts",
 	"unpkg": "./dist/bundle.js",
 	"scripts": {
 		"test": "jest --coverage",
-		"test:file": "jest tests/src/isEmail.test --watch",
+		"test:file": "jest tests/src/isDecimal.test --watch",
 		"test:watch": "jest --watch",
 		"build:types": "tsc -p tsconfig.types.json",
 		"build:src": "tsc",

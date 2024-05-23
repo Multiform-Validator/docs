@@ -12,6 +12,14 @@
  */
 function isDecimal(value: string | number): boolean {
 	let getValued: string | number = value;
+	if (typeof getValued === "number" && Number.isNaN(getValued)) {
+		throw new TypeError("Input value must not be NaN.");
+	}
+
+	if (typeof getValued === "number" && !isFinite(getValued)) {
+		throw new TypeError("Input value must not be Infinity, -Infinity or NaN.");
+	}
+
 	if (typeof getValued !== "string") {
 		if (typeof getValued === "number") {
 			if (Number.isInteger(getValued)) {
