@@ -60,16 +60,15 @@ export default function isValidImage(
 		filteredList.includes("png") && validatePng(fileBuffer);
 
 	return isGif || isIco || isJpeg || isPng;
+	/**
+	 * Validate
+	 * Bmp
+	 * Gif
+	 * Ico
+	 * Jpeg
+	 * Png
+	 * Svg
+	 * Tiff
+	 * Webp
+	 */
 }
-
-/**
- * Validate
- * Bmp
- * Gif
- * Ico
- * Jpeg
- * Png
- * Svg
- * Tiff
- * Webp
- */
