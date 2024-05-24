@@ -6,15 +6,13 @@ export default function InfoPage() {
 	return (
 		<MainBg>
 			<section id="info-section">
-				<h1>
-					multiform-validator - JavaScript Library for Form Field Validation
-				</h1>
+				<h1>multiform-validator - Multi Library for Form Field Validation</h1>
 				<p>
-					Introducing multiform-validator, a powerful JavaScript library
-					developed by Gabriel Logan. This versatile library is designed to
-					validate numerous form fields, including email addresses, phone
-					numbers, passwords, CPF (Brazilian individual taxpayer registry
-					numbers), credit card numbers, and more.
+					Introducing multiform-validator, a powerful Multi Library developed by
+					Gabriel Logan. This versatile library is designed to validate numerous
+					form fields, including email addresses, phone numbers, passwords, CPF
+					(Brazilian individual taxpayer registry numbers), credit card numbers,
+					and more.
 				</p>
 				<p>
 					With multiform-validator, you can ensure that the data submitted
@@ -32,7 +30,7 @@ export default function InfoPage() {
 				<p>
 					You can also use the multiform-validator to do validations in your
 					backend, it works for any type of form validation or functions that
-					use javascript, so feel free to use it
+					use javascript, python, so feel free to use it
 				</p>
 				<p>
 					What sets multiform-validator apart is its flexibility and ease of

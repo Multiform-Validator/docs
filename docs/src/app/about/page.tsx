@@ -24,7 +24,7 @@ export default function AboutPage() {
 				<p>
 					But my skills don&apos;t stop there. I am equally proficient in
 					back-end development, with expertise in languages such as Python,
-					Ruby, and JavaScript (Node.js). Building robust and secure web
+					Java, and JavaScript (Node.js). Building robust and secure web
 					applications is my forte, as I understand the intricacies of
 					server-side logic. My solutions are geared towards efficiency,
 					reliability, and scalability, making sure that even during peak times,

@@ -6,6 +6,8 @@ import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaCaretDown } from "react-icons/fa";
 
+import { roboto700 } from "@/fonts";
+
 export default function Header() {
 	const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +22,7 @@ export default function Header() {
 			{!show && (
 				<>
 					<header className="flex h-32 items-center justify-around bg-header md:h-28">
-						<h1 className="w-44 text-lg font-bold text-white">
+						<h1 className={`w-44 text-lg text-white ${roboto700.className}`}>
 							Multiform validator
 						</h1>
 						<div className="flex md:hidden">
