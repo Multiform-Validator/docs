@@ -42,6 +42,7 @@ export const metadata: Metadata = {
 		"Validator",
 		"validate",
 	],
+	verification: { google: "yJrJTI7i4-7ONpiZoFqwmmFvRs_7HLFSSJlFZQPsNtg" },
 };
 
 export default function RootLayout({
