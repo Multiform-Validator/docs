@@ -72,6 +72,11 @@ export default function RootLayout({
 					data-y_margin="18"
 					defer
 				/>
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6190451090444284"
+					crossOrigin="anonymous"
+				/>
 			</body>
 		</html>
 	);
