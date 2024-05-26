@@ -100,6 +100,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "monthly",
 			priority: 0.5,
 		},
+		{
+			url: `${hostUrl}/news`,
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.2,
+		},
 		...generateJsMaps(),
 	];
 }
