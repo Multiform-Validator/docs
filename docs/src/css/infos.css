@@ -7,12 +7,14 @@
   font-size: 36px;
   margin-bottom: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
 }
 #info-section p {
   font-size: 18px;
   line-height: 1.6;
   margin-block: 25px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
 }
 #info-section a {
   color: #007bff;
@@ -20,12 +22,4 @@
 }
 #info-section a:hover {
   text-decoration: underline;
-}
-
-h1 {
-  color: white;
-}
-
-p {
-  color: white;
 }/*# sourceMappingURL=infos.css.map */

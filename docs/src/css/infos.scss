@@ -15,14 +15,16 @@ $footer-bg: #343a40;
     h1 {
         font-size: 36px;
         margin-bottom: 20px;
-				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+				color: white;
     }
     // Styling for paragraphs
     p {
         font-size: 18px;
         line-height: 1.6;
 				margin-block: 25px;
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				color: white;
     }
     // Styling for links
     a {
@@ -34,10 +36,4 @@ $footer-bg: #343a40;
     }
 }
 
-h1 {
-	color: white;
-}
 
-p {
-	color: white;
-}
