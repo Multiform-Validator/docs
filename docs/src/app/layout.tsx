@@ -54,6 +54,11 @@ export default function RootLayout({
 		<html lang="en">
 			<head>
 				<meta name="google-adsense-account" content="ca-pub-6190451090444284" />
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6190451090444284"
+					crossOrigin="anonymous"
+				/>
 			</head>
 			<body className={inter.className}>
 				<Header />
@@ -71,11 +76,6 @@ export default function RootLayout({
 					data-x_margin="18"
 					data-y_margin="18"
 					defer
-				/>
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6190451090444284"
-					crossOrigin="anonymous"
 				/>
 			</body>
 		</html>
