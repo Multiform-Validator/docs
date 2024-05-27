@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { RiJavascriptFill } from "react-icons/ri";
 
+import javaIcon from "@/assets/icons/java-icon.svg";
+import pythonIcon from "@/assets/icons/python-icon.svg";
 import MainBg from "@/components/MainBg";
-
-import javaIcon from "./java-icon.svg";
-import pythonIcon from "./python-icon.svg";
 
 export default function DocumentationPage() {
 	const basePath = "/documentation";
