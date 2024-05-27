@@ -1,19 +1,5 @@
 import Script from "next/script";
 
-interface AdsenseProps {
-	GOOGLE_ADSENSE_CLIENT_ID: string | undefined;
-}
-
-export default function Adsense({ GOOGLE_ADSENSE_CLIENT_ID }: AdsenseProps) {
-	return (
-		<script
-			async
-			src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_ADSENSE_CLIENT_ID}`}
-			crossOrigin="anonymous"
-		/>
-	);
-}
-
 interface AddBannerProps {
 	AdClient: string;
 	AdSlot: string;
@@ -21,8 +7,7 @@ interface AddBannerProps {
 	FullWidthResponsive?: boolean;
 }
 
-// TEST
-export function AddBanner({
+export default function AddBanner({
 	AdClient,
 	AdSlot,
 	AdFormat = "auto",
