@@ -2,7 +2,6 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 
 import Adsense from "@/components/Adsense";
 import Footer from "@/components/Footer";
@@ -67,7 +66,7 @@ export default function RootLayout({
 				<Header />
 				{children}
 				<Footer />
-				<Script
+				<script
 					data-name="BMC-Widget"
 					data-cfasync="false"
 					src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
