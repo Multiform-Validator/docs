@@ -61,7 +61,17 @@ export default function Home() {
 				thanks in advance (:
 			</p>
 
-			<div className="mb-10 mt-5 h-16 w-52 self-center">
+			<div className="flex justify-center">
+				<iframe
+					src="https://github.com/sponsors/gabriel-logan/button"
+					title="Sponsor gabriel-logan"
+					height="32"
+					width="114"
+					style={{ border: 0, borderRadius: 6 }}
+				/>
+			</div>
+
+			<div className="mb-10 mt-5 h-12 w-44 self-center">
 				<Link href="https://www.buymeacoffee.com/gabriellogan" target="_blank">
 					<Image
 						src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
