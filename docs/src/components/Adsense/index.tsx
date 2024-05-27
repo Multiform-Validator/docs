@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Adsbygoogle from "./Adsbygoogle";
 
 interface AdsenseProps {
 	GOOGLE_ADSENSE_CLIENT_ID: string | undefined;
@@ -38,9 +38,7 @@ export function AddBanner({
 				data-ad-format={AdFormat}
 				data-full-width-responsive={FullWidthResponsive}
 			/>
-			<Script id="adsbygoogle-start" strategy="lazyOnload">
-				{`(adsbygoogle = window.adsbygoogle || []).push({});`}
-			</Script>
+			<Adsbygoogle NODE_ENV={process.env.NODE_ENV} />
 		</>
 	);
 }
