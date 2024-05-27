@@ -85,7 +85,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
           TESTE_SECRET: ${{ secrets.TESTE_SECRET }}
-          TESTE_VAR: ${{ vars.TESTE_VAR }}
+          NODE_ENV: production
         working-directory: ./docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

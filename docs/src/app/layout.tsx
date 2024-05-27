@@ -2,7 +2,9 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
+import Adsense from "@/components/Adsense";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
 		"Validator",
 		"validate",
 	],
-	verification: { google: "yJrJTI7i4-7ONpiZoFqwmmFvRs_7HLFSSJlFZQPsNtg" },
+	verification: { google: process.env.GOOGLE_SEARCH_CONSOLE_API_KEY },
 };
 
 export default function RootLayout({
@@ -53,18 +55,19 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<head>
-				<meta name="google-adsense-account" content="ca-pub-6190451090444284" />
-				<script
-					async
-					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6190451090444284"
-					crossOrigin="anonymous"
+				<meta
+					name="google-adsense-account"
+					content={process.env.GOOGLE_ADSENSE_CLIENT_ID}
+				/>
+				<Adsense
+					GOOGLE_ADSENSE_CLIENT_ID={process.env.GOOGLE_ADSENSE_CLIENT_ID}
 				/>
 			</head>
 			<body className={inter.className}>
 				<Header />
 				{children}
 				<Footer />
-				<script
+				<Script
 					data-name="BMC-Widget"
 					data-cfasync="false"
 					src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
