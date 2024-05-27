@@ -84,8 +84,9 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
-          TESTE_SECRET: ${{ secrets.TESTE_SECRET }}
           NODE_ENV: production
+          GOOGLE_SEARCH_CONSOLE_API_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_API_KEY }}
+          GOOGLE_ADSENSE_CLIENT_ID: ${{ secrets.GOOGLE_ADSENSE_CLIENT_ID }}
         working-directory: ./docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
