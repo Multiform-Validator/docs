@@ -44,6 +44,43 @@ export const metadata: Metadata = {
 		"validate",
 	],
 	verification: { google: process.env.GOOGLE_SEARCH_CONSOLE_API_KEY },
+	appleWebApp: {
+		title: "Multiform Validator",
+		capable: true,
+		statusBarStyle: "black-translucent",
+	},
+	applicationName: "Multiform Validator",
+	manifest: "/manifest.webmanifest",
+	icons: [
+		{
+			rel: "android-chrome-192x192",
+			url: `${process.env.WEBSITE_URL}/android-chrome-192x192.png`,
+		},
+		{
+			rel: "android-chrome-512x512",
+			url: `${process.env.WEBSITE_URL}/android-chrome-512x512.png`,
+		},
+		{
+			rel: "apple-touch-icon",
+			url: `${process.env.WEBSITE_URL}/apple-touch-icon.png`,
+		},
+		{
+			rel: "favicon-16x16",
+			url: `${process.env.WEBSITE_URL}/favicon-16x16.png`,
+		},
+		{
+			rel: "favicon-32x32",
+			url: `${process.env.WEBSITE_URL}/favicon-32x32.png`,
+		},
+		{
+			rel: "mstile-150x150",
+			url: `${process.env.WEBSITE_URL}/mstile-150x150.png`,
+		},
+		{
+			rel: "safari-pinned-tab",
+			url: `${process.env.WEBSITE_URL}/safari-pinned-tab.svg`,
+		},
+	],
 };
 
 export default function RootLayout({
@@ -52,7 +89,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" dir="ltr">
 			<head>
 				<meta
 					name="google-adsense-account"
