@@ -9,7 +9,8 @@ import { AddBanner } from "@/components/Adsense";
 import MainBg from "@/components/MainBg";
 
 export default function NewsPage() {
-	const GOOGLE_ADSENSE_CLIENT_ID = process.env.GOOGLE_ADSENSE_CLIENT_ID ?? "";
+	const GOOGLE_ADSENSE_CLIENT_ID =
+		process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID ?? "";
 
 	const SlotAd1AndAd2 = "9630566447";
 	const SlotAd3 = "8700628151";
@@ -24,10 +25,15 @@ export default function NewsPage() {
 
 	return (
 		<MainBg>
-			<h1>{GOOGLE_ADSENSE_CLIENT_ID} TESTE</h1>
 			{isClient && (
 				<>
-					<div id="news-page" />
+					<div id="news-page">
+						<AddBanner
+							AdClient={GOOGLE_ADSENSE_CLIENT_ID}
+							AdSlot={SlotAd3}
+							AdFormat="fluid"
+						/>
+					</div>
 				</>
 			)}
 		</MainBg>

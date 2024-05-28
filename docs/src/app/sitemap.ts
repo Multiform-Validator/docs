@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 const hostUrl: string =
-	process.env.WEBSITE_URL ??
+	process.env.NEXT_PUBLIC_WEBSITE_URL ??
 	"https://gabriel-logan.github.io/multiform-validator";
 
 function generateJsMaps(): MetadataRoute.Sitemap {

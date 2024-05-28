@@ -45,7 +45,9 @@ export const metadata: Metadata = {
 		"Validator",
 		"validate",
 	],
-	verification: { google: process.env.GOOGLE_SEARCH_CONSOLE_API_KEY },
+	verification: {
+		google: process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_API_KEY,
+	},
 	appleWebApp: {
 		title: t("Multiform Validator"),
 		capable: true,
@@ -56,31 +58,31 @@ export const metadata: Metadata = {
 	icons: [
 		{
 			rel: "android-chrome-192x192",
-			url: `${process.env.WEBSITE_URL}/android-chrome-192x192.png`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/android-chrome-192x192.png`,
 		},
 		{
 			rel: "android-chrome-512x512",
-			url: `${process.env.WEBSITE_URL}/android-chrome-512x512.png`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/android-chrome-512x512.png`,
 		},
 		{
 			rel: "apple-touch-icon",
-			url: `${process.env.WEBSITE_URL}/apple-touch-icon.png`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/apple-touch-icon.png`,
 		},
 		{
 			rel: "favicon-16x16",
-			url: `${process.env.WEBSITE_URL}/favicon-16x16.png`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/favicon-16x16.png`,
 		},
 		{
 			rel: "favicon-32x32",
-			url: `${process.env.WEBSITE_URL}/favicon-32x32.png`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/favicon-32x32.png`,
 		},
 		{
 			rel: "mstile-150x150",
-			url: `${process.env.WEBSITE_URL}/mstile-150x150.png`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/mstile-150x150.png`,
 		},
 		{
 			rel: "safari-pinned-tab",
-			url: `${process.env.WEBSITE_URL}/safari-pinned-tab.svg`,
+			url: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/safari-pinned-tab.svg`,
 		},
 	],
 };
@@ -95,10 +97,12 @@ export default function RootLayout({
 			<head>
 				<meta
 					name="google-adsense-account"
-					content={process.env.GOOGLE_ADSENSE_CLIENT_ID}
+					content={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID}
 				/>
 				<Adsense
-					GOOGLE_ADSENSE_CLIENT_ID={process.env.GOOGLE_ADSENSE_CLIENT_ID}
+					GOOGLE_ADSENSE_CLIENT_ID={
+						process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID
+					}
 				/>
 			</head>
 			<body className={inter.className}>

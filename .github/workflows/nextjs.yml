@@ -85,10 +85,10 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
           NODE_ENV: production
-          GOOGLE_SEARCH_CONSOLE_API_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_API_KEY }}
-          GOOGLE_ADSENSE_CLIENT_ID: ${{ secrets.GOOGLE_ADSENSE_CLIENT_ID }}
-          WEBSITE_DNS_NAME: ${{ secrets.WEBSITE_DNS_NAME }}
-          WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
+          NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_API_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_API_KEY }}
+          NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID: ${{ secrets.GOOGLE_ADSENSE_CLIENT_ID }}
+          NEXT_PUBLIC_WEBSITE_DNS_NAME: ${{ secrets.WEBSITE_DNS_NAME }}
+          NEXT_PUBLIC_WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
         working-directory: ./docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
