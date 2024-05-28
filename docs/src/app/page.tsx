@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import translation from "@/components/Internationalization";
+import translation, { getBrowserLang } from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 import { merriweather, oswald, playfair, roboto100, sofiaPro } from "@/fonts";
 
 export default function Home() {
+	const browserLang = getBrowserLang();
+
+	console.log("Browser language:", browserLang);
+
 	const t = (text: string) => translation({ text, subject: "HomePage" });
 
 	return (

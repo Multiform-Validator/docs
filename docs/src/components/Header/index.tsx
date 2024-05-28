@@ -8,10 +8,13 @@ import { FaCaretDown } from "react-icons/fa";
 
 import { roboto700 } from "@/fonts";
 
-import translation from "../Internationalization";
+import translation, { getBrowserLang } from "../Internationalization";
 
 export default function Header() {
-	const t = (text: string) => translation({ text, subject: "Header" });
+	const browserLang = getBrowserLang();
+
+	const t = (text: string) =>
+		translation({ text, subject: "Header", language: browserLang });
 
 	const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
