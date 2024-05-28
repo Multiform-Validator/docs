@@ -38,7 +38,7 @@ export function AddBanner({
 				data-ad-format={AdFormat}
 				data-full-width-responsive={FullWidthResponsive}
 			/>
-			<Adsbygoogle NODE_ENV={process.env.NODE_ENV} />
+			<Adsbygoogle NODE_ENV={process.env.NEXT_PUBLIC_NODE_ENV} />
 		</>
 	);
 }
