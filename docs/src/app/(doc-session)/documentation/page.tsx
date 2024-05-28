@@ -4,22 +4,25 @@ import { RiJavascriptFill } from "react-icons/ri";
 
 import javaIcon from "@/assets/icons/java-icon.svg";
 import pythonIcon from "@/assets/icons/python-icon.svg";
+import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 
 export default function DocumentationPage() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationPage" });
+
 	const basePath = "/documentation";
 	return (
 		<MainBg>
 			<section className="p-2">
 				<h1 className="mb-4 mt-8 text-center text-2xl font-bold text-white sm:text-3xl md:text-start md:text-4xl lg:text-center">
-					Documentations Page
+					{t("doc_title")}
 				</h1>
 				<p className="mb-8 text-center text-base text-white sm:text-lg md:text-start lg:text-center">
-					Welcome to the documentation page. Here you can find all the languages
-					that we support and the documentation for each one of them.
+					{t("doc_intro")}
 				</p>
 				<h2 className="mb-12 text-center text-xl font-semibold text-white sm:text-2xl md:text-start lg:text-center">
-					Here&apos;s all the languages that we support
+					{t("doc_subtitle")}
 				</h2>
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
 					<Link
@@ -28,11 +31,9 @@ export default function DocumentationPage() {
 					>
 						<RiJavascriptFill size={64} color="gold" />
 						<h3 className="mb-2 mt-1 text-xl font-semibold text-black">
-							JavaScript
+							{t("doc_js_title")}
 						</h3>
-						<p className="text-black">
-							Here you can find the documentation for the JavaScript language.
-						</p>
+						<p className="text-black">{t("doc_js_text")}</p>
 					</Link>
 					<Link
 						href={`${basePath}/py`}
@@ -40,22 +41,22 @@ export default function DocumentationPage() {
 					>
 						<Image src={pythonIcon} alt="python-icon" />
 						<h3 className="mb-2 mt-1 text-xl font-semibold text-black">
-							Python
+							{t("doc_py_title")}
 						</h3>
-						<p className="text-black">
-							Here you can find the documentation for the Python language.
-						</p>
+						<p className="text-black">{t("doc_py_text")}</p>
 					</Link>
 					<Link
 						href={`${basePath}`}
 						className="mx-auto max-w-96 cursor-pointer rounded border-black bg-white p-4 shadow hover:scale-105 active:scale-100"
 					>
 						<Image src={javaIcon} alt="java-icon" />
-						<h3 className="mb-2 mt-1 text-xl font-semibold text-black">Java</h3>
-						<p className="text-black">
-							Here you can find the documentation for the Java language.
+						<h3 className="mb-2 mt-1 text-xl font-semibold text-black">
+							{t("doc_java_title")}
+						</h3>
+						<p className="text-black">{t("doc_java_text")}</p>
+						<p className="mt-2 text-center text-black">
+							{t("doc_java_coming")}
 						</p>
-						<p className="mt-2 text-center text-black">In coming ...</p>
 					</Link>
 				</div>
 			</section>

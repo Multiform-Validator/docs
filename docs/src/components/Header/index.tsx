@@ -8,7 +8,11 @@ import { FaCaretDown } from "react-icons/fa";
 
 import { roboto700 } from "@/fonts";
 
+import translation from "../Internationalization";
+
 export default function Header() {
+	const t = (text: string) => translation({ text, subject: "Header" });
+
 	const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const path = usePathname();
@@ -23,7 +27,7 @@ export default function Header() {
 				<>
 					<header className="flex h-32 items-center justify-around bg-header md:h-28">
 						<h1 className={`w-44 text-lg text-white ${roboto700.className}`}>
-							Multiform validator
+							{t("header_title")}
 						</h1>
 						<div className="flex md:hidden">
 							<button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -41,7 +45,7 @@ export default function Header() {
 										onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
 										className="flex items-center gap-1 text-white"
 									>
-										Home
+										{t("header_home")}
 										<FaCaretDown size={12} />
 									</button>
 									{isSubMenuOpen && (
@@ -51,7 +55,9 @@ export default function Header() {
 												className="nav-link text-blue-500"
 												href={path === "/" ? "#" : "/"}
 											>
-												{path === "/" ? "You are already here (:" : "Go home"}
+												{path === "/"
+													? t("header_already_here")
+													: t("header_go_home")}
 											</Link>
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
@@ -59,7 +65,7 @@ export default function Header() {
 												target="_blank"
 												href="https://www.buymeacoffee.com/gabriellogan"
 											>
-												buy me a coffee ?
+												{t("header_buy_coffee")}
 											</Link>
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
@@ -67,7 +73,7 @@ export default function Header() {
 												target="_blank"
 												href="https://github.com/gabriel-logan/multiform-validator#readme"
 											>
-												My github
+												{t("header_github")}
 											</Link>
 										</div>
 									)}
@@ -75,12 +81,12 @@ export default function Header() {
 							</li>
 							<li className="nav-item pl-md-0 ml-md-4 ml-0 pl-4">
 								<Link className="nav-link text-white" href="/documentation/">
-									Documentation
+									{t("header_docs")}
 								</Link>
 							</li>
 							<li className="nav-item pl-md-0 ml-md-4 ml-0 pl-4">
 								<Link className="nav-link text-white" href="/info/">
-									Info
+									{t("header_info")}
 								</Link>
 							</li>
 						</ul>
@@ -94,7 +100,7 @@ export default function Header() {
 									onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
 									className="ml-4 cursor-pointer list-disc text-white"
 								>
-									Home
+									{t("header_home")}
 								</li>
 								{isSubMenuOpen && (
 									<div className="absolute left-0 top-full z-10 flex w-52 flex-col gap-2 rounded border-x border-y border-black bg-dropdownMenu p-3">
@@ -103,7 +109,9 @@ export default function Header() {
 											className="text-blue-500"
 											href={path === "/" ? "#" : "/"}
 										>
-											{path === "/" ? "You are already here (:" : "Go home"}
+											{path === "/"
+												? t("header_already_here")
+												: t("header_go_home")}
 										</Link>
 										<Link
 											onClick={() => setIsSubMenuOpen(false)}
@@ -111,7 +119,7 @@ export default function Header() {
 											target="_blank"
 											href="https://www.buymeacoffee.com/gabriellogan"
 										>
-											buy me a coffee ?
+											{t("header_buy_coffee")}
 										</Link>
 										<Link
 											onClick={() => setIsSubMenuOpen(false)}
@@ -119,19 +127,19 @@ export default function Header() {
 											target="_blank"
 											href="https://github.com/gabriel-logan/multiform-validator#readme"
 										>
-											My github
+											{t("header_github")}
 										</Link>
 									</div>
 								)}
 							</div>
 							<li className="mb-2 ml-4 cursor-pointer list-disc text-white">
 								<Link className="nav-link text-white" href="/documentation/">
-									Documentation
+									{t("header_docs")}
 								</Link>
 							</li>
 							<li className="mb-2 ml-4 cursor-pointer list-disc text-white">
 								<Link className="nav-link text-white" href="/info/">
-									Info
+									{t("header_info")}
 								</Link>
 							</li>
 						</ul>

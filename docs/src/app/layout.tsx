@@ -6,15 +6,17 @@ import { Inter } from "next/font/google";
 import Adsense from "@/components/Adsense";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import translation from "@/components/Internationalization";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const t = (text: string) => translation({ text, subject: "HomeLayout" });
+
 export const metadata: Metadata = {
-	title: "Multiform Validator",
-	description:
-		"Multilingual library made for validation, various form fields, such as: email, telephone, password, cpf, cnpj, credit card, magic numbers for image mimetype validation and much more.",
+	title: t("Multiform Validator"),
+	description: t("Description"),
 	authors: { name: "Gabriel Logan", url: "https://github.com/gabriel-logan" },
-	classification: "Validation Library",
+	classification: t("Classification"),
 	generator: "Gabriel Logan",
 	keywords: [
 		"validation",
@@ -45,11 +47,11 @@ export const metadata: Metadata = {
 	],
 	verification: { google: process.env.GOOGLE_SEARCH_CONSOLE_API_KEY },
 	appleWebApp: {
-		title: "Multiform Validator",
+		title: t("Multiform Validator"),
 		capable: true,
 		statusBarStyle: "black-translucent",
 	},
-	applicationName: "Multiform Validator",
+	applicationName: t("Multiform Validator"),
 	manifest: "/manifest.webmanifest",
 	icons: [
 		{
@@ -108,7 +110,7 @@ export default function RootLayout({
 					data-cfasync="false"
 					src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
 					data-id="gabriellogan"
-					data-description="Support me on Buy me a coffee!"
+					data-description={t("Support me on Buy me a coffee")}
 					data-message=""
 					data-color="#5F7FFF"
 					data-position="Right"

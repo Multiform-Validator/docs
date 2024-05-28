@@ -1,0 +1,133 @@
+{
+	"Header": {
+		"header_title": "Multiform validator",
+		"header_home": "Home",
+		"header_already_here": "You are already here (:",
+		"header_go_home": "Go home",
+		"header_buy_coffee": "buy me a coffee ?",
+		"header_github": "My github",
+		"header_docs": "Documentation",
+		"header_info": "Info"
+	},
+	"Footer": {
+		"Home": "Home",
+    "Services": "Services",
+    "About": "About",
+    "Terms": "Terms",
+    "Privacy Policy": "Privacy Policy",
+		"CopyRightMsg": "Multiform validator © 2023 - Gabriel Logan"
+	},
+	"HomePage": {
+		"Welcome": "Welcome to the multiform-validator website",
+		"Intro": "Using my library, you can convert many lines of code into very few lines and as a result you have a cleaner, stronger and safer code, you will have several tools and functions that will do several form validations",
+		"Hello": "Hello",
+		"FollowThe": "Follow the",
+		"Documentation": "Documentation",
+		"ForMoreInfo": "For more information",
+		"SeeTheGithubSourceCode": "See the github source",
+		"SeeTheNpmPage": "See the npm page",
+		"SeeThePypiPage": "See the pypi page",
+		"HelpMsg": "You can also help the programmer by buying a coffee at the link below, thanks in advance (:"
+	},
+	"HomeLayout": {
+		"Title": "Multiform Validator",
+		"Description": "Multilingual library made for validation, various form fields, such as: email, telephone, password, cpf, cnpj, credit card, magic numbers for image mimetype validation and much more.",
+		"Classification": "Validation Library",
+		"Support me on Buy me a coffee": "Support me on Buy me a coffee!"
+	},
+	"About": {
+		"about_title": "Hello, I'm Gabriel Logan",
+		"about_intro": "I consider myself a versatile programmer with a passion for both front-end and back-end development. Crafting exceptional web experiences is what drives me, and I take immense pride in the work I produce.",
+		"about_frontend": "As a front-end developer, I have a keen eye for user experience and interface design. I love transforming creative concepts into visually captivating and interactive web applications using HTML, CSS, and JavaScript. From seamless navigation to smooth animations, I pay attention to every detail to ensure that my front-end projects exude elegance and functionality.",
+		"about_backend": "But my skills don't stop there. I am equally proficient in back-end development, with expertise in languages such as Python, Java, and JavaScript (Node.js). Building robust and secure web applications is my forte, as I understand the intricacies of server-side logic. My solutions are geared towards efficiency, reliability, and scalability, making sure that even during peak times, my applications deliver a smooth user experience.",
+		"about_achievement": "One of my proudest achievements is the creation of a groundbreaking web page that simplifies and speeds up form validation. This ingenious solution is designed to help people and businesses streamline their form validation process. By leveraging my extensive knowledge of web development and incorporating cutting-edge technologies, my page offers a lightning-fast and SUPER efficient way to validate forms. Its user-friendly interface and intuitive functionalities make it an indispensable tool for professionals seeking to enhance their productivity and accuracy in data collection.",
+		"about_creative": "Apart from my technical skills, I thrive as a creative problem solver. I love tackling challenges with an innovative mindset and am always on the lookout for ways to enhance the user experience. My ability to think outside the box and deliver inventive solutions sets me apart as a true leader in the field of web development.",
+		"about_inspiration": "When I'm not engrossed in code, you might find me seeking inspiration in the world around me. Whether I'm exploring the outdoors, immersing myself in art and culture, or engaging in thought-provoking discussions, I draw from a diverse range of experiences that shape my approach to programming and my interactions with colleagues and clients.",
+		"about_conclusion": "In conclusion, I am Gabriel Logan, a passionate programmer who seamlessly weaves front-end and back-end skills to create exceptional web experiences. My innovative mindset, attention to detail, and dedication to efficiency have led me to develop a groundbreaking page that I believe will make a significant impact on the world of form validation. As the digital landscape continues to evolve, I stand at the forefront, ready to embrace new challenges and make a difference through my exceptional work in web development."
+	},
+	"Info": {
+		"info_title": "multiform-validator - Multi Library for Form Field Validation",
+		"info_intro": "Introducing multiform-validator, a powerful Multi Library developed by Gabriel Logan. This versatile library is designed to validate numerous form fields, including email addresses, phone numbers, passwords, CPF (Brazilian individual taxpayer registry numbers), credit card numbers, and more.",
+		"info_ensure": "With multiform-validator, you can ensure that the data submitted through your forms is accurate and secure. Whether you're building a registration form, checkout process, or any data input system, this library has got you covered.",
+		"info_prebuilt_rules": "The multiform-validator library comes with an extensive set of pre-built validation rules and customizable options. You can easily integrate it into your web applications and enjoy the benefits of client-side validation, reducing the number of invalid form submissions and enhancing the overall user experience.",
+		"info_backend": "You can also use the multiform-validator to do validations in your backend, it works for any type of form validation or functions that use javascript, python, so feel free to use it",
+		"info_flexibility": "What sets multiform-validator apart is its flexibility and ease of use. You can effortlessly apply validation rules to different form fields by simply adding a few lines of JavaScript code. Additionally, the library provides informative error messages, guiding users on how to correct their inputs, thereby reducing frustration and form abandonment rates.",
+		"info_performance": "Gabriel Logan takes pride in developing the multiform-validator library with a focus on performance, efficiency, and reliability. The library is optimized for various browsers, ensuring seamless compatibility for your diverse audience.",
+		"info_conclusion": "So, if you're seeking a comprehensive solution for form field validation, look no further than multiform-validator. Embrace the power of this library, and rest assured that your data collection process will be streamlined, accurate, and secure."
+	},
+	"PrivacyPolices": {
+		"privacy_title": "Privacy Policies - Your Data is Safe with Us",
+		"privacy_intro": "At Gabriel Logan Web Services, we take your privacy seriously. We want to assure you that we do not collect any data on our website, and we do not use any data through the \"multiform-validator\" library. Your information remains entirely confidential, and your privacy is paramount to us.",
+		"privacy_no_personal_data": "When you visit our website, rest assured that no personal data, such as your name, email address, or contact information, is gathered or stored. We believe in providing you with a safe and anonymous browsing experience.",
+		"validator_local": "The \"multiform-validator\" library is designed to validate form fields on your web applications without accessing or transmitting any data to external servers. All validation occurs locally within your browser, ensuring that your sensitive information never leaves your device.",
+		"validator_secure": "We understand the importance of data security, and that's why we have meticulously developed the \"multiform-validator\" library to be 100% secure. Your data remains under your control, and we do not have access to any information processed by the library.",
+		"privacy_trust": "Your trust is valuable to us, and we want you to feel confident in using our services and the \"multiform-validator\" library. Our commitment to your privacy is unwavering, and we will continue to prioritize the security and protection of your data in all aspects of our work.",
+		"privacy_questions": "If you have any questions or concerns about our privacy policies or the use of the \"multiform-validator\" library, please don't hesitate to contact us. We are here to address any inquiries and ensure your peace of mind.",
+		"privacy_thanks": "Thank you for choosing Gabriel Logan Web Services. We look forward to providing you with exceptional solutions while safeguarding your privacy every step of the way."
+	},
+	"Terms": {
+		"Terms and Conditions": "Terms and Conditions",
+		"Welcome to Gabriel Logan Web Services. By using this website, you agree to the following terms and conditions:": "Welcome to Gabriel Logan Web Services. By using this website, you agree to the following terms and conditions:",
+		"The content provided on this website is for general information purposes only, and we make no warranties or representations regarding its accuracy or completeness.": "The content provided on this website is for general information purposes only, and we make no warranties or representations regarding its accuracy or completeness.",
+		"We use the \"multiform-validator\" library, licensed under the MIT License, to enhance form field validation. However, we are not responsible for its usage or any consequences resulting from third-party use of the library.": "We use the \"multiform-validator\" library, licensed under the MIT License, to enhance form field validation. However, we are not responsible for its usage or any consequences resulting from third-party use of the library.",
+		"We do not collect any personal data through this website, and your privacy is important to us.": "We do not collect any personal data through this website, and your privacy is important to us.",
+		"Unauthorized use of this website is strictly prohibited.": "Unauthorized use of this website is strictly prohibited.",
+		"Your use of this website and any disputes arising are subject to the laws of [Your Country/Region].": "Your use of this website and any disputes arising are subject to the laws of [Your Country/Region].",
+		"Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us.": "Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us."
+	},
+	"Manifest": {
+		"Name": "Multiform Validator - Your Multilingual Validation Library",
+		"ShortName": "Multiform Validator",
+		"Description": "Multilingual library made for validation, various form fields, such as: email, telephone, password, cpf, cnpj, credit card, magic numbers for image mimetype validation and much more."
+	},
+	"NotFound": {
+			"Msg": "This page could not be found.",
+			"Status": "404"
+	},
+	"DocumentationLayout": {
+		"Documentation": "Documentation",
+		"Documentation for the Multiform Validator library.": "Documentation for the Multiform Validator library."
+	},
+	"DocumentationPage": {
+		"doc_title": "Documentations Page",
+		"doc_intro": "Welcome to the documentation page. Here you can find all the languages that we support and the documentation for each one of them.",
+		"doc_subtitle": "Here's all the languages that we support",
+		"doc_js_title": "JavaScript",
+		"doc_js_text": "Here you can find the documentation for the JavaScript language.",
+		"doc_py_title": "Python",
+		"doc_py_text": "Here you can find the documentation for the Python language.",
+		"doc_java_title": "Java",
+		"doc_java_text": "Here you can find the documentation for the Java language.",
+		"doc_java_coming": "In coming ..."
+	},
+	"SidebarWrapperJs": {
+		"Documentation": "Documentation",
+		"Home": "Home"
+	},
+	"DocumentationPython": {
+    "Back to home": "Back to home",
+    "Installation": "Installation",
+    "Install the package using pip: ": "Install the package using pip: ",
+    "Methods": "Methods",
+    "All params with default values are optional.": "All params with default values are optional."
+  },
+	"DocumentationJs": {
+		"Back to home page": "Back to home page",
+		"Official documentation": "Official documentation",
+		"Welcome Introduction Text": "Welcome to the main page of Multiform Validator! Here, you will find detailed documentation for various functions provided by Multiform Validator, a useful JavaScript library for data validation. Each function is designed to assist in validating different types of data, making your code more robust and secure. Multiform Validator consists of a series of specialized functions that allow you to validate various data types, such as emails, passwords, names, surnames, passport numbers, phone numbers, and more. Each function has configurable parameters and provides customizable error messages to suit your project's needs. On each documentation page, you will find a comprehensive description of the function, including its purpose, accepted parameters, and usage examples. Additionally, you will have access to details about default error messages and how to customize them to fit your application. By using Multiform Validator, you can ensure that user input in your forms is correct and compliant with the established rules. This validation is essential to prevent issues such as invalid entries, corrupted data, or security vulnerabilities. We are continuously working to enhance and expand Multiform Validator with new features and improvements to make it an even more powerful and flexible tool for your validation needs. We hope that these documentations prove to be helpful and simplify the usage of Multiform Validator in your projects. Feel free to explore the various available functions and do not hesitate to reach out to us if you have any questions or suggestions. Thank you for choosing Multiform Validator as your data validation tool, and we wish you success in your projects! Multiform Validator Team",
+		"This npm package provides JavaScript functions to validate various forms fields.": "This npm package provides JavaScript functions to validate various forms fields.",
+		"If you want to help me, you can buy me a coffee (:": "If you want to help me, you can buy me a coffee (:",
+		"INFO: ": "INFO: ",
+		"FirstInfoText": "All functions that have the name \"validate\" return an object with two properties, isValid: true | false and errorMsg: 'String with errors'",
+		"SecondInfoText": "The remaining ones can return true|false|string|array, look at the doc for each one",
+		"Feel free to find bugs Text Msg": "Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!",
+		"Example of use with CDN": "Example of use with CDN",
+		"Installation": "Installation",
+		"Data Validator": "Data Validator",
+		"This package contains various modules for validating different types of data. Below are the available validation modules:": "This package contains various modules for validating different types of data. Below are the available validation modules:",
+		"Available Validation Modules": "Available Validation Modules",
+		"if you prefer, you can use importing as:": "if you prefer, you can use importing as:",
+		"Feel free to explore msg": "Feel free to explore the various functions and experiment with different inputs to understand their behavior. If you encounter any issues or have suggestions, don't hesitate to reach out to me. Your feedback is valuable and helps improve the package. Happy coding!",
+		"By - Gabriel Logan": "By - Gabriel Logan"
+	}
+}

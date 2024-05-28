@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import translation from "@/components/Internationalization";
+
 export default function SidebarWrapper() {
+	const t = (text: string) =>
+		translation({ text, subject: "SidebarWrapperJs" });
+
 	const path = usePathname();
 	const basePath = "/documentation/js/functions";
 	return (
@@ -10,14 +15,14 @@ export default function SidebarWrapper() {
 				className={`mb-6 mt-2 rounded p-2 text-center text-white ${path === "/documentation/js" && "bg-hoverLi"}`}
 			>
 				<Link className="font-light hover:font-medium" href="/documentation/js">
-					Documentation
+					{t("Documentation")}
 				</Link>
 			</li>
 			<li
 				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/home` && "bg-hoverLi"}`}
 			>
 				<Link className="font-extralight hover:font-normal" href="/">
-					Home
+					{t("Home")}
 				</Link>
 			</li>
 			<li

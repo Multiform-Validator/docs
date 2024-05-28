@@ -3,12 +3,17 @@ import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+import translation from "@/components/Internationalization";
+
 export default function DocumentationPagePy() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationPython" });
+
 	return (
 		<div className="min-h-screen bg-gray-800 p-6 text-white">
 			<h1 className="mb-4 text-4xl font-bold">Python Doc</h1>
 			<Link href="/" className="text-blue-500 hover:underline">
-				Back to home
+				{t("Back to home")}
 			</Link>
 			<p className="mb-6 mt-6 flex gap-2">
 				<a href="https://badge.fury.io/py/multiform-validator" target="_blank">
@@ -43,8 +48,8 @@ export default function DocumentationPagePy() {
 				</a>
 			</p>
 			<div className="mt-8">
-				<h2 className="mb-2 text-3xl font-semibold">Installation</h2>
-				<p className="mb-2 text-lg">Install the package using pip:</p>
+				<h2 className="mb-2 text-3xl font-semibold">{t("Installation")}</h2>
+				<p className="mb-2 text-lg">{t("Install the package using pip: ")}</p>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
 					pip install multiform-validator
 				</SyntaxHighlighter>
@@ -64,7 +69,7 @@ export default function DocumentationPagePy() {
 				</SyntaxHighlighter>
 			</div>
 			<div className="mb-4 mt-8">
-				<h1 className="mb-2 text-3xl font-semibold">Methods</h1>
+				<h1 className="mb-2 text-3xl font-semibold">{t("Methods")}</h1>
 				<div className="mb-8">
 					<h2 className="text-lg">isEmail: </h2>
 					<SyntaxHighlighter language="python" style={a11yDark}>
@@ -169,7 +174,7 @@ print(isValidImage(file_buffer)) # True or False`}
 			</div>
 			<div>
 				<h1 className="text-3xl font-semibold">Functions signature</h1>
-				<p>All params with default values are optional.</p>
+				<p>{t("All params with default values are optional.")}</p>
 				<SyntaxHighlighter language="python" style={a11yDark}>
 					{`def isEmail(email: str) -> bool:
     pass

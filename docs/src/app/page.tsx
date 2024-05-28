@@ -1,33 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 import { merriweather, oswald, playfair, roboto100, sofiaPro } from "@/fonts";
 
 export default function Home() {
+	const t = (text: string) => translation({ text, subject: "HomePage" });
+
 	return (
 		<MainBg>
 			<h1
 				className={`mb-6 mt-28 p-2 text-center text-4xl font-semibold text-white ${oswald.className}`}
 			>
-				Welcome to the multiform-validator website
+				{t("Welcome")}
 			</h1>
 			<p className={`mb-4 text-center text-white ${merriweather.className}`}>
-				Using my library, you can convert many lines of code into very few lines
-				and as a result you have a cleaner, stronger and safer code, you will
-				have several tools and functions that will do several form validations
+				{t("Intro")}
 			</p>
 			<h2
 				className={`my-6 mt-14 text-center text-4xl font-semibold text-white ${playfair.className}`}
 			>
-				Hello (:
+				{t("Hello")} (:
 			</h2>
 			<p className={`text-center text-white ${sofiaPro.className}`}>
-				follow the{" "}
+				{t("FollowThe")}{" "}
 				<Link className="text-blue-500 hover:underline" href="/documentation">
-					documentation
+					{t("Documentation").toLowerCase()}
 				</Link>{" "}
-				for more information
+				{t("ForMoreInfo").toLowerCase()}
 			</p>
 			<div className="my-7 flex w-48 flex-col items-center justify-center gap-6 self-center">
 				<Link
@@ -36,7 +37,7 @@ export default function Home() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					See the github source
+					{t("SeeTheGithubSourceCode")}
 				</Link>
 				<Link
 					className="text-blue-500 hover:underline"
@@ -44,7 +45,7 @@ export default function Home() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					See the npm page
+					{t("SeeTheNpmPage")}
 				</Link>
 				<Link
 					className="text-blue-500 hover:underline"
@@ -52,13 +53,12 @@ export default function Home() {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					See the pypi page
+					{t("SeeThePypiPage")}
 				</Link>
 			</div>
 
 			<p className={`mb-6 mt-28 text-center text-white ${roboto100.className}`}>
-				You can also help the programmer by buying a coffee at the link below,
-				thanks in advance (:
+				{t("HelpMsg")}
 			</p>
 
 			<div className="flex justify-center">

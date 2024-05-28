@@ -1,11 +1,14 @@
 import { MetadataRoute } from "next";
 
+import translation from "@/components/Internationalization";
+
 export default function manifest(): MetadataRoute.Manifest {
+	const t = (text: string) => translation({ text, subject: "Manifest" });
+
 	return {
-		name: "Multiform Validator - Your Multilingual Validation Library",
-		short_name: "Multiform Validator",
-		description:
-			"Multilingual library made for validation, various form fields, such as: email, telephone, password, cpf, cnpj, credit card, magic numbers for image mimetype validation and much more.",
+		name: t("Name"),
+		short_name: t("ShortName"),
+		description: t("Description"),
 		start_url: "/",
 		display: "standalone",
 		background_color: "#121212",

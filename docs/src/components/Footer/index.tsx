@@ -6,7 +6,11 @@ import { FaYoutube, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { playfair, sofiaPro } from "@/fonts";
 
+import translation from "../Internationalization";
+
 export default function Footer() {
+	const t = (text: string) => translation({ text, subject: "Footer" });
+
 	const path = usePathname();
 
 	const show =
@@ -41,7 +45,7 @@ export default function Footer() {
 								href="/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								Home
+								{t("Home")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -49,7 +53,7 @@ export default function Footer() {
 								href="/documentation/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								Services
+								{t("Services")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -57,7 +61,7 @@ export default function Footer() {
 								href="/about/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								About
+								{t("About")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -65,7 +69,7 @@ export default function Footer() {
 								href="/terms/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								Terms
+								{t("Terms")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -73,14 +77,14 @@ export default function Footer() {
 								href="/privacity-polices/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								Privacy Policy
+								{t("Privacy Policy")}
 							</Link>
 						</li>
 					</ul>
 					<p
 						className={`mb-0 mt-8 text-center text-sm text-gray-400 ${sofiaPro.className}`}
 					>
-						Multiform validator © 2023 - Gabriel Logan
+						{t("CopyRightMsg")}
 					</p>
 				</footer>
 			)}
