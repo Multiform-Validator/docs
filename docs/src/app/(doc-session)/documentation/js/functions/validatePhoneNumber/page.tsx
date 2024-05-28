@@ -4,8 +4,12 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidatePhoneNumber() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
@@ -13,19 +17,16 @@ export default function ValidatePhoneNumber() {
 			</div>
 			<div className="container-fluid container">
 				<h1 className="title">
-					Phone Number Validation Function Documentation
+					Phone Number Validation {t("Function Documentation")}
 				</h1>
 				<p>
-					The <code>validatePhoneNumber</code> function is used to validate
-					phone numbers. It returns an object with two properties:
-					&apos;isValid&apos; (boolean) and &apos;errorMsg&apos; (string). The
-					&apos;isValid&apos; property will be true if the phone number meets
-					the specified criteria, and &apos;errorMsg&apos; will contain the
-					error message if the phone number is invalid, or it will be null if
-					the phone number is valid.
+					{t("The")} <code>validatePhoneNumber</code>{" "}
+					{t(
+						'Function is used to validate phone numbers. It returns an object with two properties: "isValid" (boolean) and "errorMsg" (string). The "isValid" property will be true if the phone number meets the specified criteria, and "errorMsg" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.',
+					)}
 				</p>
 
-				<h2 className="subtitle">Function Signature</h2>
+				<h2 className="subtitle">{t("Function Signature")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`function validatePhoneNumber(
 	phoneNumber: string,
@@ -33,20 +34,21 @@ export default function ValidatePhoneNumber() {
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
+				<h2 className="subtitle">{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<code>phoneNumber</code> (string) - The phone number to be
-						validated.
+						<code>phoneNumber</code> (string) -{" "}
+						{t("The phone number to be validated.")}
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]) {t("[optional]")} -{" "}
+						{t(
+							"An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default Error Messages</h2>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
 	'Invalid value passed',
@@ -55,7 +57,7 @@ export default function ValidatePhoneNumber() {
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const result1 = validatePhoneNumber('555-123-4567');

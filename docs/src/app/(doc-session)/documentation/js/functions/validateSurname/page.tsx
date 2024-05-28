@@ -4,26 +4,29 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidateSurname() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">Surname Validation Function Documentation</h1>
+				<h1 className="title">
+					Surname Validation {t("Function Documentation")}
+				</h1>
 				<p>
-					The <code>validateSurname</code> function is used to validate
-					surnames. It returns an object with two properties:
-					&apos;isValid&apos; (boolean) and &apos;errorMsg&apos; (string). The
-					&apos;isValid&apos; property will be true if the surname meets the
-					specified criteria, and &apos;errorMsg&apos; will contain the error
-					message if the surname is invalid, or it will be null if the surname
-					is valid.
+					{t("The")} <code>validateSurname</code>{" "}
+					{t(
+						"function is used to validate surnames. It returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string). The 'isValid' property will be true if the surname meets the specified criteria, and 'errorMsg' will contain the error message if the surname is invalid, or it will be null if the surname is valid.",
+					)}
 				</p>
 
-				<h2 className="subtitle">Function Signature</h2>
+				<h2 className="subtitle">{t("Function Signature")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`function validateSurname(
 	surname: string,
@@ -35,27 +38,28 @@ export default function ValidateSurname() {
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
+				<h2 className="subtitle">{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<code>surname</code> (string) - The surname to be validated.
+						<code>surname</code> (string) - {t("The surname to be validated.")}
 					</li>
 					<li>
-						<code>minLength</code> (number) [optional] - The minimum length of
-						the surname. Default is 1.
+						<code>minLength</code> (number) {t("[optional]")} -{" "}
+						{t("The minimum length of the surname. Default is 1.")}
 					</li>
 					<li>
-						<code>maxLength</code> (number) [optional] - The maximum length of
-						the surname. Default is 25.
+						<code>maxLength</code> (number) {t("[optional]")} -{" "}
+						{t("The maximum length of the surname. Default is 25.")}
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]) {t("[optional]")} -{" "}
+						{t(
+							"An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default Error Messages</h2>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
 	'Invalid value passed',
@@ -67,7 +71,7 @@ export default function ValidateSurname() {
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const result1 = validateSurname("Jackson", {
     minLength: 3,

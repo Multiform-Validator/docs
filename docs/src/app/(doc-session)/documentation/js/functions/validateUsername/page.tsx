@@ -4,29 +4,33 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidateUsername() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">Username Validation Function Documentation</h1>
+				<h1 className="title">
+					Username Validation {t("Function Documentation")}
+				</h1>
 				<p>
-					The <code>validateUsername</code> function is used to validate
-					usernames. It returns an object with two properties:
-					&quot;isValid&quot; (boolean) and &quot;errorMsg&quot; (string). The
-					&quot;isValid&quot; property will be true if the username meets the
-					specified criteria, and &quot;errorMsg&quot; will contain the error
-					message if the username is invalid, or it will be null if the username
-					is valid.
+					{t("The")} <code>validateUsername</code>{" "}
+					{t(
+						'function is used to validate usernames. It returns an object with two properties: "isValid" (boolean) and "errorMsg" (string). The "isValid" property will be true if the username meets the specified criteria, and "errorMsg" will contain the error message if the username is invalid, or it will be null if the username is valid.',
+					)}
 				</p>
 
 				<h2 className="subtitle">Import</h2>
 				<p>
-					The function can be imported using ES6 syntax from the
-					&quot;multiform-validator&quot; package:
+					{t(
+						'The function can be imported using ES6 syntax from the "multiform-validator" package:',
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
@@ -34,7 +38,9 @@ export default function ValidateUsername() {
 				</SyntaxHighlighter>
 
 				<p>
-					Alternatively, you can import the function using CommonJS syntax with{" "}
+					{t(
+						"Alternatively, you can import the function using CommonJS syntax with",
+					)}{" "}
 					<code>require</code> (Node.js):
 				</p>
 
@@ -42,7 +48,7 @@ export default function ValidateUsername() {
 					{`const {validateUsername} = require('multiform-validator');`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Function Signature</h2>
+				<h2 className="subtitle">{t("Function Signature")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`interface OptionsParams {
@@ -63,27 +69,33 @@ function validateUsername(
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
+				<h2 className="subtitle">{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<code>username</code> (string) - The username to be validated.
+						<code>username</code> (string) -{" "}
+						{t("The username to be validated.")}
 					</li>
 					<li>
-						<code>minLength</code> (number) [optional] - The minimum length of
-						the username. Default is 1.
+						<code>minLength</code> (number){" "}
+						{t(
+							"[optional] - The minimum length of the username. Default is 1.",
+						)}
 					</li>
 					<li>
-						<code>maxLength</code> (number) [optional] - The maximum length of
-						the username. Default is Infinity.
+						<code>maxLength</code> (number){" "}
+						{t(
+							"[optional] - The maximum length of the username. Default is Infinity.",
+						)}
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]){" "}
+						{t(
+							"[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default Error Messages</h2>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
@@ -97,7 +109,7 @@ function validateUsername(
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const result1 = validateUsername("User999", {

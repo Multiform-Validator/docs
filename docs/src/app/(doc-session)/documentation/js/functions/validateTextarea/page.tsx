@@ -4,21 +4,26 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidateTextarea() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1>validateTextarea Function</h1>
+				<h1>validateTextarea {t("Function Documentation")}</h1>
 				<p>
-					This function is a text area validation utility that checks the
-					validity of a given textarea string based on certain criteria.
+					{t(
+						"This function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.",
+					)}
 				</p>
 
-				<h2>Function Signature</h2>
+				<h2>{t("Function Signature")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`/**
@@ -36,51 +41,54 @@ export default function ValidateTextarea() {
 */`}
 				</SyntaxHighlighter>
 
-				<h2>Parameters</h2>
+				<h2>{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<strong>textarea</strong> (string): The input textarea string to be
-						validated.
+						<strong>textarea</strong> (string):{" "}
+						{t("The input textarea string to be validated.")}
 					</li>
 					<li>
-						<strong>isRequired</strong> (boolean, optional, default: false): A
-						flag to determine if the textarea is required.
+						<strong>isRequired</strong> (boolean, optional, default: false):{" "}
+						{t("A flag to determine if the textarea is required.")}
 					</li>
 					<li>
-						<strong>maxLength</strong> (number, optional, default: 50): The
-						maximum allowed length for the textarea.
+						<strong>maxLength</strong> (number, optional, default: 50):{" "}
+						{t("The maximum allowed length for the textarea.")}
 					</li>
 					<li>
 						<strong>errorMsg</strong> (string array, optional, default:
-						predefined messages): An array of custom error messages for
-						different validation conditions. The array should contain three
-						elements corresponding to different error scenarios. If not
-						provided, default error messages will be used. Default Error
-						Messages:
+						predefined messages):{" "}
+						{t(
+							"An array of custom error messages for different validation conditions. The array should contain three elements corresponding to different error scenarios. If not provided, default error messages will be used. Default Error Messages:",
+						)}
 						<ul>
-							<li>Index 0: &apos;This textarea is too big&apos;</li>
-							<li>Index 1: &apos;Can not be empty&apos;</li>
-							<li>Index 2: &apos;Unknown error&apos;</li>
+							<li>{t('Index 0: "This textarea is too big"')}</li>
+							<li>{t('Index 1: "Can not be empty"')}</li>
+							<li>{t('Index 2: "Unknown error"')}</li>
 						</ul>
 					</li>
 				</ul>
 
-				<h2>Return Value</h2>
+				<h2>{t("Return Value")}</h2>
 				<p>
-					The function returns an object with two properties:
+					{t("The function returns an object with two properties:")}
 					<ul>
 						<li>
-							<strong>isValid</strong> (boolean): Indicates if the textarea is
-							valid based on the given criteria.
+							<strong>isValid</strong> (boolean):{" "}
+							{t(
+								"Indicates if the textarea is valid based on the given criteria.",
+							)}
 						</li>
 						<li>
-							<strong>errorMsg</strong> (string): Contains the corresponding
-							error message, if any, based on the validation result.
+							<strong>errorMsg</strong> (string):{" "}
+							{t(
+								"Contains the corresponding error message, if any, based on the validation result.",
+							)}
 						</li>
 					</ul>
 				</p>
 
-				<h2>Usage Examples</h2>
+				<h2>{t("Usage Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`validateTextarea("Some text content"); // Example 1
@@ -94,9 +102,10 @@ validateTextarea("Very long text...", { isRequired: false, maxLength: 10 }); // 
 				</SyntaxHighlighter>
 
 				<p>
-					<strong>Note:</strong> The examples provided demonstrate how to use
-					the function with different parameters and show the expected return
-					values.
+					<strong>{t("Note:")}</strong>{" "}
+					{t(
+						"The examples provided demonstrate how to use the function with different parameters and show the expected return values.",
+					)}
 				</p>
 			</div>
 		</div>
