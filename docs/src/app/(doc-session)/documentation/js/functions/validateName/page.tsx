@@ -4,24 +4,27 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidateName() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">Name Validation Function Documentation</h1>
+				<h1 className="title">Name Validation {t("Function Documentation")}</h1>
 				<p>
-					The <code>validateName</code> function is used to validate names. It
-					returns an object with two properties: &quot;isValid&quot; (boolean)
-					and &quot;errorMsg&quot; (string). The &quot;errorMsg&quot; property
-					will contain the error message if the name is invalid, or it will be
-					null if the name is valid.
+					{t("The")} <code>validateName</code>{" "}
+					{t(
+						"Function is used to validate names. It returns an object with two properties: 'isValid' (boolean) and 'errorMsg' (string). The 'errorMsg' property will contain the error message if the name is invalid, or it will be null if the name is valid.",
+					)}
 				</p>
 
-				<h2 className="subtitle">Function Signature</h2>
+				<h2 className="subtitle">{t("Function Signature")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`function validateName(
         name: string,
@@ -33,27 +36,32 @@ export default function ValidateName() {
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
+				<h2 className="subtitle">{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<code>name</code> (string) - The name to be validated.
+						<code>name</code> (string) - {t("The name to be validated.")}
 					</li>
 					<li>
-						<code>minLength</code> (number) [optional] - The minimum length
-						allowed for the name. Default value: 1.
+						<code>minLength</code> (number) -{" "}
+						{t(
+							"[optional] The minimum length allowed for the name. Default value: 1.",
+						)}
 					</li>
 					<li>
-						<code>maxLength</code> (number) [optional] - The maximum length
-						allowed for the name. Default value: 20.
+						<code>maxLength</code> (number) -{" "}
+						{t(
+							"[optional] The maximum length allowed for the name. Default value: 20.",
+						)}
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]) -{" "}
+						{t(
+							"[optional] An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default Error Messages</h2>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
@@ -66,7 +74,7 @@ export default function ValidateName() {
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const result1 = validateName("John", {

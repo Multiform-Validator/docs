@@ -4,8 +4,12 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidateBRPhoneNumber() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
@@ -13,21 +17,20 @@ export default function ValidateBRPhoneNumber() {
 			</div>
 			<div className="container-fluid container">
 				<h1 className="title">
-					BR Phone Number Validation Function Documentation
+					BR Phone Number Validation {t("Function Documentation")}
 				</h1>
 				<p>
-					The <code>validateBRPhoneNumber</code> function is used to validate
-					Brazilian phone numbers. It returns an object with two properties:
-					&quot;isValid&quot; (boolean) and &quot;errorMsg&quot; (string). The
-					&quot;errorMsg&quot; property will contain the error message if the
-					phone number is invalid, or it will be null if the phone number is
-					valid.
+					{t("The")} <code>validateBRPhoneNumber</code>{" "}
+					{t(
+						'function is used to validate Brazilian phone numbers. It returns an object with two properties: "isValid" (boolean) and "errorMsg" (string). The "errorMsg" property will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.',
+					)}
 				</p>
 
 				<h2 className="subtitle">Import</h2>
 				<p>
-					The function can be imported using ES6 syntax from the
-					&quot;br-phone-number-validator&quot; package:
+					{t(
+						'The function can be imported using ES6 syntax from the "br-phone-number-validator" package:',
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
@@ -35,7 +38,9 @@ export default function ValidateBRPhoneNumber() {
 				</SyntaxHighlighter>
 
 				<p>
-					Alternatively, you can import the function using CommonJS syntax with{" "}
+					{t(
+						"Alternatively, you can import the function using CommonJS syntax with",
+					)}{" "}
 					<code>require</code> (Node.js):
 				</p>
 
@@ -43,22 +48,23 @@ export default function ValidateBRPhoneNumber() {
 					{`const { validateBRPhoneNumber } = require('multiform-validator');`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
-				<p>The function takes two parameters:</p>
+				<h2 className="subtitle">{t("Parameters")}</h2>
+				<p>{t("The function takes two parameters:")}</p>
 				<ul>
 					<li>
-						<code>phoneNumber</code> (string) - The Brazilian phone number to be
-						validated.
+						<code>phoneNumber</code> (string) -{" "}
+						{t("The Brazilian phone number to be validated.")}
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]){" "}
+						{t(
+							"[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default Error Messages</h2>
-				<p>The default error messages are as follows:</p>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
+				<p>{t("The default error messages are as follows:")}</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
@@ -68,7 +74,7 @@ export default function ValidateBRPhoneNumber() {
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const result1 = validateBRPhoneNumber('(11) 98765-4321');

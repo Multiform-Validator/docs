@@ -4,52 +4,62 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidateEmail() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">Email Validation Function Documentation</h1>
+				<h1 className="title">
+					Email Validation {t("Function Documentation")}
+				</h1>
 				<p>
-					The <code>validateEmail</code> function is used to validate email
-					addresses. It returns an object with two properties:
-					&quot;isValid&quot; (boolean) and &quot;errorMsg&quot; (string). The
-					&quot;errorMsg&quot; property will contain the error message if the
-					email address is invalid, or it will be null if the email address is
-					valid.
+					{t("The")} <code>validateEmail</code>{" "}
+					{t(
+						'function is used to validate email addresses. It returns an object with two properties: "isValid" (boolean) and "errorMsg" (string). The "errorMsg" property will contain the error message if the email address is invalid, or it will be null if the email address is valid.',
+					)}
 				</p>
 
 				<p>
-					What is the difference between <code>validateEmail</code> and{" "}
-					<code>isEmail</code>? isEmail just does simple validations like
-					checking if the string has the formatting of an email like several
-					validators out there, <code>validateEmail</code> does not, it does
-					complex validations and better than that, you can customize the
-					validations passing the information in the parameters
+					{t("What is the difference between")} <code>validateEmail</code>{" "}
+					{t("and")} <code>isEmail</code>?{" "}
+					{t(
+						"isEmail just does simple validations like checking if the string has the formatting of an email like several validators out there,",
+					)}{" "}
+					<code>validateEmail</code>{" "}
+					{t(
+						"does not, it does complex validations and better than that, you can customize the validations passing the information in the parameters.",
+					)}
 				</p>
 
 				<h2 className="subtitle">Import</h2>
 				<p>
-					The function can be imported using ES6 syntax from the
-					&quot;multiform-validator&quot; package:
+					{t(
+						'The function can be imported using ES6 syntax from the "multiform-validator" package:',
+					)}
 				</p>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`import { validateEmail } from 'multiform-validator';`}
+					{`import { validateEmail } from "multiform-validator";`}
 				</SyntaxHighlighter>
 
 				<p>
-					Alternatively, you can import the function using CommonJS syntax with{" "}
+					{t(
+						"Alternatively, you can import the function using CommonJS syntax with",
+					)}{" "}
 					<code>require</code> (Node.js):
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`const { validateEmail } = require('multiform-validator');`}
+					{`const { validateEmail } = require("multiform-validator");`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Function Signature</h2>
+				<h2 className="subtitle">{t("Function Signature")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`interface OptionsParams {
     maxLength?: number;
@@ -76,38 +86,47 @@ function validateEmail(
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
+				<h2 className="subtitle">{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<code>email</code> (string) - The email address to be validated.
+						<code>email</code> (string) -{" "}
+						{t("The email address to be validated.")}
 					</li>
 					<li>
-						<code>maxLength</code> (number) [optional] - The maximum length
-						allowed for the email address. If not provided, the default value is
-						400.
+						<code>maxLength</code> (number){" "}
+						{t(
+							"[optional] - The maximum length allowed for the email address. If not provided, the default value is 400.",
+						)}
 					</li>
 					<li>
-						<code>country</code> (string) [optional] - The country code to check
-						if the email ends with it. If not provided, no country code check
-						will be performed.
+						<code>country</code> (string){" "}
+						{t(
+							"[optional] - The country code to check if the email ends with it. If not provided, no country code check will be performed.",
+						)}
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]){" "}
+						{t(
+							"[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 					<li>
-						<code>validDomains</code> (boolean | string[]) [optional] - This
-						parameter determines whether to check for specific valid email
-						domains or not. If set to <code>true</code>, the function will use a
-						default list of valid domains. If set to <code>false</code>, no
-						domain check will be performed. Alternatively, you can pass an array
-						of custom valid domains to perform the check against a specific
-						list.
+						<code>validDomains</code> (boolean | string[]){" "}
+						{t(
+							"[optional] - This parameter determines whether to check for specific valid email domains or not. If set to",
+						)}{" "}
+						<code>true</code>,{" "}
+						{t(
+							"the function will use a default list of valid domains. If set to",
+						)}{" "}
+						<code>false</code>,{" "}
+						{t(
+							"no domain check will be performed. Alternatively, you can pass an array of custom valid domains to perform the check against a specific list.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default list of valid domains</h2>
+				<h2 className="subtitle">{t("Default list of valid domains")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
 	'@gmail.com',
@@ -124,7 +143,7 @@ function validateEmail(
 ];`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Default Error Messages</h2>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
 	'Invalid value passed',
@@ -136,7 +155,7 @@ function validateEmail(
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const result1: ValidateFunctions = validateEmail("foor@bar.com", {
     maxLength: 30,

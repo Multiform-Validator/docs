@@ -4,36 +4,42 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function ValidatePassword() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">Password Validation Function Documentation</h1>
+				<h1 className="title">
+					Password Validation {t("Function Documentation")}
+				</h1>
 				<p>
-					The <code>validatePassword</code> function is used to validate
-					passwords. It returns an object with two properties:
-					&quot;isValid&quot; (boolean) and &quot;errorMsg&quot; (string). The
-					&quot;isValid&quot; property will be true if the password meets the
-					specified criteria, and &quot;errorMsg&quot; will contain the error
-					message if the password is invalid, or it will be null if the password
-					is valid.
+					{t("The")} <code>validatePassword</code>{" "}
+					{t(
+						'function is used to validate passwords. It returns an object with two properties: "isValid" (boolean) and "errorMsg" (string). The "isValid" property will be true if the password meets the specified criteria, and "errorMsg" will contain the error message if the password is invalid, or it will be null if the password is valid.',
+					)}
 				</p>
 
 				<h2 className="subtitle">Import</h2>
 				<p>
-					The function can be imported using ES6 syntax from the
-					&quot;multiform-validator&quot; package:
+					{t(
+						'The function can be imported using ES6 syntax from the "multiform-validator" package:',
+					)}
 				</p>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`import { validatePassword } from 'multiform-validator';`}
 				</SyntaxHighlighter>
 
 				<p>
-					Alternatively, you can import the function using CommonJS syntax with{" "}
+					{t(
+						"Alternatively, you can import the function using CommonJS syntax with",
+					)}{" "}
 					<code>require</code> (Node.js):
 				</p>
 
@@ -41,7 +47,7 @@ export default function ValidatePassword() {
 					{`const { validatePassword } = require('multiform-validator');`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Function Signature</h2>
+				<h2 className="subtitle">{t("Function Signature")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`interface Options {
     requireUppercase?: boolean;
@@ -80,52 +86,68 @@ function validatePassword(
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
+				<h2 className="subtitle">{t("Parameters")}</h2>
 				<ul>
 					<li>
-						<code>password</code> (string) - The password to be validated.
+						<code>password</code> (string) -{" "}
+						{t("The password to be validated.")}
 					</li>
 					<li>
-						<code>minLength</code> (number) [optional] - The minimum length
-						allowed for the password. Default value: 1.
+						<code>minLength</code> (number) {t("[optional]")} -{" "}
+						{t(
+							"The minimum length allowed for the password. Default value: 1.",
+						)}
 					</li>
 					<li>
-						<code>maxLength</code> (number) [optional] - The maximum length
-						allowed for the password. Default value: Infinity.
+						<code>maxLength</code> (number) {t("[optional]")} -{" "}
+						{t(
+							"The maximum length allowed for the password. Default value: Infinity.",
+						)}
 					</li>
 					<li>
-						<code>options</code> (object) [optional] - An object with the
-						following optional properties:
+						<code>options</code> (object){" "}
+						{t(
+							"[optional] - An object with the following optional properties:",
+						)}
 						<ul>
 							<li>
-								<code>requireUppercase</code> (boolean) - Whether the password
-								requires at least one uppercase letter. Default value: false.
+								<code>requireUppercase</code> (boolean) -{" "}
+								{t(
+									"Whether the password requires at least one uppercase letter. Default value: false.",
+								)}
 							</li>
 							<li>
-								<code>requireSpecialChar</code> (boolean) - Whether the password
-								requires at least one special character{" "}
+								<code>requireSpecialChar</code> (boolean) -{" "}
+								{t(
+									"Whether the password requires at least one special character",
+								)}{" "}
 								{`(e.g., !@#$%^&*(),.?":{}|
 												<>)`}
-								. Default value: false.
+								. {t("Default value: false.")}
 							</li>
 							<li>
-								<code>requireNumber</code> (boolean) - Whether the password
-								requires at least one number. Default value: false.
+								<code>requireNumber</code> (boolean) -{" "}
+								{t(
+									"Whether the password requires at least one number. Default value: false.",
+								)}
 							</li>
 							<li>
-								<code>requireString</code> (boolean) - Whether the password
-								requires at least one letter. Default value: false.
+								<code>requireString</code> (boolean) -{" "}
+								{t(
+									"Whether the password requires at least one letter. Default value: false.",
+								)}
 							</li>
 						</ul>
 					</li>
 					<li>
-						<code>errorMsg</code> (string[]) [optional] - An array of error
-						messages to customize the response. If not provided, the function
-						will use default error messages.
+						<code>errorMsg</code> (string[]){" "}
+						{t(
+							"[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.",
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Default Error Messages</h2>
+				<h2 className="subtitle">{t("Default Error Messages")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
 	'This password is too long',
@@ -138,7 +160,7 @@ function validatePassword(
 ]`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const defaultErrorMsg = [...];
 
