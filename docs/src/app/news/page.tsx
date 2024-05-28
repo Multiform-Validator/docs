@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import "@/css/news.css";
 import { useEffect, useState } from "react";
 
@@ -25,49 +27,11 @@ export default function NewsPage() {
 			{isClient && (
 				<>
 					<div id="news-page">
-						<div className="div-ad div-ad1">
-							<AddBanner
-								AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-								AdSlot={SlotAd1AndAd2}
-							/>
-						</div>
-
-						<div className="div-ad div-ad2">
-							<AddBanner
-								AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-								AdSlot={SlotAd1AndAd2}
-							/>
-						</div>
-
-						<div className="div-ad div-ad3">
-							<AddBanner
-								AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-								AdSlot={SlotAd3}
-								AdFormat="fluid"
-							/>
-						</div>
-
-						<div className="div-ad div-ad4">
-							<AddBanner
-								AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-								AdSlot={SlotAd4}
-								AdFormat="autorelaxed"
-							/>
-						</div>
-
-						<div className="div-ad div-ad5">
-							<AddBanner
-								AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-								AdSlot={SlotAd5AndAd6}
-							/>
-						</div>
-
-						<div className="div-ad div-ad6">
-							<AddBanner
-								AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-								AdSlot={SlotAd5AndAd6}
-							/>
-						</div>
+						<AddBanner
+							AdClient={GOOGLE_ADSENSE_CLIENT_ID}
+							AdSlot={SlotAd3}
+							AdFormat="fluid"
+						/>
 					</div>
 				</>
 			)}
