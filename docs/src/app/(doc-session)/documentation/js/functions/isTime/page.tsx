@@ -4,57 +4,68 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function IsTime() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">isTime Function Documentation</h1>
+				<h1 className="title">isTime {t("Function Documentation")}</h1>
 				<p>
-					The <code>isTime</code> function checks if the input value represents
-					a valid time in the format &quot;hh:mm&quot; or &quot;hh:mm
-					AM/PM&quot; or &quot;hh:mm:ss&quot; or &quot;hh:mm:ss AM/PM&quot;. It
-					returns <code>true</code> if the value matches any of these formats,
-					and <code>false</code> otherwise.
+					{t("The")} <code>isTime</code>{" "}
+					{t(
+						'function checks if the input value represents a valid time in the format "hh:mm" or "hh:mm AM/PM" or "hh:mm:ss" or "hh:mm:ss AM/PM". It returns',
+					)}{" "}
+					<code>true</code>{" "}
+					{t("if the value matches any of these formats, and")}{" "}
+					<code>false</code> {t("otherwise.")}
 				</p>
 
-				<h2 className="subtitle">Import</h2>
+				<h2 className="subtitle">{t("Import")}</h2>
 				<p>
-					The function can be imported using ES6 syntax from the
-					&quot;multiform-validator&quot; package:
-				</p>
-
-				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`import { isTime } from 'multiform-validator';`}
-				</SyntaxHighlighter>
-
-				<p>
-					Alternatively, you can import the function using CommonJS syntax with{" "}
-					<code>require</code> (Node.js):
+					{t(
+						'The function can be imported using ES6 syntax from the "multiform-validator" package:',
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`const { isTime } = require('multiform-validator');`}
+					{`import { isPostalCode } from 'multiform-validator';`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
 				<p>
-					The function takes one parameter, which must be a string representing
-					the time to be checked.
+					{t(
+						"Alternatively, you can import the function using CommonJS syntax with",
+					)}{" "}
+					<code>{t("require")}</code> (Node.js):
+				</p>
+
+				<SyntaxHighlighter language="javascript" style={a11yDark}>
+					{`const { isPostalCode } = require('multiform-validator');`}
+				</SyntaxHighlighter>
+
+				<h2 className="subtitle">{t("Parameters")}</h2>
+
+				<p>
+					{t(
+						"The function takes one parameter, which must be a string representing the time to be checked.",
+					)}
 				</p>
 				<ul>
 					<li>
-						<code>time</code> (string) - The time to be checked for validity. It
-						must be in one of the supported formats: &quot;hh:mm&quot;,
-						&quot;hh:mm AM/PM&quot;, &quot;hh:mm:ss&quot;, or &quot;hh:mm:ss
-						AM/PM&quot;.
+						<code>time</code> (string) -{" "}
+						{t(
+							'The time to be checked for validity. It must be in one of the supported formats: "hh:mm", "hh:mm AM/PM", "hh:mm:ss", or "hh:mm:ss AM/PM".',
+						)}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Examples</h2>
+				<h2 className="subtitle">{t("Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`// Example 1 - Valid time formats
@@ -87,12 +98,14 @@ const result9 = isTime('23:59:61'); // false (invalid second)
 console.log(result9);`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Notes</h2>
+				<h2 className="subtitle">{t("Notes")}</h2>
 				<p>
-					The function uses a regular expression to check if the input time
-					string matches any of the supported time formats. It returns{" "}
-					<code>true</code> if the input value matches any of the supported
-					formats, and <code>false</code> otherwise.
+					{t(
+						"The function uses a regular expression to check if the input time string matches any of the supported time formats. It returns",
+					)}{" "}
+					<code>true</code>{" "}
+					{t("if the input value matches any of the supported formats, and")}{" "}
+					<code>false</code> {t("otherwise.")}
 				</p>
 			</div>
 		</div>

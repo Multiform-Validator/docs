@@ -4,21 +4,27 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function IsValidImage() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid">
-				<h1>How to use the isValidImage function</h1>
+				<h1>{t("How to use the isValidImage function")}</h1>
 				<p>
-					The <code>isValidImage</code> function is used to check whether an
-					image file is valid or not. It accepts a Buffer as an argument.
+					{t("The")} <code>isValidImage</code>{" "}
+					{t(
+						"function is used to check whether an image file is valid or not. It accepts a Buffer as an argument.",
+					)}
 				</p>
 
-				<h2 className="mt-6">Types that are validated</h2>
+				<h2 className="mt-6">{t("Types that are validated")}</h2>
 
 				<ul>
 					<li>jpeg</li>
@@ -28,8 +34,9 @@ export default function IsValidImage() {
 				</ul>
 
 				<p>
-					You can also pass an options object as a second argument to exclude a
-					specific type.
+					{t(
+						"You can also pass an options object as a second argument to exclude a	specific type.",
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
@@ -43,7 +50,7 @@ console.log(isValid);  // true if the image is valid, false otherwise`}
 				</SyntaxHighlighter>
 
 				<p className="mt-4">
-					Passing options to the <code>isValidImage</code>
+					{t("Passing options to the")} <code>isValidImage</code>
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
@@ -56,10 +63,11 @@ const isValid = isValidImage(buffer, { exclude: ['gif'] });
 console.log(isValid);  // true if the image is valid, false otherwise`}
 				</SyntaxHighlighter>
 
-				<h2 className="mt-6">Example Usage with Nestjs and Multer</h2>
+				<h2 className="mt-6">{t("Example Usage with Nestjs and Multer")}</h2>
 				<p>
-					In this example it only allocates 4 bytes for performance reasons, but
-					you can pass the entire file.
+					{t(
+						"In this example it only allocates 4 bytes for performance reasons, but you can pass the entire file.",
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
@@ -81,12 +89,16 @@ if (!isValidImageResult) {
 }`}
 				</SyntaxHighlighter>
 				<p>
-					First, import the <code>isValidImage</code> function from
-					&apos;multiform-validator&apos;. Then, define the path to the image
-					you want to check. Call the <code>isValidImage</code> function with
-					the image path as an argument. The function will return{" "}
-					<code>true</code> if the image is valid and <code>false</code> if it
-					is not.
+					{t("First, import the")} <code>isValidImage</code>{" "}
+					{t(
+						"function from 'multiform-validator'. Then, define the path to the image you want to check. Call the",
+					)}{" "}
+					<code>isValidImage</code>{" "}
+					{t(
+						"function with the image path as an argument. The function will return",
+					)}{" "}
+					<code>true</code> {t("if the image is valid and")} <code>false</code>{" "}
+					{t("if it is not.")}
 				</p>
 			</div>
 		</div>

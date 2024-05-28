@@ -4,21 +4,27 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function IsValidAudio() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid">
-				<h1>How to use the isValidAudio function</h1>
+				<h1>{t("How to use the isValidAudio function")}</h1>
 				<p>
-					The <code>isValidAudio</code> function is used to check whether an
-					audio file is valid or not. It accepts a Buffer as an argument.
+					{t("The")} <code>isValidAudio</code>{" "}
+					{t(
+						"function is used to check whether an audio file is valid or not. It accepts a Buffer as an argument.",
+					)}
 				</p>
 
-				<h2 className="mt-6">Types that are validated</h2>
+				<h2 className="mt-6">{t("Types that are validated")}</h2>
 
 				<ul>
 					<li>mp3</li>
@@ -26,8 +32,9 @@ export default function IsValidAudio() {
 				</ul>
 
 				<p>
-					You can also pass an options object as a second argument to exclude a
-					specific type.
+					{t(
+						"You can also pass an options object as a second argument to exclude a	specific type.",
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
