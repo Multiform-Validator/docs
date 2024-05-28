@@ -24,15 +24,10 @@ export default function NewsPage() {
 
 	return (
 		<MainBg>
+			<h1>{GOOGLE_ADSENSE_CLIENT_ID} TESTE</h1>
 			{isClient && (
 				<>
-					<div id="news-page">
-						<AddBanner
-							AdClient={GOOGLE_ADSENSE_CLIENT_ID}
-							AdSlot={SlotAd3}
-							AdFormat="fluid"
-						/>
-					</div>
+					<div id="news-page" />
 				</>
 			)}
 		</MainBg>
