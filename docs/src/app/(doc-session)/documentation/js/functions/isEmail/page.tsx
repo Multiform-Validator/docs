@@ -5,32 +5,43 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import DrawerComponent from "@/components/Drawer";
+import translation from "@/components/Internationalization";
 
 export default function IsEmail() {
+	const t = (text: string) =>
+		translation({ text, subject: "DocumentationJsFunctions" });
+
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1 className="title">isEmail Function Documentation</h1>
+				<h1 className="title">isEmail {t("Function Documentation")}</h1>
 				<p>
-					The <code>isEmail</code> function checks if the input string is a
-					valid email address. It returns <code>true</code> if the email address
-					is valid and follows the supported format, and <code>false</code>{" "}
-					otherwise.
+					{t("The")} <code>isEmail</code>{" "}
+					{t(
+						"function checks if the input string is a valid email address. It returns",
+					)}{" "}
+					<code>true</code>{" "}
+					{t(
+						"if the email address is valid and follows the supported format, and",
+					)}{" "}
+					<code>false</code> {t("otherwise.")}
 				</p>
 				<p>
-					This function just checks the syntax of the email to see if it&apos;s
-					valid or not, if you need a stronger validation, use{" "}
+					{t(
+						"This function just checks the syntax of the email to see if it's valid or not, if you need a stronger validation, use: ",
+					)}{" "}
 					<Link href="./validateEmail" className="nav-link">
 						<code>validateEmail</code>
 					</Link>
 				</p>
-				<h2 className="subtitle">Import</h2>
+				<h2 className="subtitle">{t("Import")}</h2>
 				<p>
-					The function can be imported using ES6 syntax from the
-					&quot;multiform-validator&quot; package:
+					{t(
+						'The function can be imported using ES6 syntax from the "multiform-validator" package:',
+					)}
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
@@ -38,24 +49,26 @@ export default function IsEmail() {
 				</SyntaxHighlighter>
 
 				<p>
-					Alternatively, you can import the function using CommonJS syntax with{" "}
-					<code>require</code> (Node.js):
+					{t(
+						"Alternatively, you can import the function using CommonJS syntax with",
+					)}{" "}
+					<code>{t("require")}</code> (Node.js):
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`const { isEmail } = require('multiform-validator');`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Parameters</h2>
-				<p>The function takes one parameter:</p>
+				<h2 className="subtitle">{t("Parameters")}</h2>
+				<p>{t("The function takes one parameter:")}</p>
 				<ul>
 					<li>
-						<code>email</code> (string) - The input string representing the
-						email address to validate.
+						<code>email</code> (string) -{" "}
+						{t("The input string representing the	email address to validate.")}
 					</li>
 				</ul>
 
-				<h2 className="subtitle">Example</h2>
+				<h2 className="subtitle">{t("Example")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`// Example - Valid email address
@@ -63,11 +76,13 @@ const result1 = isEmail('foor@bar.com');
 console.log(result1); // true`}
 				</SyntaxHighlighter>
 
-				<h2 className="subtitle">Notes</h2>
+				<h2 className="subtitle">{t("Notes")}</h2>
 				<p>
-					The function expects the input email to be passed as a string. If the
-					input is not a string, it will throw an error. If the email passed is
-					an invalid email, it will return <code>false</code>.
+					{" "}
+					{t(
+						"The function expects the input email to be passed as a string. If the input is not a string, it will throw an error. If the email passed is an invalid email, it will return.",
+					)}{" "}
+					<code>false</code>.
 				</p>
 			</div>
 		</div>

@@ -173,6 +173,56 @@
 		"The function takes one parameter:": "The function takes one parameter:",
 		"The credit card number for which to identify the flag based on the first digits.": "The credit card number for which to identify the flag based on the first digits.",
 		"Example": "Example",
-		"The function expects the credit card number to be passed as a string. It uses the first digits of the card number to identify the card flag and returns the corresponding flag name as a string. If the card flag cannot be identified or the input is not a string, it returns 'Unknown'.": "The function expects the credit card number to be passed as a string. It uses the first digits of the card number to identify the card flag and returns the corresponding flag name as a string. If the card flag cannot be identified or the input is not a string, it returns 'Unknown'."
+		"The function expects the credit card number to be passed as a string. It uses the first digits of the card number to identify the card flag and returns the corresponding flag name as a string. If the card flag cannot be identified or the input is not a string, it returns 'Unknown'.": "The function expects the credit card number to be passed as a string. It uses the first digits of the card number to identify the card flag and returns the corresponding flag name as a string. If the card flag cannot be identified or the input is not a string, it returns 'Unknown'.",
+
+		"function checks if the input string contains only ASCII characters. It returns": "function checks if the input string contains only ASCII characters. It returns",
+		"if the string is composed of ASCII characters, and": "if the string is composed of ASCII characters, and",
+		"otherwise.": "otherwise.",
+		"The input string to check for ASCII characters.": "The input string to check for ASCII characters.",
+		"The function expects the input value to be passed as a string. It checks each character of the string, and if any character has a character code greater than 127 (non-ASCII), the function returns": "The function expects the input value to be passed as a string. It checks each character of the string, and if any character has a character code greater than 127 (non-ASCII), the function returns",
+		"If the input is not a string or an empty string, it throws an error.": "If the input is not a string or an empty string, it throws an error.",
+
+		"function checks if the input string is a valid Base64 string. It returns": "function checks if the input string is a valid Base64 string. It returns",
+		"if the string is a valid Base64, and": "if the string is a valid Base64, and",
+		"The input string to check if it is a valid Base64 string.": "The input string to check if it is a valid Base64 string.",
+		"The function expects the input value to be passed as a string. It checks if the string is a valid Base64 string using a regular expression. If the input is not a string or an empty string, it throws an error.": "The function expects the input value to be passed as a string. It checks if the string is a valid Base64 string using a regular expression. If the input is not a string or an empty string, it throws an error.",
+
+		"function checks if the input string is a valid Brazilian ZIP Code (CEP). It returns": "function checks if the input string is a valid Brazilian ZIP Code (CEP). It returns",
+		"if the CEP is valid, and": "if the CEP is valid, and",
+		"The input string to check if it is a valid Brazilian ZIP Code (CEP).": "The input string to check if it is a valid Brazilian ZIP Code (CEP).",
+		"The function expects the input to be passed as a string.": "The function expects the input to be passed as a string.",
+
+		"function checks if the input string represents a valid credit card number using the Luhn algorithm. It returns": "function checks if the input string represents a valid credit card number using the Luhn algorithm. It returns",
+		"if the credit card number is valid, and": "if the credit card number is valid, and",
+		"The input string representing the credit card number to validate.": "The input string representing the credit card number to validate.",
+		"The function expects the input value to be passed as a string representing a credit card number. It removes any non-digit characters and applies the Luhn algorithm to validate the credit card number. If the input is not a string, the function throws an error.": "The function expects the input value to be passed as a string representing a credit card number. It removes any non-digit characters and applies the Luhn algorithm to validate the credit card number. If the input is not a string, the function throws an error.",
+
+		"function checks if the input string is a valid date.": "function checks if the input string is a valid date.",
+		"The input string representing the date": "The input string representing the date",
+		"The function expects the input value to be passed as a string.": "The function expects the input value to be passed as a string.",
+
+		"function checks if the input string or number represents a valid decimal number. It returns": "function checks if the input string or number represents a valid decimal number. It returns",
+		"if the value is a valid decimal number and follows one of the supported formats, and": "if the value is a valid decimal number and follows one of the supported formats, and",
+		"The input value to check if it represents a valid decimal number.": "The input value to check if it represents a valid decimal number.",
+		"The function expects the input value to be passed as a string or a number representing a decimal number. If the input is not a string or number, or an empty string, the function throws an error. It uses a regular expression to validate decimal numbers, supports both dot (.) and comma (,) as decimal separators, and checks for multiple decimal separators. Additionally, it performs checks for the negative sign to ensure it is only at the beginning of the value.": "The function expects the input value to be passed as a string or a number representing a decimal number. If the input is not a string or number, or an empty string, the function throws an error. It uses a regular expression to validate decimal numbers, supports both dot (.) and comma (,) as decimal separators, and checks for multiple decimal separators. Additionally, it performs checks for the negative sign to ensure it is only at the beginning of the value.",
+
+		"function checks if the input string is a valid email address. It returns": "function checks if the input string is a valid email address. It returns",
+		"if the email address is valid and follows the supported format, and": "if the email address is valid and follows the supported format, and",
+		"This function just checks the syntax of the email to see if it's valid or not, if you need a stronger validation, use: ": "This function just checks the syntax of the email to see if it's valid or not, if you need a stronger validation, use: ",
+		"The input string representing the email address to validate.": "The input string representing the email address to validate.",
+		"The function expects the input email to be passed as a string. If the input is not a string, it will throw an error. If the email passed is an invalid email, it will return.": "The function expects the input email to be passed as a string. If the input is not a string, it will throw an error. If the email passed is an invalid email, it will return.",
+
+		"function checks if the input string is empty or contains only whitespace characters. It returns": "function checks if the input string is empty or contains only whitespace characters. It returns",
+		"if the input string is empty or consists of only whitespace characters, and": "if the input string is empty or consists of only whitespace characters, and",
+		"The input string to check if it is empty or contains only whitespace characters.": "The input string to check if it is empty or contains only whitespace characters.",
+		"The function expects the input value to be passed as a string. If the input is not a string, the function throws a TypeError. It removes any leading and trailing whitespace from the input string using the.": "The function expects the input value to be passed as a string. If the input is not a string, the function throws a TypeError. It removes any leading and trailing whitespace from the input string using the.",
+		"trim()": "trim()",
+		"method and checks if the resulting string is empty (i.e., has a length of 0). If the input string consists of only whitespace characters, the function also returns.": "method and checks if the resulting string is empty (i.e., has a length of 0). If the input string consists of only whitespace characters, the function also returns.",
+		"as it considers such strings to be empty.": "as it considers such strings to be empty.",
+
+		"function checks if the input string is a valid MAC address. It returns": "function checks if the input string is a valid MAC address. It returns",
+		"if the MAC address is valid and follows the supported formats, and": "if the MAC address is valid and follows the supported formats, and",
+		"The input string representing the MAC address to validate. The MAC address can be in the following formats: \"001A2B3C4D5E\", \"00:1A:2B:3C:4D:5E\", or \"00-1A-2B-3C-4D-5E\".": "The input string representing the MAC address to validate. The MAC address can be in the following formats: \"001A2B3C4D5E\", \"00:1A:2B:3C:4D:5E\", or \"00-1A-2B-3C-4D-5E\".",
+		"The function expects the input MAC address to be passed as a string. If the input is not a string, the function throws a TypeError. It removes all non-alphanumeric characters from the input string using a regular expression and checks if the resulting string has a valid length (exactly 12 characters). Then, it uses another regular expression to verify if the cleaned MAC address matches the supported pattern. The supported pattern is a 12-character string consisting of hexadecimal digits (0-9, A-F, a-f), with optional separators (\":\", \"-\") between pairs of hexadecimal digits.": "The function expects the input MAC address to be passed as a string. If the input is not a string, the function throws a TypeError. It removes all non-alphanumeric characters from the input string using a regular expression and checks if the resulting string has a valid length (exactly 12 characters). Then, it uses another regular expression to verify if the cleaned MAC address matches the supported pattern. The supported pattern is a 12-character string consisting of hexadecimal digits (0-9, A-F, a-f), with optional separators (\":\", \"-\") between pairs of hexadecimal digits."
 	}
 }
