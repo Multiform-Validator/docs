@@ -1,6 +1,6 @@
 {
 	"Header": {
-		"header_title": "Multiform validator",
+		"header_title": "Multiform Validator",
 		"header_home": "Home",
 		"header_already_here": "You are already here (:",
 		"header_go_home": "Go home",
@@ -38,8 +38,8 @@
 	"About": {
 		"about_title": "Hello, I'm Gabriel Logan",
 		"about_intro": "I consider myself a versatile programmer with a passion for both front-end and back-end development. Crafting exceptional web experiences is what drives me, and I take immense pride in the work I produce.",
-		"about_frontend": "As a front-end developer, I have a keen eye for user experience and interface design. I love transforming creative concepts into visually captivating and interactive web applications using HTML, CSS, and JavaScript. From seamless navigation to smooth animations, I pay attention to every detail to ensure that my front-end projects exude elegance and functionality.",
-		"about_backend": "But my skills don't stop there. I am equally proficient in back-end development, with expertise in languages such as Python, Java, and JavaScript (Node.js). Building robust and secure web applications is my forte, as I understand the intricacies of server-side logic. My solutions are geared towards efficiency, reliability, and scalability, making sure that even during peak times, my applications deliver a smooth user experience.",
+		"about_frontend": "As a front-end developer, I have a keen eye for user experience and interface design. I love transforming creative concepts into visually captivating and interactive web applications using React and Nextjs with typescript. From seamless navigation to smooth animations, I pay attention to every detail to ensure that my front-end projects exude elegance and functionality.",
+		"about_backend": "But my skills don't stop there. I am equally proficient in back-end development, with expertise in languages such as Python, Java, and JavaScript (Node.js). Building robust and secure web applications is my strong point, as I understand the intricacies of server-side logic. My solutions are geared towards efficiency, reliability, and scalability, making sure that even during peak times, my applications deliver a smooth user experience.",
 		"about_achievement": "One of my proudest achievements is the creation of a groundbreaking web page that simplifies and speeds up form validation. This ingenious solution is designed to help people and businesses streamline their form validation process. By leveraging my extensive knowledge of web development and incorporating cutting-edge technologies, my page offers a lightning-fast and SUPER efficient way to validate forms. Its user-friendly interface and intuitive functionalities make it an indispensable tool for professionals seeking to enhance their productivity and accuracy in data collection.",
 		"about_creative": "Apart from my technical skills, I thrive as a creative problem solver. I love tackling challenges with an innovative mindset and am always on the lookout for ways to enhance the user experience. My ability to think outside the box and deliver inventive solutions sets me apart as a true leader in the field of web development.",
 		"about_inspiration": "When I'm not engrossed in code, you might find me seeking inspiration in the world around me. Whether I'm exploring the outdoors, immersing myself in art and culture, or engaging in thought-provoking discussions, I draw from a diverse range of experiences that shape my approach to programming and my interactions with colleagues and clients.",
@@ -140,7 +140,7 @@
 		"The function can be imported using ES6 syntax from the \"multiform-validator\" package:": "The function can be imported using ES6 syntax from the \"multiform-validator\" package:",
 		"Parameters": "Parameters",
 		"The function takes two parameters:": "The function takes two parameters:",
-		"The CNPJ number to validate.": "The CNPJ number to validate.",
+		"The CNPJ number to be validate.": "The CNPJ number to be validate.",
 		"optional array": "optional array",
 		"A list of custom error messages. If not provided, it uses a default list of error messages.": "A list of custom error messages. If not provided, it uses a default list of error messages.",
 		"Examples": "Examples",
@@ -320,6 +320,7 @@
 		"The Brazilian phone number to be validated.": "The Brazilian phone number to be validated.",
 		"[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.": "[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.",
 		"Default Error Messages": "Default Error Messages",
+		"The function can be imported using ES6 syntax from the \"validateBRPhoneNumber\" package:": "The function can be imported using ES6 syntax from the \"validateBRPhoneNumber\" package:",
 		"The default error messages are as follows:": "The default error messages are as follows:",
 
 		"function is used to validate email addresses. It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"errorMsg\" property will contain the error message if the email address is invalid, or it will be null if the email address is valid.": "function is used to validate email addresses. It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"errorMsg\" property will contain the error message if the email address is invalid, or it will be null if the email address is valid.",

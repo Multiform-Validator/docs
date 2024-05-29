@@ -44,7 +44,7 @@ export default function CnpjIsValid() {
 				<p>{t("The function takes two parameters:")}</p>
 				<ul>
 					<li>
-						<code>cnpj</code> (string) - {t("The CNPJ number to validate.")}
+						<code>cnpj</code> (string) - {t("The CNPJ number to be validate.")}
 					</li>
 					<li>
 						<code>errorMsg</code> ({t("optional array")}) -{" "}

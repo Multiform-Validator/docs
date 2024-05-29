@@ -28,7 +28,7 @@ export default function ValidateEmail() {
 
 				<p>
 					{t("What is the difference between")} <code>validateEmail</code>{" "}
-					{t("and")} <code>isEmail</code>?{" "}
+					{t("and")} <code>isEmail</code> ?{" "}
 					{t(
 						"isEmail just does simple validations like checking if the string has the formatting of an email like several validators out there,",
 					)}{" "}

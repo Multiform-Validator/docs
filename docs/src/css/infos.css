@@ -2,6 +2,7 @@
 #info-section {
   padding: 20px;
   text-align: center;
+  margin-top: 35px;
 }
 #info-section h1 {
   font-size: 36px;
@@ -22,4 +23,28 @@
 }
 #info-section a:hover {
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  #info-section {
+    padding: 12px;
+  }
+  #info-section h1 {
+    font-size: 32px;
+  }
+  #info-section p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  #info-section {
+    padding: 8px;
+  }
+  #info-section h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 480px) {
+  #info-section {
+    padding: 4px;
+  }
 }/*# sourceMappingURL=infos.css.map */

@@ -36,6 +36,7 @@
 #page-content-wrapper .container p {
   line-height: 1.6;
   margin-bottom: 20px;
+  font-size: 1rem;
 }
 #page-content-wrapper .container-fluid p code,
 #page-content-wrapper .container p code {
@@ -79,6 +80,59 @@
   padding: 10px;
   white-space: pre-wrap;
   word-break: break-all;
+}
+@media (max-width: 768px) {
+  #page-content-wrapper .container-fluid,
+  #page-content-wrapper .container {
+    padding: 0 10px;
+  }
+  #page-content-wrapper .container-fluid .title,
+  #page-content-wrapper .container .title {
+    font-size: 2rem;
+  }
+  #page-content-wrapper .container-fluid .subtitle,
+  #page-content-wrapper .container .subtitle {
+    font-size: 1.6rem;
+  }
+  #page-content-wrapper .container-fluid p,
+  #page-content-wrapper .container p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 576px) {
+  #page-content-wrapper .container-fluid,
+  #page-content-wrapper .container {
+    padding: 0 5px;
+  }
+  #page-content-wrapper .container-fluid .title,
+  #page-content-wrapper .container .title {
+    font-size: 1.8rem;
+  }
+  #page-content-wrapper .container-fluid .subtitle,
+  #page-content-wrapper .container .subtitle {
+    font-size: 1.4rem;
+  }
+  #page-content-wrapper .container-fluid p,
+  #page-content-wrapper .container p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  #page-content-wrapper {
+    padding: 5px;
+  }
+  #page-content-wrapper .container-fluid .title,
+  #page-content-wrapper .container .title {
+    font-size: 1.6rem;
+  }
+  #page-content-wrapper .container-fluid .subtitle,
+  #page-content-wrapper .container .subtitle {
+    font-size: 1.2rem;
+  }
+  #page-content-wrapper .container-fluid p,
+  #page-content-wrapper .container p {
+    font-size: 0.7rem;
+  }
 }
 
 .lastLi {

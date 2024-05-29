@@ -40,6 +40,7 @@ $secondary-color: #6c757d;
 		p {
 			line-height: 1.6;
 			margin-bottom: 20px;
+			font-size: 1rem;
 
 			code {
 				padding: 2px 5px;
@@ -83,6 +84,63 @@ $secondary-color: #6c757d;
 			padding: 10px;
 			white-space: pre-wrap;
 			word-break: break-all;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.container-fluid,
+		.container {
+			padding: 0 10px;
+
+			.title {
+				font-size: 2rem;
+			}
+
+			.subtitle {
+				font-size: 1.6rem;
+			}
+
+			p {
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+		.container-fluid,
+		.container {
+			padding: 0 5px;
+
+			.title {
+				font-size: 1.8rem;
+			}
+
+			.subtitle {
+				font-size: 1.4rem;
+			}
+
+			p {
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	@media (max-width: 400px) {
+		padding: 5px;
+
+		.container-fluid,
+		.container {
+			.title {
+				font-size: 1.6rem;
+			}
+
+			.subtitle {
+				font-size: 1.2rem;
+			}
+
+			p {
+				font-size: 0.7rem;
+			}
 		}
 	}
 }

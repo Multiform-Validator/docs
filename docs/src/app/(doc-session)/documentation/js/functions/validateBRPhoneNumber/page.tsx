@@ -29,7 +29,7 @@ export default function ValidateBRPhoneNumber() {
 				<h2 className="subtitle">Import</h2>
 				<p>
 					{t(
-						'The function can be imported using ES6 syntax from the "br-phone-number-validator" package:',
+						'The function can be imported using ES6 syntax from the "validateBRPhoneNumber" package:',
 					)}
 				</p>
 

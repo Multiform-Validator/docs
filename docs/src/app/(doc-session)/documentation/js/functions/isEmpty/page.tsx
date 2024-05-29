@@ -97,8 +97,7 @@ console.log(result6);`}
 					{t(
 						"method and checks if the resulting string is empty (i.e., has a length of 0). If the input string consists of only whitespace characters, the function also returns.",
 					)}{" "}
-					<code>true</code>
-					{t("as it considers such strings to be empty.")}
+					<code>true</code> {t("as it considers such strings to be empty.")}
 				</p>
 			</div>
 		</div>

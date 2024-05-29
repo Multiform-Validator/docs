@@ -34,7 +34,7 @@ export default function ValidateUsername() {
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`import {validateUsername} from 'multiform-validator';`}
+					{`import { validateUsername } from 'multiform-validator';`}
 				</SyntaxHighlighter>
 
 				<p>
@@ -45,7 +45,7 @@ export default function ValidateUsername() {
 				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`const {validateUsername} = require('multiform-validator');`}
+					{`const { validateUsername } = require('multiform-validator');`}
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">{t("Function Signature")}</h2>

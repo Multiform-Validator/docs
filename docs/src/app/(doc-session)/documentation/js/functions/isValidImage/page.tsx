@@ -88,7 +88,7 @@ if (!isValidImageResult) {
     throw new BadRequestException('Invalid image');
 }`}
 				</SyntaxHighlighter>
-				<p>
+				<p className="mt-6">
 					{t("First, import the")} <code>isValidImage</code>{" "}
 					{t(
 						"function from 'multiform-validator'. Then, define the path to the image you want to check. Call the",

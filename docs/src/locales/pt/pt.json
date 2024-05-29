@@ -139,7 +139,7 @@
 		"The function can be imported using ES6 syntax from the \"multiform-validator\" package:": "A função pode ser importada usando a sintaxe ES6 do pacote \"multiform-validator\":",
 		"Parameters": "Parâmetros",
 		"The function takes two parameters:": "A função recebe dois parâmetros:",
-		"The CNPJ number to validate.": "O número de CNPJ a ser validado.",
+		"The CNPJ number to be validate.": "O número de CNPJ a ser validado.",
 		"optional array": "array opcional",
 		"A list of custom error messages. If not provided, it uses a default list of error messages.": "Uma lista de mensagens de erro personalizadas. Se não fornecido, ele usa uma lista padrão de mensagens de erro.",
 		"Examples": "Exemplos",
@@ -318,6 +318,7 @@
     "The Brazilian phone number to be validated.": "O número de telefone brasileiro a ser validado.",
     "[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.": "[opcional] - Um array de mensagens de erro para personalizar a resposta. Se não fornecido, a função usará mensagens de erro padrão.",
     "Default Error Messages": "Mensagens de Erro Padrão",
+		"The function can be imported using ES6 syntax from the \"validateBRPhoneNumber\" package:": "A função pode ser importada usando a sintaxe ES6 do pacote \"validateBRPhoneNumber\":",
     "The default error messages are as follows:": "As mensagens de erro padrão são as seguintes:",
 
     "function is used to validate email addresses. It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"errorMsg\" property will contain the error message if the email address is invalid, or it will be null if the email address is valid.": "A função é usada para validar endereços de e-mail. Ela retorna um objeto com duas propriedades: \"isValid\" (booleano) e \"errorMsg\" (string). A propriedade \"errorMsg\" conterá a mensagem de erro se o endereço de e-mail for inválido, ou será nula se o endereço de e-mail for válido.",

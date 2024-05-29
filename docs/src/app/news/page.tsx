@@ -25,7 +25,6 @@ export default function NewsPage() {
 
 	return (
 		<MainBg>
-			<h1>TESTE: {GOOGLE_ADSENSE_CLIENT_ID}</h1>
 			{isClient && (
 				<>
 					<div id="news-page">

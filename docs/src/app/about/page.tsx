@@ -1,9 +1,12 @@
 import "@/css/infos.css";
-import translation from "@/components/Internationalization";
+import translation, { getBrowserLang } from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 
 export default function AboutPage() {
-	const t = (text: string) => translation({ text, subject: "About" });
+	const browserLang = getBrowserLang();
+
+	const t = (text: string) =>
+		translation({ text, subject: "About", language: browserLang });
 
 	return (
 		<MainBg>

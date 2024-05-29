@@ -16,7 +16,12 @@ export default function ValidateTextarea() {
 				<DrawerComponent />
 			</div>
 			<div className="container-fluid container">
-				<h1>validateTextarea {t("Function Documentation")}</h1>
+				<h1>
+					<p>
+						<code>validateTextarea</code>
+					</p>{" "}
+					{t("Function Documentation")}
+				</h1>
 				<p>
 					{t(
 						"This function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.",
