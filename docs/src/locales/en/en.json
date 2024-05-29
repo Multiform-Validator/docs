@@ -36,6 +36,8 @@
 		"Support me on Buy me a coffee": "Support me on Buy me a coffee!"
 	},
 	"About": {
+		"About_Page": "About Page",
+		"About_Page_Description": "Get to know Gabriel Logan, the creator of the multiform-validator library, and learn about his passion for web development, innovative solutions, and dedication to user experience.",
 		"about_title": "Hello, I'm Gabriel Logan",
 		"about_intro": "I consider myself a versatile programmer with a passion for both front-end and back-end development. Crafting exceptional web experiences is what drives me, and I take immense pride in the work I produce.",
 		"about_frontend": "As a front-end developer, I have a keen eye for user experience and interface design. I love transforming creative concepts into visually captivating and interactive web applications using React and Nextjs with typescript. From seamless navigation to smooth animations, I pay attention to every detail to ensure that my front-end projects exude elegance and functionality.",
@@ -46,6 +48,7 @@
 		"about_conclusion": "In conclusion, I am Gabriel Logan, a passionate programmer who seamlessly weaves front-end and back-end skills to create exceptional web experiences. My innovative mindset, attention to detail, and dedication to efficiency have led me to develop a groundbreaking page that I believe will make a significant impact on the world of form validation. As the digital landscape continues to evolve, I stand at the forefront, ready to embrace new challenges and make a difference through my exceptional work in web development."
 	},
 	"Info": {
+		"Info_Page": "Information Page",
 		"info_title": "multiform-validator - Multi Library for Form Field Validation",
 		"info_intro": "Introducing multiform-validator, a powerful Multi Library developed by Gabriel Logan. This versatile library is designed to validate numerous form fields, including email addresses, phone numbers, passwords, CPF (Brazilian individual taxpayer registry numbers), credit card numbers, and more.",
 		"info_ensure": "With multiform-validator, you can ensure that the data submitted through your forms is accurate and secure. Whether you're building a registration form, checkout process, or any data input system, this library has got you covered.",
@@ -56,6 +59,7 @@
 		"info_conclusion": "So, if you're seeking a comprehensive solution for form field validation, look no further than multiform-validator. Embrace the power of this library, and rest assured that your data collection process will be streamlined, accurate, and secure."
 	},
 	"PrivacyPolices": {
+		"Privacy Policy": "Privacy Policy",
 		"privacy_title": "Privacy Policies - Your Data is Safe with Us",
 		"privacy_intro": "At Gabriel Logan Web Services, we take your privacy seriously. We want to assure you that we do not collect any data on our website, and we do not use any data through the \"multiform-validator\" library. Your information remains entirely confidential, and your privacy is paramount to us.",
 		"privacy_no_personal_data": "When you visit our website, rest assured that no personal data, such as your name, email address, or contact information, is gathered or stored. We believe in providing you with a safe and anonymous browsing experience.",
@@ -73,7 +77,8 @@
 		"We do not collect any personal data through this website, and your privacy is important to us.": "We do not collect any personal data through this website, and your privacy is important to us.",
 		"Unauthorized use of this website is strictly prohibited.": "Unauthorized use of this website is strictly prohibited.",
 		"Your use of this website and any disputes arising are subject to the laws of [Your Country/Region].": "Your use of this website and any disputes arising are subject to the laws of [Your Country/Region].",
-		"Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us.": "Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us."
+		"Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us.": "Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us.",
+		"Terms and Conditions of Multiform Validator library": "Terms and Conditions of Multiform Validator library"
 	},
 	"Manifest": {
 		"Name": "Multiform Validator - Your Multilingual Validation Library",

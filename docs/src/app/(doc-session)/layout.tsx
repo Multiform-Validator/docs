@@ -8,7 +8,10 @@ const t = (text: string) =>
 	translation({ text, subject: "DocumentationLayout" });
 
 export const metadata: Metadata = {
-	title: t("Documentation"),
+	title: {
+		template: `${t("Documentation")} | %s`,
+		default: t("Documentation"),
+	},
 	description: t("Documentation for the Multiform Validator library."),
 };
 

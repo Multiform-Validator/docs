@@ -46,7 +46,7 @@ export default function manifest(): MetadataRoute.Manifest {
 		icons: [
 			{
 				src: "/favicon.ico",
-				sizes: "48x48",
+				sizes: "256x256",
 				type: "image/x-icon",
 			},
 			{
@@ -82,6 +82,10 @@ export default function manifest(): MetadataRoute.Manifest {
 			{
 				src: "/safari-pinned-tab.svg",
 				type: "image/svg+xml",
+			},
+			{
+				src: "/opengraph-image.png",
+				type: "image/png",
 			},
 		],
 	};

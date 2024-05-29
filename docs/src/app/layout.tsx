@@ -13,11 +13,32 @@ const inter = Inter({ subsets: ["latin"] });
 const t = (text: string) => translation({ text, subject: "HomeLayout" });
 
 export const metadata: Metadata = {
-	title: t("Multiform Validator"),
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_WEBSITE_URL ||
+			"https://multiform-validator.3utilities.com",
+	),
+
+	title: {
+		template: `${t("Multiform Validator")} | %s`,
+		default: t("Multiform Validator"),
+	},
+
 	description: t("Description"),
+
 	authors: { name: "Gabriel Logan", url: "https://github.com/gabriel-logan" },
 	classification: t("Classification"),
-	generator: "Gabriel Logan",
+	generator: "Next.js",
+	publisher: "Gabriel Logan",
+	creator: "Gabriel Logan",
+
+	openGraph: {
+		title: t("Multiform Validator"),
+		description: t("Description"),
+		url: process.env.NEXT_PUBLIC_WEBSITE_URL,
+		siteName: t("Multiform Validator"),
+		type: "website",
+	},
+
 	keywords: [
 		"validation",
 		"form",
@@ -45,16 +66,21 @@ export const metadata: Metadata = {
 		"Validator",
 		"validate",
 	],
+
 	verification: {
 		google: process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_API_KEY,
 	},
+
 	appleWebApp: {
 		title: t("Multiform Validator"),
 		capable: true,
 		statusBarStyle: "black-translucent",
 	},
-	applicationName: t("Multiform Validator"),
+
 	manifest: "/manifest.webmanifest",
+
+	category: "technology",
+
 	icons: [
 		{
 			rel: "android-chrome-192x192",

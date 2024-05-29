@@ -1,7 +1,18 @@
 import "@/css/infos.css";
 
+import { Metadata } from "next";
+
 import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
+
+export function generateMetadata(): Metadata {
+	const t = (text: string) => translation({ text, subject: "Terms" });
+
+	return {
+		title: t("Terms and Conditions"),
+		description: t("Terms and Conditions of Multiform Validator library"),
+	};
+}
 
 export default function TermsPage() {
 	const t = (text: string) => translation({ text, subject: "Terms" });

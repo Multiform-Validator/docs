@@ -1,6 +1,17 @@
 import "@/css/infos.css";
+import { Metadata } from "next";
+
 import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
+
+export function generateMetadata(): Metadata {
+	const t = (text: string) => translation({ text, subject: "Info" });
+
+	return {
+		title: t("Info_Page"),
+		description: t("info_title"),
+	};
+}
 
 export default function InfoPage() {
 	const t = (text: string) => translation({ text, subject: "Info" });

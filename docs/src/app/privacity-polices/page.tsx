@@ -1,7 +1,18 @@
 import "@/css/infos.css";
 
+import { Metadata } from "next";
+
 import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
+
+export function generateMetadata(): Metadata {
+	const t = (text: string) => translation({ text, subject: "PrivacyPolices" });
+
+	return {
+		title: t("Privacy Policy"),
+		description: t("privacy_title"),
+	};
+}
 
 export default function PrivacityPolicesPage() {
 	const t = (text: string) => translation({ text, subject: "PrivacyPolices" });
