@@ -143,7 +143,6 @@
 		"function is used to validate a Brazilian CNPJ (National Registry of Legal Entities) number. It returns an object containing the": "function is used to validate a Brazilian CNPJ (National Registry of Legal Entities) number. It returns an object containing the",
 		"and": "and",
 		"properties, indicating whether the CNPJ is valid and, in case of an error, the corresponding error message.": "properties, indicating whether the CNPJ is valid and, in case of an error, the corresponding error message.",
-		"Import": "Import",
 		"The function can be imported using ES6 syntax from the \"multiform-validator\" package:": "The function can be imported using ES6 syntax from the \"multiform-validator\" package:",
 		"Parameters": "Parameters",
 		"The function takes two parameters:": "The function takes two parameters:",
@@ -161,7 +160,6 @@
 		"properties, indicating whether the CPF is valid and, in case of an error, the corresponding error message.": "properties, indicating whether the CPF is valid and, in case of an error, the corresponding error message.",
 		"There are two ways to import the function:": "There are two ways to import the function:",
 		"Using": "Using",
-		"require": "require",
 		"The CPF number to be validated.": "The CPF number to be validated.",
 		"function extracts email addresses from a given text. If the optional": "function extracts email addresses from a given text. If the optional",
 		"parameter is set to": "parameter is set to",
@@ -225,7 +223,6 @@
 		"if the input string is empty or consists of only whitespace characters, and": "if the input string is empty or consists of only whitespace characters, and",
 		"The input string to check if it is empty or contains only whitespace characters.": "The input string to check if it is empty or contains only whitespace characters.",
 		"The function expects the input value to be passed as a string. If the input is not a string, the function throws a TypeError. It removes any leading and trailing whitespace from the input string using the.": "The function expects the input value to be passed as a string. If the input is not a string, the function throws a TypeError. It removes any leading and trailing whitespace from the input string using the.",
-		"trim()": "trim()",
 		"method and checks if the resulting string is empty (i.e., has a length of 0). If the input string consists of only whitespace characters, the function also returns.": "method and checks if the resulting string is empty (i.e., has a length of 0). If the input string consists of only whitespace characters, the function also returns.",
 		"as it considers such strings to be empty.": "as it considers such strings to be empty.",
 

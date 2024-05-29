@@ -30,12 +30,16 @@
     "HelpMsg": "Você também pode ajudar o programador comprando um café no link abaixo, desde já agradeço (:"
 	},
 	"HomeLayout": {
-			"Title": "Validador Multiform",
-			"Description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, telefone, senha, CPF, CNPJ, cartão de crédito, números mágicos para validação de tipo MIME de imagem e muito mais.",
-			"Classification": "Biblioteca de Validação",
-			"Support me on Buy me a coffee": "Apoie-me no Buy me a coffee!"
+    "Title": "Multiform Validator",
+    "Opengraph title": "Multiform Validator - Sua Biblioteca de Validação Multilíngue",
+    "Opengraph description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, imagem, CPF, CNPJ, cartão de crédito, números mágicos e muito mais.",
+    "Description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, telefone, senha, CPF, CNPJ, cartão de crédito, números mágicos para validação de mimetype de imagem e muito mais.",
+    "Classification": "Biblioteca de Validação",
+    "Support me on Buy me a coffee": "Apoie-me no Buy me a coffee!"
 	},
 	"About": {
+		"About_Page": "Página Sobre",
+		"About_Page_Description": "Conheça Gabriel Logan, o criador da biblioteca multiform-validator, e saiba mais sobre sua paixão pelo desenvolvimento web, soluções inovadoras e dedicação à experiência do usuário.",
     "about_title": "Olá, eu sou Gabriel Logan",
     "about_intro": "Me considero um programador versátil com paixão tanto pelo desenvolvimento front-end quanto pelo back-end. Criar experiências web excepcionais é o que me motiva, e tenho muito orgulho do trabalho que produzo.",
     "about_frontend": "Como desenvolvedor front-end, tenho um olhar atento para a experiência do usuário e o design de interface. Adoro transformar conceitos criativos em aplicativos web visualmente cativantes e interativos usando HTML, CSS e JavaScript. Da navegação perfeita às animações suaves, presto atenção em cada detalhe para garantir que meus projetos front-end exibam elegância e funcionalidade.",
@@ -46,6 +50,7 @@
     "about_conclusion": "Em conclusão, sou Gabriel Logan, um programador apaixonado que mescla habilidades front-end e back-end para criar experiências web excepcionais. Minha mentalidade inovadora, atenção aos detalhes e dedicação à eficiência me levaram a desenvolver uma página inovadora que acredito que terá um impacto significativo no mundo da validação de formulários. À medida que o cenário digital continua a evoluir, estou na vanguarda, pronto para abraçar novos desafios e fazer a diferença por meio do meu trabalho excepcional em desenvolvimento web."
 	},
 	"Info": {
+		"Info_Page": "Página de Informações",
     "info_title": "multiform-validator - Biblioteca Multi para Validação de Campos de Formulário",
     "info_intro": "Apresentando multiform-validator, uma poderosa Biblioteca Multi desenvolvida por Gabriel Logan. Esta biblioteca versátil é projetada para validar inúmeros campos de formulário, incluindo endereços de e-mail, números de telefone, senhas, CPF (Cadastro de Pessoa Física), números de cartão de crédito e muito mais.",
     "info_ensure": "Com o multiform-validator, você pode garantir que os dados enviados por meio de seus formulários sejam precisos e seguros. Esteja você criando um formulário de registro, processo de checkout ou qualquer sistema de entrada de dados, esta biblioteca tem tudo o que você precisa.",
@@ -56,6 +61,7 @@
     "info_conclusion": "Portanto, se você está procurando uma solução abrangente para validação de campos de formulário, não procure mais do que o multiform-validator. Aproveite o poder desta biblioteca e tenha a certeza de que seu processo de coleta de dados será simplificado, preciso e seguro."
 	},
 	"PrivacyPolices": {
+		"Privacy Policy": "Política de Privacidade",
     "privacy_title": "Políticas de Privacidade - Seus Dados Estão Seguros Conosco",
     "privacy_intro": "Levamos sua privacidade a sério. Queremos assegurar que não coletamos nenhum dado em nosso site, e não utilizamos nenhum dado através da biblioteca \"multiform-validator\". Suas informações permanecem totalmente confidenciais, e sua privacidade é primordial para nós.",
     "privacy_no_personal_data": "Ao visitar nosso site, fique tranquilo que nenhum dado pessoal, como seu nome, endereço de e-mail ou informações de contato, é coletado ou armazenado. Acreditamos em fornecer uma experiência de navegação segura e anônima para você.",
@@ -73,7 +79,8 @@
     "We do not collect any personal data through this website, and your privacy is important to us.": "Não coletamos nenhum dado pessoal por meio deste site, e sua privacidade é importante para nós.",
     "Unauthorized use of this website is strictly prohibited.": "O uso não autorizado deste site é estritamente proibido.",
     "Your use of this website and any disputes arising are subject to the laws of [Your Country/Region].": "Seu uso deste site e quaisquer disputas que surgirem estão sujeitos às leis de [Seu País/Região].",
-    "Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us.": "Obrigado por visitar nosso site e usar nossos serviços. Se você tiver alguma dúvida ou preocupação, não hesite em nos contatar."
+    "Thank you for visiting our website and using our services. If you have any questions or concerns, please don’t hesitate to contact us.": "Obrigado por visitar nosso site e usar nossos serviços. Se você tiver alguma dúvida ou preocupação, não hesite em nos contatar.",
+		"Terms and Conditions of Multiform Validator library": "Termos e Condições da biblioteca Multiform Validator"
 	},
 	"Manifest": {
     "Name": "Multiform Validator - Sua Biblioteca de Validação Multilíngue",
@@ -165,7 +172,7 @@
 		"(optional boolean | string[]) - Either a boolean value indicating whether to clean after default domains or an array of custom domains to clean after. Default is": "(booleano opcional | string[]) - Um valor booleano indicando se deve limpar após domínios padrão ou uma matriz de domínios personalizados para limpar após. O padrão é",
 		"which means it won't clean the email addresses after default domains ['.br', '.io', '.pt', '.us', '.org', '.com'];. If set to": "o que significa que não limpará os endereços de e-mail após os domínios padrão ['.br', '.io', '.pt', '.us', '.org', '.com'];. Se definido como",
 		"it will clean after default domains. If set to an array of strings, it will clean after the specified custom domains.": "ele limpará após os domínios padrão. Se definido como uma matriz de strings, ele limpará após os domínios personalizados especificados.",
-		"(booleano opcional) - Se definido como": "(booleano opcional) - Se definido como",
+		"(optional boolean) - If set to": "(booleano opcional) - Se definido como",
 		"the function will remove duplicate emails from the output list. If set to": "a função removerá e-mails duplicados da lista de saída. Se definido como",
 		"or not provided, it will keep the duplicate emails in the output list.": "ou não fornecido, ele manterá os e-mails duplicados na lista de saída.",
 		"If no email address is found in the input text, the function will return the string 'No email found'.": "Se nenhum endereço de e-mail for encontrado no texto de entrada, a função retornará a string 'Nenhum e-mail encontrado'.",
