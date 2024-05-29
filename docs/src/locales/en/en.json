@@ -31,6 +31,8 @@
 	},
 	"HomeLayout": {
 		"Title": "Multiform Validator",
+		"Opengraph title": "Multiform Validator - Your Multilingual Validation Library",
+		"Opengraph description": "Multilingual library made for validation, various form fields, such as: email, image, cpf, cnpj, credit card, magic numbers and much more.",
 		"Description": "Multilingual library made for validation, various form fields, such as: email, telephone, password, cpf, cnpj, credit card, magic numbers for image mimetype validation and much more.",
 		"Classification": "Validation Library",
 		"Support me on Buy me a coffee": "Support me on Buy me a coffee!"

@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 	),
 
 	title: {
-		template: `${t("Multiform Validator")} | %s`,
-		default: t("Multiform Validator"),
+		template: `${t("Title")} | %s`,
+		default: t("Title"),
 	},
 
 	description: t("Description"),
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
 	creator: "Gabriel Logan",
 
 	openGraph: {
-		title: t("Multiform Validator"),
-		description: t("Description"),
+		title: t("Opengraph title"),
+		description: t("Opengraph description"),
 		url: process.env.NEXT_PUBLIC_WEBSITE_URL,
-		siteName: t("Multiform Validator"),
+		siteName: t("Title"),
 		type: "website",
 	},
 
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 	},
 
 	appleWebApp: {
-		title: t("Multiform Validator"),
+		title: t("Title"),
 		capable: true,
 		statusBarStyle: "black-translucent",
 	},
