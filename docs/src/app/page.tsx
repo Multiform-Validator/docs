@@ -30,7 +30,7 @@ export default function Home() {
 				</Link>{" "}
 				{t("ForMoreInfo").toLowerCase()}
 			</p>
-			<div className="my-7 flex w-48 flex-col items-center justify-center gap-6 self-center">
+			<div className="my-7 flex w-52 flex-col items-center justify-center gap-6 self-center sm:w-56">
 				<Link
 					className="text-blue-500 hover:underline"
 					href="https://github.com/gabriel-logan/multiform-validator"

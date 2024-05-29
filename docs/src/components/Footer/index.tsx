@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaYoutube, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { playfair, sofiaPro } from "@/fonts";
@@ -9,6 +10,8 @@ import { playfair, sofiaPro } from "@/fonts";
 import translation, { getBrowserLang } from "../Internationalization";
 
 export default function Footer() {
+	const [isClient, setIsClient] = useState(false);
+
 	const browserLang = getBrowserLang();
 
 	const t = (text: string) =>
@@ -20,6 +23,9 @@ export default function Footer() {
 		path.startsWith("/documentation/js") ||
 		path.startsWith("/documentation/py");
 
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
 	return (
 		<>
 			{!show && (
@@ -48,7 +54,7 @@ export default function Footer() {
 								href="/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{t("Home")}
+								{isClient ? t("Home") : "Home"}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -56,7 +62,7 @@ export default function Footer() {
 								href="/documentation/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{t("Services")}
+								{isClient ? t("Services") : "Services"}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -64,7 +70,7 @@ export default function Footer() {
 								href="/about/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{t("About")}
+								{isClient ? t("About") : "About"}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -72,7 +78,7 @@ export default function Footer() {
 								href="/terms/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{t("Terms")}
+								{isClient ? t("Terms") : "Terms"}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
@@ -80,14 +86,16 @@ export default function Footer() {
 								href="/privacity-polices/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{t("Privacy Policy")}
+								{isClient ? t("Privacy Policy") : "Privacy Policy"}
 							</Link>
 						</li>
 					</ul>
 					<p
 						className={`mb-0 mt-8 text-center text-sm text-gray-400 ${sofiaPro.className}`}
 					>
-						{t("CopyRightMsg")}
+						{isClient
+							? t("CopyRightMsg")
+							: "Multiform Validator © 2023 - Gabriel Logan"}
 					</p>
 				</footer>
 			)}
