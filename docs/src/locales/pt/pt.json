@@ -31,7 +31,7 @@
 	},
 	"HomeLayout": {
     "Title": "Multiform Validator",
-    "Opengraph title": "Multiform Validator - Sua Biblioteca de Validação Multilíngue",
+    "Opengraph title": "Multiform Validator - Sua lib de Validação Multilíngue",
     "Opengraph description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, imagem, CPF, CNPJ, cartão de crédito, números mágicos e muito mais.",
     "Description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, telefone, senha, CPF, CNPJ, cartão de crédito, números mágicos para validação de mimetype de imagem e muito mais.",
     "Classification": "Biblioteca de Validação",
