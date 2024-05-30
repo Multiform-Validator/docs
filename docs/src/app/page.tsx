@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Intercepter from "@/components/Intercepter";
 import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 import { merriweather, oswald, playfair, roboto100, sofiaPro } from "@/fonts";
@@ -10,6 +11,7 @@ export default function Home() {
 
 	return (
 		<MainBg>
+			<Intercepter />
 			<h1
 				className={`mb-6 mt-28 p-2 text-center text-4xl font-semibold text-white ${oswald.className}`}
 			>

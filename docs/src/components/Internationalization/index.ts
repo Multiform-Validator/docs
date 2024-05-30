@@ -67,9 +67,9 @@ function portugueseTreatment({ text, subject }: TranslationProps): string {
 	return ptText;
 }
 
-export function getBrowserLang() {
+export function getBrowserLang(): Langs | undefined {
 	if (typeof window !== "undefined") {
-		return navigator.languages;
+		return navigator.languages as unknown as Langs;
 	}
-	return null;
+	return undefined;
 }
