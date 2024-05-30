@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import translation from "@/components/Internationalization";
+import translation, { Langs } from "@/components/Internationalization";
 
-export default function SidebarWrapper({ locale }: { locale?: string }) {
+export default function SidebarWrapper({ locale }: { locale?: Langs }) {
 	const t = (text: string) =>
 		translation({ text, subject: "SidebarWrapperJs", language: locale });
 
