@@ -1,7 +1,7 @@
 import "@/css/infos.css";
 import { Metadata } from "next";
 
-import translation, { getBrowserLang } from "@/components/Internationalization";
+import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 
 export function generateMetadata(): Metadata {
@@ -14,10 +14,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default function AboutPage() {
-	const browserLang = getBrowserLang();
-
-	const t = (text: string) =>
-		translation({ text, subject: "About", language: browserLang });
+	const t = (text: string) => translation({ text, subject: "About" });
 
 	return (
 		<MainBg>
