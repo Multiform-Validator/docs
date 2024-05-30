@@ -8,7 +8,9 @@ import Drawer from "react-modern-drawer";
 
 import SidebarWrapper from "@/components/SidebarWrapper/js";
 
-export default function DrawerComponent({ locale }: { locale?: string }) {
+import { Langs } from "../Internationalization";
+
+export default function DrawerComponent({ locale }: { locale?: Langs }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleDrawer = () => {
 		setIsOpen((prevState) => !prevState);
