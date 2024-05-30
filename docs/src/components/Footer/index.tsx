@@ -7,12 +7,12 @@ import { FaYoutube, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { playfair, sofiaPro } from "@/fonts";
 
-import translation, { getBrowserLang } from "../Internationalization";
+import translation, { Langs, getBrowserLang } from "../Internationalization";
 
 export default function Footer() {
 	const [isClient, setIsClient] = useState(false);
 
-	const browserLang = getBrowserLang();
+	const browserLang = getBrowserLang() as unknown as (Langs | undefined)[];
 
 	const t = (text: string) =>
 		translation({ text, subject: "Footer", language: browserLang });

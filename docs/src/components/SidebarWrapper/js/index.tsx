@@ -5,7 +5,7 @@ import translation, { Langs } from "@/components/Internationalization";
 
 export default function SidebarWrapper({ locale }: { locale?: Langs }) {
 	const t = (text: string) =>
-		translation({ text, subject: "SidebarWrapperJs", language: locale });
+		translation({ text, subject: "SidebarWrapperJs", language: [locale] });
 
 	const route = locale === "pt" ? "/pt/" : "/";
 

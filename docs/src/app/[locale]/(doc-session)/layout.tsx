@@ -3,6 +3,7 @@ import "react-modern-drawer/dist/index.css";
 import type { Metadata } from "next";
 import { setStaticParamsLocale } from "next-international/server";
 
+import { I18nProviderClient } from "@/locales/client";
 import { getScopedI18n } from "@/locales/server";
 
 import { LocaleParams } from "../types/locale";
@@ -30,6 +31,7 @@ type DocumentationLayoutProps = Readonly<{
 
 export default function DocumentationLayout({
 	children,
+	params: { locale },
 }: DocumentationLayoutProps) {
-	return <>{children}</>;
+	return <I18nProviderClient locale={locale}>{children}</I18nProviderClient>;
 }

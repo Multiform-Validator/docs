@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Intercepter from "@/components/Intercepter";
+import Intercepter from "@/components/Interceptor";
 import translation from "@/components/Internationalization";
 import MainBg from "@/components/MainBg";
 import { merriweather, oswald, playfair, roboto100, sofiaPro } from "@/fonts";

@@ -8,12 +8,12 @@ import { FaCaretDown } from "react-icons/fa";
 
 import { roboto700 } from "@/fonts";
 
-import translation, { getBrowserLang } from "../Internationalization";
+import translation, { Langs, getBrowserLang } from "../Internationalization";
 
 export default function Header() {
 	const [isClient, setIsClient] = useState(false);
 
-	const browserLang = getBrowserLang();
+	const browserLang = getBrowserLang() as unknown as (Langs | undefined)[];
 
 	const t = (text: string) =>
 		translation({ text, subject: "Header", language: browserLang });
