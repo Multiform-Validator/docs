@@ -22,9 +22,15 @@ export default function Header() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const path = usePathname();
 
+	const route = path.startsWith("/pt") ? "/pt/" : "/";
+
 	const show =
 		path.startsWith("/documentation/js") ||
-		path.startsWith("/documentation/py");
+		path.startsWith("/documentation/py") ||
+		path.startsWith("/pt/documentation/py") ||
+		path.startsWith("/pt/documentation/js") ||
+		path.startsWith("/en/documentation/js") ||
+		path.startsWith("/en/documentation/py");
 
 	useEffect(() => {
 		setIsClient(true);
@@ -61,9 +67,9 @@ export default function Header() {
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
 												className="nav-link text-blue-500"
-												href={path === "/" ? "#" : "/"}
+												href={path === `${route}` ? "#" : `${route}`}
 											>
-												{path === "/"
+												{path === `${route}`
 													? t("header_already_here")
 													: t("header_go_home")}
 											</Link>
@@ -88,12 +94,15 @@ export default function Header() {
 								</div>
 							</li>
 							<li className="nav-item pl-md-0 ml-md-4 ml-0 pl-4">
-								<Link className="nav-link text-white" href="/documentation/">
+								<Link
+									className="nav-link text-white"
+									href={`${route}documentation`}
+								>
 									{isClient ? t("header_docs") : "Docs"}
 								</Link>
 							</li>
 							<li className="nav-item pl-md-0 ml-md-4 ml-0 pl-4">
-								<Link className="nav-link text-white" href="/info/">
+								<Link className="nav-link text-white" href={`${route}info`}>
 									{isClient ? t("header_info") : "Info"}
 								</Link>
 							</li>
@@ -116,9 +125,9 @@ export default function Header() {
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
 												className="text-blue-500"
-												href={path === "/" ? "#" : "/"}
+												href={path === `${route}` ? "#" : `${route}`}
 											>
-												{path === "/"
+												{path === `${route}`
 													? t("header_already_here")
 													: t("header_go_home")}
 											</Link>
@@ -142,12 +151,15 @@ export default function Header() {
 									)}
 								</div>
 								<li className="mb-2 ml-4 cursor-pointer list-disc text-white">
-									<Link className="nav-link text-white" href="/documentation/">
+									<Link
+										className="nav-link text-white"
+										href={`${route}documentation`}
+									>
 										{t("header_docs")}
 									</Link>
 								</li>
 								<li className="mb-2 ml-4 cursor-pointer list-disc text-white">
-									<Link className="nav-link text-white" href="/info/">
+									<Link className="nav-link text-white" href={`${route}info`}>
 										{t("header_info")}
 									</Link>
 								</li>

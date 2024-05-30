@@ -35,7 +35,8 @@
     "Opengraph description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, imagem, CPF, CNPJ, cartão de crédito, números mágicos e muito mais.",
     "Description": "Biblioteca multilíngue feita para validação de vários campos de formulário, como: email, telefone, senha, CPF, CNPJ, cartão de crédito, números mágicos para validação de mimetype de imagem e muito mais.",
     "Classification": "Biblioteca de Validação",
-    "Support me on Buy me a coffee": "Apoie-me no Buy me a coffee!"
+    "Support me on Buy me a coffee": "Apoie-me no Buy me a coffee!",
+		"Technology": "tecnologia"
 	},
 	"About": {
 		"About_Page": "Página Sobre",
@@ -97,8 +98,8 @@
 	},
 	"DocumentationPage": {
 			"doc_title": "Página de Documentação",
-			"doc_intro": "Bem-vindo à página de documentação. Aqui você pode encontrar todos os idiomas que suportamos e a documentação para cada um deles.",
-			"doc_subtitle": "Aqui estão todos os idiomas que suportamos",
+			"doc_intro": "Bem-vindo à página de documentação. Aqui você pode encontrar todas as linguagens que suportamos e a documentação para cada um deles.",
+			"doc_subtitle": "Aqui estão todos as linguagens que suportamos",
 			"doc_js_title": "JavaScript",
 			"doc_js_text": "Aqui você pode encontrar a documentação para a linguagem JavaScript.",
 			"doc_py_title": "Python",
@@ -116,6 +117,7 @@
     "Installation": "Instalação",
     "Install the package using pip: ": "Instale o pacote usando o pip:",
     "Methods": "Métodos",
+		"Functions signature": "Assinatura das funções",
     "All params with default values are optional.": "Todos os parâmetros com valores padrão são opcionais."
 	},
 	"DocumentationJs": {
@@ -274,6 +276,8 @@
     "The function uses regular expressions to check the input postal code against supported 'countries' postal code formats. It returns": "A função usa expressões regulares para verificar o código postal de entrada contra os formatos de código postal 'countries' suportados. Ela retorna",
     "if the input value matches any of the supported postal code formats, and": "se o valor de entrada corresponde a qualquer um dos formatos de código postal suportados, e",
 
+		"function checks if the input value represents a valid time in the format \"hh:mm\" or \"hh:mm AM/PM\" or \"hh:mm:ss\" or \"hh:mm:ss AM/PM\". It returns": "função verifica se o valor de entrada representa um horário válido no formato \"hh:mm\" ou \"hh:mm AM/PM\" ou \"hh:mm:ss\" ou \"hh:mm:ss AM/PM\". Ela retorna",
+		"The time to be checked for validity. It must be in one of the supported formats: \"hh:mm\", \"hh:mm AM/PM\", \"hh:mm:ss\", or \"hh:mm:ss AM/PM\".": "O horário a ser verificado quanto à validade. Deve estar em um dos formatos suportados: \"hh:mm\", \"hh:mm AM/PM\", \"hh:mm:ss\" ou \"hh:mm:ss AM/PM\".",
 		"if the value matches any of these formats, and": "se o valor corresponde a qualquer um desses formatos, e",
 		"The function takes one parameter, which must be a string representing the time to be checked.": "A função recebe um parâmetro, que deve ser uma string representando o horário a ser verificado.",
 		"The function uses a regular expression to check if the input time string matches any of the supported time formats. It returns": "A função usa uma expressão regular para verificar se a string de horário de entrada corresponde a algum dos formatos de horário suportados. Ela retorna",
@@ -393,11 +397,15 @@
     "Indicates if the textarea is valid based on the given criteria.": "Indica se a área de texto é válida com base nos critérios fornecidos.",
     "Contains the corresponding error message, if any, based on the validation result.": "Contém a mensagem de erro correspondente, se houver, com base no resultado da validação.",
     "This function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.": "Esta função é uma utilidade de validação de área de texto que verifica a validade de uma determinada string de área de texto com base em certos critérios.",
+		"Usage Examples": "Exemplos de Uso",
+		"Note:": "Nota:",
+		"The examples provided demonstrate how to use the function with different parameters and show the expected return values.": "Os exemplos fornecidos demonstram como usar a função com diferentes parâmetros e mostram os valores de retorno esperados.",
 
     "The function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.": "A função é uma utilidade de validação de área de texto que verifica a validade de uma determinada string de área de texto com base em certos critérios.",
     "The username to be validated.": "O nome de usuário a ser validado.",
     "[optional] - The minimum length of the username. Default is 1.": "[opcional] - O comprimento mínimo do nome de usuário. O padrão é 1.",
     "[optional] - The maximum length of the username. Default is Infinity.": "[opcional] - O comprimento máximo do nome de usuário. O padrão é Infinito.",
+		"function is used to validate usernames. It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the username meets the specified criteria, and \"errorMsg\" will contain the error message if the username is invalid, or it will be null if the username is valid.": "A função é usada para validar nomes de usuário. Ela retorna um objeto com duas propriedades: \"isValid\" (booleano) e \"errorMsg\" (string). A propriedade \"isValid\" será verdadeira se o nome de usuário atender aos critérios especificados, e \"errorMsg\" conterá a mensagem de erro se o nome de usuário for inválido, ou será nula se o nome de usuário for válido.",
 
     "function is used to validate US phone numbers. It supports various formats, including \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\", and \"1 (XXX) XXX-XXXX\". It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the phone number is valid, and \"errorMsg\" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.": "A função é usada para validar números de telefone dos EUA. Ela suporta vários formatos, incluindo \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\" e \"1 (XXX) XXX-XXXX\". Ela retorna um objeto com duas propriedades: \"isValid\" (booleano) e \"errorMsg\" (string). A propriedade \"isValid\" será verdadeira se o número de telefone for válido, e \"errorMsg\" conterá a mensagem de erro se o número de telefone for inválido, ou será nula se o número de telefone for válido.",
     "The US phone number to be validated.": "O número de telefone dos EUA a ser validado."

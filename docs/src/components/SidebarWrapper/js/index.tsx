@@ -3,25 +3,30 @@ import { usePathname } from "next/navigation";
 
 import translation from "@/components/Internationalization";
 
-export default function SidebarWrapper() {
+export default function SidebarWrapper({ locale }: { locale?: string }) {
 	const t = (text: string) =>
-		translation({ text, subject: "SidebarWrapperJs" });
+		translation({ text, subject: "SidebarWrapperJs", language: locale });
+
+	const route = locale === "pt" ? "/pt/" : "/";
 
 	const path = usePathname();
-	const basePath = "/documentation/js/functions";
+	const basePath = `${route}documentation/js/functions`;
 	return (
 		<ul className="p-2">
 			<li
 				className={`mb-6 mt-2 rounded p-2 text-center text-white ${path === "/documentation/js" && "bg-hoverLi"}`}
 			>
-				<Link className="font-light hover:font-medium" href="/documentation/js">
+				<Link
+					className="font-light hover:font-medium"
+					href={`${route}documentation/js`}
+				>
 					{t("Documentation")}
 				</Link>
 			</li>
 			<li
 				className={`rounded px-4 py-2 text-white hover:bg-hoverLi ${path === `${basePath}/home` && "bg-hoverLi"}`}
 			>
-				<Link className="font-extralight hover:font-normal" href="/">
+				<Link className="font-extralight hover:font-normal" href={route}>
 					{t("Home")}
 				</Link>
 			</li>

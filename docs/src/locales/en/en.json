@@ -35,7 +35,8 @@
 		"Opengraph description": "Multilingual library made for validation, various form fields, such as: email, image, cpf, cnpj, credit card, magic numbers and much more.",
 		"Description": "Multilingual library made for validation, various form fields, such as: email, telephone, password, cpf, cnpj, credit card, magic numbers for image mimetype validation and much more.",
 		"Classification": "Validation Library",
-		"Support me on Buy me a coffee": "Support me on Buy me a coffee!"
+		"Support me on Buy me a coffee": "Support me on Buy me a coffee!",
+		"Technology": "technology"
 	},
 	"About": {
 		"About_Page": "About Page",
@@ -116,6 +117,7 @@
     "Installation": "Installation",
     "Install the package using pip: ": "Install the package using pip: ",
     "Methods": "Methods",
+		"Functions signature": "Functions signature",
     "All params with default values are optional.": "All params with default values are optional."
   },
 	"DocumentationJs": {
@@ -273,6 +275,8 @@
 		"The function uses regular expressions to check the input postal code against supported 'countries' postal code formats. It returns": "The function uses regular expressions to check the input postal code against supported 'countries' postal code formats. It returns",
 		"if the input value matches any of the supported postal code formats, and": "if the input value matches any of the supported postal code formats, and",
 
+		"function checks if the input value represents a valid time in the format \"hh:mm\" or \"hh:mm AM/PM\" or \"hh:mm:ss\" or \"hh:mm:ss AM/PM\". It returns": "function checks if the input value represents a valid time in the format \"hh:mm\" or \"hh:mm AM/PM\" or \"hh:mm:ss\" or \"hh:mm:ss AM/PM\". It returns",
+		"The time to be checked for validity. It must be in one of the supported formats: \"hh:mm\", \"hh:mm AM/PM\", \"hh:mm:ss\", or \"hh:mm:ss AM/PM\".": "The time to be checked for validity. It must be in one of the supported formats: \"hh:mm\", \"hh:mm AM/PM\", \"hh:mm:ss\", or \"hh:mm:ss AM/PM\".",
 		"if the value matches any of these formats, and": "if the value matches any of these formats, and",
 		"The function takes one parameter, which must be a string representing the time to be checked.": "The function takes one parameter, which must be a string representing the time to be checked.",
 		"The function uses a regular expression to check if the input time string matches any of the supported time formats. It returns": "The function uses a regular expression to check if the input time string matches any of the supported time formats. It returns",
@@ -392,11 +396,15 @@
 		"Indicates if the textarea is valid based on the given criteria.": "Indicates if the textarea is valid based on the given criteria.",
 		"Contains the corresponding error message, if any, based on the validation result.": "Contains the corresponding error message, if any, based on the validation result.",
 		"This function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.": "This function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.",
+		"Usage Examples": "Usage Examples",
+		"Note:": "Note:",
+		"The examples provided demonstrate how to use the function with different parameters and show the expected return values.": "The examples provided demonstrate how to use the function with different parameters and show the expected return values.",
 
 		"The function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.": "The function is a text area validation utility that checks the validity of a given textarea string based on certain criteria.",
 		"The username to be validated.": "The username to be validated.",
 		"[optional] - The minimum length of the username. Default is 1.": "[optional] - The minimum length of the username. Default is 1.",
 		"[optional] - The maximum length of the username. Default is Infinity.": "[optional] - The maximum length of the username. Default is Infinity.",
+		"function is used to validate usernames. It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the username meets the specified criteria, and \"errorMsg\" will contain the error message if the username is invalid, or it will be null if the username is valid.": "function is used to validate usernames. It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the username meets the specified criteria, and \"errorMsg\" will contain the error message if the username is invalid, or it will be null if the username is valid.",
 
 		"function is used to validate US phone numbers. It supports various formats, including \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\", and \"1 (XXX) XXX-XXXX\". It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the phone number is valid, and \"errorMsg\" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.": "function is used to validate US phone numbers. It supports various formats, including \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\", and \"1 (XXX) XXX-XXXX\". It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the phone number is valid, and \"errorMsg\" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.",
 		"The US phone number to be validated.": "The US phone number to be validated."

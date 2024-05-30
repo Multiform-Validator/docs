@@ -1,12 +1,12 @@
 import enJson from "@/locales/en/en.json";
 import ptJson from "@/locales/pt/pt.json";
 
-// type Langs = "en" | "pt";
+export type Langs = "en" | "pt" | "";
 
 interface TranslationProps {
 	text: string;
 	subject?: keyof typeof enJson | "";
-	language?: readonly string[] | null;
+	language?: Langs;
 }
 
 interface Locale {
@@ -15,7 +15,7 @@ interface Locale {
 
 function translation({
 	text,
-	language = null,
+	language = "",
 	subject = "",
 }: TranslationProps): string {
 	if (language) {

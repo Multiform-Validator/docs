@@ -19,9 +19,15 @@ export default function Footer() {
 
 	const path = usePathname();
 
+	const route = path.startsWith("/pt") ? "/pt/" : "/";
+
 	const show =
 		path.startsWith("/documentation/js") ||
-		path.startsWith("/documentation/py");
+		path.startsWith("/documentation/py") ||
+		path.startsWith("/pt/documentation/py") ||
+		path.startsWith("/pt/documentation/js") ||
+		path.startsWith("/en/documentation/js") ||
+		path.startsWith("/en/documentation/py");
 
 	useEffect(() => {
 		setIsClient(true);
@@ -51,7 +57,7 @@ export default function Footer() {
 					<ul className="mb-0 list-none p-0 text-center text-lg leading-6">
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href="/"
+								href={route}
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
 								{isClient ? t("Home") : "Home"}
@@ -59,7 +65,7 @@ export default function Footer() {
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href="/documentation/"
+								href={`${route}documentation/`}
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
 								{isClient ? t("Services") : "Services"}
@@ -67,7 +73,7 @@ export default function Footer() {
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href="/about/"
+								href={`${route}about/`}
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
 								{isClient ? t("About") : "About"}
@@ -75,7 +81,7 @@ export default function Footer() {
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href="/terms/"
+								href={`${route}terms/`}
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
 								{isClient ? t("Terms") : "Terms"}
@@ -83,7 +89,7 @@ export default function Footer() {
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href="/privacity-polices/"
+								href={`${route}privacity-polices/`}
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
 								{isClient ? t("Privacy Policy") : "Privacy Policy"}

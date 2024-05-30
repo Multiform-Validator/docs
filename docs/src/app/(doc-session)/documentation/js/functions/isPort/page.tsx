@@ -92,7 +92,7 @@ console.log(result6);`}
 				<h2 className="subtitle">{t("Notes")}</h2>
 				<p>
 					{t(
-						"agora esse The function first checks if the input value is either a string or a number. If the value is a string, it is converted to an integer using",
+						"The function first checks if the input value is either a string or a number. If the value is a string, it is converted to an integer using",
 					)}{" "}
 					<code>parseInt(value, 10)</code>.{" "}
 					{t(

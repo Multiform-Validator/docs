@@ -8,7 +8,7 @@ import Drawer from "react-modern-drawer";
 
 import SidebarWrapper from "@/components/SidebarWrapper/js";
 
-export default function DrawerComponent() {
+export default function DrawerComponent({ locale }: { locale?: string }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleDrawer = () => {
 		setIsOpen((prevState) => !prevState);
@@ -23,7 +23,7 @@ export default function DrawerComponent() {
 				customIdSuffix="my-drawer"
 			>
 				<section className="hide-scrollbar h-screen overflow-y-auto border-r-2 border-gray-800 bg-drawer-bg-dark">
-					<SidebarWrapper />
+					<SidebarWrapper locale={locale} />
 				</section>
 			</Drawer>
 			<button onClick={toggleDrawer}>
