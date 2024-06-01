@@ -1,13 +1,41 @@
 import { MetadataRoute } from "next";
 
+import { JsFuncTypes } from "@/types/Functions/Javascript";
+import { Langs } from "@/types/Locales";
+
 const hostUrl: string =
 	process.env.NEXT_PUBLIC_WEBSITE_URL ??
-	"https://gabriel-logan.github.io/multiform-validator";
+	"https://multiformvalidator.vercel.app";
+
+const languages: Langs[] = [
+	"en",
+	"pt",
+	"ar",
+	"de",
+	"es",
+	"fr",
+	"it",
+	"ja",
+	"nl",
+	"ru",
+	"tr",
+	"zh",
+];
+
+const ChangeFrequency = {
+	ALWAYS: "always",
+	HOURLY: "hourly",
+	DAILY: "daily",
+	WEEKLY: "weekly",
+	MONTHLY: "monthly",
+	YEARLY: "yearly",
+	NEVER: "never",
+} as const;
 
 function generateJsMaps(): MetadataRoute.Sitemap {
 	const prefix: string = "documentation/js/functions";
 
-	const functions: string[] = [
+	const functions: JsFuncTypes[] = [
 		"cnpjIsValid",
 		"cpfIsValid",
 		"getOnlyEmail",
@@ -44,117 +72,76 @@ function generateJsMaps(): MetadataRoute.Sitemap {
 		"validateUSPhoneNumber",
 	];
 
-	return functions.map((func) => ({
+	const homeMetadata = functions.map((func) => ({
 		url: `${hostUrl}/${prefix}/${func}`,
 		lastModified: new Date(),
-		changeFrequency: "monthly",
+		changeFrequency: ChangeFrequency.MONTHLY,
 		priority: 0.9,
-		alternates: {
-			languages: {
-				en: `${hostUrl}/en/${prefix}/${func}`,
-				pt: `${hostUrl}/pt/${prefix}/${func}`,
-			},
-		},
 	}));
+
+	const alternatesMetadata = functions.flatMap((func) =>
+		languages.map((lang) => ({
+			url: `${hostUrl}/${lang}/${prefix}/${func}`,
+			lastModified: new Date(),
+			changeFrequency: ChangeFrequency.MONTHLY,
+			priority: 0.9,
+		})),
+	);
+
+	const metadata = [...homeMetadata, ...alternatesMetadata];
+
+	return metadata;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-	return [
+function generateBasicMetadata(): MetadataRoute.Sitemap {
+	const homeMetadata: MetadataRoute.Sitemap = [
 		{
 			url: hostUrl,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.5,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en`,
-					pt: `${hostUrl}/pt`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/documentation`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.6,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/documentation`,
-					pt: `${hostUrl}/pt/documentation`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/documentation/py`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.8,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/documentation/py`,
-					pt: `${hostUrl}/pt/documentation/py`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/documentation/js`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 1,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/documentation/js`,
-					pt: `${hostUrl}/pt/documentation/js`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/about`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.6,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/about`,
-					pt: `${hostUrl}/pt/about`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/terms`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.3,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/terms`,
-					pt: `${hostUrl}/pt/terms`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/privacity-polices`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.3,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/privacity-polices`,
-					pt: `${hostUrl}/pt/privacity-polices`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/info`,
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 0.5,
-			alternates: {
-				languages: {
-					en: `${hostUrl}/en/info`,
-					pt: `${hostUrl}/pt/info`,
-				},
-			},
 		},
 		{
 			url: `${hostUrl}/news`,
@@ -162,31 +149,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "monthly",
 			priority: 0.2,
 		},
-		...generateJsMaps(),
 	];
+
+	const alternatesMetadata: MetadataRoute.Sitemap = languages.flatMap(
+		(lang) => [
+			{
+				url: `${hostUrl}/${lang}`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.5,
+			},
+			{
+				url: `${hostUrl}/${lang}/documentation`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.6,
+			},
+			{
+				url: `${hostUrl}/${lang}/documentation/py`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.8,
+			},
+			{
+				url: `${hostUrl}/${lang}/documentation/js`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 1,
+			},
+			{
+				url: `${hostUrl}/${lang}/about`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.6,
+			},
+			{
+				url: `${hostUrl}/${lang}/terms`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.3,
+			},
+			{
+				url: `${hostUrl}/${lang}/privacity-polices`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.3,
+			},
+			{
+				url: `${hostUrl}/${lang}/info`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.5,
+			},
+			{
+				url: `${hostUrl}/${lang}/news`,
+				lastModified: new Date(),
+				changeFrequency: "monthly",
+				priority: 0.2,
+			},
+		],
+	);
+
+	return [...homeMetadata, ...alternatesMetadata];
 }
 
-/**
- * example:
- * 		{
-			url: hostUrl,
-			lastModified: new Date(),
-			changeFrequency: "monthly",
-			priority: 1,
-			alternates: {
-				languages: {
-					pt: `${hostUrl}/pt`,
-				},
-			},
-		},
- */
-
-/**
-info
-documentation
-about
-terms
-privacity-polices
-documentation/py
-documentation/js
-*/
+export default function sitemap(): MetadataRoute.Sitemap {
+	return [...generateBasicMetadata(), ...generateJsMaps()];
+}

@@ -14,5 +14,5 @@ export const { getI18n, getScopedI18n, getStaticParams } = createI18nServer({
 	nl: () => import("./nl/nl.json"),
 	ru: () => import("./ru/ru.json"),
 	tr: () => import("./tr/tr.json"),
-	"zh-Hans": () => import("./zh-Hans/zh-Hans.json"),
+	zh: () => import("./zh-Hans/zh-Hans.json"),
 });

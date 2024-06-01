@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { setStaticParamsLocale } from "next-international/server";
 
 import DrawerComponent from "@/components/Drawer";
 import { getScopedI18n } from "@/locales/server";
@@ -15,9 +16,11 @@ import {
 export default async function DocumentationPageJs({
 	params: { locale },
 }: LocaleParams) {
+	setStaticParamsLocale(locale);
+
 	const scopedT = await getScopedI18n("DocumentationJs");
 	return (
-		<section className="min-h-screen bg-drawer-bg p-8 dark:bg-drawer-bg-dark">
+		<section className="min-h-screen bg-drawer-bg px-3 py-8 sm:px-4 md:px-8 dark:bg-drawer-bg-dark">
 			<div>
 				{/**<!-- Page Content --> */}
 				<div id="page-content-wrapper">

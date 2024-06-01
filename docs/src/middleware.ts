@@ -1,7 +1,9 @@
 import { NextRequest } from "next/server";
 import { createI18nMiddleware } from "next-international/middleware";
 
-const languages = [
+import { Langs } from "./types/Locales";
+
+const languages: Langs[] = [
 	"en",
 	"pt",
 	"ar",
@@ -13,7 +15,7 @@ const languages = [
 	"nl",
 	"ru",
 	"tr",
-	"zh-Hans",
+	"zh",
 ];
 
 const I18nMiddleware = createI18nMiddleware({

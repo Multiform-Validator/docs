@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { setStaticParamsLocale } from "next-international/server";
 
 import MainBg from "@/components/MainBg";
 import { merriweather, oswald, playfair, roboto100, sofiaPro } from "@/fonts";
 import { getScopedI18n } from "@/locales/server";
+import { LocaleParams } from "@/types/Params";
 
-export default async function Page() {
+export default async function Page({ params: { locale } }: LocaleParams) {
+	setStaticParamsLocale(locale);
+
 	const t = await getScopedI18n("HomePage");
 
 	return (

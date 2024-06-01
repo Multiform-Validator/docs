@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 import en from "@/locales/en/en.json";
 
-export default async function manifest(): Promise<MetadataRoute.Manifest> {
+export default function manifest(): MetadataRoute.Manifest {
 	const scoped = en.Manifest;
 
 	return {

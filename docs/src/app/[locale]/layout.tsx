@@ -3,16 +3,18 @@ import "../globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import Adsense from "@/components/Adsense";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { inter } from "@/fonts";
 import { I18nProviderClient } from "@/locales/client";
-import { getScopedI18n } from "@/locales/server";
+import { getScopedI18n, getStaticParams } from "@/locales/server";
 import { Locale } from "@/types/Locales";
 
-const inter = Inter({ subsets: ["latin"] });
+export function generateStaticParams() {
+	return getStaticParams();
+}
 
 export async function generateMetadata(): Promise<Metadata> {
 	const scopedT = await getScopedI18n("HomeLayout");

@@ -1,5 +1,6 @@
 import "@/css/functions.css";
 
+import { setStaticParamsLocale } from "next-international/server";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -10,6 +11,8 @@ import { LocaleParams } from "@/types/Params";
 export default async function PasswordStrengthTester({
 	params: { locale },
 }: LocaleParams) {
+	setStaticParamsLocale(locale);
+
 	const t = await getScopedI18n("DocumentationJsFunctions");
 	return (
 		<div id="page-content-wrapper">

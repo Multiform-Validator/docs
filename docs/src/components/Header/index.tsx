@@ -19,6 +19,7 @@ export default function Header({ locale }: Locale) {
 	const path = usePathname();
 
 	const route = `/${locale}`;
+	const homeRoute = locale === "en" ? "/" : `/${locale}`;
 
 	const show =
 		path.startsWith(`/documentation/py`) ||
@@ -32,7 +33,7 @@ export default function Header({ locale }: Locale) {
 				<>
 					<header className="flex h-32 items-center justify-around bg-header md:h-28">
 						<Link href="/">
-							<h1 className={`w-48 text-lg text-white ${roboto700.className}`}>
+							<h1 className={`w-52 text-lg text-white ${roboto700.className}`}>
 								{scopedT("header_title")}
 							</h1>
 						</Link>
@@ -60,9 +61,9 @@ export default function Header({ locale }: Locale) {
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
 												className="nav-link text-blue-500"
-												href={path === `${route}` ? "#" : `${route}`}
+												href={path === homeRoute ? "#" : homeRoute}
 											>
-												{path === `${route}`
+												{path === homeRoute
 													? scopedT("header_already_here")
 													: scopedT("header_go_home")}
 											</Link>
@@ -117,9 +118,9 @@ export default function Header({ locale }: Locale) {
 										<Link
 											onClick={() => setIsSubMenuOpen(false)}
 											className="text-blue-500"
-											href={path === `${route}/` ? "#" : `${route}/`}
+											href={path === homeRoute ? "#" : homeRoute}
 										>
-											{path === `${route}/`
+											{path === homeRoute
 												? scopedT("header_already_here")
 												: scopedT("header_go_home")}
 										</Link>

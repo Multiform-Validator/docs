@@ -1,13 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import { setStaticParamsLocale } from "next-international/server";
 import { RiJavascriptFill } from "react-icons/ri";
 
 import javaIcon from "@/assets/icons/java-icon.svg";
 import pythonIcon from "@/assets/icons/python-icon.svg";
 import MainBg from "@/components/MainBg";
 import { getScopedI18n } from "@/locales/server";
+import { LocaleParams } from "@/types/Params";
 
-export default async function DocumentationPage() {
+export default async function DocumentationPage({
+	params: { locale },
+}: LocaleParams) {
+	setStaticParamsLocale(locale);
+
 	const t = await getScopedI18n("DocumentationPage");
 
 	const basePath = "/documentation";
