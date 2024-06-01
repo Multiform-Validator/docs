@@ -29,7 +29,7 @@ export default function Header({ locale }: Locale) {
 			{!show && (
 				<>
 					<header className="flex h-32 items-center justify-around bg-header md:h-28">
-						<h1 className={`w-44 text-lg text-white ${roboto700.className}`}>
+						<h1 className={`w-48 text-lg text-white ${roboto700.className}`}>
 							{scopedT("header_title")}
 						</h1>
 						<div className="flex md:hidden">
@@ -52,7 +52,7 @@ export default function Header({ locale }: Locale) {
 										<FaCaretDown size={12} />
 									</button>
 									{isSubMenuOpen && (
-										<div className="absolute left-0 top-full z-10 flex w-52 flex-col gap-2 rounded border-x border-y border-black bg-dropdownMenu p-3">
+										<div className="absolute left-0 top-full z-10 flex w-60 flex-col gap-2 rounded border-x border-y border-black bg-dropdownMenu p-3">
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
 												className="nav-link text-blue-500"
@@ -64,7 +64,7 @@ export default function Header({ locale }: Locale) {
 											</Link>
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
-												className="nav-link ml-5 text-white"
+												className="nav-link ml-3 text-white"
 												target="_blank"
 												href="https://www.buymeacoffee.com/gabriellogan"
 											>
@@ -72,7 +72,7 @@ export default function Header({ locale }: Locale) {
 											</Link>
 											<Link
 												onClick={() => setIsSubMenuOpen(false)}
-												className="nav-link ml-5 text-white"
+												className="nav-link ml-3 text-white"
 												target="_blank"
 												href="https://github.com/gabriel-logan/multiform-validator#readme"
 											>
@@ -109,7 +109,7 @@ export default function Header({ locale }: Locale) {
 									{scopedT("header_home")}
 								</li>
 								{isSubMenuOpen && (
-									<div className="absolute left-0 top-full z-10 flex w-52 flex-col gap-2 rounded border-x border-y border-black bg-dropdownMenu p-3">
+									<div className="absolute left-0 top-full z-10 flex w-56 flex-col gap-2 rounded border-x border-y border-black bg-dropdownMenu p-3">
 										<Link
 											onClick={() => setIsSubMenuOpen(false)}
 											className="text-blue-500"
@@ -121,7 +121,7 @@ export default function Header({ locale }: Locale) {
 										</Link>
 										<Link
 											onClick={() => setIsSubMenuOpen(false)}
-											className="ml-5 text-white"
+											className="ml-3 text-white"
 											target="_blank"
 											href="https://www.buymeacoffee.com/gabriellogan"
 										>
@@ -129,7 +129,7 @@ export default function Header({ locale }: Locale) {
 										</Link>
 										<Link
 											onClick={() => setIsSubMenuOpen(false)}
-											className="ml-5 text-white"
+											className="ml-3 text-white"
 											target="_blank"
 											href="https://github.com/gabriel-logan/multiform-validator#readme"
 										>
