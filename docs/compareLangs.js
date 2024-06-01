@@ -1,6 +1,10 @@
 /* eslint-disable no-console */
+// MODE OF USE: node compareLangs.js <targetLang>
+
+const targetFileFromTerminal = process.argv.slice(2)[0]; // Nós usamos slice(2) para ignorar os
+
 const sourceFile = "en";
-const targetFile = "pt";
+const targetFile = targetFileFromTerminal || "pt";
 
 const srcFile = require(`./src/locales/${sourceFile}/${sourceFile}.json`);
 const tgtFile = require(`./src/locales/${targetFile}/${targetFile}.json`);
@@ -38,19 +42,3 @@ console.log(
 
 // The script will output the missing translations in the console.
 // If there are no missing translations, the output will be an empty array.
-
-/**
- * [
-  'HomeLayout.Opengraph title',
-  'HomeLayout.Opengraph description',
-  'About.About_Page',
-  'About.About_Page_Description',
-  'Info.Info_Page',
-  'PrivacyPolices.Privacy Policy',
-  'Terms.Terms and Conditions of Multiform Validator library',
-  'DocumentationJsFunctions.Import',
-  'DocumentationJsFunctions.require',
-  'DocumentationJsFunctions.(optional boolean) - If set to',
-  'DocumentationJsFunctions.trim()'
-]
- */
