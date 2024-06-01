@@ -1,18 +1,11 @@
 import "@/css/infos.css";
 
 import { Metadata } from "next";
-import { setStaticParamsLocale } from "next-international/server";
 
 import MainBg from "@/components/MainBg";
 import { getScopedI18n } from "@/locales/server";
 
-import { LocaleParams } from "../types/locale";
-
-export async function generateMetadata({
-	params: { locale },
-}: LocaleParams): Promise<Metadata> {
-	setStaticParamsLocale(locale);
-
+export async function generateMetadata(): Promise<Metadata> {
 	const t = await getScopedI18n("PrivacyPolices");
 	return {
 		title: t("Privacy Policy"),
@@ -20,11 +13,7 @@ export async function generateMetadata({
 	};
 }
 
-export default async function PrivacityPolicesPage({
-	params: { locale },
-}: LocaleParams) {
-	setStaticParamsLocale(locale);
-
+export default async function PrivacityPolicesPage() {
 	const t = await getScopedI18n("PrivacyPolices");
 
 	return (

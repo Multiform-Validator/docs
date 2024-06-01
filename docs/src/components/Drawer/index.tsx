@@ -7,10 +7,9 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Drawer from "react-modern-drawer";
 
 import SidebarWrapper from "@/components/SidebarWrapper/js";
+import { Locale } from "@/types/Locales";
 
-import { Langs } from "../Internationalization";
-
-export default function DrawerComponent({ locale }: { locale?: Langs }) {
+export default function DrawerComponent({ locale }: Locale) {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleDrawer = () => {
 		setIsOpen((prevState) => !prevState);

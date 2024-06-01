@@ -1,18 +1,10 @@
 import "react-modern-drawer/dist/index.css";
 
 import type { Metadata } from "next";
-import { setStaticParamsLocale } from "next-international/server";
 
-import { I18nProviderClient } from "@/locales/client";
 import { getScopedI18n } from "@/locales/server";
 
-import { LocaleParams } from "../types/locale";
-
-export async function generateMetadata({
-	params: { locale },
-}: LocaleParams): Promise<Metadata> {
-	setStaticParamsLocale(locale);
-
+export async function generateMetadata(): Promise<Metadata> {
 	const t = await getScopedI18n("DocumentationLayout");
 
 	return {
@@ -26,12 +18,10 @@ export async function generateMetadata({
 
 type DocumentationLayoutProps = Readonly<{
 	children: React.ReactNode;
-	params: { locale: string };
 }>;
 
 export default function DocumentationLayout({
 	children,
-	params: { locale },
 }: DocumentationLayoutProps) {
-	return <I18nProviderClient locale={locale}>{children}</I18nProviderClient>;
+	return <>{children}</>;
 }

@@ -1,16 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { setStaticParamsLocale } from "next-international/server";
 
 import MainBg from "@/components/MainBg";
 import { merriweather, oswald, playfair, roboto100, sofiaPro } from "@/fonts";
 import { getScopedI18n } from "@/locales/server";
 
-import { LocaleParams } from "./types/locale";
-
-export default async function Page({ params: { locale } }: LocaleParams) {
-	setStaticParamsLocale(locale);
-
+export default async function Page() {
 	const t = await getScopedI18n("HomePage");
 
 	return (
@@ -30,10 +25,7 @@ export default async function Page({ params: { locale } }: LocaleParams) {
 			</h2>
 			<p className={`text-center text-white ${sofiaPro.className}`}>
 				{t("FollowThe")}{" "}
-				<Link
-					className="text-blue-500 hover:underline"
-					href={`${locale}/documentation`}
-				>
+				<Link className="text-blue-500 hover:underline" href="/documentation">
 					{t("Documentation").toLowerCase()}
 				</Link>{" "}
 				{t("ForMoreInfo").toLowerCase()}
@@ -84,8 +76,8 @@ export default async function Page({ params: { locale } }: LocaleParams) {
 					<Image
 						src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
 						alt="Buy Me A Coffee"
-						width={0}
-						height={0}
+						width={217}
+						height={60}
 						className="h-auto w-auto"
 					/>
 				</Link>

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { setStaticParamsLocale } from "next-international/server";
 
-import { LocaleParams } from "@/app/[locale]/types/locale";
 import DrawerComponent from "@/components/Drawer";
 import { getScopedI18n } from "@/locales/server";
+import { LocaleParams } from "@/types/Params";
 
 import {
 	Cdns,
@@ -16,11 +15,7 @@ import {
 export default async function DocumentationPageJs({
 	params: { locale },
 }: LocaleParams) {
-	setStaticParamsLocale(locale);
-
-	const route = locale === "pt" ? "/pt" : "/";
-
-	const t = await getScopedI18n("DocumentationJs");
+	const scopedT = await getScopedI18n("DocumentationJs");
 	return (
 		<section className="min-h-screen bg-drawer-bg p-8 dark:bg-drawer-bg-dark">
 			<div>
@@ -28,19 +23,19 @@ export default async function DocumentationPageJs({
 				<div id="page-content-wrapper">
 					<div className="mb-10 flex justify-around">
 						<Link
-							href={route}
+							href="/"
 							className="rounded bg-gray-700 px-4 py-2 text-white"
 							id="menu-toggle"
 						>
-							{t("Back to home page")}
+							{scopedT("Back to home page")}
 						</Link>
 						<DrawerComponent locale={locale} />
 					</div>
 					<div>
 						<h1 className="text-3xl font-medium">
-							{t("Official documentation")}
+							{scopedT("Official documentation")}
 						</h1>
-						<p className="mt-4">{t("Welcome Introduction Text")}</p>
+						<p className="mt-4">{scopedT("Welcome Introduction Text")}</p>
 						<div id="examples_code" className="mt-8">
 							<h1 className="mb-4 text-2xl font-semibold">
 								Multiform-validator
@@ -83,13 +78,13 @@ export default async function DocumentationPageJs({
 							</p>
 
 							<p>
-								{t(
+								{scopedT(
 									"This npm package provides JavaScript functions to validate various forms fields.",
 								)}
 							</p>
 
 							<p className="mb-4">
-								{t("If you want to help me, you can buy me a coffee (:")}
+								{scopedT("If you want to help me, you can buy me a coffee (:")}
 							</p>
 
 							<p className="mb-6 mt-4 flex h-12 w-52">
@@ -108,12 +103,14 @@ export default async function DocumentationPageJs({
 							</p>
 
 							<strong>
-								<p className="mb-3">{t("INFO: ")}</p>
-								<p className="mb-3">{t("FirstInfoText")}</p>
-								<p className="mb-3">{t("SecondInfoText")}</p>
+								<p className="mb-3">{scopedT("INFO: ")}</p>
+								<p className="mb-3">{scopedT("FirstInfoText")}</p>
+								<p className="mb-3">{scopedT("SecondInfoText")}</p>
 							</strong>
 
-							<p className="mb-3">{t("Feel free to find bugs Text Msg")} </p>
+							<p className="mb-3">
+								{scopedT("Feel free to find bugs Text Msg")}{" "}
+							</p>
 
 							<h2 className="mb-2 mt-4 text-lg font-medium">CDN&apos;s</h2>
 
@@ -122,27 +119,27 @@ export default async function DocumentationPageJs({
 							</div>
 
 							<h2 className="mb-2 mt-4 text-lg font-medium">
-								{t("Example of use with CDN")}
+								{scopedT("Example of use with CDN")}
 							</h2>
 
 							<div className="mb-8">
 								<UsageCDNExample />
 							</div>
 
-							<h2 className="text-lg font-medium">{t("Installation")}</h2>
+							<h2 className="text-lg font-medium">{scopedT("Installation")}</h2>
 
 							<Installation />
 
-							<h1 className="mb-3 text-2xl">{t("Data Validator")}</h1>
+							<h1 className="mb-3 text-2xl">{scopedT("Data Validator")}</h1>
 
 							<p className="mb-3">
-								{t(
+								{scopedT(
 									"This package contains various modules for validating different types of data. Below are the available validation modules:",
 								)}
 							</p>
 
 							<h3 className="mb-1 text-start font-medium">
-								{t("Available Validation Modules")}
+								{scopedT("Available Validation Modules")}
 							</h3>
 
 							<ul className="mb-5 text-start">
@@ -261,7 +258,7 @@ export default async function DocumentationPageJs({
 							</ul>
 
 							<p className="mb-3">
-								{t("if you prefer, you can use importing as:")}
+								{scopedT("if you prefer, you can use importing as:")}
 							</p>
 
 							<div className="p-2">
@@ -269,7 +266,7 @@ export default async function DocumentationPageJs({
 							</div>
 
 							<p className="mb-4 mt-3">
-								{t("If you want to help me, you can buy me a coffee (:")}
+								{scopedT("If you want to help me, you can buy me a coffee (:")}
 							</p>
 
 							<p className="mb-6 mt-2 flex h-12 w-52">
@@ -287,9 +284,9 @@ export default async function DocumentationPageJs({
 								</Link>
 							</p>
 
-							<p className="mb-4">{t("Feel free to explore msg")}</p>
+							<p className="mb-4">{scopedT("Feel free to explore msg")}</p>
 
-							<h2 className="mb-6">{t("By - Gabriel Logan")}</h2>
+							<h2 className="mb-6">{scopedT("By - Gabriel Logan")}</h2>
 						</div>
 					</div>
 				</div>

@@ -1,18 +1,11 @@
 import "@/css/infos.css";
 
 import { Metadata } from "next";
-import { setStaticParamsLocale } from "next-international/server";
 
 import MainBg from "@/components/MainBg";
 import { getScopedI18n } from "@/locales/server";
 
-import { LocaleParams } from "../types/locale";
-
-export async function generateMetadata({
-	params: { locale },
-}: LocaleParams): Promise<Metadata> {
-	setStaticParamsLocale(locale);
-
+export async function generateMetadata(): Promise<Metadata> {
 	const t = await getScopedI18n("Terms");
 
 	return {
@@ -21,9 +14,7 @@ export async function generateMetadata({
 	};
 }
 
-export default async function TermsPage({ params: { locale } }: LocaleParams) {
-	setStaticParamsLocale(locale);
-
+export default async function TermsPage() {
 	const t = await getScopedI18n("Terms");
 
 	return (

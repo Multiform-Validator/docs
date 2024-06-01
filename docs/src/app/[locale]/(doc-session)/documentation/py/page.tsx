@@ -1,23 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { setStaticParamsLocale } from "next-international/server";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { LocaleParams } from "@/app/[locale]/types/locale";
 import { getScopedI18n } from "@/locales/server";
 
-export default async function DocumentationPagePy({
-	params: { locale },
-}: LocaleParams) {
-	setStaticParamsLocale(locale);
-
+export default async function DocumentationPagePy() {
 	const t = await getScopedI18n("DocumentationPython");
 
 	return (
 		<div className="min-h-screen bg-gray-800 p-6 text-white">
 			<h1 className="mb-4 text-4xl font-bold">Python Doc</h1>
-			<Link href={`/${locale}`} className="text-blue-500 hover:underline">
+			<Link href="/" className="text-blue-500 hover:underline">
 				{t("Back to home")}
 			</Link>
 			<p className="mb-6 mt-6 flex gap-2">

@@ -1,20 +1,16 @@
 import "@/css/functions.css";
 
-import { setStaticParamsLocale } from "next-international/server";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { LocaleParams } from "@/app/[locale]/types/locale";
 import DrawerComponent from "@/components/Drawer";
 import { getScopedI18n } from "@/locales/server";
+import { LocaleParams } from "@/types/Params";
 
 export default async function ValidatePassword({
 	params: { locale },
 }: LocaleParams) {
-	setStaticParamsLocale(locale);
-
 	const t = await getScopedI18n("DocumentationJsFunctions");
-
 	return (
 		<div id="page-content-wrapper">
 			<div className="relative mr-10 flex justify-end p-4">

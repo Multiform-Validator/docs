@@ -16,7 +16,7 @@ export default function Adsbygoogle({ NODE_ENV }: AdsbygoogleProps) {
 	useEffect(() => {
 		NODE_ENV === "production" &&
 			(window.adsbygoogle = window.adsbygoogle || []).push({});
-	}, []);
+	}, [NODE_ENV]);
 
 	return <></>;
 }

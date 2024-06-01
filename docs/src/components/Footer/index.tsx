@@ -2,36 +2,23 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { FaYoutube, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { playfair, sofiaPro } from "@/fonts";
+import { useScopedI18n } from "@/locales/client";
+import { Locale } from "@/types/Locales";
 
-import translation, { Langs, getBrowserLang } from "../Internationalization";
+export default function Footer({ locale }: Locale) {
+	const scopedT = useScopedI18n("Footer");
 
-export default function Footer() {
-	const [isClient, setIsClient] = useState(false);
-
-	const browserLang = getBrowserLang() as unknown as (Langs | undefined)[];
-
-	const t = (text: string) =>
-		translation({ text, subject: "Footer", language: browserLang });
+	const route = `/${locale}`;
 
 	const path = usePathname();
 
-	const route = path.startsWith("/pt") ? "/pt/" : "/";
-
 	const show =
-		path.startsWith("/documentation/js") ||
-		path.startsWith("/documentation/py") ||
-		path.startsWith("/pt/documentation/py") ||
-		path.startsWith("/pt/documentation/js") ||
-		path.startsWith("/en/documentation/js") ||
-		path.startsWith("/en/documentation/py");
+		path.startsWith(`${route}/documentation/py`) ||
+		path.startsWith(`${route}/documentation/js`);
 
-	useEffect(() => {
-		setIsClient(true);
-	}, []);
 	return (
 		<>
 			{!show && (
@@ -57,51 +44,49 @@ export default function Footer() {
 					<ul className="mb-0 list-none p-0 text-center text-lg leading-6">
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href={route}
+								href="/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{isClient ? t("Home") : "Home"}
+								{scopedT("Home")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href={`${route}documentation/`}
+								href="/documentation/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{isClient ? t("Services") : "Services"}
+								{scopedT("Services")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href={`${route}about/`}
+								href="/about/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{isClient ? t("About") : "About"}
+								{scopedT("About")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href={`${route}terms/`}
+								href="/terms/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{isClient ? t("Terms") : "Terms"}
+								{scopedT("Terms")}
 							</Link>
 						</li>
 						<li className="mx-2 inline-block px-2">
 							<Link
-								href={`${route}privacity-polices/`}
+								href="/privacity-polices/"
 								className={`text-inherit text-white opacity-80 hover:underline hover:opacity-100 ${playfair.className}`}
 							>
-								{isClient ? t("Privacy Policy") : "Privacy Policy"}
+								{scopedT("Privacy Policy")}
 							</Link>
 						</li>
 					</ul>
 					<p
 						className={`mb-0 mt-8 text-center text-sm text-gray-400 ${sofiaPro.className}`}
 					>
-						{isClient
-							? t("CopyRightMsg")
-							: "Multiform Validator © 2023 - Gabriel Logan"}
+						{scopedT("CopyRightMsg")}
 					</p>
 				</footer>
 			)}
