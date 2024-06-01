@@ -16,6 +16,8 @@ export default function Footer({ locale }: Locale) {
 	const path = usePathname();
 
 	const show =
+		path.startsWith(`/documentation/py`) ||
+		path.startsWith(`/documentation/py`) ||
 		path.startsWith(`${route}/documentation/py`) ||
 		path.startsWith(`${route}/documentation/js`);
 

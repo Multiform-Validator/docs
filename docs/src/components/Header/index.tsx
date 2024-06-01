@@ -21,6 +21,8 @@ export default function Header({ locale }: Locale) {
 	const route = `/${locale}`;
 
 	const show =
+		path.startsWith(`/documentation/py`) ||
+		path.startsWith(`/documentation/py`) ||
 		path.startsWith(`${route}/documentation/py`) ||
 		path.startsWith(`${route}/documentation/js`);
 
@@ -29,9 +31,11 @@ export default function Header({ locale }: Locale) {
 			{!show && (
 				<>
 					<header className="flex h-32 items-center justify-around bg-header md:h-28">
-						<h1 className={`w-48 text-lg text-white ${roboto700.className}`}>
-							{scopedT("header_title")}
-						</h1>
+						<Link href="/">
+							<h1 className={`w-48 text-lg text-white ${roboto700.className}`}>
+								{scopedT("header_title")}
+							</h1>
+						</Link>
 						<div className="flex md:hidden">
 							<button onClick={() => setIsMenuOpen(!isMenuOpen)}>
 								{isMenuOpen ? (
