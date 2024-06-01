@@ -22,7 +22,7 @@ export default function Header({ locale }: Locale) {
 
 	const show =
 		path.startsWith(`/documentation/py`) ||
-		path.startsWith(`/documentation/py`) ||
+		path.startsWith(`/documentation/js`) ||
 		path.startsWith(`${route}/documentation/py`) ||
 		path.startsWith(`${route}/documentation/js`);
 
