@@ -9,7 +9,7 @@
 
 This npm package provides JavaScript functions to validate various forms fields.
 
-Documentation: https://gabriel-logan.github.io/multiform-validator
+Documentation: https://multiform-validator.vercel.app
 
 Feel free to find bugs and report them to me. Your feedback is highly appreciated. Hugs from Gabriel Logan!
 
@@ -17,24 +17,24 @@ Feel free to find bugs and report them to me. Your feedback is highly appreciate
 
 jsDelivr:
 ```bash
-https://cdn.jsdelivr.net/npm/multiform-validator@2.1.0/dist/bundle.min.js
+https://cdn.jsdelivr.net/npm/multiform-validator@2.1.1/dist/bundle.min.js
 ```
 ```html
-<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.0/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.1/dist/bundle.min.js"></script>
 ```
 
 unpkg:
 ```bash
-https://unpkg.com/multiform-validator@2.1.0/dist/bundle.js
+https://unpkg.com/multiform-validator@2.1.1/dist/bundle.js
 ```
 ```html
-<script src="https://unpkg.com/multiform-validator@2.1.0/dist/bundle.js"></script>
+<script src="https://unpkg.com/multiform-validator@2.1.1/dist/bundle.js"></script>
 ```
 
 ### Example of use with CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.0/dist/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.1/dist/bundle.min.js"></script>
 <script>
 
 	const emailResult = isEmail('123456');
@@ -144,7 +144,7 @@ validator.FUNCTION_NAME.errorMsg = 'ErrorMsg' // You can customize errors
 ```
 
 ## Documentation
-### https://gabriel-logan.github.io/multiform-validator
+### https://multiform-validator.vercel.app
 
 ```javascript
 

@@ -1,6 +1,6 @@
 {
 	"name": "multiform-validator",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Javascript library made to validate, several form fields, such as: email, phone, password, cpf etc.",
 	"main": "./dist/index.js",
 	"types": "./types/index.d.ts",
@@ -48,7 +48,7 @@
 	"bugs": {
 		"url": "https://github.com/gabriel-logan/multiform-validator/issues"
 	},
-	"homepage": "https://gabriel-logan.github.io/multiform-validator/",
+	"homepage": "https://multiform-validator.vercel.app",
 	"contributors": [
 		"Gabriel Logan",
 		"Breno A"
