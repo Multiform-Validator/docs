@@ -1,14 +1,14 @@
 import { MetadataRoute } from "next";
 
-import { getScopedI18n } from "@/locales/server";
+import en from "@/locales/en/en.json";
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
-	const scopedT = await getScopedI18n("Manifest");
+	const scoped = en.Manifest;
 
 	return {
-		name: scopedT("Name"),
-		short_name: scopedT("ShortName"),
-		description: scopedT("Description"),
+		name: scoped.Name,
+		short_name: scoped.ShortName,
+		description: scoped.Description,
 		start_url: "/",
 		display: "standalone",
 		background_color: "#121212",
