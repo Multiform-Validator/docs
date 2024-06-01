@@ -19,8 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	return {
 		metadataBase: new URL(
-			process.env.NEXT_PUBLIC_WEBSITE_URL ||
-				"https://multiform-validator.3utilities.com",
+			process.env.NEXT_PUBLIC_WEBSITE_URL || "multiformvalidator.vercel.app",
 		),
 
 		title: {

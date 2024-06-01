@@ -41,7 +41,7 @@ export default async function DocumentationPagePy() {
 						width={0}
 						height={0}
 						className="h-auto w-auto"
-						src="https://img.shields.io/pypi/dm/multiform-validator.svg?style=flat-square"
+						src="https://img.shields.io/pypi/dm/multiform-validator.svg"
 						alt="pypi downloads"
 					/>
 				</a>
