@@ -42,3 +42,5 @@ console.log(
 
 // The script will output the missing translations in the console.
 // If there are no missing translations, the output will be an empty array.
+
+// A
