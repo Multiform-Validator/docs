@@ -1,7 +1,5 @@
 import "../globals.css";
 
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -162,8 +160,6 @@ export default async function RootLayout({
 					data-y_margin="18"
 					defer
 				/>
-				<Analytics />
-				<SpeedInsights />
 			</body>
 		</html>
 	);
