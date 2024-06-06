@@ -55,7 +55,7 @@ import { FUNCTION_NAME } from 'multiform-validator';
 export function UsageCDNExample() {
 	return (
 		<SyntaxHighlighter language="html" style={a11yDark}>
-			{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.0/dist/bundle.min.js"></script>
+			{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.2/dist/bundle.min.js"></script>
 
 <script>
 	const emailResult = isEmail('123456');
@@ -74,19 +74,19 @@ export function Cdns() {
 			<div className="mb-4">
 				<h3 className="mb-2">jsDelivr</h3>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
-					https://cdn.jsdelivr.net/npm/multiform-validator@2.1.0/dist/bundle.min.js
+					https://cdn.jsdelivr.net/npm/multiform-validator@2.1.2/dist/bundle.min.js
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.0/dist/bundle.min.js"></script>`}
+					{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.2/dist/bundle.min.js"></script>`}
 				</SyntaxHighlighter>
 			</div>
 			<div className="mb-4">
 				<h3 className="mb-2">unpkg</h3>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
-					https://unpkg.com/multiform-validator@2.1.0/dist/bundle.js
+					https://unpkg.com/multiform-validator@2.1.2/dist/bundle.js
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<script src="https://unpkg.com/multiform-validator@2.1.0/dist/bundle.js"></script>`}
+					{`<script src="https://unpkg.com/multiform-validator@2.1.2/dist/bundle.js"></script>`}
 				</SyntaxHighlighter>
 			</div>
 		</>
