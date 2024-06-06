@@ -34,4 +34,30 @@ describe('validateName', () => {
 			minLength: 1, maxLength: 20, errorMsg: [123 as unknown as string]
 		})).toThrow('All values within the array must be strings or null/undefined.');
 	});
+
+	it('should return true for valid names with custom min and max length', () => {
+		const result: ValidateFunctions = validateName('John', { minLength: 1, maxLength: 20 });
+		expect(result.isValid).toBe(true);
+	});
+
+	it('should return false for names that are too short', () => {
+		const result: ValidateFunctions = validateName('J', { minLength: 2, maxLength: 20 });
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe("This name is not valid");
+	});
+
+	it('should return false for names that are too long', () => {
+		const result: ValidateFunctions = validateName('JohnJohnJohnJohnJohnJohnJohnJohnJohnJohn', { minLength: 2, maxLength: 20 });
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe("Name too big, try again");
+	});
+
+	it('Should return true for a valid name Peter, Pedro, or Gabriel', () => {
+		const result1: ValidateFunctions = validateName('Peter');
+		const result2: ValidateFunctions = validateName('Pedro');
+		const result3: ValidateFunctions = validateName('Gabriel');
+		expect(result1.isValid).toBe(true);
+		expect(result2.isValid).toBe(true);
+		expect(result3.isValid).toBe(true);
+	});
 });

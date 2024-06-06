@@ -143,6 +143,57 @@ function validateUsername(
 				errorMsg: getErrorMessage(2),
 			};
 		} // Tamanho da palavra não pode ser maior que o tamanho máximo
+
+		// Define os caracteres especiais
+		const specialChars: string[] = [
+			"!",
+			"@",
+			"#",
+			"$",
+			"%",
+			"^",
+			"&",
+			"*",
+			"(",
+			")",
+			"-",
+			"_",
+			"=",
+			"+",
+			"[",
+			"]",
+			"{",
+			"}",
+			"|",
+			"\\",
+			";",
+			":",
+			"'",
+			'"',
+			",",
+			".",
+			"<",
+			">",
+			"/",
+			"?",
+		];
+
+		// Cria um objeto para contar a ocorrência de cada caractere especial
+		const charCount: { [key: string]: number } = {};
+
+		// Itera sobre a string para contar os caracteres especiais
+		for (const char of username) {
+			if (specialChars.includes(char)) {
+				charCount[char] = (charCount[char] || 0) + 1;
+				if (charCount[char] > 2) {
+					return {
+						isValid: false,
+						errorMsg: "Username cannot contain multiple special characters",
+					};
+				}
+			}
+		}
+
 		return {
 			isValid: true,
 			errorMsg: null,

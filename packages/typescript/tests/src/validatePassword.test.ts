@@ -75,4 +75,48 @@ describe('validatePassword', () => {
 		});
 		expect(result2.errorMsg).toBe("Password must be greater than 20 characters");
 	});
+
+	it('Returns correct error message for password without uppercase', () => {
+		const result = validatePassword('passw0rd!', {
+			options: { requireUppercase: true }
+		});
+		expect(result.errorMsg).toBe("Password requires at least one capital letter");
+	});
+
+	it('Returns correct error message for password without special character', () => {
+		const result = validatePassword('Passw0rd', {
+			options: { requireSpecialChar: true }
+		});
+		expect(result.errorMsg).toBe("Password requires at least one special character");
+	});
+
+	it('Returns correct error message for password without number', () => {
+		const result = validatePassword('Password!', {
+			options: { requireNumber: true }
+		});
+		expect(result.errorMsg).toBe("Password requires at least one number");
+	});
+
+	it('Returns correct error message for password without string', () => {
+		const result = validatePassword('12345678!', {
+			options: { requireString: true }
+		});
+		expect(result.errorMsg).toBe("Password requires at least one letter");
+	});
+
+	it('should throw error for invalid errorMsg parameter', () => {
+		expect(() => validatePassword('Passw0rd!', { minLength: 8, errorMsg: [123 as any] })).toThrow('All values within the array must be strings or null/undefined.');
+	});
+
+	it('should throw error for invalid password parameter', () => {
+		expect(() => validatePassword(123 as any)).toThrow('The input should be a string.');
+	});
+
+	it('should throw error for invalid minLength parameter', () => {
+		expect(() => validatePassword('Passw0rd!', { minLength: 8, maxLength: 6 })).toThrow("the minimum size cannot be larger than the maximum");
+	});
+
+	it('should throw error for invalid errorMsg parameter', () => {
+		expect(() => validatePassword('Passw0rd!', { minLength: 8, maxLength: 20, errorMsg: [123 as any] })).toThrow('All values within the array must be strings or null/undefined.');
+	});
 });

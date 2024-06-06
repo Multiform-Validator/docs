@@ -34,4 +34,30 @@ describe('validateSurname', () => {
 	it('throws error for invalid errorMsg parameter', () => {
 		expect(() => validateSurname('Jackson', { minLength: 3, maxLength: 25, errorMsg: [123 as unknown as string] })).toThrow('All values within the array must be strings or null/undefined.');
 	});
+
+	it('should return true for valid surnames with custom min and max length', () => {
+		const result = validateSurname('Jackson', { minLength: 1, maxLength: 20 });
+		expect(result.isValid).toBe(true);
+	});
+
+	it('should return false for surnames that are too short', () => {
+		const result = validateSurname('J', { minLength: 2, maxLength: 20 });
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe("This surname is not valid");
+	});
+
+	it('should return false for surnames that are too long', () => {
+		const result = validateSurname('JacksonJacksonJacksonJacksonJackson', { minLength: 2, maxLength: 20 });
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe("Surname too big, try again");
+	});
+
+	it('Should return true for a valid surname Jackson, Johnson, or Smith', () => {
+		const result1 = validateSurname('Jackson');
+		const result2 = validateSurname('Johnson');
+		const result3 = validateSurname('Smith');
+		expect(result1.isValid).toBe(true);
+		expect(result2.isValid).toBe(true);
+		expect(result3.isValid).toBe(true);
+	});
 });

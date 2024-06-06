@@ -39,4 +39,39 @@ describe('validateUsername', () => {
 	it('throws error for invalid errorMsg parameter', () => {
 		expect(() => validateUsername('User123', { minLength: 3, maxLength: 25, errorMsg: [123 as any] })).toThrow('All values within the array must be strings or null/undefined.');
 	});
+
+	it('should return true for valid usernames with custom min and max length', () => {
+		const result = validateUsername('User123', { minLength: 1, maxLength: 20 });
+		expect(result.isValid).toBe(true);
+	});
+
+	it('should return false for usernames that are too short', () => {
+		const result = validateUsername('U', { minLength: 2, maxLength: 20 });
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe('Username must be between 2 and 20 characters');
+	});
+
+	it('should return false for usernames that are too long', () => {
+		const result = validateUsername('User123User123User123User123', { minLength: 2, maxLength: 20 });
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe('Username must be between 2 and 20 characters');
+	});
+
+	it('Should return true for a valid username User123, User, or User1234', () => {
+		const result1 = validateUsername('User123');
+		const result2 = validateUsername('User');
+		const result3 = validateUsername('User1234');
+		expect(result1.isValid).toBe(true);
+		expect(result2.isValid).toBe(true);
+		expect(result3.isValid).toBe(true);
+	});
+
+	it('Should return false for invalid usernames', () => {
+		const result1 = validateUsername('User 123');
+		const result2 = validateUsername('123User');
+		const result3 = validateUsername('@@@@@@');
+		expect(result1.isValid).toBe(false);
+		expect(result2.isValid).toBe(false);
+		expect(result3.isValid).toBe(false);
+	});
 });
