@@ -55,14 +55,14 @@ function cpfIsValid(
 
 		const cpfClean: string = cpf.replace(/\D+/g, "");
 		
-		if (/^(\d)\1{10}$/.test(cpfLimpo)) {
+		if (/^(\d)\1{10}$/.test(cpfClean)) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(2),
 			};
 		}
 
-		if (cpfLimpo.length !== 11) {
+		if (cpfClean.length !== 11) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(1),
