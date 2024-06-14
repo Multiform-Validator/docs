@@ -46,4 +46,11 @@ describe('cpfIsValid', () => {
 	it('should throw an error when errorMsg contains non-string values', () => {
 		expect(() => cpfIsValid('12345678910', ['error message', 123 as any])).toThrow('All values within the array must be strings or null/undefined.');
 	});
+
+	it("it should return false when all digits are repeated", () => {
+		const result = cpfIsValid('11111111111');
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe("CPF is not valid");
+	}
+	);
 });

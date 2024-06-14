@@ -54,4 +54,10 @@ describe('cnpjIsValid function', () => {
     expect(result.isValid).toBe(false);
     expect(result.errorMsg).toBe('Custom not valid message');
   });
+
+	test('should return false when all digits are repeated', () => {
+		const result = cnpjIsValid('11.111.111/1111-11');
+		expect(result.isValid).toBe(false);
+		expect(result.errorMsg).toBe('CNPJ is not valid');
+	});
 });
