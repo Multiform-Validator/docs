@@ -1,6 +1,28 @@
 /**
- * @example isEmail('foor@bar.com') true;
- * @example isEmail('foor@bar') false;
+ * Validates if the given string is a valid email address.
+ *
+ * @example isEmail('foo@bar.com') // returns true;
+ * @example isEmail('foo@bar') // returns false;
+ * @example isEmail('1foo@bar.com') // returns false, starts with a number.
+ * @example isEmail('foo@1bar.com') // returns false, domain starts with a number.
+ * @example isEmail('foo@bar.1com') // returns false, TLD starts with a number.
+ * @example isEmail('..foo@bar.com') // returns false, starts with consecutive dots.
+ * @example isEmail('foo..bar@baz.com') // returns false, local part contains consecutive dots.
+ * @example isEmail('foo@..bar.com') // returns false, domain contains consecutive dots.
+ * @example isEmail('foo@bar..com') // returns false, domain contains consecutive dots before TLD.
+ * @example isEmail('foo@bar.com..') // returns false, ends with consecutive dots.
+ * @example isEmail('foo@@bar.com') // returns false, contains multiple @ symbols.
+ * @example isEmail('foo@bar.com.br') // returns true, valid country code TLD.
+ * @example isEmail('foo@bar.com.com') // returns false, domain repetition.
+ * @example isEmail('foo@bar.c') // returns false, TLD too short.
+ * @example isEmail('!foo@bar.com') // returns false, starts with a special character.
+ * @example isEmail('foo bar@baz.com') // returns false, contains spaces.
+ * @example isEmail('foo@bar!com') // returns false, domain contains special characters.
+ * @example isEmail('foo!@bar.com') // returns false, local part contains special characters.
+ * @example isEmail('foo@bar.c') // returns false, invalid TLD.
+ * @description This function checks if the provided string is a valid email address according to the standard email formatting rules. It checks for the presence of an @ symbol, valid characters in the local part and domain, the absence of forbidden characters and patterns, and a valid top-level domain.
+ * @param email The email address to validate.
+ * @returns {boolean} True if the email address is valid, false otherwise.
  */
 function isEmail(email: string): boolean {
 	if (typeof email !== "string") {
