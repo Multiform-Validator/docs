@@ -1,0 +1,116 @@
+validador
+multiforma
+validação
+validador de email
+validador multiforma
+javascript
+npm
+segurança
+teste de penetração
+ferramentas de segurança
+validar
+número mágico
+validador de número mágico
+números mágicos
+cpf
+cnpj
+senha
+email
+isEmail
+imagem
+validator
+multiform
+validation
+email-validator
+multiform-validator
+security
+safe
+pentest
+security-tools
+validate
+magic number
+magic number validator
+magic numbers
+password
+image
+validar imagem
+E-Mail-Validator
+Multiform-Validator
+Sicherheit
+Penetrationstest
+Sicherheitswerkzeuge
+validieren
+magische Zahl
+magische Zahl Validator
+magische Zahlen
+Passwort
+Bild
+validación
+seguridad
+herramientas de seguridad
+contraseña
+correo electrónico
+验证器
+多形式
+验证
+电子邮件验证器
+安全
+渗透测试
+安全工具
+魔数
+魔数验证器
+密码
+电子邮件
+图像
+isemail
+learn javascript
+javascript tutorial
+learn javascript free
+learn javascript online
+learn js
+javascript programming
+javascript website
+javascript online
+javascript free
+Como validar CPF
+Como gerar CPF
+Como validar CNPJ
+Como gerar CNPJ
+Como validar email
+Como validar senha
+Como validar número mágico
+Como validar número de telefone
+Como validar endereço
+Como validar cartão de crédito
+Como validar data
+Como validar CEP
+Como validar imagem
+Como validar arquivo
+Como validar formulário
+How to validate CPF
+How to generate CPF
+How to validate CNPJ
+How to generate CNPJ
+How to validate email
+How to validate password
+How to validate magic number
+How to validate phone number
+How to validate address
+How to validate credit card
+How to validate date
+How to validate postal code
+How to validate image
+How to validate file
+How to validate form
+email account
+email login
+e mail
+webmail
+aseguranza
+javascript download
+webmail login
+js
+javascript coding
+email account login
+online email
+in javascript
