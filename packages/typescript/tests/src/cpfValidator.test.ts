@@ -28,7 +28,7 @@ describe('cpfIsValid', () => {
 	it('should return isValid as false and the correct error message when CPF is invalid', () => {
 		const result = cpfIsValid('123456789-02');
 		expect(result.isValid).toBe(false);
-		expect(result.errorMsg).toBe("CPF must have 11 numerical digits");
+		expect(result.errorMsg).toBe("CPF is not valid");
 	});
 
 	it('should throw an error when the input is not a string', () => {

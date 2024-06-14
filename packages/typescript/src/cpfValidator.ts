@@ -62,18 +62,20 @@ function cpfIsValid(
 		let numeroBase2: number = 11;
 		let somaTotal: number = 0;
 		let somaTotal2: number = 0;
-		if (cpf.length !== 11 && cpf.length !== 14) {
-			return {
-				isValid: false,
-				errorMsg: getErrorMessage(1),
-			};
-		}
+
 		const cpfLimpo: string = cpf.replace(/\D+/g, ""); // Transforma o cpf em um valor limpo sem caracter especial
 		// Validação para verificar se todos os dígitos são iguais (condição de CPF inválido).
 		if (/^(\d)\1{10}$/.test(cpfLimpo)) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(2),
+			};
+		}
+
+		if (cpfLimpo.length !== 11) {
+			return {
+				isValid: false,
+				errorMsg: getErrorMessage(1),
 			};
 		}
 
