@@ -54,7 +54,7 @@ function cpfIsValid(
 		}
 
 		const cpfClean: string = cpf.replace(/\D+/g, "");
-		if (cpfClean.length !== 11) {
+		if (cpfClean.length !== 11 && cpfClean.length !== 14) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(1),
