@@ -12,7 +12,8 @@
 		"build:types": "tsc -p tsconfig.types.json",
 		"build:src": "tsc",
 		"build:browser": "webpack",
-		"build": "yarn build:types && yarn build:src && yarn build:browser"
+		"build": "yarn build:types && yarn build:src && yarn build:browser",
+		"pr-check": "yarn build && yarn test"
 	},
 	"repository": {
 		"type": "git",
