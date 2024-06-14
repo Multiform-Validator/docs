@@ -54,6 +54,7 @@ function cpfIsValid(
 		}
 
 		const cpfClean: string = cpf.replace(/\D+/g, "");
+		
 		if (/^(\d)\1{10}$/.test(cpfLimpo)) {
 			return {
 				isValid: false,
