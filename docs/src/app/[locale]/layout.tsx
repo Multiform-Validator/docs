@@ -3,6 +3,7 @@ import "../globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import Adsense from "@/components/Adsense";
 import Footer from "@/components/Footer";
@@ -75,6 +76,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 		verification: {
 			google: process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_API_KEY,
+			other: {
+				"google-adsense-account": process.env
+					.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID as string,
+			},
 		},
 
 		appleWebApp: {
@@ -134,15 +139,25 @@ export default async function RootLayout({
 	return (
 		<html lang={locale}>
 			<head>
-				<meta
-					name="google-adsense-account"
-					content={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID}
-				/>
 				<Adsense
 					GOOGLE_ADSENSE_CLIENT_ID={
 						process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID
 					}
 				/>
+				{/**<!-- Google tag (gtag.js) --> */}
+				<Script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=AW-11180158373"
+				/>
+				<Script id="googleTag">
+					{`
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-11180158373');
+					`}
+				</Script>
 			</head>
 			<body className={inter.className}>
 				<I18nProviderClient locale={locale}>
