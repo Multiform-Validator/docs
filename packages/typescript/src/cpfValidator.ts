@@ -6,20 +6,17 @@ const defaultErrorMsg: string[] = [
 ];
 
 /**
- * @param cpf
- * @param errorMsg optional
- * @example cpfIsValid('123.456.789.10');
- * @example cpfIsValid('12345678910');
- * @example cpfIsValid('12345678910', ['CPF ta errado','Tem que ter pelo menos 11']);
- * @description This function returns four errors in the following order,
+ * Validates a Brazilian CPF number for correctness.
  *
- * If you want to use a default parameter, use null or leave Empty..
+ * The CPF (Cadastro de Pessoas Físicas) is a Brazilian tax identification number.
+ * It consists of 11 digits in the format XXX.XXX.XXX-XX. This function checks the
+ * validity of a CPF number using its calculation algorithm.
  *
- * Default:
- * ['CPF invalid', 'CPF must have 11 numerical digits', 'CPF is not valid', 'Unknown error']
- * .
- *
- * Create a list of errors separated by commas in strings
+ * @param cpf The CPF number as a string.
+ * @param errorMsg An optional array of custom error messages.
+ * @example cpfIsValid('123.456.789-09');
+ * @example cpfIsValid('12345678909');
+ * @example cpfIsValid('12345678909', ['Custom invalid CPF message','Custom length error']);
  * @returns An object with 'isValid' (boolean) and 'errorMsg' (string) properties.
  */
 function cpfIsValid(
@@ -32,8 +29,6 @@ function cpfIsValid(
 	if (typeof cpf !== "string") {
 		throw new TypeError("The input should be a string.");
 	}
-	// Check para saber se as mensagens que sao passadas sao validas
-	// caso contrario retorna um ERRO
 	if (errorMsg) {
 		if (!Array.isArray(errorMsg)) throw new TypeError("Must be an Array");
 		for (let index: number = 0; index < errorMsg.length; index += 1) {
@@ -44,7 +39,7 @@ function cpfIsValid(
 			}
 		}
 	}
-	// Função interna para obter a mensagem de erro
+
 	function getErrorMessage(index: number): string {
 		const errorMessage: string | null = errorMsg ? errorMsg[index] : null;
 		return errorMessage != null ? errorMessage : defaultErrorMsg[index];
@@ -58,53 +53,28 @@ function cpfIsValid(
 			};
 		}
 
-		let numeroBase: number = 10;
-		let numeroBase2: number = 11;
-		let somaTotal: number = 0;
-		let somaTotal2: number = 0;
-
-		const cpfLimpo: string = cpf.replace(/\D+/g, ""); // Transforma o cpf em um valor limpo sem caracter especial
-		// Validação para verificar se todos os dígitos são iguais (condição de CPF inválido).
-		if (/^(\d)\1{10}$/.test(cpfLimpo)) {
+		const cpfClean: string = cpf.replace(/\D+/g, "");
+		
+		if (/^(\d)\1{10}$/.test(cpfClean)) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(2),
 			};
 		}
 
-		if (cpfLimpo.length !== 11) {
+		if (cpfClean.length !== 11) {
 			return {
 				isValid: false,
 				errorMsg: getErrorMessage(1),
 			};
 		}
 
-		let primeiroVerificador: number = 0;
-		let segundoVerificador: number = 0;
+		const cpfArray: number[] = cpfClean.split('').map(Number);
+		const validator = (sum: number) => (sum % 11 < 2 ? 0 : 11 - (sum % 11));
+		const sum1 = cpfArray.slice(0, 9).reduce((acc, val, i) => acc + val * (10 - i), 0);
+		const sum2 = cpfArray.slice(0, 10).reduce((acc, val, i) => acc + val * (11 - i), 0);
 
-		for (let repetidor: number = 0; repetidor < 11; repetidor += 1) {
-			// Executa os códigos 11 vezes em sequência.
-			// Faz a soma numérica de todos os números gerados por multiplicador.
-			const multiplicador: number = Number(cpfLimpo[repetidor]) * numeroBase;
-			numeroBase -= 1;
-			somaTotal += multiplicador;
-			// Faz a soma numérica de todos os números gerados por multiplicador2.
-			const multiplicador2: number = Number(cpfLimpo[repetidor]) * numeroBase2;
-			numeroBase2 -= 1;
-			somaTotal2 += multiplicador2;
-			// Calculo de verificação dos digitos
-			const valorDeVerificacao: number = somaTotal - Number(cpfLimpo[9]); // Coleta a soma apenas até o 9° número da sequência
-			const valorDeVerificacao2: number = somaTotal2 - Number(cpfLimpo[10]); // Coleta a soma apenas até o 10° número da sequência
-			primeiroVerificador = 11 - (valorDeVerificacao % 11); // Calcula o Primeiro dígito verificador
-			segundoVerificador = 11 - (valorDeVerificacao2 % 11); // Calcula o Segundo Dígito verificador
-		}
-		if (primeiroVerificador > 9) primeiroVerificador = 0;
-		if (segundoVerificador > 9) segundoVerificador = 0;
-		// Valida o Número gerado, se = true, CPF GERADO.
-		if (
-			primeiroVerificador === Number(cpfLimpo[9]) &&
-			segundoVerificador === Number(cpfLimpo[10])
-		) {
+		if (cpfArray[9] === validator(sum1) && cpfArray[10] === validator(sum2)) {
 			return {
 				isValid: true,
 				errorMsg: null,

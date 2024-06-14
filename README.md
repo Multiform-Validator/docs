@@ -3,11 +3,11 @@
 
 # Multiform-validator
 
-MyLibrary is a multilanguage library designed to validate various form fields. It can validate fields such as email, phone, password, CPF (Brazilian Individual Taxpayer Registry), credit card numbers, and more.
+Multiform-validator is a comprehensive, multilanguage library designed to validate various form fields. It supports validation for fields such as email, phone, password, CPF (Brazilian Individual Taxpayer Registry), credit card numbers, and more, ensuring data integrity and security across different programming languages.
 
 ## Supported Languages
 
-This library can validate data in the following programming languages:
+This library provides validation functionalities in the following programming languages:
 
 - [TypeScript (TS/JS/NPM)](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md) (stable)
 - [Java](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java/README.md) (coming soon)
@@ -17,16 +17,15 @@ This library can validate data in the following programming languages:
 
 ## Usage
 
-To use this library, please refer to the specific README file in the directory of the programming language you are using. 
-For example, if you are using TypeScript, you can find the usage instructions in the [TypeScript README](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md).
+For detailed usage instructions, please refer to the README file in the directory of the programming language you are using. For instance, TypeScript users can find the usage instructions in the [TypeScript README](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md).
 
 ## Installation
 
-Please refer to the specific installation instructions in the README file of the respective programming language directory.
+Installation instructions are available in the README file of the respective programming language directory.
 
 ## Contributing
 
-Contributions are welcome! Please read the contributing guidelines before getting started.
+We welcome contributions! Please consult the contributing guidelines before starting.
 
 ## Contributors
 
