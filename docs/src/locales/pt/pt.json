@@ -409,5 +409,10 @@
 
     "function is used to validate US phone numbers. It supports various formats, including \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\", and \"1 (XXX) XXX-XXXX\". It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the phone number is valid, and \"errorMsg\" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.": "A função é usada para validar números de telefone dos EUA. Ela suporta vários formatos, incluindo \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\" e \"1 (XXX) XXX-XXXX\". Ela retorna um objeto com duas propriedades: \"isValid\" (booleano) e \"errorMsg\" (string). A propriedade \"isValid\" será verdadeira se o número de telefone for válido, e \"errorMsg\" conterá a mensagem de erro se o número de telefone for inválido, ou será nula se o número de telefone for válido.",
     "The US phone number to be validated.": "O número de telefone dos EUA a ser validado."
+	},
+
+	"News": {
+		"News Ad Page": "Página de Anúncio de Notícias",
+		"News Ad Page for the Multiform Validator library." : "Página de Anúncio de Notícias para a biblioteca Multiform Validator."
 	}
 }

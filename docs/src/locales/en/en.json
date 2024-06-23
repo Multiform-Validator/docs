@@ -408,5 +408,10 @@
 
 		"function is used to validate US phone numbers. It supports various formats, including \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\", and \"1 (XXX) XXX-XXXX\". It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the phone number is valid, and \"errorMsg\" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.": "function is used to validate US phone numbers. It supports various formats, including \"XXX-XXX-XXXX\", \"(XXX) XXX-XXXX\", and \"1 (XXX) XXX-XXXX\". It returns an object with two properties: \"isValid\" (boolean) and \"errorMsg\" (string). The \"isValid\" property will be true if the phone number is valid, and \"errorMsg\" will contain the error message if the phone number is invalid, or it will be null if the phone number is valid.",
 		"The US phone number to be validated.": "The US phone number to be validated."
+	},
+
+	"News": {
+		"News Ad Page": "News Ad Page",
+		"News Ad Page for the Multiform Validator library." : "News Ad Page for the Multiform Validator library."
 	}
 }
