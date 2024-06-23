@@ -1,15 +1,12 @@
 "use client";
 
 import "@/css/news.css";
-import { setStaticParamsLocale } from "next-international/server";
 import { useEffect, useState } from "react";
 
 import { AddBanner } from "@/components/Adsense";
 import MainBg from "@/components/MainBg";
-import { LocaleParams } from "@/types/Params";
 
-export default function NewsPage({ params: { locale } }: LocaleParams) {
-	setStaticParamsLocale(locale);
+export default function NewsPage() {
 	const GOOGLE_ADSENSE_CLIENT_ID =
 		process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID ?? "";
 
