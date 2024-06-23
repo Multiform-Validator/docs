@@ -1,7 +1,11 @@
 import "@/css/news.css";
-import MainBg from "@/components/MainBg";
+import { setStaticParamsLocale } from "next-international/server";
 
-export default function NewsPage() {
+import MainBg from "@/components/MainBg";
+import { LocaleParams } from "@/types/Params";
+
+export default function NewsPage({ params: { locale } }: LocaleParams) {
+	setStaticParamsLocale(locale);
 	return (
 		<MainBg>
 			<div id="news-page">
