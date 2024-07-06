@@ -1,3 +1,4 @@
 dist/
 comopublicar.txt
 multiform_validator.egg-info
+__pycache__
