@@ -1,6 +1,11 @@
 name: Python Pull Request Check
 
 on:
+  push:
+    branches: [ main ]
+    paths:
+        - "packages/python/**"
+
   pull_request:
     branches: [ main ]
     paths:

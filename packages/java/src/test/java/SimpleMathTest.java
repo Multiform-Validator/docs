@@ -4,6 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SimpleMathTest {
     @Test
     void testAddition() {
-        assertEquals(2, 1 + 1, "1 + 1 should equal 2");
+        assertEquals(3, 1 + 1, "1 + 1 should equal 2");
     }
 }

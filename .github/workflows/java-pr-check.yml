@@ -1,6 +1,11 @@
 name: Java Pull Request Check
 
 on:
+  push:
+    branches: [ main ]
+    paths:
+        - "packages/java/**"
+
   pull_request:
     branches: [ main ]
     paths:

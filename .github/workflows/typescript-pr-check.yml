@@ -1,6 +1,11 @@
 name: Typescript Pull Request Check
 
 on:
+  push:
+    branches: [ main ]
+    paths:
+        - "packages/typescript/**"
+
   pull_request:
     branches: [ main ]
     paths:
