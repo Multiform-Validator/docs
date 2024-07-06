@@ -23,7 +23,7 @@ def validateBRPhoneNumber(phone_number, errorMsg=default_error_msg):
             'errorMsg': get_error_message(0),
         }
 
-    br_phone_number_regex = r'^\(\d{2}\) \d{5}-\d{4}$'
+    br_phone_number_regex = r'^\(?\d{2}\)?[\s-]?9?\d{4}-?\d{4}$'
     if not re.match(br_phone_number_regex, phone_number):
         return {
             'isValid': False,
