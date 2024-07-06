@@ -1,92 +1,64 @@
-defaultErrorMsg = [
-  'CPF invalid',
-  'CPF must have 11 numerical digits',
-  'CPF is not valid',
-  'Unknown error',
+# Define the default error messages
+default_error_msg = [
+    "CPF invalid",
+    "CPF must have 11 numerical digits",
+    "CPF is not valid",
+    "Unknown error",
 ]
 
-def cpfValidator(cpf, errorMsg = defaultErrorMsg):
-	"""
-	Validates a CPF (Brazilian individual taxpayer registry identification) number.
+def cpfValidator(cpf, error_msg=None):
+    """
+    Validates a Brazilian CPF number for correctness.
 
-	:param cpf: The CPF number to be validated.
-	:param error_msg: An optional list of error messages.
-	:return: A dictionary with 'is_valid' (boolean) and 'error_msg' (string) properties.
-	"""
-	if (type(cpf) != str): raise TypeError('The input should be a string.')
+    The CPF (Cadastro de Pessoas Físicas) is a Brazilian tax identification number.
+    It consists of 11 digits in the format XXX.XXX.XXX-XX. This function checks the
+    validity of a CPF number using its calculation algorithm.
 
-	if (errorMsg):
-			if (not isinstance(errorMsg, list)):
-					raise TypeError('Must be a list')
-			for index in range(len(errorMsg)):
-					if errorMsg[index] is not None and not isinstance(errorMsg[index], str):
-							raise TypeError('All values within the list must be strings or None.')
+    :param cpf: The CPF number as a string.
+    :param error_msg: An optional list of custom error messages.
+    :return: A dictionary with 'is_valid' (boolean) and 'error_msg' (string) properties.
+    """
+    if error_msg is None:
+        error_msg = default_error_msg
+    else:
+        if not isinstance(error_msg, list):
+            raise TypeError("Must be a list")
+        for index, msg in enumerate(error_msg):
+            if msg is not None and not isinstance(msg, str):
+                raise TypeError("All values within the list must be strings or None.")
 
-	def getErrorMessage(index):
-			if (errorMsg and index >= 0 and index < len(errorMsg)):
-					errorMessage = errorMsg[index]
-					return errorMessage if errorMessage is not None else defaultErrorMsg[index]
-			return defaultErrorMsg[index]
+    def get_error_message(index):
+        return error_msg[index] if index < len(error_msg) and error_msg[index] is not None else default_error_msg[index]
 
-	try:
+    try:
+        if not cpf:
+            return {
+                'is_valid': False,
+                'error_msg': get_error_message(0),
+            }
 
-		if(not cpf):
-			return {
-				"isValid": False,
-				"errorMsg": getErrorMessage(0)
-			}
+        cpf_clean = ''.join(filter(str.isdigit, cpf))
 
-		numeroBase = 10
-		numeroBase2 = 11
-		somaTotal = somaTotal2 = 0
+        if len(cpf_clean) != 11 or cpf_clean == cpf_clean[0] * 11:
+            return {
+                'is_valid': False,
+                'error_msg': get_error_message(1 if len(cpf_clean) != 11 else 2),
+            }
 
-		if(len(cpf) != 11 and len(cpf) != 14):
-			return {
-				"isValid": False,
-				"errorMsg": getErrorMessage(1),
-			}
+        def calculate_digit(cpf_slice):
+            return sum((10 - i) * int(digit) for i, digit in enumerate(cpf_slice)) % 11 % 10
 
-		cpfLimpo = ''.join(filter(str.isdigit, cpf))
-
-		if (len(cpfLimpo) == 11 and cpfLimpo == cpfLimpo[0] * 11):
-			return {
-					"isValid": False,
-					"errorMsg": getErrorMessage(2),
-			}
-
-		primeiroVerificador = segundoVerificador = repetidor = 0
-
-		while (repetidor < 11):
-			multiplicador = int(cpfLimpo[repetidor]) * numeroBase
-			numeroBase -= 1
-			somaTotal += multiplicador
-
-			multiplicador2 = int(cpfLimpo[repetidor]) * numeroBase2
-			numeroBase2 -= 1
-			somaTotal2 += multiplicador2
-
-			valorDeVerificacao = somaTotal - int(cpfLimpo[9])
-			valorDeVerificacao2 = somaTotal2 - int(cpfLimpo[10])
-
-			primeiroVerificador = 11 - (valorDeVerificacao % 11)
-			segundoVerificador = 11 - (valorDeVerificacao2 % 11)
-
-			repetidor += 1
-
-		if(primeiroVerificador > 9): primeiroVerificador = 0
-		if(segundoVerificador > 9): segundoVerificador = 0
-
-		if(primeiroVerificador == int(cpfLimpo[9]) and segundoVerificador == int(cpfLimpo[10])):
-			return {
-        "isValid": True,
-        "errorMsg": None,
-      }
-		return {
-			"isValid": False,
-			"errorMsg": getErrorMessage(2)
-		}
-	except:
-		return {
-      "isValid": False,
-      "errorMsg": getErrorMessage(3),
-    }
+        if all(cpf_clean[i] == str(calculate_digit(cpf_clean[:i])) for i in [9, 10]):
+            return {
+                'is_valid': True,
+                'error_msg': None,
+            }
+        return {
+            'is_valid': False,
+            'error_msg': get_error_message(2),
+        }
+    except Exception as e:
+        return {
+            'is_valid': False,
+            'error_msg': get_error_message(3),
+        }
