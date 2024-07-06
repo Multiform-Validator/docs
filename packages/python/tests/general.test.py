@@ -26,6 +26,9 @@ def tester():
     phoneTrueValue2 = validateBRPhoneNumber('(11) 98765-4321')
     phoneFalseValue = validateBRPhoneNumber('(11) 1111-111')
 
+    print(cpfTrueValue)
+    print(cpfFalseValue)
+
     successTests = []
     failedTests = []
 
