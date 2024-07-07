@@ -28,10 +28,11 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven
-      working-directory: ./packages/java/
+      working-directory: ./packages/java
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
+      working-directory: ./packages/java
       run: mvn deploy -s $GITHUB_WORKSPACE/packages/java/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
