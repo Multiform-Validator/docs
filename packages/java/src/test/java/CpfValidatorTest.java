@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static io.multiform_validator.CpfValidator.cpfIsValid;
+import static io.github.gabriel_logan.multiform_validator.CpfValidator.cpfIsValid;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CpfValidatorTest {

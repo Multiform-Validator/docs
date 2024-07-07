@@ -1,4 +1,4 @@
-package io.multiform_validator;
+package io.github.gabriel_logan.multiform_validator;
 
 public class Validator {
     private static final String INPUT_VALUE_CANNOT_BE_EMPTY = "Input value cannot be empty.";

@@ -1,4 +1,4 @@
-package io.multiform_validator;
+package io.github.gabriel_logan.multiform_validator;
 
 import java.util.Arrays;
 public class CnpjValidator {

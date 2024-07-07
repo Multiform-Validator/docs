@@ -1,4 +1,4 @@
-import io.multiform_validator.Validator;
+import io.github.gabriel_logan.multiform_validator.Validator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

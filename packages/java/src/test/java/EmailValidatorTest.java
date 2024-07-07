@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static io.multiform_validator.EmailValidator.isEmail;
+import static io.github.gabriel_logan.multiform_validator.EmailValidator.isEmail;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmailValidatorTest {
