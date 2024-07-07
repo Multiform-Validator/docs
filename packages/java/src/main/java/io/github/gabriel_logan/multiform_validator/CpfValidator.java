@@ -8,6 +8,7 @@ public class CpfValidator {
     private CpfValidator() {
         throw new IllegalStateException("Utility class");
     }
+
     public static boolean cpfIsValid(String cpf) {
         if (cpf == null) {
             throw new NullPointerException("CPF cannot be null or empty");

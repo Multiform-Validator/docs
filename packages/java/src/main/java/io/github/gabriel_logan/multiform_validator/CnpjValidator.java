@@ -1,10 +1,12 @@
 package io.github.gabriel_logan.multiform_validator;
 
 import java.util.Arrays;
+
 public class CnpjValidator {
     private CnpjValidator() {
         throw new IllegalStateException("Utility class");
     }
+
     private static int calculateFirstVerifier(int[] cnpjBase) {
         final int[] weight = {5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
         int sum = 0;
