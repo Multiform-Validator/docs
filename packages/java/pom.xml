@@ -75,7 +75,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://github.com/gabriel-logan/multiform-validator/</url>
+            <url>https://maven.pkg.github.com/gabriel-logan/multiform-validator</url>
         </repository>
     </distributionManagement>
 
