@@ -6,7 +6,7 @@
 
     <groupId>io.github.gabriel_logan</groupId>
     <artifactId>multiform-validator</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <name>Multiform Validator</name>
     <description>
@@ -75,7 +75,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/gabriel-logan/multiform-validator</url>
+            <url>https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java</url>
         </repository>
     </distributionManagement>
 
