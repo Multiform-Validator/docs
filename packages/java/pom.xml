@@ -6,7 +6,25 @@
 
     <groupId>io.github.gabriel_logan</groupId>
     <artifactId>multiform-validator</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
+
+    <name>Multiform Validator</name>
+    <description>
+        Multilingual library made for validation, various form fields, such as: email, cpf, cnpj, credit card and much
+        more.
+    </description>
+    <url>https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java</url>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://github.com/gabriel-logan/multiform-validator/blob/main/LICENSE</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Gabriel Logan</name>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -20,7 +38,7 @@
             <version>24.1.0</version>
             <scope>compile</scope>
         </dependency>
-        
+
         <!-- JUnit Jupiter API -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
