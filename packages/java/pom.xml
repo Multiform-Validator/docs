@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.gabriel_logan</groupId>
-    <artifactId>multiform-validator</artifactId>
-    <version>0.0.5</version>
+    <artifactId>multiform_validator</artifactId>
+    <version>0.0.1</version>
 
     <name>Multiform Validator</name>
     <description>
         Multilingual library made for validation, various form fields, such as: email, cpf, cnpj, credit card and much
         more.
     </description>
-    <url>https://github.com/gabriel-logan/multiform-validator/</url>
+    <url>https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java/</url>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
