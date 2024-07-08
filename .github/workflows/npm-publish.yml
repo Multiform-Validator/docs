@@ -13,9 +13,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  release:
-    types: [created]
-
 jobs:
   publish-npm:
     runs-on: ubuntu-latest

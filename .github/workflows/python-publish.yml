@@ -15,9 +15,6 @@ on:
       - "packages/python/pyproject.toml"
       
   workflow_dispatch:
-  
-  release:
-    types: [published]
 
 permissions:
   contents: read
