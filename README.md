@@ -16,6 +16,7 @@ This library provides validation functionalities in the following programming la
 - [C#](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/csharp/README.md) (coming soon)
 - [Python](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python/README.md) (stable)
 - [PHP](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/php/README.md) (coming soon)
+- [C](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/c/README.md) (coming soon)
 
 ## Usage
 
