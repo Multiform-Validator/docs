@@ -2,6 +2,22 @@
 
 The multiform-validator is a powerful Multilanguage library for validating form fields in multiple languages. This guide describes the guidelines for contributing to the project efficiently and effectively.
 
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## How to Contribute
 
 1. **Fork the Repository**

@@ -1,5 +1,0 @@
-{
-	"code-runner.executorMap": {
-		"typescript": "npx ts-node",
-	},
-}
