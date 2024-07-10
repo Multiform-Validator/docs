@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+		"pr-check": "yarn lint && yarn build"
   },
   "dependencies": {
     "@vercel/analytics": "^1.3.1",
