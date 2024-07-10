@@ -20,7 +20,7 @@ This library provides validation functionalities in the following programming la
 
 ## Usage
 
-For detailed usage instructions, please refer to the README file in the directory of the programming language you are using. For instance, TypeScript users can find the usage instructions in the [TypeScript README](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md).
+For detailed usage instructions, please refer to the README file in the directory of the programming language you are using. For instance, TypeScript users can find the usage instructions in the [TypeScript README](https://github.com/Multiform-Validator/typescript-javascript/blob/main/README.md).
 
 ## Installation
 

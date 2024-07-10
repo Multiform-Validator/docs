@@ -18,7 +18,7 @@ Esta biblioteca fornece funcionalidades de validação nas seguintes linguagens 
 
 ## Uso
 
-Para instruções detalhadas de uso, consulte o arquivo README no diretório da linguagem de programação que você está usando. Por exemplo, os usuários de TypeScript podem encontrar as instruções de uso no [README do TypeScript](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md).
+Para instruções detalhadas de uso, consulte o arquivo README no diretório da linguagem de programação que você está usando. Por exemplo, os usuários de TypeScript podem encontrar as instruções de uso no [README do TypeScript](https://github.com/Multiform-Validator/typescript-javascript/blob/main/README.md).
 
 ## Instalação
 
