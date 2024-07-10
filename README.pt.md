@@ -9,12 +9,12 @@ Multiform-validator é uma biblioteca abrangente e multilíngue projetada para v
 
 Esta biblioteca fornece funcionalidades de validação nas seguintes linguagens de programação:
 
-- [TypeScript (TS/JS/NPM)](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/typescript/README.md) (estável)
-- [Java](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/java/README.md) (em breve)
-- [C#](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/csharp/README.md) (em breve)
-- [Python](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/python/README.md) (estável)
-- [PHP](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/php/README.md) (em breve)
-- [C](https://github.com/gabriel-logan/multiform-validator/tree/main/packages/c/README.md) (em breve)
+- [TypeScript (TS/JS/NPM)](https://github.com/Multiform-Validator/typescript-javascript/README.md) (estável)
+- [Java](https://github.com/Multiform-Validator/java/README.md) (em breve)
+- [C#](https://github.com/Multiform-Validator/csharp/README.md) (em breve)
+- [Python](https://github.com/Multiform-Validator/python/README.md) (estável)
+- [PHP](https://github.com/Multiform-Validator/php/README.md) (em breve)
+- [C](https://github.com/Multiform-Validator/c/README.md) (em breve)
 
 ## Uso
 
