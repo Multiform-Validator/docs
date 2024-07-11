@@ -14,7 +14,7 @@ Multiform-validator is a comprehensive, multilanguage library designed to valida
 This library provides validation functionalities in the following programming languages:
 
 - [TypeScript (TS/JS/NPM)](https://github.com/Multiform-Validator/typescript-javascript/blob/main/README.md) (stable)
-- [Java](https://github.com/Multiform-Validator/java/blob/main/README.md) (coming soon)
+- [Java](https://github.com/Multiform-Validator/java/blob/main/README.md) (stable)
 - [C#](https://github.com/Multiform-Validator/csharp/blob/main/README.md) (coming soon)
 - [Python](https://github.com/Multiform-Validator/python/blob/main/README.md) (stable)
 - [PHP](https://github.com/Multiform-Validator/php/blob/main/README.md) (coming soon)

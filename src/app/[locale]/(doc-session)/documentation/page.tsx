@@ -60,9 +60,6 @@ export default async function DocumentationPage({
 							{t("doc_java_title")}
 						</h3>
 						<p className="text-black">{t("doc_java_text")}</p>
-						<p className="mt-2 text-center text-black">
-							{t("doc_java_coming")}
-						</p>
 					</Link>
 				</div>
 			</section>
