@@ -103,7 +103,8 @@
         "Welcome": "Bienvenue sur le site du validateur multiformulaire",
         "SeeTheGithubSourceCode": "Voir le code source github",
         "ForMoreInfo": "Pour plus d’informations",
-        "SeeTheNpmPage": "Voir la page npm"
+        "SeeTheNpmPage": "Voir la page npm",
+        "SeeTheJitPackPage": "Voir la page jitpack"
     },
     "DocumentationJsFunctions": {
         "Alternatively, you can import the function using CommonJS syntax with": "Vous pouvez également importer la fonction en utilisant la syntaxe CommonJS avec",

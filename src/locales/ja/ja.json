@@ -103,7 +103,8 @@
         "Welcome": "multiform-validator の Web サイトへようこそ",
         "SeeTheGithubSourceCode": "githubのソースを参照してください",
         "ForMoreInfo": "詳細情報",
-        "SeeTheNpmPage": "npm のページを参照してください"
+        "SeeTheNpmPage": "npm のページを参照してください",
+        "SeeTheJitPackPage": "jitpack のページを参照してください"
     },
     "DocumentationJsFunctions": {
         "Alternatively, you can import the function using CommonJS syntax with": "または、CommonJS 構文を使用して関数をインポートすることもできます。",

@@ -103,7 +103,8 @@
         "Welcome": "Willkommen auf der Website des Multiform-Validators",
         "SeeTheGithubSourceCode": "Siehe die Github-Quelle",
         "ForMoreInfo": "Weitere Informationen",
-        "SeeTheNpmPage": "Siehe die npm-Seite"
+        "SeeTheNpmPage": "Siehe die npm-Seite",
+        "SeeTheJitPackPage": "Siehe die Jitpack-Seite"
     },
     "DocumentationJsFunctions": {
         "Alternatively, you can import the function using CommonJS syntax with": "Alternativ können Sie die Funktion mit der CommonJS-Syntax mit",

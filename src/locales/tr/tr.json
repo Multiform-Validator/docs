@@ -103,7 +103,8 @@
         "Welcome": "Çok biçimli doğrulayıcı web sitesine hoş geldiniz",
         "SeeTheGithubSourceCode": "Github kaynağına bakın",
         "ForMoreInfo": "Daha fazla bilgi için",
-        "SeeTheNpmPage": "npm sayfasına bakın"
+        "SeeTheNpmPage": "npm sayfasına bakın",
+        "SeeTheJitPackPage": "Jitpack sayfasına bakın"
     },
     "DocumentationJsFunctions": {
         "Alternatively, you can import the function using CommonJS syntax with": "Alternatif olarak, CommonJS sözdizimini kullanarak işlevi içe aktarabilirsiniz.",

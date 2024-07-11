@@ -103,7 +103,8 @@
         "Welcome": "مرحبا بك في موقع التحقق من صحة النماذج المتعددة",
         "SeeTheGithubSourceCode": "راجع مصدر جيثب",
         "ForMoreInfo": "لمزيد من المعلومات",
-        "SeeTheNpmPage": "انظر صفحة npm"
+        "SeeTheNpmPage": "انظر صفحة npm",
+        "SeeTheJitPackPage": "انظر صفحة جيتباك"
     },
     "DocumentationJsFunctions": {
         "Alternatively, you can import the function using CommonJS syntax with": "بدلا من ذلك ، يمكنك استيراد الوظيفة باستخدام بناء جملة CommonJS مع",

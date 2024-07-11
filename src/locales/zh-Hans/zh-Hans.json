@@ -103,7 +103,8 @@
         "Welcome": "欢迎访问 multiform-validator 网站",
         "SeeTheGithubSourceCode": "查看 github 源代码",
         "ForMoreInfo": "更多信息",
-        "SeeTheNpmPage": "查看 npm 页面"
+        "SeeTheNpmPage": "查看 npm 页面",
+        "SeeTheJitPackPage": "查看 jitpack 页面"
     },
     "DocumentationJsFunctions": {
         "Alternatively, you can import the function using CommonJS syntax with": "或者，您可以使用 CommonJS 语法导入函数",

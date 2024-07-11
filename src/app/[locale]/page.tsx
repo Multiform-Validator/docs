@@ -37,7 +37,7 @@ export default async function Page({ params: { locale } }: LocaleParams) {
 			<div className="my-7 flex w-60 flex-col items-center justify-center gap-6 self-center">
 				<Link
 					className="text-blue-500 hover:underline"
-					href="https://github.com/gabriel-logan/multiform-validator"
+					href="https://github.com/Multiform-Validator/docs"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -58,6 +58,14 @@ export default async function Page({ params: { locale } }: LocaleParams) {
 					rel="noopener noreferrer"
 				>
 					{t("SeeThePypiPage")}
+				</Link>
+				<Link
+					className="text-blue-500 hover:underline"
+					href="https://jitpack.io/#multiform-validator/java/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{t("SeeTheJitPackPage")}
 				</Link>
 			</div>
 
