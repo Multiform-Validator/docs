@@ -51,7 +51,7 @@ export default async function DocumentationPage({
 						<p className="text-black">{t("doc_py_text")}</p>
 					</Link>
 					<Link
-						href="https://github.com/Multiform-Validator/java/blob/main/README.md"
+						href="https://multiform-validator.github.io/java/"
 						target="_blank"
 						className="mx-auto max-w-96 cursor-pointer rounded border-black bg-white p-4 shadow hover:scale-105 active:scale-100"
 					>
