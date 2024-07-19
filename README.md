@@ -34,8 +34,8 @@ We welcome contributions! Please consult the contributing guidelines before star
 
 ## Contributors
 
-<a style="display: flex; justify-content: center;" href="https://github.com/gabriel-logan/multiform-validator/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=gabriel-logan/multiform-validator" />
+<a href="https://github.com/Multiform-Validator/docs/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Multiform-Validator/docs" />
 </a>
 
 ## License
