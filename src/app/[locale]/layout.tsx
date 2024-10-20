@@ -21,9 +21,10 @@ export async function generateMetadata(): Promise<Metadata> {
 	const scopedT = await getScopedI18n("HomeLayout");
 
 	return {
-    metadataBase: new URL(
-			process.env.NEXT_PUBLIC_WEBSITE_URL || "https://multiformvalidator.netlify.app",
-	),
+		metadataBase: new URL(
+			process.env.NEXT_PUBLIC_WEBSITE_URL ||
+				"https://multiformvalidator.netlify.app",
+		),
 
 		title: {
 			template: `${scopedT("Title")} | %s`,
