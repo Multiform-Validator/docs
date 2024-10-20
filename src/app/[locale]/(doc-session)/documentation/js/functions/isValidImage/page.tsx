@@ -10,7 +10,7 @@ import { LocaleParams } from "@/types/Params";
 
 export default async function IsValidImage({
 	params: { locale },
-}: LocaleParams) {
+}: Readonly<LocaleParams>) {
 	setStaticParamsLocale(locale);
 
 	const t = await getScopedI18n("DocumentationJsFunctions");
@@ -45,10 +45,13 @@ export default async function IsValidImage({
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`import { isValidImage } from 'multiform-validator';
-import ImageBuffer from 'image-buffer';
+import * as path from 'path';
+import * as fs from 'fs';
 
-const buffer: Buffer = ImageBuffer;
-const isValid = isValidImage(buffer);
+const filePath = path.join(__dirname, 'image.png');
+const fileBuffer = fs.readFileSync(filePath);
+
+const isValid = isValidImage(fileBuffer);
 
 console.log(isValid);  // true if the image is valid, false otherwise`}
 				</SyntaxHighlighter>
@@ -59,37 +62,22 @@ console.log(isValid);  // true if the image is valid, false otherwise`}
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`import { isValidImage } from 'multiform-validator';
-import ImageBuffer from 'image-buffer';
+import * as path from 'path';
+import * as fs from 'fs';
 
-const buffer: Buffer = ImageBuffer;
-const isValid = isValidImage(buffer, { exclude: ['gif'] });
+const filePath = path.join(__dirname, 'image.png');
+const fileBuffer = fs.readFileSync(filePath);
+
+const isValid = isValidImage(fileBuffer, { exclude: ['gif'] });
 
 console.log(isValid);  // true if the image is valid, false otherwise`}
 				</SyntaxHighlighter>
 
 				<h2 className="mt-6">{t("Example Usage with Nestjs and Multer")}</h2>
-				<p>
-					{t(
-						"In this example it only allocates 4 bytes for performance reasons, but you can pass the entire file.",
-					)}
-				</p>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`const filePath = resolve(process.cwd(), 'public', 'assets', 'images');
-
-const fileGetted = resolve(filePath, filename);
-
-const buffer = Buffer.alloc(4);
-
-const fd = fs.openSync(fileGetted, 'r');
-fs.readSync(fd, buffer, 0, 4, 0);
-fs.closeSync(fd);
-
-const isValidImageResult = isValidImage(buffer);
-
-if (!isValidImageResult) {
-    fs.unlinkSync(fileGetted);
-    throw new BadRequestException('Invalid image');
+					{`if (!isValidImage(file.buffer)) {
+	throw new BadRequestException("This is not a valid image");
 }`}
 				</SyntaxHighlighter>
 				<p className="mt-6">

@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	return {
 		metadataBase: new URL(
-			process.env.NEXT_PUBLIC_WEBSITE_URL ||
+			process.env.NEXT_PUBLIC_WEBSITE_URL ??
 				"https://multiformvalidator.netlify.app",
 		),
 

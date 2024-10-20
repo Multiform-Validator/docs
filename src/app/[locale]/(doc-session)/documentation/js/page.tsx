@@ -15,7 +15,7 @@ import {
 
 export default async function DocumentationPageJs({
 	params: { locale },
-}: LocaleParams) {
+}: Readonly<LocaleParams>) {
 	setStaticParamsLocale(locale);
 
 	const scopedT = await getScopedI18n("DocumentationJs");
