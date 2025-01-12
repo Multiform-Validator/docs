@@ -10,7 +10,7 @@ import { LocaleParams } from "@/types/Params";
 
 export default async function ValidateUsername({
 	params: { locale },
-}: LocaleParams) {
+}: Readonly<LocaleParams>) {
 	setStaticParamsLocale(locale);
 
 	const t = await getScopedI18n("DocumentationJsFunctions");
@@ -58,18 +58,25 @@ export default async function ValidateUsername({
 					{`interface OptionsParams {
 	minLength?: number;
 	maxLength?: number;
+	cbValidate?: (username: string) => boolean;
 	errorMsg?: (string | null)[];
 }
 
 const defaultOptionsParams: OptionsParams = {
     minLength: 1,
     maxLength: infinity,
+	cbValidate: undefined,
     errorMsg: defaultErrorMsg,
 };
 
 function validateUsername(
-    username: string,
-    { minLength, maxLength, errorMsg }: OptionsParams = defaultOptionsParams,
+	username: string,
+	{
+		minLength,
+		maxLength,
+		cbValidate,
+		errorMsg,
+	}: OptionsParams = defaultOptionsParams,
 ): { isValid: boolean, errorMsg: string | null };`}
 				</SyntaxHighlighter>
 
@@ -92,6 +99,11 @@ function validateUsername(
 						)}
 					</li>
 					<li>
+						<code>cbValidate</code> ((username: string) -&gt; boolean){" "}
+						[optional] - A custom validation function that takes the username as
+						an argument and returns a boolean. Default is undefined.
+					</li>
+					<li>
 						<code>errorMsg</code> (string[]){" "}
 						{t(
 							"[optional] - An array of error messages to customize the response. If not provided, the function will use default error messages.",
@@ -103,14 +115,11 @@ function validateUsername(
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
 					{`[
-	'Invalid value passed',
-	'Username too short',
-	'This username is too long',
-	'Username cannot contain spaces',
-	'Cannot start with a number',
-	'Cannot contain only numbers',
-	'Unknown error'
-]`}
+	"Username cannot be empty",
+	"Username too short",
+	"This username is too long",
+	"Invalid username",
+];`}
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">{t("Examples")}</h2>
@@ -130,7 +139,14 @@ const result2 = validateUsername("User999", {
     errorMsg: customErrorMsg,
 });
 console.log(result2);
-// Output: { isValid: false, errorMsg: 'Username too short' }`}
+// Output: { isValid: false, errorMsg: 'Username too short' }
+
+console.log(validateUsername('user123', { minLength: 5, maxLength: 10 }));
+// Output: { isValid: true, errorMsg: null }
+
+console.log(validateUsername('user1', { 
+    cbValidate: (value) => value.length > 5 
+})); // Output: { isValid: false, errorMsg: 'Invalid username' }`}
 				</SyntaxHighlighter>
 			</div>
 		</div>

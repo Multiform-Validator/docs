@@ -10,7 +10,7 @@ import { LocaleParams } from "@/types/Params";
 
 export default async function PasswordStrengthTester({
 	params: { locale },
-}: LocaleParams) {
+}: Readonly<LocaleParams>) {
 	setStaticParamsLocale(locale);
 
 	const t = await getScopedI18n("DocumentationJsFunctions");
@@ -23,12 +23,6 @@ export default async function PasswordStrengthTester({
 				<h1 className="title">
 					Password Strength Tester {t("Function Documentation")}
 				</h1>
-				<p>
-					{t("The")} <code>passwordStrengthTester</code>{" "}
-					{t(
-						'function evaluates the strength of a given password and returns the type of password strength as a string. The possible strength types are: "veryWeak", "weak", "regular", "strong", or "veryStrong", based on specific criteria.',
-					)}
-				</p>
 
 				<h2 className="subtitle">Import</h2>
 				<p>
@@ -53,88 +47,59 @@ export default async function PasswordStrengthTester({
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">{t("Parameters")}</h2>
-				<p>
-					{t(
-						"The function takes one parameter, which must be a string representing the password to be evaluated.",
-					)}
-				</p>
 				<ul>
 					<li>
 						<code>password</code> (string) -{" "}
 						{t("The password to be evaluated for strength.")}
+					</li>
+					<li>
+						<code>options</code> (object) - An optional object that can be
+						passed to the function to customize the strength criteria.
+						<ul>
+							<li>
+								<code>isVeryWeak</code> (password: string, passwordLength:
+								number) -&gt; boolean
+							</li>
+							<li>
+								<code>isWeak</code> (password: string, passwordLength: number)
+								-&gt; boolean
+							</li>
+							<li>
+								<code>isRegular</code> (password: string, passwordLength:
+								number) -&gt; boolean
+							</li>
+							<li>
+								<code>isStrong</code> (password: string, passwordLength: number)
+								-&gt; boolean
+							</li>
+							<li>
+								<code>isVeryStrong</code> (password: string, passwordLength:
+								number) -&gt; boolean{" "}
+							</li>
+						</ul>
 					</li>
 				</ul>
 
 				<h2 className="subtitle">{t("Examples")}</h2>
 
 				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`const result1 = passwordStrengthTester("12345");
-console.log(result1);  // Output: veryWeak
+					{`import { passwordStrengthTester } from 'multiform-validator';
 
-const result2 = passwordStrengthTester("abcdef");
-console.log(result2); // Output: weak
+const password = "P@ssw0rd123";
 
-const result3 = passwordStrengthTester("abc12345");
-console.log(result3); // Output: regular
+const customOptions = {
+	isVeryWeak: (password, passwordLength) => passwordLength < 6,
+	isWeak: (password, passwordLength) => passwordLength >= 6 && passwordLength < 8,
+	isRegular: (password, passwordLength) => passwordLength >= 8 && passwordLength < 10,
+	isStrong: (password, passwordLength) => passwordLength >= 10 && passwordLength < 12,
+	isVeryStrong: (password, passwordLength) => passwordLength >= 12,
+};
 
-const result4 = passwordStrengthTester("Abc123awdasd");
-console.log(result4); // Output: strong
+const customResult = passwordStrengthTester(password, customOptions);
 
-const result5 = passwordStrengthTester("SuperSecurePassword123!@");
-console.log(result5); // Output: veryStrong`}
+console.log(customResult); // "Strong"
+`}
 				</SyntaxHighlighter>
-
-				<h2 className="subtitle">{t("Notes")}</h2>
-				<p>
-					{t(
-						"The function checks the length of the password and applies certain criteria to classify the password strength. The returned strength type is based on the following criteria:",
-					)}
-				</p>
-				<ul>
-					<li>
-						{t(
-							"'veryWeak' - Password with less than 6 characters, consisting only of numbers",
-						)}
-					</li>
-					<li>
-						{t(
-							"'weak' - Password with less than 6 characters, consisting of numbers and letters",
-						)}
-					</li>
-					<li>
-						{t(
-							"'weak' - Password that repeats the same character more than 3 times in a row and is less than 10 characters long",
-						)}
-					</li>
-					<li>
-						{t(
-							"'weak' - Password between 5 and 8 characters, consisting only of numbers",
-						)}
-					</li>
-					<li>{t("'regular' - Password between 9 and 12 characters")}</li>
-					<li>
-						{t(
-							"'regular' - Password greater than or equal to 6 and less than 8 characters, containing at least one number and one letter",
-						)}
-					</li>
-					<li>
-						{t(
-							"'regular' - Password greater than 10 and has characters that are repeated more than 5 times in sequence",
-						)}
-					</li>
-					<li>{t("'strong' - Password between 13 and 16 characters")}</li>
-					<li>
-						{t(
-							"'strong' - Password with 8 or more characters, containing at least one uppercase letter, one number and one lowercase letter",
-						)}
-					</li>
-					<li>{t("'veryStrong' - Password longer than 16 characters")}</li>
-					<li>
-						{t(
-							"'veryStrong' - Password with 8 or more characters, containing at least one uppercase letter, one number, one special character and one lowercase letter",
-						)}
-					</li>
-				</ul>
 			</div>
 		</div>
 	);
