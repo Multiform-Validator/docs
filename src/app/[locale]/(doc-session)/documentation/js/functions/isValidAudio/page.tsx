@@ -10,7 +10,7 @@ import { LocaleParams } from "@/types/Params";
 
 export default async function IsValidAudio({
 	params: { locale },
-}: LocaleParams) {
+}: Readonly<LocaleParams>) {
 	setStaticParamsLocale(locale);
 
 	const t = await getScopedI18n("DocumentationJsFunctions");

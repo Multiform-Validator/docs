@@ -8,7 +8,9 @@ import DrawerComponent from "@/components/Drawer";
 import { getScopedI18n } from "@/locales/server";
 import { LocaleParams } from "@/types/Params";
 
-export default async function IsDecimal({ params: { locale } }: LocaleParams) {
+export default async function IsDecimal({
+	params: { locale },
+}: Readonly<LocaleParams>) {
 	setStaticParamsLocale(locale);
 
 	const t = await getScopedI18n("DocumentationJsFunctions");
