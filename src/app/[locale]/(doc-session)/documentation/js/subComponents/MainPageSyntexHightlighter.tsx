@@ -27,6 +27,18 @@ export function Installation() {
 					yarn add multiform-validator
 				</SyntaxHighlighter>
 			</div>
+
+			<div className="">
+				<SyntaxHighlighter
+					customStyle={{
+						textAlign: "center",
+					}}
+					language="bash"
+					style={a11yDark}
+				>
+					pnpm add multiform-validator
+				</SyntaxHighlighter>
+			</div>
 		</>
 	);
 }
@@ -55,11 +67,10 @@ import { FUNCTION_NAME } from 'multiform-validator';
 export function UsageCDNExample() {
 	return (
 		<SyntaxHighlighter language="html" style={a11yDark}>
-			{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.2/dist/bundle.min.js"></script>
-
-<script>
-	const emailResult = isEmail('123456');
-	const cpfResult = cpfIsValid('123456');
+			{`<script type="module">
+	import { isEmail, cpfIsValid } from "https://cdn.jsdelivr.net/npm/multiform-validator@2.3.1/+esm";
+	const emailResult = isEmail("123456");
+	const cpfResult = cpfIsValid("123456");
 
 	console.log(emailResult); // returns false
 	console.log(cpfResult.isValid); // returns false
@@ -74,19 +85,21 @@ export function Cdns() {
 			<div className="mb-4">
 				<h3 className="mb-2">jsDelivr</h3>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
-					https://cdn.jsdelivr.net/npm/multiform-validator@2.1.2/dist/bundle.min.js
+					https://cdn.jsdelivr.net/npm/multiform-validator@2.3.1/+esm
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.1.2/dist/bundle.min.js"></script>`}
+					{`<script type="module">
+	import multiformValidator from "https://cdn.jsdelivr.net/npm/multiform-validator@2.3.1/+esm"
+</script>`}
 				</SyntaxHighlighter>
 			</div>
 			<div className="mb-4">
 				<h3 className="mb-2">unpkg</h3>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
-					https://unpkg.com/multiform-validator@2.1.2/dist/bundle.js
+					https://unpkg.com/multiform-validator@2.3.1/dist/cjs/index.cjs
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<script src="https://unpkg.com/multiform-validator@2.1.2/dist/bundle.js"></script>`}
+					{`<script src="https://unpkg.com/multiform-validator@2.3.1/dist/cjs/index.cjs"></script>`}
 				</SyntaxHighlighter>
 			</div>
 		</>
