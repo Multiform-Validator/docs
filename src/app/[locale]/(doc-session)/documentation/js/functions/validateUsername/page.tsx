@@ -54,11 +54,21 @@ export default async function ValidateUsername({
 
 				<h2 className="subtitle">{t("Function Signature")}</h2>
 
-				<SyntaxHighlighter language="javascript" style={a11yDark}>
-					{`interface OptionsParams {
+				<SyntaxHighlighter language="typescript" style={a11yDark}>
+					{`type ValidateFunctions =
+	| {
+			isValid: true;
+			errorMsg: null;
+	  }
+	| {
+			isValid: false;
+			errorMsg: string;
+	  };
+
+interface OptionsParams {
 	minLength?: number;
 	maxLength?: number;
-	cbValidate?: (username: string) => boolean;
+	cbValidate?: (username: string) => ValidateFunctions;
 	errorMsg?: (string | null)[];
 }
 
@@ -77,7 +87,7 @@ function validateUsername(
 		cbValidate,
 		errorMsg,
 	}: OptionsParams = defaultOptionsParams,
-): { isValid: boolean, errorMsg: string | null };`}
+): ValidateFunctions {}`}
 				</SyntaxHighlighter>
 
 				<h2 className="subtitle">{t("Parameters")}</h2>
@@ -99,9 +109,9 @@ function validateUsername(
 						)}
 					</li>
 					<li>
-						<code>cbValidate</code> ((username: string) -&gt; boolean){" "}
+						<code>cbValidate</code> ((username: string) -&gt; ValidateFunctions){" "}
 						[optional] - A custom validation function that takes the username as
-						an argument and returns a boolean. Default is undefined.
+						an argument and returns a ValidateFunctions. Default is undefined.
 					</li>
 					<li>
 						<code>errorMsg</code> (string[]){" "}
@@ -118,7 +128,6 @@ function validateUsername(
 	"Username cannot be empty",
 	"Username too short",
 	"This username is too long",
-	"Invalid username",
 ];`}
 				</SyntaxHighlighter>
 
@@ -145,7 +154,19 @@ console.log(validateUsername('user123', { minLength: 5, maxLength: 10 }));
 // Output: { isValid: true, errorMsg: null }
 
 console.log(validateUsername('user1', { 
-    cbValidate: (value) => value.length > 5 
+	cbValidate: (username: string) => {
+		if (username !== "User123") {
+			return {
+				isValid: false,
+				errorMsg: "Invalid username",
+			};
+		}
+
+		return {
+			isValid: true,
+			errorMsg: null,
+		};
+	},
 })); // Output: { isValid: false, errorMsg: 'Invalid username' }`}
 				</SyntaxHighlighter>
 			</div>
