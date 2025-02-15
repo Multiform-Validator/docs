@@ -85,21 +85,30 @@ export function Cdns() {
 			<div className="mb-4">
 				<h3 className="mb-2">jsDelivr</h3>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
-					https://cdn.jsdelivr.net/npm/multiform-validator@2.5.2/+esm
+					https://cdn.jsdelivr.net/npm/multiform-validator@2.6.1/+esm
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
 					{`<script type="module">
-	import multiformValidator from "https://cdn.jsdelivr.net/npm/multiform-validator@2.5.2/+esm"
+	import mv from "https://cdn.jsdelivr.net/npm/multiform-validator@2.6.1/+esm"
 </script>`}
+				</SyntaxHighlighter>
+			</div>
+			<div className="mb-4">
+				<h3 className="mb-2">jsDelivr</h3>
+				<SyntaxHighlighter language="bash" style={a11yDark}>
+					https://cdn.jsdelivr.net/npm/multiform-validator@2.6.1/dist/index.min.js
+				</SyntaxHighlighter>
+				<SyntaxHighlighter language="html" style={a11yDark}>
+					{`<script src="https://cdn.jsdelivr.net/npm/multiform-validator@2.6.1/dist/index.min.js"></script>`}
 				</SyntaxHighlighter>
 			</div>
 			<div className="mb-4">
 				<h3 className="mb-2">unpkg</h3>
 				<SyntaxHighlighter language="bash" style={a11yDark}>
-					https://unpkg.com/multiform-validator@2.5.2/dist/cjs/index.cjs
+					https://unpkg.com/multiform-validator@2.6.1/dist/index.js
 				</SyntaxHighlighter>
 				<SyntaxHighlighter language="html" style={a11yDark}>
-					{`<script src="https://unpkg.com/multiform-validator@2.5.2/dist/cjs/index.cjs"></script>`}
+					{`<script src="https://unpkg.com/multiform-validator@2.6.1/dist/index.js"></script>`}
 				</SyntaxHighlighter>
 			</div>
 		</>
