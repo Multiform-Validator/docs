@@ -3452,6 +3452,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"multiform-validator@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "multiform-validator@npm:2.6.1"
+  checksum: 10c0/01e60ad8fd5dab3a79ef904c0c84cdfce210884e038e5c13681a71463af539f186e2112a8b9867d4e9d10314913473e1eda6302edab062e52c380d2b150d3b15
+  languageName: node
+  linkType: hard
+
 "multiform-validator@workspace:.":
   version: 0.0.0-use.local
   resolution: "multiform-validator@workspace:."
@@ -3466,6 +3473,7 @@ __metadata:
     eslint: "npm:^8"
     eslint-config-next: "npm:14.2.3"
     eslint-config-universe: "npm:^12.0.1"
+    multiform-validator: "npm:^2.6.1"
     next: "npm:^14.2.21"
     next-international: "npm:^1.2.4"
     postcss: "npm:^8"
