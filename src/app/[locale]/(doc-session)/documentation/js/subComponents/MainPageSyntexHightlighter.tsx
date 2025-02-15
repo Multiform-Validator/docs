@@ -68,7 +68,7 @@ export function UsageCDNExample() {
 	return (
 		<SyntaxHighlighter language="html" style={a11yDark}>
 			{`<script type="module">
-	import { isEmail, cpfIsValid } from "https://cdn.jsdelivr.net/npm/multiform-validator@2.5.2/+esm";
+	import { isEmail, cpfIsValid } from "https://cdn.jsdelivr.net/npm/multiform-validator@2.6.1/+esm";
 	const emailResult = isEmail("123456");
 	const cpfResult = cpfIsValid("123456");
 
